@@ -13,6 +13,7 @@ import HealthKit
 class HealthKitManager {
     
     let healthStore = HKHealthStore()
+
     
     init()
     {
@@ -28,13 +29,35 @@ class HealthKitManager {
     }
     
     
-    func getTodayStepCount() -> Double {
-         return 10.0
-        // healthStore.execute(sampleQuery)
+    func getTodayStepCount(completion:@escaping (Double?)->()) {
+
+        //   Define the sample type
+        let type = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)
+        
+        let cal = Calendar(identifier: .gregorian)
+        let startDate = cal.startOfDay(for: Date())
+        
+        let endDate = Date()
+        
+        //  Set the predicate
+        let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: [])
+        
+        let query = HKStatisticsQuery(quantityType: type!, quantitySamplePredicate: predicate, options: .cumulativeSum) { query, results, error in
+            if results != nil {
+                let quantity = results?.sumQuantity()
+                let unit = HKUnit.count()
+                let totalSteps = quantity?.doubleValue(for: unit)
+                // print("totalSteps are \(totalSteps!)")
+                completion(totalSteps)
+             } else {
+                print("results are nil")
+                completion(nil)
+             }
+        }
+        healthStore.execute(query)
     }
-
-
     
+
     func checkHealthKitAuthorization() -> Bool
     {
         // Default to assuming that we're authorized
@@ -45,11 +68,12 @@ class HealthKitManager {
             print ("healthKit is available")
  
             let healthKitTypesToRead : Set = [
-                HKObjectType.characteristicType(forIdentifier: HKCharacteristicTypeIdentifier.dateOfBirth)!
+                HKObjectType.characteristicType(forIdentifier: HKCharacteristicTypeIdentifier.dateOfBirth)!,
+                HKObjectType.quantityType(forIdentifier:HKQuantityTypeIdentifier.stepCount)!
             ]
             healthStore.requestAuthorization(toShare: nil, read: healthKitTypesToRead) { (success, error) -> Void in
                 if (error != nil) {
-                    isHealthKitEnabled = success
+                    isHealthKitEnabled = true
                 } else {
                     isHealthKitEnabled = false
                 }

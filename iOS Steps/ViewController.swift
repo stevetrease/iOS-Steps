@@ -36,18 +36,21 @@ class ViewController: UIViewController {
         
         let ageString = ageFormatter.string(from: dateOfBirth, to: Date())
         ageLabel.text = ageString
-        
-        let steps = HealthKitManager().getTodayStepCount()
-        todayStepCountLabel.text = "\(steps)"
-    }
 
+        todayStepCountLabel.text = " "
+        HealthKitManager().getTodayStepCount(completion: { (steps) in
+            let numberFormatter = NumberFormatter()
+            let stepsString = numberFormatter.string(from: steps! as NSNumber)
+            self.todayStepCountLabel.text = stepsString! + " steps"
+        })
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         print ("didReceiveMemoryWarning")
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
 }
 
 
