@@ -16,11 +16,20 @@ class ViewController: UIViewController {
     @IBOutlet weak var ageLabel: UILabel!
     @IBOutlet weak var todayStepCountLabel: UILabel!
     @IBOutlet weak var todayFlightClimbedLabel: UILabel!
+    @IBOutlet weak var refreshButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         print ("viewDidLoad")
+        todayStepCountLabel.text = " "
+        todayFlightClimbedLabel.text = " "
+        
+        drawScreen()
+    }
+    
+    
+    func drawScreen () {
         
         let dateOfBirth = HealthKitManager().getDateOfBirth()
         
@@ -38,7 +47,6 @@ class ViewController: UIViewController {
         let ageString = ageFormatter.string(from: dateOfBirth, to: Date())
         ageLabel.text = ageString
 
-        todayStepCountLabel.text = " "
         HealthKitManager().getTodayStepCount(completion: { (steps) in
             let numberFormatter = NumberFormatter()
             let stepsString = numberFormatter.string(from: steps! as NSNumber)
@@ -51,7 +59,6 @@ class ViewController: UIViewController {
             self.todayStepCountLabel.text = stepsString! + " step"  + pluralString
         })
         
-        todayFlightClimbedLabel.text = " "
         HealthKitManager().getTodayFlightsClimbedCount(completion: { (flights) in
             let numberFormatter = NumberFormatter()
             let flightsString = numberFormatter.string(from: flights! as NSNumber)
@@ -64,7 +71,12 @@ class ViewController: UIViewController {
             self.todayFlightClimbedLabel.text = flightsString! + " flight" + pluralString
         })
 
-        
+    }
+    
+    
+    @IBAction func actionTriggered(sender: AnyObject) {
+        // print ("Button pressed")
+        drawScreen()
     }
     
     

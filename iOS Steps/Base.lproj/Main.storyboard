@@ -26,16 +26,16 @@
                                 <rect key="frame" x="26" y="30" width="323" height="627"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Wj2-Ac-Zpc">
-                                        <rect key="frame" x="0.0" y="0.0" width="323" height="313.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="323" height="209"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="todayStepCountLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="24" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oJu-oP-i4O" userLabel="todayStepCountLabel">
-                                                <rect key="frame" x="0.0" y="0.0" width="323" height="157"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="323" height="104.5"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="48"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="todayFlightClimbedLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="24" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j1u-TF-Awu" userLabel="todayFlightClimbedLabel">
-                                                <rect key="frame" x="0.0" y="157" width="323" height="156.5"/>
+                                                <rect key="frame" x="0.0" y="104.5" width="323" height="104.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -43,22 +43,29 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="G2h-uc-hT2">
-                                        <rect key="frame" x="41.5" y="313.5" width="240.5" height="313.5"/>
+                                        <rect key="frame" x="41.5" y="209" width="240.5" height="209"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dateOfBirthLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rqw-05-9Od" userLabel="dateOfBirthLabel">
-                                                <rect key="frame" x="0.0" y="0.0" width="240.5" height="157"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="240.5" height="104.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ageLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="laa-bO-Brc">
-                                                <rect key="frame" x="55" y="157" width="130.5" height="156.5"/>
+                                                <rect key="frame" x="55" y="104.5" width="130.5" height="104.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                     </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3kd-Yd-WSU" userLabel="RefreshButton">
+                                        <rect key="frame" x="135" y="418" width="53" height="209"/>
+                                        <state key="normal" title="Refresh"/>
+                                        <connections>
+                                            <action selector="actionTriggeredWithSender:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="BKe-kb-7Fe"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </stackView>
                         </subviews>
