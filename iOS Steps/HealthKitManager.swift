@@ -20,7 +20,13 @@ class HealthKitManager {
         print ("HealthKitManager.init")
         checkHealthKitAuthorization()
     }
+   
     
+    func oldest() -> Date
+    {
+        return healthStore.earliestPermittedSampleDate()
+    }
+
     
     func getDateOfBirth() -> Date
     {
