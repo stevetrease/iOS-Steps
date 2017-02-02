@@ -44,6 +44,9 @@ class ViewController: UIViewController {
             let stepsString = numberFormatter.string(from: steps! as NSNumber)
             
             var pluralString = "s"
+            if (steps != nil && Int(steps!) == 1) {
+                pluralString = ""
+            }
             
             self.todayStepCountLabel.text = stepsString! + " step"  + pluralString
         })
@@ -54,7 +57,10 @@ class ViewController: UIViewController {
             let flightsString = numberFormatter.string(from: flights! as NSNumber)
             
             var pluralString = "s"
-
+            if (flights != nil && Int(flights!) == 1) {
+                pluralString = ""
+            }
+            
             self.todayFlightClimbedLabel.text = flightsString! + " flight" + pluralString
         })
 
