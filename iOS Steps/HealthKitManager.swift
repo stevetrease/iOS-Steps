@@ -24,6 +24,7 @@ class HealthKitManager {
     
     func oldest() -> Date
     {
+        print (healthStore.earliestPermittedSampleDate())
         return healthStore.earliestPermittedSampleDate()
     }
 
