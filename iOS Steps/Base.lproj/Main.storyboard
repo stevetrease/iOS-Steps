@@ -25,12 +25,23 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="8DN-Ze-0kR">
                                 <rect key="frame" x="26" y="30" width="323" height="627"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="todayStepCountLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="24" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oJu-oP-i4O" userLabel="todayStepCountLabel">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Wj2-Ac-Zpc">
                                         <rect key="frame" x="0.0" y="0.0" width="323" height="313.5"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="48"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="todayStepCountLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="24" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oJu-oP-i4O" userLabel="todayStepCountLabel">
+                                                <rect key="frame" x="0.0" y="0.0" width="323" height="256"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="48"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="todayFlightClimbedLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="24" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j1u-TF-Awu" userLabel="todayFlightClimbedLabel">
+                                                <rect key="frame" x="0.0" y="256" width="323" height="57.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="48"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="G2h-uc-hT2">
                                         <rect key="frame" x="41.5" y="313.5" width="240.5" height="313.5"/>
                                         <subviews>
@@ -64,6 +75,7 @@
                     <connections>
                         <outlet property="ageLabel" destination="laa-bO-Brc" id="e2Q-xA-N0l"/>
                         <outlet property="dateOfBirthLabel" destination="rqw-05-9Od" id="tff-80-MJW"/>
+                        <outlet property="todayFlightClimbedLabel" destination="j1u-TF-Awu" id="dcz-Zn-WS4"/>
                         <outlet property="todayStepCountLabel" destination="oJu-oP-i4O" id="zJh-0Q-CMX"/>
                     </connections>
                 </viewController>

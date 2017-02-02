@@ -34,6 +34,35 @@ class HealthKitManager {
         let dateOfBirth = Calendar.current.date(from: dateOfBirthComponents!)
         return dateOfBirth!
     }
+
+    
+    func getTodayFlightsClimbedCount(completion:@escaping (Double?)->())
+    {
+        
+        //   Define the sample type
+        let type = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.flightsClimbed)
+        
+        let cal = Calendar(identifier: .gregorian)
+        let startDate = cal.startOfDay(for: Date())
+        
+        let endDate = Date()
+        
+        //  Set the predicate
+        let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: [])
+        
+        let query = HKStatisticsQuery(quantityType: type!, quantitySamplePredicate: predicate, options: .cumulativeSum) { query, results, error in
+            if results != nil {
+                let quantity = results?.sumQuantity()
+                let unit = HKUnit.count()
+                let totalFlights = quantity?.doubleValue(for: unit)
+                completion(totalFlights)
+            } else {
+                print("getTodayStairCount: results are nil - returning zero flights")
+                completion(0.0)
+            }
+        }
+        healthStore.execute(query)
+    }
     
     
     func getTodayStepCount(completion:@escaping (Double?)->())
@@ -102,6 +131,7 @@ class HealthKitManager {
  
             let healthKitTypesToRead : Set = [
                 HKObjectType.characteristicType(forIdentifier: HKCharacteristicTypeIdentifier.dateOfBirth)!,
+                HKObjectType.quantityType(forIdentifier:HKQuantityTypeIdentifier.flightsClimbed)!,
                 HKObjectType.quantityType(forIdentifier:HKQuantityTypeIdentifier.stepCount)!
             ]
             healthStore.requestAuthorization(toShare: nil, read: healthKitTypesToRead) { (success, error) -> Void in
