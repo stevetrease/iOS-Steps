@@ -42,14 +42,20 @@ class ViewController: UIViewController {
         HealthKitManager().getTodayStepCount(completion: { (steps) in
             let numberFormatter = NumberFormatter()
             let stepsString = numberFormatter.string(from: steps! as NSNumber)
-            self.todayStepCountLabel.text = stepsString! + " step"
+            
+            var pluralString = "s"
+            
+            self.todayStepCountLabel.text = stepsString! + " step"  + pluralString
         })
         
         todayFlightClimbedLabel.text = " "
         HealthKitManager().getTodayFlightsClimbedCount(completion: { (flights) in
             let numberFormatter = NumberFormatter()
-            let stepsString = numberFormatter.string(from: flights! as NSNumber)
-            self.todayFlightClimbedLabel.text = stepsString! + " flight"
+            let flightsString = numberFormatter.string(from: flights! as NSNumber)
+            
+            var pluralString = "s"
+
+            self.todayFlightClimbedLabel.text = flightsString! + " flight" + pluralString
         })
 
         
