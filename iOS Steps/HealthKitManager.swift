@@ -85,7 +85,6 @@ class HealthKitManager {
                 let quantity = results?.sumQuantity()
                 let unit = HKUnit.count()
                 let totalSteps = quantity?.doubleValue(for: unit)
-                // print("totalSteps are \(totalSteps!)")
                 completion(totalSteps)
              } else {
                 print("getTodayStepCount: results are nil - returning zero steps")
@@ -110,7 +109,6 @@ class HealthKitManager {
                 let quantity = results?.sumQuantity()
                 let unit = HKUnit.count()
                 let totalSteps = quantity?.doubleValue(for: unit)
-                // print("totalSteps are \(totalSteps!)")
                 completion(totalSteps)
             } else {
                 print("getTodayStepCount: results are nil - returning zero steps")
@@ -145,9 +143,7 @@ class HealthKitManager {
         } else {
             isHealthKitEnabled = false
         }
-        
+
         return isHealthKitEnabled
     }
-    
-
- }
+}

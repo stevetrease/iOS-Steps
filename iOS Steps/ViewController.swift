@@ -16,7 +16,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var ageLabel: UILabel!
     @IBOutlet weak var todayStepCountLabel: UILabel!
     @IBOutlet weak var todayFlightClimbedLabel: UILabel!
-    @IBOutlet weak var refreshButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,11 +24,16 @@ class ViewController: UIViewController {
         todayStepCountLabel.text = " "
         todayFlightClimbedLabel.text = " "
         
+        let appDelegate:AppDelegate = UIApplication.shared.delegate! as! AppDelegate
+        appDelegate.myViewController = self
+        
         drawScreen()
     }
     
     
     func drawScreen () {
+        
+        print ("drawScreen")
         
         let dateOfBirth = HealthKitManager().getDateOfBirth()
         
