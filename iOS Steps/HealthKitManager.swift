@@ -22,14 +22,16 @@ class HealthKitManager {
     }
     
     
-    func getDateOfBirth() -> Date {
+    func getDateOfBirth() -> Date
+    {
         let dateOfBirthComponents = try? healthStore.dateOfBirthComponents()
         let dateOfBirth = Calendar.current.date(from: dateOfBirthComponents!)
         return dateOfBirth!
     }
     
     
-    func getTodayStepCount(completion:@escaping (Double?)->()) {
+    func getTodayStepCount(completion:@escaping (Double?)->())
+    {
 
         //   Define the sample type
         let type = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)
@@ -50,8 +52,8 @@ class HealthKitManager {
                 // print("totalSteps are \(totalSteps!)")
                 completion(totalSteps)
              } else {
-                print("results are nil")
-                completion(nil)
+                print("getTodayStepCount: results are nil - returning zero steps")
+                completion(0.0)
              }
         }
         healthStore.execute(query)
