@@ -21,8 +21,12 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         print ("viewDidLoad")
+        
         todayStepCountLabel.text = " "
         todayFlightClimbedLabel.text = " "
+        
+        dateOfBirthLabel.text = healthKitManager.dateOfBirthSting
+        ageLabel.text = healthKitManager.ageString
         
         let appDelegate:AppDelegate = UIApplication.shared.delegate! as! AppDelegate
         appDelegate.myViewController = self
@@ -32,56 +36,21 @@ class ViewController: UIViewController {
     
     
     func drawScreen () {
-
         print ("drawScreen")
         
-        let dateOfBirth = healthKitManager.getDateOfBirth()
-        
-        let formatter = DateFormatter()
-        formatter.dateStyle = .long
-        
-        let dateString = formatter.string(from: dateOfBirth)
-        dateOfBirthLabel.text = dateString
-
-        
-        let ageFormatter = DateComponentsFormatter()
-        ageFormatter.unitsStyle = .full
-        ageFormatter.allowedUnits = [.year, .month, .day]
-        ageFormatter.maximumUnitCount = 3
-        
-        let ageString = ageFormatter.string(from: dateOfBirth, to: Date())
-        ageLabel.text = ageString
-
-        
         healthKitManager.getTodayStepCount(completion: { (steps) in
-            let numberFormatter = NumberFormatter()
-            let stepsString = numberFormatter.string(from: steps! as NSNumber)
-            
-            var pluralString = "s"
-            if (steps != nil && Int(steps!) == 1) {
-                pluralString = ""
-            }
-            
-            self.todayStepCountLabel.text = stepsString! + " step"  + pluralString
+            self.todayStepCountLabel.text = healthKitManager.stepsTodayString
         })
 
         
         healthKitManager.getTodayFlightsClimbedCount(completion: { (flights) in
-            let numberFormatter = NumberFormatter()
-            let flightsString = numberFormatter.string(from: flights! as NSNumber)
-            
-            var pluralString = "s"
-            if (flights != nil && Int(flights!) == 1) {
-                pluralString = ""
-            }
-            
-            self.todayFlightClimbedLabel.text = flightsString! + " flight" + pluralString
+            self.todayFlightClimbedLabel.text = healthKitManager.flightsClimbedTodayString
         })
     }
     
     
     @IBAction func actionTriggered(sender: AnyObject) {
-        // print ("Button pressed")
+        print ("Button pressed")
         drawScreen()
     }
     

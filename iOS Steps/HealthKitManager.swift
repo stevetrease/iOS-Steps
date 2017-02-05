@@ -21,23 +21,34 @@ class HealthKitManager {
     {
         print ("HealthKitManager.init")
         checkHealthKitAuthorization()
-    }
-   
-    
-    func oldest() -> Date
-    {
-        print (healthStore.earliestPermittedSampleDate())
-        return healthStore.earliestPermittedSampleDate()
-    }
-
-    
-    func getDateOfBirth() -> Date
-    {
+        
+        earliestPermittedSampleDate = healthStore.earliestPermittedSampleDate()
+        
         let dateOfBirthComponents = try? healthStore.dateOfBirthComponents()
-        let dateOfBirth = Calendar.current.date(from: dateOfBirthComponents!)
-        return dateOfBirth!
-    }
+        dateOfBirth = Calendar.current.date(from: dateOfBirthComponents!)!
+        let formatter = DateFormatter()
+        formatter.dateStyle = .long
+        dateOfBirthSting = formatter.string(from: dateOfBirth)
+        
+        let ageFormatter = DateComponentsFormatter()
+        ageFormatter.unitsStyle = .full
+        ageFormatter.allowedUnits = [.year, .month, .day]
+        ageFormatter.maximumUnitCount = 3
+        ageString = ageFormatter.string(from: dateOfBirth, to: Date())!
 
+    }
+    
+   
+    var earliestPermittedSampleDate: Date = Date()
+    var dateOfBirth: Date = Date()
+    var dateOfBirthSting: String = ""
+    var ageString: String = ""
+    var stepsToday: Double = 0.0
+    var stepsTodayString: String = ""
+    var flightsClimbedToday: Double = 0.0
+    var flightsClimbedTodayString = ""
+    
+    
     
     func getTodayFlightsClimbedCount(completion:@escaping (Double?)->())
     {
@@ -57,10 +68,22 @@ class HealthKitManager {
             if results != nil {
                 let quantity = results?.sumQuantity()
                 let unit = HKUnit.count()
-                let totalFlights = quantity?.doubleValue(for: unit)
-                completion(totalFlights)
+                let flights = quantity?.doubleValue(for: unit)
+                
+                self.flightsClimbedToday = flights!
+                
+                var pluralString = "s"
+                if (flights != nil && Int(flights!) == 1) {
+                    pluralString = ""
+                }
+                let numberFormatter = NumberFormatter()
+                self.flightsClimbedTodayString = numberFormatter.string(from: flights! as NSNumber)! + " flight" + pluralString
+                
+                completion(flights)
             } else {
                 print("getTodayStairCount: results are nil - returning zero flights")
+                self.flightsClimbedToday = 0.0
+                self.flightsClimbedTodayString = "0 flights"
                 completion(0.0)
             }
         }
@@ -86,10 +109,22 @@ class HealthKitManager {
             if results != nil {
                 let quantity = results?.sumQuantity()
                 let unit = HKUnit.count()
-                let totalSteps = quantity?.doubleValue(for: unit)
-                completion(totalSteps)
+                let steps = quantity?.doubleValue(for: unit)
+
+                self.stepsToday = steps!
+               
+                var pluralString = "s"
+                if (steps != nil && Int(steps!) == 1) {
+                    pluralString = ""
+                }
+                let numberFormatter = NumberFormatter()
+                self.stepsTodayString = numberFormatter.string(from: steps! as NSNumber)! + " step" + pluralString
+
+                completion(steps)
              } else {
                 print("getTodayStepCount: results are nil - returning zero steps")
+                self.stepsToday = 0.0
+                self.stepsTodayString = "0 steps"
                 completion(0.0)
              }
         }
