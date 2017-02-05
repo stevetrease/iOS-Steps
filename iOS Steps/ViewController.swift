@@ -32,10 +32,10 @@ class ViewController: UIViewController {
     
     
     func drawScreen () {
-        
+
         print ("drawScreen")
         
-        let dateOfBirth = HealthKitManager().getDateOfBirth()
+        let dateOfBirth = healthKitManager.getDateOfBirth()
         
         let formatter = DateFormatter()
         formatter.dateStyle = .long
@@ -43,6 +43,7 @@ class ViewController: UIViewController {
         let dateString = formatter.string(from: dateOfBirth)
         dateOfBirthLabel.text = dateString
 
+        
         let ageFormatter = DateComponentsFormatter()
         ageFormatter.unitsStyle = .full
         ageFormatter.allowedUnits = [.year, .month, .day]
@@ -51,7 +52,8 @@ class ViewController: UIViewController {
         let ageString = ageFormatter.string(from: dateOfBirth, to: Date())
         ageLabel.text = ageString
 
-        HealthKitManager().getTodayStepCount(completion: { (steps) in
+        
+        healthKitManager.getTodayStepCount(completion: { (steps) in
             let numberFormatter = NumberFormatter()
             let stepsString = numberFormatter.string(from: steps! as NSNumber)
             
@@ -62,8 +64,9 @@ class ViewController: UIViewController {
             
             self.todayStepCountLabel.text = stepsString! + " step"  + pluralString
         })
+
         
-        HealthKitManager().getTodayFlightsClimbedCount(completion: { (flights) in
+        healthKitManager.getTodayFlightsClimbedCount(completion: { (flights) in
             let numberFormatter = NumberFormatter()
             let flightsString = numberFormatter.string(from: flights! as NSNumber)
             
@@ -74,7 +77,6 @@ class ViewController: UIViewController {
             
             self.todayFlightClimbedLabel.text = flightsString! + " flight" + pluralString
         })
-
     }
     
     
