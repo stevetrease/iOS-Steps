@@ -16,6 +16,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var ageLabel: UILabel!
     @IBOutlet weak var todayStepCountLabel: UILabel!
     @IBOutlet weak var todayFlightClimbedLabel: UILabel!
+    @IBOutlet weak var yesterdayStepCountLabel: UILabel!
+    @IBOutlet weak var yesterdayFlightClimbedLabel: UILabel!
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +27,8 @@ class ViewController: UIViewController {
         
         todayStepCountLabel.text = " "
         todayFlightClimbedLabel.text = " "
+        yesterdayStepCountLabel.text = " "
+        yesterdayFlightClimbedLabel.text = " "
         
         dateOfBirthLabel.text = healthKitManager.dateOfBirthSting
         ageLabel.text = healthKitManager.ageString
@@ -41,10 +46,19 @@ class ViewController: UIViewController {
         healthKitManager.getTodayStepCount(completion: { (steps) in
             self.todayStepCountLabel.text = healthKitManager.stepsTodayString
         })
-
+        
+        healthKitManager.getYesterdayStepCount(completion: { (steps) in
+            self.yesterdayStepCountLabel.text = healthKitManager.stepsYesterdayString
+        })
+        
         
         healthKitManager.getTodayFlightsClimbedCount(completion: { (flights) in
             self.todayFlightClimbedLabel.text = healthKitManager.flightsClimbedTodayString
+        })
+
+        
+        healthKitManager.getYesterdayFlightsClimbedCount(completion: { (flights) in
+            self.yesterdayFlightClimbedLabel.text = healthKitManager.flightsClimbedYesterdayString
         })
     }
     

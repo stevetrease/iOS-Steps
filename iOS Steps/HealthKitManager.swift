@@ -47,9 +47,12 @@ class HealthKitManager {
     var stepsTodayString: String = ""
     var flightsClimbedToday: Double = 0.0
     var flightsClimbedTodayString = ""
+    var stepsYesterday: Double = 0.0
+    var stepsYesterdayString: String = ""
+    var flightsClimbedYesterday: Double = 0.0
+    var flightsClimbedYesterdayString = ""
     
-    
-    
+        
     func getTodayFlightsClimbedCount(completion:@escaping (Double?)->())
     {
         
@@ -58,7 +61,6 @@ class HealthKitManager {
         
         let cal = Calendar(identifier: .gregorian)
         let startDate = cal.startOfDay(for: Date())
-        
         let endDate = Date()
         
         //  Set the predicate
@@ -90,6 +92,45 @@ class HealthKitManager {
         healthStore.execute(query)
     }
     
+    func getYesterdayFlightsClimbedCount(completion:@escaping (Double?)->())
+    {
+        
+        //   Define the sample type
+        let type = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.flightsClimbed)
+        
+        let cal = Calendar(identifier: .gregorian)
+        let endDate = cal.startOfDay(for: Date())
+        let startDate =  cal.date(byAdding: .day, value: -1, to: endDate)
+        
+        //  Set the predicate
+        let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: [])
+        
+        let query = HKStatisticsQuery(quantityType: type!, quantitySamplePredicate: predicate, options: .cumulativeSum) { query, results, error in
+            if results != nil {
+                let quantity = results?.sumQuantity()
+                let unit = HKUnit.count()
+                let flights = quantity?.doubleValue(for: unit)
+                
+                self.flightsClimbedYesterday = flights!
+                
+                var pluralString = "s"
+                if (flights != nil && Int(flights!) == 1) {
+                    pluralString = ""
+                }
+                let numberFormatter = NumberFormatter()
+                self.flightsClimbedYesterdayString = numberFormatter.string(from: flights! as NSNumber)! + " flight" + pluralString
+                
+                completion(flights)
+            } else {
+                print("getTodayStairCount: results are nil - returning zero flights")
+                self.flightsClimbedYesterday = 0.0
+                self.flightsClimbedYesterdayString = "0 flights"
+                completion(0.0)
+            }
+        }
+        healthStore.execute(query)
+    }
+
     
     func getTodayStepCount(completion:@escaping (Double?)->())
     {
@@ -99,7 +140,6 @@ class HealthKitManager {
         
         let cal = Calendar(identifier: .gregorian)
         let startDate = cal.startOfDay(for: Date())
-        
         let endDate = Date()
         
         //  Set the predicate
@@ -127,6 +167,45 @@ class HealthKitManager {
                 self.stepsTodayString = "0 steps"
                 completion(0.0)
              }
+        }
+        healthStore.execute(query)
+    }
+    
+    func getYesterdayStepCount(completion:@escaping (Double?)->())
+    {
+        
+        //   Define the sample type
+        let type = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)
+        
+        let cal = Calendar(identifier: .gregorian)
+        let endDate = cal.startOfDay(for: Date())
+        let startDate =  cal.date(byAdding: .day, value: -1, to: endDate)
+        
+        //  Set the predicate
+        let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: [])
+        
+        let query = HKStatisticsQuery(quantityType: type!, quantitySamplePredicate: predicate, options: .cumulativeSum) { query, results, error in
+            if results != nil {
+                let quantity = results?.sumQuantity()
+                let unit = HKUnit.count()
+                let steps = quantity?.doubleValue(for: unit)
+                
+                self.stepsYesterday = steps!
+                
+                var pluralString = "s"
+                if (steps != nil && Int(steps!) == 1) {
+                    pluralString = ""
+                }
+                let numberFormatter = NumberFormatter()
+                self.stepsYesterdayString = numberFormatter.string(from: steps! as NSNumber)! + " step" + pluralString
+                
+                completion(steps)
+            } else {
+                print("getTodayStepCount: results are nil - returning zero steps")
+                self.stepsYesterday = 0.0
+                self.stepsYesterdayString = "0 steps"
+                completion(0.0)
+            }
         }
         healthStore.execute(query)
     }
