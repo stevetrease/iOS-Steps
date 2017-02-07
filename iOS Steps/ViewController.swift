@@ -45,18 +45,20 @@ class ViewController: UIViewController {
         
         healthKitManager.getTodayStepCount(completion: { (steps) in
             self.todayStepCountLabel.text = healthKitManager.stepsTodayString
+            let generator = UIImpactFeedbackGenerator(style: .light)
+            generator.impactOccurred()
         })
         
         healthKitManager.getYesterdayStepCount(completion: { (steps) in
             self.yesterdayStepCountLabel.text = healthKitManager.stepsYesterdayString
         })
         
-        
         healthKitManager.getTodayFlightsClimbedCount(completion: { (flights) in
             self.todayFlightClimbedLabel.text = healthKitManager.flightsClimbedTodayString
+            let generator = UIImpactFeedbackGenerator(style: .light)
+            generator.impactOccurred()
         })
 
-        
         healthKitManager.getYesterdayFlightsClimbedCount(completion: { (flights) in
             self.yesterdayFlightClimbedLabel.text = healthKitManager.flightsClimbedYesterdayString
         })
