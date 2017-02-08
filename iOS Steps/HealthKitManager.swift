@@ -35,10 +35,9 @@ class HealthKitManager {
         ageFormatter.allowedUnits = [.year, .month, .day]
         ageFormatter.maximumUnitCount = 3
         ageString = ageFormatter.string(from: dateOfBirth, to: Date())!
-
     }
     
-   
+    
     var earliestPermittedSampleDate: Date = Date()
     var dateOfBirth: Date = Date()
     var dateOfBirthSting: String = ""
@@ -51,8 +50,8 @@ class HealthKitManager {
     var stepsYesterdayString: String = ""
     var flightsClimbedYesterday: Double = 0.0
     var flightsClimbedYesterdayString = ""
+
     
-        
     func getTodayFlightsClimbedCount(completion:@escaping (Double?)->())
     {
         
@@ -67,6 +66,7 @@ class HealthKitManager {
         let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: [])
         
         let query = HKStatisticsQuery(quantityType: type!, quantitySamplePredicate: predicate, options: .cumulativeSum) { query, results, error in
+            
             if results != nil {
                 let quantity = results?.sumQuantity()
                 let unit = HKUnit.count()
@@ -80,12 +80,13 @@ class HealthKitManager {
                 }
                 let numberFormatter = NumberFormatter()
                 self.flightsClimbedTodayString = numberFormatter.string(from: flights! as NSNumber)! + " flight" + pluralString
-                
+
                 completion(flights)
             } else {
                 print("getTodayStairCount: results are nil - returning zero flights")
                 self.flightsClimbedToday = 0.0
                 self.flightsClimbedTodayString = "0 flights"
+
                 completion(0.0)
             }
         }
@@ -119,12 +120,13 @@ class HealthKitManager {
                 }
                 let numberFormatter = NumberFormatter()
                 self.flightsClimbedYesterdayString = numberFormatter.string(from: flights! as NSNumber)! + " flight" + pluralString
-                
+
                 completion(flights)
             } else {
                 print("getTodayStairCount: results are nil - returning zero flights")
                 self.flightsClimbedYesterday = 0.0
                 self.flightsClimbedYesterdayString = "0 flights"
+
                 completion(0.0)
             }
         }
@@ -165,6 +167,7 @@ class HealthKitManager {
                 print("getTodayStepCount: results are nil - returning zero steps")
                 self.stepsToday = 0.0
                 self.stepsTodayString = "0 steps"
+
                 completion(0.0)
              }
         }
@@ -204,6 +207,7 @@ class HealthKitManager {
                 print("getTodayStepCount: results are nil - returning zero steps")
                 self.stepsYesterday = 0.0
                 self.stepsYesterdayString = "0 steps"
+
                 completion(0.0)
             }
         }
@@ -225,9 +229,11 @@ class HealthKitManager {
                 let quantity = results?.sumQuantity()
                 let unit = HKUnit.count()
                 let totalSteps = quantity?.doubleValue(for: unit)
+
                 completion(totalSteps)
             } else {
                 print("getTodayStepCount: results are nil - returning zero steps")
+
                 completion(0.0)
             }
         }
