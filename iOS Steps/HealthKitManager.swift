@@ -241,7 +241,7 @@ class HealthKitManager {
     }
     
 
-    func checkHealthKitAuthorization() -> Bool
+    func checkHealthKitAuthorization() ->()
     {
         // Default to assuming that we're authorized
         var isHealthKitEnabled = true
@@ -265,7 +265,7 @@ class HealthKitManager {
         } else {
             isHealthKitEnabled = false
         }
-
-        return isHealthKitEnabled
+        print (isHealthKitEnabled)
+        // return isHealthKitEnabled
     }
 }
