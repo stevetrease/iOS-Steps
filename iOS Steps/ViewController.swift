@@ -44,23 +44,23 @@ class ViewController: UIViewController {
         print ("drawScreen")
         
         healthKitManager.getTodayStepCount(completion: { (steps) in
-            self.todayStepCountLabel.text = healthKitManager.stepsTodayString
+            self.todayStepCountLabel.text = healthKitManager.stepsTodayString + " today"
             let generator = UIImpactFeedbackGenerator(style: .light)
             generator.impactOccurred()
         })
         
         healthKitManager.getYesterdayStepCount(completion: { (steps) in
-            self.yesterdayStepCountLabel.text = healthKitManager.stepsYesterdayString
+            self.yesterdayStepCountLabel.text = healthKitManager.stepsYesterdayString + " yesterday"
         })
         
         healthKitManager.getTodayFlightsClimbedCount(completion: { (flights) in
-            self.todayFlightClimbedLabel.text = healthKitManager.flightsClimbedTodayString
+            self.todayFlightClimbedLabel.text = healthKitManager.flightsClimbedTodayString + " today"
             let generator = UIImpactFeedbackGenerator(style: .light)
             generator.impactOccurred()
         })
 
         healthKitManager.getYesterdayFlightsClimbedCount(completion: { (flights) in
-            self.yesterdayFlightClimbedLabel.text = healthKitManager.flightsClimbedYesterdayString
+            self.yesterdayFlightClimbedLabel.text = healthKitManager.flightsClimbedYesterdayString + " yesterday"
         })
     }
     
