@@ -28,19 +28,32 @@ class HealthKitManager {
         dateOfBirth = Calendar.current.date(from: dateOfBirthComponents!)!
         let formatter = DateFormatter()
         formatter.dateStyle = .long
-        dateOfBirthSting = formatter.string(from: dateOfBirth)
+        dateOfBirthString = formatter.string(from: dateOfBirth)
         
         let ageFormatter = DateComponentsFormatter()
         ageFormatter.unitsStyle = .full
         ageFormatter.allowedUnits = [.year, .month, .day]
         ageFormatter.maximumUnitCount = 3
         ageString = ageFormatter.string(from: dateOfBirth, to: Date())!
+        
+        let calendar = Calendar.current
+        let ageComponents = calendar.dateComponents ([.year], from: dateOfBirth, to: Date())
+        let age = ageComponents.year
+
+        let nextBirthday = calendar.date(byAdding: .year, value: age! + 1, to: dateOfBirth)
+        
+        ageFormatter.unitsStyle = .full
+        ageFormatter.allowedUnits = [.month, .day]
+        ageFormatter.maximumUnitCount = 2
+
+        nextBirthdayString = ageFormatter.string(from: Date(), to: nextBirthday!)!
     }
     
     
     var earliestPermittedSampleDate: Date = Date()
     var dateOfBirth: Date = Date()
-    var dateOfBirthSting: String = ""
+    var dateOfBirthString: String = ""
+    var nextBirthdayString: String = ""
     var ageString: String = ""
     var stepsToday: Double = 0.0
     var stepsTodayString: String = ""

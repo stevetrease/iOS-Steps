@@ -115,19 +115,25 @@
                                 <rect key="frame" x="10" y="30" width="394" height="696"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dateOfBirthLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rqw-05-9Od" userLabel="dateOfBirthLabel">
-                                        <rect key="frame" x="77" y="0.0" width="241" height="232"/>
+                                        <rect key="frame" x="77" y="0.0" width="241" height="174"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ageLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="laa-bO-Brc">
-                                        <rect key="frame" x="132" y="232" width="131" height="232"/>
+                                        <rect key="frame" x="132" y="174" width="131" height="174"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ageLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jlz-9o-wlw" userLabel="nextBirthdayLabel">
+                                        <rect key="frame" x="132" y="348" width="131" height="174"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iEl-Kc-Wph">
-                                        <rect key="frame" x="174" y="464" width="46" height="232"/>
+                                        <rect key="frame" x="174" y="522" width="46" height="174"/>
                                         <state key="normal" title="Return"/>
                                         <connections>
                                             <action selector="goBack" destination="Y8Z-91-V3U" eventType="touchUpInside" id="r0v-GR-7Xe"/>
@@ -150,6 +156,7 @@
                     <connections>
                         <outlet property="ageLabel" destination="laa-bO-Brc" id="aHj-Uk-RWy"/>
                         <outlet property="dateOfBirthLabel" destination="rqw-05-9Od" id="6ha-VR-Lyf"/>
+                        <outlet property="nextBirthdayLabel" destination="Jlz-9o-wlw" id="OwE-P7-cGD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y8Z-91-V3U" userLabel="First Responder" sceneMemberID="firstResponder"/>

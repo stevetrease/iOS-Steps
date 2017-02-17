@@ -18,7 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		AA67AFCC1E5768CF00EE0630 /* BackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BackViewController.swift; path = "iOS Steps/BackViewController.swift"; sourceTree = "<group>"; };
+		AA67AFCC1E5768CF00EE0630 /* BackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackViewController.swift; sourceTree = "<group>"; };
 		AA9D2E811E3E424C000E9C08 /* iOS Steps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS Steps.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA9D2E841E3E424C000E9C08 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA9D2E861E3E424C000E9C08 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -46,7 +46,6 @@
 		AA9D2E781E3E424C000E9C08 = {
 			isa = PBXGroup;
 			children = (
-				AA67AFCC1E5768CF00EE0630 /* BackViewController.swift */,
 				AA9D2E831E3E424C000E9C08 /* iOS Steps */,
 				AA9D2E821E3E424C000E9C08 /* Products */,
 				AAD088401E3FBA1800612BC1 /* Frameworks */,
@@ -68,6 +67,7 @@
 				AA9D2E841E3E424C000E9C08 /* AppDelegate.swift */,
 				AAD088461E3FC3C500612BC1 /* HealthKitManager.swift */,
 				AA9D2E861E3E424C000E9C08 /* ViewController.swift */,
+				AA67AFCC1E5768CF00EE0630 /* BackViewController.swift */,
 				AA9D2E881E3E424C000E9C08 /* Main.storyboard */,
 				AA9D2E8B1E3E424C000E9C08 /* Assets.xcassets */,
 				AA9D2E8D1E3E424C000E9C08 /* LaunchScreen.storyboard */,
