@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12106.1" systemVersion="16E154a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -18,139 +18,76 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="example" translatesAutoresizingMaskIntoConstraints="NO" id="kAr-Y6-w5S">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </imageView>
-                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H4v-1z-Jt0">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="DNu-9c-eSI">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <subviews>
-                                        <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x01-pa-IKH">
-                                            <rect key="frame" x="10" y="10" width="355" height="647"/>
-                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Zvv-Ju-Bdf">
-                                                <rect key="frame" x="0.0" y="0.0" width="355" height="647"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="Vvw-VY-4ya">
-                                                        <rect key="frame" x="0.0" y="0.0" width="355" height="647"/>
-                                                        <subviews>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Wj2-Ac-Zpc">
-                                                                <rect key="frame" x="0.0" y="0.0" width="355" height="214"/>
-                                                                <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="todayStepCountLabel" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="24" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oJu-oP-i4O" userLabel="todayStepCountLabel">
-                                                                        <rect key="frame" x="5" y="0.0" width="345.5" height="107"/>
-                                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="48"/>
-                                                                        <nil key="textColor"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="yesterdayStepCountLabel" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="24" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WPY-JI-Jbe" userLabel="yesterdayStepCountLabel">
-                                                                        <rect key="frame" x="36" y="107" width="283" height="107"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                                                        <nil key="textColor"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
-                                                                </subviews>
-                                                                <constraints>
-                                                                    <constraint firstItem="WPY-JI-Jbe" firstAttribute="leading" secondItem="Wj2-Ac-Zpc" secondAttribute="leading" constant="36" id="zuw-WI-MtB"/>
-                                                                </constraints>
-                                                            </stackView>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ULM-lZ-ccC">
-                                                                <rect key="frame" x="0.0" y="214" width="355" height="178.5"/>
-                                                                <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="todayFlightClimbedLabel" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="24" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j1u-TF-Awu" userLabel="todayFlightClimbedLabel">
-                                                                        <rect key="frame" x="22" y="0.0" width="311" height="89"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                                                        <nil key="textColor"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="yesterdayFlightClimbedLabel" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="24" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3kt-C4-gcd" userLabel="yesterdayFlightClimbedLabel">
-                                                                        <rect key="frame" x="36" y="89" width="283" height="89.5"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                                                        <nil key="textColor"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
-                                                                </subviews>
-                                                                <constraints>
-                                                                    <constraint firstItem="3kt-C4-gcd" firstAttribute="leading" secondItem="ULM-lZ-ccC" secondAttribute="leading" constant="36" id="GCy-ek-mdW"/>
-                                                                    <constraint firstItem="j1u-TF-Awu" firstAttribute="leading" secondItem="ULM-lZ-ccC" secondAttribute="leading" constant="22" id="JqX-la-AXj"/>
-                                                                </constraints>
-                                                            </stackView>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="G2h-uc-hT2">
-                                                                <rect key="frame" x="0.0" y="392.5" width="355" height="143"/>
-                                                                <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dateOfBirthLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rqw-05-9Od" userLabel="dateOfBirthLabel">
-                                                                        <rect key="frame" x="57.5" y="0.0" width="240.5" height="71.5"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                                                        <nil key="textColor"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ageLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="laa-bO-Brc">
-                                                                        <rect key="frame" x="112.5" y="71.5" width="130.5" height="71.5"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                                                        <nil key="textColor"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
-                                                                </subviews>
-                                                            </stackView>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FwZ-61-gUK" userLabel="RefreshButton">
-                                                                <rect key="frame" x="0.0" y="535.5" width="355" height="55.5"/>
-                                                                <state key="normal" title="Refresh"/>
-                                                                <connections>
-                                                                    <action selector="actionTriggeredWithSender:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="YRP-8g-7N6"/>
-                                                                </connections>
-                                                            </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jl4-7U-TgV" userLabel="Back">
-                                                                <rect key="frame" x="0.0" y="591" width="355" height="56"/>
-                                                                <state key="normal" title="Back"/>
-                                                                <connections>
-                                                                    <segue destination="6yh-p4-nxq" kind="presentation" modalTransitionStyle="partialCurl" id="zg1-XC-ZIN"/>
-                                                                </connections>
-                                                            </button>
-                                                        </subviews>
-                                                    </stackView>
-                                                </subviews>
-                                                <constraints>
-                                                    <constraint firstAttribute="bottom" secondItem="Vvw-VY-4ya" secondAttribute="bottom" id="0kz-ma-xVO"/>
-                                                    <constraint firstAttribute="trailing" secondItem="Vvw-VY-4ya" secondAttribute="trailing" id="jDy-sv-w3q"/>
-                                                    <constraint firstItem="Vvw-VY-4ya" firstAttribute="leading" secondItem="Zvv-Ju-Bdf" secondAttribute="leading" id="vxM-1q-GdC"/>
-                                                    <constraint firstItem="Vvw-VY-4ya" firstAttribute="top" secondItem="Zvv-Ju-Bdf" secondAttribute="top" id="wJe-qi-OMd"/>
-                                                </constraints>
-                                            </view>
-                                            <vibrancyEffect>
-                                                <blurEffect style="extraLight"/>
-                                            </vibrancyEffect>
-                                        </visualEffectView>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="x01-pa-IKH" secondAttribute="bottom" constant="10" id="RbR-CU-Z2J"/>
-                                        <constraint firstAttribute="trailing" secondItem="x01-pa-IKH" secondAttribute="trailing" constant="10" id="cPM-Ka-q8U"/>
-                                        <constraint firstItem="x01-pa-IKH" firstAttribute="leading" secondItem="DNu-9c-eSI" secondAttribute="leading" constant="10" id="u0b-0h-SIg"/>
-                                        <constraint firstItem="x01-pa-IKH" firstAttribute="top" secondItem="DNu-9c-eSI" secondAttribute="top" constant="10" id="vAG-RN-jH8"/>
-                                    </constraints>
-                                </view>
-                                <blurEffect style="extraLight"/>
-                            </visualEffectView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="Vvw-VY-4ya">
+                                <rect key="frame" x="10" y="30" width="394" height="696"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Wj2-Ac-Zpc">
+                                        <rect key="frame" x="0.0" y="0.0" width="394" height="332"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="todayStepCountLabel" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="24" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oJu-oP-i4O" userLabel="todayStepCountLabel">
+                                                <rect key="frame" x="3" y="0.0" width="389" height="166"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="48"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="yesterdayStepCountLabel" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="24" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WPY-JI-Jbe" userLabel="yesterdayStepCountLabel">
+                                                <rect key="frame" x="5" y="166" width="384" height="166"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ULM-lZ-ccC">
+                                        <rect key="frame" x="0.0" y="332" width="394" height="277"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="todayFlightClimbedLabel" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="24" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j1u-TF-Awu" userLabel="todayFlightClimbedLabel">
+                                                <rect key="frame" x="22" y="0.0" width="350" height="139"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="yesterdayFlightClimbedLabel" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="24" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3kt-C4-gcd" userLabel="yesterdayFlightClimbedLabel">
+                                                <rect key="frame" x="36" y="139" width="322" height="138"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="3kt-C4-gcd" firstAttribute="leading" secondItem="ULM-lZ-ccC" secondAttribute="leading" constant="36" id="GCy-ek-mdW"/>
+                                            <constraint firstItem="j1u-TF-Awu" firstAttribute="leading" secondItem="ULM-lZ-ccC" secondAttribute="leading" constant="22" id="JqX-la-AXj"/>
+                                        </constraints>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FwZ-61-gUK" userLabel="RefreshButton">
+                                        <rect key="frame" x="0.0" y="609" width="394" height="44"/>
+                                        <state key="normal" title="Refresh"/>
+                                        <connections>
+                                            <action selector="actionTriggeredWithSender:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="YRP-8g-7N6"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jl4-7U-TgV" userLabel="BirthdayView">
+                                        <rect key="frame" x="0.0" y="653" width="394" height="43"/>
+                                        <state key="normal" title="Birthday view"/>
+                                        <connections>
+                                            <segue destination="6yh-p4-nxq" kind="presentation" modalTransitionStyle="partialCurl" id="zg1-XC-ZIN"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="kAr-Y6-w5S" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="0Uc-rq-tNY"/>
-                            <constraint firstItem="H4v-1z-Jt0" firstAttribute="centerX" secondItem="kAr-Y6-w5S" secondAttribute="centerX" id="6nK-Dy-1wE"/>
-                            <constraint firstItem="H4v-1z-Jt0" firstAttribute="centerY" secondItem="kAr-Y6-w5S" secondAttribute="centerY" id="8xv-4M-Nhf"/>
-                            <constraint firstItem="H4v-1z-Jt0" firstAttribute="height" secondItem="kAr-Y6-w5S" secondAttribute="height" id="GKb-aM-HkD"/>
-                            <constraint firstItem="H4v-1z-Jt0" firstAttribute="width" secondItem="kAr-Y6-w5S" secondAttribute="width" id="im4-vD-hpr"/>
-                            <constraint firstItem="kAr-Y6-w5S" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="n9m-Nr-uE3"/>
-                            <constraint firstItem="kAr-Y6-w5S" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="tY5-qV-vsy"/>
-                            <constraint firstItem="kAr-Y6-w5S" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ybl-Wj-xFO"/>
+                            <constraint firstItem="Vvw-VY-4ya" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="12A-Vs-6WU"/>
+                            <constraint firstAttribute="trailing" secondItem="Vvw-VY-4ya" secondAttribute="trailing" constant="10" id="3lK-sH-hHb"/>
+                            <constraint firstItem="Vvw-VY-4ya" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="aiV-1e-1wL"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Vvw-VY-4ya" secondAttribute="bottom" constant="10" id="wjl-2X-S9o"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="ageLabel" destination="laa-bO-Brc" id="e2Q-xA-N0l"/>
-                        <outlet property="dateOfBirthLabel" destination="rqw-05-9Od" id="tff-80-MJW"/>
                         <outlet property="todayFlightClimbedLabel" destination="j1u-TF-Awu" id="dcz-Zn-WS4"/>
                         <outlet property="todayStepCountLabel" destination="oJu-oP-i4O" id="zJh-0Q-CMX"/>
                         <outlet property="yesterdayFlightClimbedLabel" destination="3kt-C4-gcd" id="Mb9-nW-Zht"/>
@@ -162,46 +99,62 @@
             </objects>
             <point key="canvasLocation" x="-143" y="33"/>
         </scene>
-        <!--View Controller-->
+        <!--Back View Controller-->
         <scene sceneID="L0T-8W-Kgt">
             <objects>
-                <viewController id="6yh-p4-nxq" sceneMemberID="viewController">
+                <viewController id="6yh-p4-nxq" customClass="BackViewController" customModule="iOS_Steps" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jRN-D9-6Rz"/>
                         <viewControllerLayoutGuide type="bottom" id="4Rx-aj-lFR"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="cCQ-jF-24S">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pPE-Cs-vPw">
-                                <rect key="frame" x="166" y="323" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iEl-Kc-Wph" userLabel="Exit">
-                                <rect key="frame" x="164" y="493" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Exit"/>
-                                <connections>
-                                    <action selector="goBack" destination="Y8Z-91-V3U" eventType="touchUpInside" id="r0v-GR-7Xe"/>
-                                    <action selector="unWindSegueWithSegue:" destination="Y8Z-91-V3U" eventType="touchUpInside" id="fFf-ik-tqJ"/>
-                                    <action selector="unWindToViewControllerSegueWithSegue:" destination="Y8Z-91-V3U" eventType="touchUpInside" id="QEW-GL-lJi"/>
-                                    <segue destination="T38-1X-nae" kind="unwind" unwindAction="unWindToViewControllerSegueWithSegue:" id="nGz-lx-XNk"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="G2h-uc-hT2">
+                                <rect key="frame" x="10" y="30" width="394" height="696"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dateOfBirthLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rqw-05-9Od" userLabel="dateOfBirthLabel">
+                                        <rect key="frame" x="77" y="0.0" width="241" height="232"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ageLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="laa-bO-Brc">
+                                        <rect key="frame" x="132" y="232" width="131" height="232"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iEl-Kc-Wph">
+                                        <rect key="frame" x="174" y="464" width="46" height="232"/>
+                                        <state key="normal" title="Return"/>
+                                        <connections>
+                                            <action selector="goBack" destination="Y8Z-91-V3U" eventType="touchUpInside" id="r0v-GR-7Xe"/>
+                                            <action selector="unWindSegueWithSegue:" destination="Y8Z-91-V3U" eventType="touchUpInside" id="fFf-ik-tqJ"/>
+                                            <action selector="unWindToViewControllerSegueWithSegue:" destination="Y8Z-91-V3U" eventType="touchUpInside" id="QEW-GL-lJi"/>
+                                            <segue destination="T38-1X-nae" kind="unwind" unwindAction="unWindToViewControllerSegueWithSegue:" id="nGz-lx-XNk"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="G2h-uc-hT2" firstAttribute="leading" secondItem="cCQ-jF-24S" secondAttribute="leading" constant="10" id="Fsi-dG-q4g"/>
+                            <constraint firstItem="G2h-uc-hT2" firstAttribute="top" secondItem="jRN-D9-6Rz" secondAttribute="bottom" constant="10" id="YRk-PD-qVD"/>
+                            <constraint firstItem="4Rx-aj-lFR" firstAttribute="top" secondItem="G2h-uc-hT2" secondAttribute="bottom" constant="10" id="hmU-Lk-N0D"/>
+                            <constraint firstAttribute="trailing" secondItem="G2h-uc-hT2" secondAttribute="trailing" constant="10" id="hqB-We-nyI"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="ageLabel" destination="laa-bO-Brc" id="aHj-Uk-RWy"/>
+                        <outlet property="dateOfBirthLabel" destination="rqw-05-9Od" id="6ha-VR-Lyf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y8Z-91-V3U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="806" y="33"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="example" width="1536" height="1152"/>
-    </resources>
 </document>

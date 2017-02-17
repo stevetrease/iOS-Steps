@@ -10,10 +10,10 @@ import UIKit
 import Foundation
 import HealthKit
 
+
+
 class ViewController: UIViewController {
 
-    @IBOutlet weak var dateOfBirthLabel: UILabel!
-    @IBOutlet weak var ageLabel: UILabel!
     @IBOutlet weak var todayStepCountLabel: UILabel!
     @IBOutlet weak var todayFlightClimbedLabel: UILabel!
     @IBOutlet weak var yesterdayStepCountLabel: UILabel!
@@ -29,9 +29,6 @@ class ViewController: UIViewController {
         todayFlightClimbedLabel.text = " "
         yesterdayStepCountLabel.text = " "
         yesterdayFlightClimbedLabel.text = " "
-        
-        dateOfBirthLabel.text = healthKitManager.dateOfBirthSting
-        ageLabel.text = healthKitManager.ageString
         
         let appDelegate:AppDelegate = UIApplication.shared.delegate! as! AppDelegate
         appDelegate.myViewController = self
