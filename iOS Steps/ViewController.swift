@@ -10,6 +10,7 @@ import UIKit
 import Foundation
 import HealthKit
 
+let annimationDuration = 0.4
 
 
 class ViewController: UIViewController {
@@ -42,7 +43,11 @@ class ViewController: UIViewController {
         
         healthKitManager.getTodayStepCount(completion: { (steps) in
             OperationQueue.main.addOperation {
+                self.todayStepCountLabel.alpha = 0.0
                 self.todayStepCountLabel.text = healthKitManager.stepsTodayString + " today"
+                UIView.animate(withDuration: annimationDuration, animations: {
+                    self.todayStepCountLabel.alpha = 1.0
+                })
             }
             let generator = UIImpactFeedbackGenerator(style: .light)
             generator.impactOccurred()
@@ -56,7 +61,11 @@ class ViewController: UIViewController {
         
         healthKitManager.getTodayFlightsClimbedCount(completion: { (flights) in
             OperationQueue.main.addOperation {
+                self.todayFlightClimbedLabel.alpha = 0.0
                 self.todayFlightClimbedLabel.text = healthKitManager.flightsClimbedTodayString + " today"
+                UIView.animate(withDuration: annimationDuration, animations: {
+                    self.todayFlightClimbedLabel.alpha = 1.0
+                })
             }
             let generator = UIImpactFeedbackGenerator(style: .light)
             generator.impactOccurred()
