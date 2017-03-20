@@ -22,34 +22,54 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print ("didFinishLaunchingWithOptions")
         UserDefaults.standard.setValue(false, forKey: "_UIConstraintBasedLayoutLogUnsatisfiable")
         
-        
-        
-        let sampleType =
+        let stepCountSampleType =
             HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)
-        
-        let query = HKObserverQuery(sampleType: sampleType!, predicate: nil) {
+  
+        let stepCountQuery = HKObserverQuery(sampleType: stepCountSampleType!, predicate: nil) {
             query, completionHandler, error in
             
-            print ("query")
+            let formatter = DateFormatter()
+            formatter.dateFormat = "HH:mm"
+            let dateString = formatter.string(from: Date())
+
+            print ("step count query handler at \(dateString)")
             
             if error != nil {
-                
                 // Perform Proper Error Handling Here...
                 print ("*** An error occured while setting up the stepCount observer. \(String(describing: error?.localizedDescription)) ***")
                 abort()
             }
             
-            // Take whatever steps are necessary to update your app's data and UI
-            // This may involve executing other queries
             // self.updateDailyStepCount()
             
-            // If you have subscribed for background updates you must call the completion handler here.
-            // completionHandler()
+            completionHandler()
         }
         
-        healthKitManager.healthStore.execute(query)
+        let flightCountSampleType = HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.flightsClimbed)
         
+        let flightCountQuery = HKObserverQuery(sampleType: flightCountSampleType!, predicate: nil) {
+            query, completionHandler, error in
+            
+            let formatter = DateFormatter()
+            formatter.dateFormat = "HH:mm"
+            let dateString = formatter.string(from: Date())
+            
+            print ("flight count query handler at \(dateString)")
+            
+            if error != nil {
+                // Perform Proper Error Handling Here...
+                print ("*** An error occured while setting up the stepCount observer. \(String(describing: error?.localizedDescription)) ***")
+                abort()
+            }
+            
+            // self.updateDailyFlightCount()
+            
+            completionHandler()
+        }
         
+        healthKitManager.healthStore.execute(stepCountQuery)
+        healthKitManager.healthStore.execute(flightCountQuery)
+  
         return true
     }
     
