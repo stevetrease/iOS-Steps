@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import HealthKit
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,11 +19,40 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        print ("application")
+        print ("didFinishLaunchingWithOptions")
         UserDefaults.standard.setValue(false, forKey: "_UIConstraintBasedLayoutLogUnsatisfiable")
+        
+        
+        
+        let sampleType =
+            HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)
+        
+        let query = HKObserverQuery(sampleType: sampleType!, predicate: nil) {
+            query, completionHandler, error in
+            
+            print ("query")
+            
+            if error != nil {
+                
+                // Perform Proper Error Handling Here...
+                print ("*** An error occured while setting up the stepCount observer. \(String(describing: error?.localizedDescription)) ***")
+                abort()
+            }
+            
+            // Take whatever steps are necessary to update your app's data and UI
+            // This may involve executing other queries
+            // self.updateDailyStepCount()
+            
+            // If you have subscribed for background updates you must call the completion handler here.
+            // completionHandler()
+        }
+        
+        healthKitManager.healthStore.execute(query)
+        
+        
         return true
     }
-
+    
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
