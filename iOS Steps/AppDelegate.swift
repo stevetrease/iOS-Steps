@@ -22,14 +22,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print ("didFinishLaunchingWithOptions")
         UserDefaults.standard.setValue(false, forKey: "_UIConstraintBasedLayoutLogUnsatisfiable")
         
-        let stepCountSampleType =
-            HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH:mm"
+        
+        let stepCountSampleType = HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)
+        let flightCountSampleType = HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.flightsClimbed)
+
   
         let stepCountQuery = HKObserverQuery(sampleType: stepCountSampleType!, predicate: nil) {
             query, completionHandler, error in
             
-            let formatter = DateFormatter()
-            formatter.dateFormat = "HH:mm"
             let dateString = formatter.string(from: Date())
 
             print ("step count query handler at \(dateString)")
@@ -45,20 +47,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             completionHandler()
         }
         
-        let flightCountSampleType = HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.flightsClimbed)
         
         let flightCountQuery = HKObserverQuery(sampleType: flightCountSampleType!, predicate: nil) {
             query, completionHandler, error in
             
-            let formatter = DateFormatter()
-            formatter.dateFormat = "HH:mm"
-            let dateString = formatter.string(from: Date())
+           let dateString = formatter.string(from: Date())
             
-            print ("flight count query handler at \(dateString)")
+            print ("flight count query handler at  \(dateString)")
             
             if error != nil {
                 // Perform Proper Error Handling Here...
-                print ("*** An error occured while setting up the stepCount observer. \(String(describing: error?.localizedDescription)) ***")
+                print ("*** An error occured while setting up the flightCount observer. \(String(describing: error?.localizedDescription)) ***")
                 abort()
             }
             
