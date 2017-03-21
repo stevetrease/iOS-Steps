@@ -80,15 +80,15 @@ class HealthKitManager {
         
         let query = HKStatisticsQuery(quantityType: type!, quantitySamplePredicate: predicate, options: .cumulativeSum) { query, results, error in
             print ("getTodayFlightsClimbedCount query")
-            if results != nil {
-                let quantity = results?.sumQuantity()
-                let unit = HKUnit.count()
-                let flights = quantity?.doubleValue(for: unit)
-                
+            let quantity = results?.sumQuantity()
+            let unit = HKUnit.count()
+            let flights = quantity?.doubleValue(for: unit)
+
+            if flights != nil {
                 self.flightsClimbedToday = flights!
                 
                 var pluralString = "s"
-                if (flights != nil && Int(flights!) == 1) {
+                if (Int(flights!) == 1) {
                     pluralString = ""
                 }
                 let numberFormatter = NumberFormatter()
@@ -121,15 +121,15 @@ class HealthKitManager {
         
         let query = HKStatisticsQuery(quantityType: type!, quantitySamplePredicate: predicate, options: .cumulativeSum) { query, results, error in
             print ("getYesterdayFlightsClimbedCount query")
-            if results != nil {
-                let quantity = results?.sumQuantity()
-                let unit = HKUnit.count()
-                let flights = quantity?.doubleValue(for: unit)
-                
+            let quantity = results?.sumQuantity()
+            let unit = HKUnit.count()
+            let flights = quantity?.doubleValue(for: unit)
+
+            if flights != nil {
                 self.flightsClimbedYesterday = flights!
                 
                 var pluralString = "s"
-                if (flights != nil && Int(flights!) == 1) {
+                if (Int(flights!) == 1) {
                     pluralString = ""
                 }
                 let numberFormatter = NumberFormatter()
@@ -162,16 +162,16 @@ class HealthKitManager {
         let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: [])
         
         let query = HKStatisticsQuery(quantityType: type!, quantitySamplePredicate: predicate, options: .cumulativeSum) { query, results, error in
-            if results != nil {
-                print ("getTodayStepCount query")
-                let quantity = results?.sumQuantity()
-                let unit = HKUnit.count()
-                let steps = quantity?.doubleValue(for: unit)
-
+            print ("getTodayStepCount query")
+            let quantity = results?.sumQuantity()
+            let unit = HKUnit.count()
+            let steps = quantity?.doubleValue(for: unit)
+            
+            if steps != nil {
                 self.stepsToday = steps!
                
                 var pluralString = "s"
-                if (steps != nil && Int(steps!) == 1) {
+                if (Int(steps!) == 1) {
                     pluralString = ""
                 }
                 let numberFormatter = NumberFormatter()
@@ -204,15 +204,15 @@ class HealthKitManager {
         
         let query = HKStatisticsQuery(quantityType: type!, quantitySamplePredicate: predicate, options: .cumulativeSum) { query, results, error in
             print ("getYesterdayStepCount query")
-            if results != nil {
-                let quantity = results?.sumQuantity()
-                let unit = HKUnit.count()
-                let steps = quantity?.doubleValue(for: unit)
-                
+            let quantity = results?.sumQuantity()
+            let unit = HKUnit.count()
+            let steps = quantity?.doubleValue(for: unit)
+
+            if steps != nil {
                 self.stepsYesterday = steps!
                 
                 var pluralString = "s"
-                if (steps != nil && Int(steps!) == 1) {
+                if (Int(steps!) == 1) {
                     pluralString = ""
                 }
                 let numberFormatter = NumberFormatter()

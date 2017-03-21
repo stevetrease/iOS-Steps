@@ -34,7 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             let dateString = formatter.string(from: Date())
 
-            print ("step count query handler at \(dateString)")
+            print ("step count query handler at  \(dateString)")
             
             if error != nil {
                 // Perform Proper Error Handling Here...
@@ -42,7 +42,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 abort()
             }
             
-            // self.updateDailyStepCount()
+            self.myViewController?.drawScreen()
             
             completionHandler()
         }
@@ -53,7 +53,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
            let dateString = formatter.string(from: Date())
             
-            print ("flight count query handler at  \(dateString)")
+            print ("flight count query handler at \(dateString)")
             
             if error != nil {
                 // Perform Proper Error Handling Here...
@@ -61,7 +61,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 abort()
             }
             
-            // self.updateDailyFlightCount()
+            self.myViewController?.drawScreen()
             
             completionHandler()
         }
