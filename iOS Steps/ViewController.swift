@@ -38,12 +38,13 @@ class ViewController: UIViewController {
     
     func drawScreen () {
         print ("drawScreen")
-        
+
+        let generator = UIImpactFeedbackGenerator(style: .light)
+
         healthKitManager.getTodayStepCount(completion: { (steps) in
-            OperationQueue.main.addOperation {                self.todayStepCountLabel.alpha = 0.0
+            OperationQueue.main.addOperation {
                 self.todayStepCountLabel.text = healthKitManager.stepsTodayString + " today"
             }
-            let generator = UIImpactFeedbackGenerator(style: .light)
             generator.impactOccurred()
         })
         
@@ -57,7 +58,6 @@ class ViewController: UIViewController {
             OperationQueue.main.addOperation {
                  self.todayFlightClimbedLabel.text = healthKitManager.flightsClimbedTodayString + " today"
             }
-            let generator = UIImpactFeedbackGenerator(style: .light)
             generator.impactOccurred()
         })
 
