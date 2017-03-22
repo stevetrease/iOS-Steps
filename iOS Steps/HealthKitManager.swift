@@ -15,6 +15,7 @@ var healthKitManager = HealthKitManager()
 class HealthKitManager {
     
     let healthStore = HKHealthStore()
+    let numberFormatter = NumberFormatter()
 
     
     init()
@@ -51,18 +52,57 @@ class HealthKitManager {
     
     
     var earliestPermittedSampleDate: Date = Date()
+    
     var dateOfBirth: Date = Date()
     var dateOfBirthString: String = ""
+    
     var nextBirthdayString: String = ""
     var ageString: String = ""
-    var stepsToday: Double = 0.0
-    var stepsTodayString: String = ""
-    var flightsClimbedToday: Double = 0.0
-    var flightsClimbedTodayString = ""
+    
+    var stepsToday: Double = 0.0 {
+        didSet (newValue) {
+            print ("stepsToday \(newValue)")
+        }
+    }
+    var stepsTodayString: String {
+        if (Int(stepsToday) == 1) {
+            return (numberFormatter.string(from: stepsToday as NSNumber)! + " steps")
+        } else {
+            return "1 steps"
+        }
+    }
+
     var stepsYesterday: Double = 0.0
-    var stepsYesterdayString: String = ""
+    var stepsYesterdayString: String {
+        if (Int(stepsYesterday) == 1) {
+            return (numberFormatter.string(from: stepsYesterday as NSNumber)! + " steps")
+        } else {
+            return "1 steps"
+        }
+    }
+
+    var flightsClimbedToday: Double = 0.0 {
+        didSet (newValue) {
+            print ("flightsClimbedToday \(newValue)")
+        }
+    }
+
+    var flightsClimbedTodayString: String {
+        if (Int(flightsClimbedToday) == 1) {
+            return (numberFormatter.string(from: flightsClimbedToday as NSNumber)! + " flights")
+        } else {
+            return "1 flight"
+        }
+    }
+    
     var flightsClimbedYesterday: Double = 0.0
-    var flightsClimbedYesterdayString = ""
+    var flightsClimbedYesterdayString: String {
+        if (Int(flightsClimbedYesterday) == 1) {
+            return (numberFormatter.string(from: flightsClimbedYesterday as NSNumber)! + " flights")
+        } else {
+            return "1 flight"
+        }
+    }
 
     
     func getTodayFlightsClimbedCount(completion:@escaping (Double?)->())
@@ -86,20 +126,10 @@ class HealthKitManager {
 
             if flights != nil {
                 self.flightsClimbedToday = flights!
-                
-                var pluralString = "s"
-                if (Int(flights!) == 1) {
-                    pluralString = ""
-                }
-                let numberFormatter = NumberFormatter()
-                self.flightsClimbedTodayString = numberFormatter.string(from: flights! as NSNumber)! + " flight" + pluralString
-
                 completion(flights)
             } else {
                 print("getTodayStairCount: results are nil - returning zero flights")
                 self.flightsClimbedToday = 0.0
-                self.flightsClimbedTodayString = "0 flights"
-
                 completion(0.0)
             }
         }
@@ -127,20 +157,10 @@ class HealthKitManager {
 
             if flights != nil {
                 self.flightsClimbedYesterday = flights!
-                
-                var pluralString = "s"
-                if (Int(flights!) == 1) {
-                    pluralString = ""
-                }
-                let numberFormatter = NumberFormatter()
-                self.flightsClimbedYesterdayString = numberFormatter.string(from: flights! as NSNumber)! + " flight" + pluralString
-
-                completion(flights)
+                 completion(flights)
             } else {
                 print("getTodayStairCount: results are nil - returning zero flights")
                 self.flightsClimbedYesterday = 0.0
-                self.flightsClimbedYesterdayString = "0 flights"
-
                 completion(0.0)
             }
         }
@@ -169,20 +189,10 @@ class HealthKitManager {
             
             if steps != nil {
                 self.stepsToday = steps!
-               
-                var pluralString = "s"
-                if (Int(steps!) == 1) {
-                    pluralString = ""
-                }
-                let numberFormatter = NumberFormatter()
-                self.stepsTodayString = numberFormatter.string(from: steps! as NSNumber)! + " step" + pluralString
-
                 completion(steps)
              } else {
                 print("getTodayStepCount: results are nil - returning zero steps")
                 self.stepsToday = 0.0
-                self.stepsTodayString = "0 steps"
-
                 completion(0.0)
              }
         }
@@ -210,20 +220,10 @@ class HealthKitManager {
 
             if steps != nil {
                 self.stepsYesterday = steps!
-                
-                var pluralString = "s"
-                if (Int(steps!) == 1) {
-                    pluralString = ""
-                }
-                let numberFormatter = NumberFormatter()
-                self.stepsYesterdayString = numberFormatter.string(from: steps! as NSNumber)! + " step" + pluralString
-                
                 completion(steps)
             } else {
                 print("getTodayStepCount: results are nil - returning zero steps")
                 self.stepsYesterday = 0.0
-                self.stepsYesterdayString = "0 steps"
-
                 completion(0.0)
             }
         }
