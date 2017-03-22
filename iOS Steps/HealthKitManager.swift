@@ -79,7 +79,7 @@ class HealthKitManager {
         let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: [])
         
         let query = HKStatisticsQuery(quantityType: type!, quantitySamplePredicate: predicate, options: .cumulativeSum) { query, results, error in
-            print ("getTodayFlightsClimbedCount query")
+            print ("query: getTodayFlightsClimbedCount")
             let quantity = results?.sumQuantity()
             let unit = HKUnit.count()
             let flights = quantity?.doubleValue(for: unit)
@@ -120,7 +120,7 @@ class HealthKitManager {
         let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: [])
         
         let query = HKStatisticsQuery(quantityType: type!, quantitySamplePredicate: predicate, options: .cumulativeSum) { query, results, error in
-            print ("getYesterdayFlightsClimbedCount query")
+            print ("query: getYesterdayFlightsClimbedCount")
             let quantity = results?.sumQuantity()
             let unit = HKUnit.count()
             let flights = quantity?.doubleValue(for: unit)
@@ -162,7 +162,7 @@ class HealthKitManager {
         let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: [])
         
         let query = HKStatisticsQuery(quantityType: type!, quantitySamplePredicate: predicate, options: .cumulativeSum) { query, results, error in
-            print ("getTodayStepCount query")
+            print ("query: getTodayStepCount")
             let quantity = results?.sumQuantity()
             let unit = HKUnit.count()
             let steps = quantity?.doubleValue(for: unit)
@@ -203,7 +203,7 @@ class HealthKitManager {
         let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: [])
         
         let query = HKStatisticsQuery(quantityType: type!, quantitySamplePredicate: predicate, options: .cumulativeSum) { query, results, error in
-            print ("getYesterdayStepCount query")
+            print ("query: getYesterdayStepCount")
             let quantity = results?.sumQuantity()
             let unit = HKUnit.count()
             let steps = quantity?.doubleValue(for: unit)
@@ -241,7 +241,7 @@ class HealthKitManager {
         let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: [])
         
         let query = HKStatisticsQuery(quantityType: type!, quantitySamplePredicate: predicate, options: .cumulativeSum) { query, results, error in
-            print ("getStepCountBetween query")
+            print ("query: getStepCountBetween")
             if results != nil {
                 let quantity = results?.sumQuantity()
                 let unit = HKUnit.count()
