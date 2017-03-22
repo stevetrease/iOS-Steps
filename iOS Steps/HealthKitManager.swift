@@ -60,44 +60,53 @@ class HealthKitManager {
     var ageString: String = ""
     
     var stepsToday: Double = 0.0 {
-        didSet (newValue) {
-            print ("stepsToday \(newValue)")
+        didSet {
+            print ("stepsToday \(stepsToday)")
         }
     }
     var stepsTodayString: String {
-        if (Int(stepsToday) == 1) {
+        if (Int(stepsToday) != 1) {
             return (numberFormatter.string(from: stepsToday as NSNumber)! + " steps")
         } else {
-            return "1 steps"
+            return "1 step"
         }
     }
 
-    var stepsYesterday: Double = 0.0
+    var stepsYesterday: Double = 0.0 {
+        didSet {
+            print ("stepsYesterday \(stepsYesterday)")
+        }
+    }
     var stepsYesterdayString: String {
-        if (Int(stepsYesterday) == 1) {
+        if (Int(stepsYesterday) != 1) {
             return (numberFormatter.string(from: stepsYesterday as NSNumber)! + " steps")
         } else {
-            return "1 steps"
+            return "1 step"
         }
     }
 
     var flightsClimbedToday: Double = 0.0 {
-        didSet (newValue) {
-            print ("flightsClimbedToday \(newValue)")
+        didSet {
+            print ("flightsClimbedToday \(flightsClimbedToday)")
         }
     }
 
     var flightsClimbedTodayString: String {
-        if (Int(flightsClimbedToday) == 1) {
+        if (Int(flightsClimbedToday) != 1) {
             return (numberFormatter.string(from: flightsClimbedToday as NSNumber)! + " flights")
         } else {
             return "1 flight"
         }
     }
     
-    var flightsClimbedYesterday: Double = 0.0
+    var flightsClimbedYesterday: Double = 0.0 {
+        didSet {
+            print ("flightsClimbedYesterday \(flightsClimbedYesterday)")
+        }
+    }
+
     var flightsClimbedYesterdayString: String {
-        if (Int(flightsClimbedYesterday) == 1) {
+        if (Int(flightsClimbedYesterday) != 1) {
             return (numberFormatter.string(from: flightsClimbedYesterday as NSNumber)! + " flights")
         } else {
             return "1 flight"
