@@ -36,6 +36,16 @@ class ViewController: UIViewController {
         appDelegate.myViewController = self
         
         barChartView.legend.enabled = false
+        barChartView.xAxis.drawLabelsEnabled = true
+        barChartView.xAxis.labelPosition = XAxis.LabelPosition.bottom
+        barChartView.xAxis.drawGridLinesEnabled = false
+        barChartView.leftAxis.drawGridLinesEnabled = false
+        barChartView.rightAxis.drawLabelsEnabled = false
+        barChartView.leftAxis.drawLabelsEnabled = false
+        barChartView.descriptionText = ""
+        barChartView.drawBordersEnabled = false
+        barChartView.leftAxis.drawAxisLineEnabled = false
+        barChartView.rightAxis.drawAxisLineEnabled = false
         
         drawScreen()
     }
