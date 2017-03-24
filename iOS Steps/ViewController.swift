@@ -9,6 +9,7 @@
 import UIKit
 import Foundation
 import HealthKit
+import Charts
 
 
 
@@ -18,6 +19,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var todayFlightClimbedLabel: UILabel!
     @IBOutlet weak var yesterdayStepCountLabel: UILabel!
     @IBOutlet weak var yesterdayFlightClimbedLabel: UILabel!
+    @IBOutlet weak var barChartView: BarChartView!
 
 
     override func viewDidLoad() {
@@ -32,6 +34,8 @@ class ViewController: UIViewController {
         
         let appDelegate:AppDelegate = UIApplication.shared.delegate! as! AppDelegate
         appDelegate.myViewController = self
+        
+        barChartView.legend.enabled = false
         
         drawScreen()
     }
@@ -70,10 +74,39 @@ class ViewController: UIViewController {
         
         healthKitManager.getHourlyTodaySteps (completion: { (steps) in
             OperationQueue.main.addOperation {
-                print ("healthKitManager.getTodaysHourlySteps")
+                print ("healthKitManager.getTodaysHourlySteps \(healthKitManager.hourlySteps.count)")
+                
+                var x: [Double] = []
+                var y: [Double] = []
+                                print ()
+                for i in 0..<healthKitManager.hourlySteps.count {
+                    let cal = Calendar.current
+                    let d = healthKitManager.hourlySteps[i].date
+                    let components = cal.dateComponents ([.hour], from: d)
+                    let hour = Double(components.hour!)
+                    x.append(hour)
+                    y.append(healthKitManager.hourlySteps[i].value)
+                }
+                
+                self.setChart(dates: x, values: y)
             }
         })
 
+    }
+    
+    
+    func setChart(dates: [Double], values: [Double]) {
+        print ("setChart")
+        var dataEntries: [BarChartDataEntry] = []
+        
+        for i in 0..<dates.count {
+           let dataEntry = BarChartDataEntry(x: dates[i], y: values[i])
+            dataEntries.append(dataEntry)
+        }
+        
+        let chartDataSet = BarChartDataSet(values: dataEntries, label: "")
+        let chartData = BarChartData(dataSet: chartDataSet)
+        barChartView.data = chartData
     }
     
     
