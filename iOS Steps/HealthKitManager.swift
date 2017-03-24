@@ -16,7 +16,6 @@ class HealthKitManager {
     
     let healthStore = HKHealthStore()
     let numberFormatter = NumberFormatter()
-
     
     init()
     {
@@ -112,7 +111,10 @@ class HealthKitManager {
             return "1 flight"
         }
     }
-
+    
+    var hourlySteps: [(date: Date, value: Double)] = []
+    
+    
     
     func getTodayFlightsClimbedCount(completion:@escaping (Double?)->())
     {
@@ -239,6 +241,53 @@ class HealthKitManager {
         healthStore.execute(query)
     }
     
+ 
+    func getHourlyTodaySteps(completion:@escaping (Double?)->())
+    {
+        let calendar = Calendar.current
+        let anchorDate = calendar.startOfDay(for: Date())
+        
+        var interval = DateComponents()
+        interval.hour = 1
+        
+        let type = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)
+        
+        // Create the query
+        let query = HKStatisticsCollectionQuery(quantityType: type!,
+                                                quantitySamplePredicate: nil,
+                                                options: .cumulativeSum,
+                                                anchorDate: anchorDate,
+                                                intervalComponents: interval)
+        
+        // Set the results handler
+        query.initialResultsHandler = {
+            query, results, error in
+            
+            print ("query: getHourlyTodaySteps")
+            guard let statsCollection = results else {
+                // Perform proper error handling here
+                fatalError("*** An error occurred while calculating the statistics: \(String(describing: error?.localizedDescription)) ***")
+            }
+            
+            let startDate = calendar.startOfDay(for: Date())
+            let endDate = Date()
+            
+             // Plot the weekly step counts over the past 3 months
+            statsCollection.enumerateStatistics(from: startDate, to: endDate) { [unowned self] statistics, stop in
+                
+                if let quantity = statistics.sumQuantity() {
+                    let date = statistics.startDate
+                    let steps = quantity.doubleValue(for: HKUnit.count())
+                    
+                    // Call a custom method to plot each data point.
+                    self.hourlySteps.append(date: date, value: steps)
+                }
+            }
+            // print (self.hourlySteps)
+        }
+        healthStore.execute(query)
+    }
+
     
     func getStepCountBetween(startDate: Date, endDate: Date, completion:@escaping (Double?)->())
     {

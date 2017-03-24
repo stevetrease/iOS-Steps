@@ -42,31 +42,38 @@ class ViewController: UIViewController {
 
         let generator = UIImpactFeedbackGenerator(style: .light)
 
-        healthKitManager.getTodayStepCount(completion: { (steps) in
+        healthKitManager.getTodayStepCount (completion: { (steps) in
             OperationQueue.main.addOperation {
                 self.todayStepCountLabel.text = healthKitManager.stepsTodayString + " today"
             }
             generator.impactOccurred()
         })
         
-        healthKitManager.getYesterdayStepCount(completion: { (steps) in
+        healthKitManager.getYesterdayStepCount (completion: { (steps) in
             OperationQueue.main.addOperation {
                 self.yesterdayStepCountLabel.text = healthKitManager.stepsYesterdayString + " yesterday"
             }
         })
         
-        healthKitManager.getTodayFlightsClimbedCount(completion: { (flights) in
+        healthKitManager.getTodayFlightsClimbedCount (completion: { (flights) in
             OperationQueue.main.addOperation {
                  self.todayFlightClimbedLabel.text = healthKitManager.flightsClimbedTodayString + " today"
             }
             generator.impactOccurred()
         })
 
-        healthKitManager.getYesterdayFlightsClimbedCount(completion: { (flights) in
+        healthKitManager.getYesterdayFlightsClimbedCount( completion: { (flights) in
             OperationQueue.main.addOperation {
                 self.yesterdayFlightClimbedLabel.text = healthKitManager.flightsClimbedYesterdayString + " yesterday"
             }
         })
+        
+        healthKitManager.getHourlyTodaySteps (completion: { (steps) in
+            OperationQueue.main.addOperation {
+                print ("healthKitManager.getTodaysHourlySteps")
+            }
+        })
+
     }
     
     
