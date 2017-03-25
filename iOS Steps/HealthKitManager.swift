@@ -104,6 +104,8 @@ class HealthKitManager {
     }
     
     var hourlySteps: [(date: Date, value: Double)] = []
+    var hourlyStepsYesterday: [(date: Date, value: Double)] = []
+
     
     
     
@@ -265,22 +267,67 @@ class HealthKitManager {
             
             self.hourlySteps = []
             
-            // Plot the weekly step counts over the past 3 months
             statsCollection.enumerateStatistics(from: startDate, to: endDate) { [unowned self] statistics, stop in
                 
                 if let quantity = statistics.sumQuantity() {
                     let date = statistics.startDate
                     let steps = quantity.doubleValue(for: HKUnit.count())
                     
-                    // Call a custom method to plot each data point.
                     self.hourlySteps.append(date: date, value: steps)
                 }
             }
-            // print (self.hourlySteps)
             completion (0.0)
         }
         healthStore.execute(query)
     }
+    
+    
+    func getHourlyYesterdaySteps(completion:@escaping (Double?)->())
+    {
+        let cal = Calendar.current
+        let anchorDate = cal.date(byAdding: .day, value: -1, to: cal.startOfDay(for: Date()))
+        
+        var interval = DateComponents()
+        interval.hour = 1
+        
+        let type = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)
+        
+        // Create the query
+        let query = HKStatisticsCollectionQuery(quantityType: type!,
+                                                quantitySamplePredicate: nil,
+                                                options: .cumulativeSum,
+                                                anchorDate: anchorDate!,
+                                                intervalComponents: interval)
+        
+        // Set the results handler
+        query.initialResultsHandler = {
+            query, results, error in
+            
+            print ("query: getHourlyYesterdaySteps")
+            guard let statsCollection = results else {
+                // Perform proper error handling here
+                fatalError("*** An error occurred while calculating the statistics: \(String(describing: error?.localizedDescription)) ***")
+            }
+            
+            let endDate = cal.startOfDay(for: Date())
+            let startDate = cal.date(byAdding: .day, value: -1, to: endDate)
+
+            self.hourlyStepsYesterday = []
+            
+            statsCollection.enumerateStatistics(from: startDate!, to: endDate) { [unowned self] statistics, stop in
+                
+                if let quantity = statistics.sumQuantity() {
+                    let date = statistics.startDate
+                    let steps = quantity.doubleValue(for: HKUnit.count())
+                    
+                    self.hourlyStepsYesterday.append(date: date, value: steps)
+                }
+            }
+            completion (0.0)
+        }
+        healthStore.execute(query)
+    }
+
 
 
     func checkHealthKitAuthorization() ->()

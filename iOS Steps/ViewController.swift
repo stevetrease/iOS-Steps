@@ -99,14 +99,20 @@ class ViewController: UIViewController {
                 }
                 
                 self.setChart(dates: x, values: y)
-                self.barChartView.data?.notifyDataChanged()
-                self.barChartView.notifyDataSetChanged()
+                // self.barChartView.data?.notifyDataChanged()
+                // self.barChartView.notifyDataSetChanged()
+            }
+        })
+        
+        healthKitManager.getHourlyYesterdaySteps (completion: { (steps) in
+            OperationQueue.main.addOperation {
+                print ("healthKitManager.getYesterdaysHourlySteps \(healthKitManager.hourlyStepsYesterday.count)")
             }
         })
 
     }
-    
-    
+
+
     func setChart(dates: [Double], values: [Double]) {
         print ("setChart")
         var dataEntries: [BarChartDataEntry] = []
@@ -119,6 +125,7 @@ class ViewController: UIViewController {
         let chartDataSet = BarChartDataSet(values: dataEntries, label: "")
         let chartData = BarChartData(dataSet: chartDataSet)
         barChartView.data = chartData
+        barChartView.data?.notifyDataChanged()
     }
     
     
