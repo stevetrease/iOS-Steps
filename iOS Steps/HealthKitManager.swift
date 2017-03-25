@@ -21,43 +21,45 @@ class HealthKitManager {
     {
         print ("HealthKitManager.init")
         checkHealthKitAuthorization()
-        
-        earliestPermittedSampleDate = healthStore.earliestPermittedSampleDate()
-        
+    }
+    
+    
+    var earliestPermittedSampleDate: Date {
+        return (healthStore.earliestPermittedSampleDate())
+    }
+    
+    
+    var dateOfBirth: Date {
         let dateOfBirthComponents = try? healthStore.dateOfBirthComponents()
-        dateOfBirth = Calendar.current.date(from: dateOfBirthComponents!)!
+        return (Calendar.current.date(from: dateOfBirthComponents!)!)
+    }
+    
+    var dateOfBirthString: String {
         let formatter = DateFormatter()
         formatter.dateStyle = .long
-        dateOfBirthString = formatter.string(from: dateOfBirth)
-        
+        return (formatter.string(from: dateOfBirth))
+    }
+    
+    var nextBirthdayString: String {
+        let cal = Calendar.current
+        let ageComponents = cal.dateComponents ([.year], from: dateOfBirth, to: Date())
+        let age = ageComponents.year
+        let nextBirthday = cal.date(byAdding: .year, value: age! + 1, to: dateOfBirth)
+        let ageFormatter = DateComponentsFormatter()
+        ageFormatter.unitsStyle = .full
+        ageFormatter.allowedUnits = [.month, .day]
+        ageFormatter.maximumUnitCount = 2
+        return (ageFormatter.string(from: Date(), to: nextBirthday!)!)
+    }
+    
+    var ageString: String {
         let ageFormatter = DateComponentsFormatter()
         ageFormatter.unitsStyle = .full
         ageFormatter.allowedUnits = [.year, .month, .day]
         ageFormatter.maximumUnitCount = 3
-        ageString = ageFormatter.string(from: dateOfBirth, to: Date())!
-        
-        let cal = Calendar.current
-        let ageComponents = cal.dateComponents ([.year], from: dateOfBirth, to: Date())
-        let age = ageComponents.year
-
-        let nextBirthday = cal.date(byAdding: .year, value: age! + 1, to: dateOfBirth)
-        
-        ageFormatter.unitsStyle = .full
-        ageFormatter.allowedUnits = [.month, .day]
-        ageFormatter.maximumUnitCount = 2
-
-        nextBirthdayString = ageFormatter.string(from: Date(), to: nextBirthday!)!
+        return (ageFormatter.string(from: dateOfBirth, to: Date())!)
     }
-    
-    
-    var earliestPermittedSampleDate: Date = Date()
-    
-    var dateOfBirth: Date = Date()
-    var dateOfBirthString: String = ""
-    
-    var nextBirthdayString: String = ""
-    var ageString: String = ""
-    
+
     var stepsToday: Double = 0.0 {
         didSet {
             print ("stepsToday \(stepsToday)")
@@ -71,11 +73,8 @@ class HealthKitManager {
         }
     }
 
-    var stepsYesterday: Double = 0.0 {
-        didSet {
-            print ("stepsYesterday \(stepsYesterday)")
-        }
-    }
+    var stepsYesterday: Double = 0.0
+    
     var stepsYesterdayString: String {
         if (Int(stepsYesterday) != 1) {
             return (numberFormatter.string(from: stepsYesterday as NSNumber)! + " steps")
@@ -84,12 +83,8 @@ class HealthKitManager {
         }
     }
 
-    var flightsClimbedToday: Double = 0.0 {
-        didSet {
-            print ("flightsClimbedToday \(flightsClimbedToday)")
-        }
-    }
-
+    var flightsClimbedToday: Double = 0.0
+    
     var flightsClimbedTodayString: String {
         if (Int(flightsClimbedToday) != 1) {
             return (numberFormatter.string(from: flightsClimbedToday as NSNumber)! + " flights")
@@ -98,12 +93,8 @@ class HealthKitManager {
         }
     }
     
-    var flightsClimbedYesterday: Double = 0.0 {
-        didSet {
-            print ("flightsClimbedYesterday \(flightsClimbedYesterday)")
-        }
-    }
-
+    var flightsClimbedYesterday: Double = 0.0
+    
     var flightsClimbedYesterdayString: String {
         if (Int(flightsClimbedYesterday) != 1) {
             return (numberFormatter.string(from: flightsClimbedYesterday as NSNumber)! + " flights")
