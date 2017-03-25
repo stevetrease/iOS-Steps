@@ -99,6 +99,8 @@ class ViewController: UIViewController {
                 }
                 
                 self.setChart(dates: x, values: y)
+                self.barChartView.data?.notifyDataChanged()
+                self.barChartView.notifyDataSetChanged()
             }
         })
 

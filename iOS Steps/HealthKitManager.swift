@@ -36,11 +36,11 @@ class HealthKitManager {
         ageFormatter.maximumUnitCount = 3
         ageString = ageFormatter.string(from: dateOfBirth, to: Date())!
         
-        let calendar = Calendar.current
-        let ageComponents = calendar.dateComponents ([.year], from: dateOfBirth, to: Date())
+        let cal = Calendar.current
+        let ageComponents = cal.dateComponents ([.year], from: dateOfBirth, to: Date())
         let age = ageComponents.year
 
-        let nextBirthday = calendar.date(byAdding: .year, value: age! + 1, to: dateOfBirth)
+        let nextBirthday = cal.date(byAdding: .year, value: age! + 1, to: dateOfBirth)
         
         ageFormatter.unitsStyle = .full
         ageFormatter.allowedUnits = [.month, .day]
@@ -244,8 +244,8 @@ class HealthKitManager {
  
     func getHourlyTodaySteps(completion:@escaping (Double?)->())
     {
-        let calendar = Calendar.current
-        let anchorDate = calendar.startOfDay(for: Date())
+        let cal = Calendar.current
+        let anchorDate = cal.startOfDay(for: Date())
         
         var interval = DateComponents()
         interval.hour = 1
@@ -269,10 +269,12 @@ class HealthKitManager {
                 fatalError("*** An error occurred while calculating the statistics: \(String(describing: error?.localizedDescription)) ***")
             }
             
-            let startDate = calendar.startOfDay(for: Date())
+            let startDate = cal.startOfDay(for: Date())
             let endDate = Date()
             
-             // Plot the weekly step counts over the past 3 months
+            self.hourlySteps = []
+            
+            // Plot the weekly step counts over the past 3 months
             statsCollection.enumerateStatistics(from: startDate, to: endDate) { [unowned self] statistics, stop in
                 
                 if let quantity = statistics.sumQuantity() {
