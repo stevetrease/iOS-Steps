@@ -20,8 +20,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var yesterdayStepCountLabel: UILabel!
     @IBOutlet weak var yesterdayFlightClimbedLabel: UILabel!
     @IBOutlet weak var chartVew: BarChartView!
-    @IBOutlet weak var chartVew2: CombinedChartView!
-
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,19 +46,6 @@ class ViewController: UIViewController {
         chartVew.leftAxis.drawAxisLineEnabled = false
         chartVew.rightAxis.drawAxisLineEnabled = false
         chartVew.animate(xAxisDuration: 0.2, yAxisDuration: 1.0, easingOptionX: .easeInExpo, easingOptionY: .easeInExpo)
-        
-        chartVew2.legend.enabled = false
-        chartVew2.xAxis.drawLabelsEnabled = true
-        chartVew2.xAxis.labelPosition = XAxis.LabelPosition.bottom
-        chartVew2.xAxis.drawGridLinesEnabled = false
-        chartVew2.leftAxis.drawGridLinesEnabled = false
-        chartVew2.rightAxis.drawLabelsEnabled = false
-        chartVew2.leftAxis.drawLabelsEnabled = false
-        chartVew2.descriptionText = ""
-        chartVew2.drawBordersEnabled = false
-        chartVew2.leftAxis.drawAxisLineEnabled = false
-        chartVew2.rightAxis.drawAxisLineEnabled = false
-        chartVew2.animate(xAxisDuration: 0.2, yAxisDuration: 1.0, easingOptionX: .easeInExpo, easingOptionY: .easeInExpo)
         
         drawScreen()
     }
@@ -120,7 +105,7 @@ class ViewController: UIViewController {
                 self.chartVew.data = chartData
                 self.chartVew.data?.notifyDataChanged()
                 self.chartVew.notifyDataSetChanged()
-            }
+              }
         })
         
         healthKitManager.getHourlyYesterdaySteps (completion: { (steps) in

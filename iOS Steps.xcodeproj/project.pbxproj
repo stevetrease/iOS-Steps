@@ -17,6 +17,10 @@
 		AA9D2E8F1E3E424C000E9C08 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA9D2E8D1E3E424C000E9C08 /* LaunchScreen.storyboard */; };
 		AAD088421E3FBA1800612BC1 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAD088411E3FBA1800612BC1 /* HealthKit.framework */; };
 		AAD088471E3FC3C500612BC1 /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD088461E3FC3C500612BC1 /* HealthKitManager.swift */; };
+		AAF185F31E8848720081A1DB /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAF185F21E8848720081A1DB /* NotificationCenter.framework */; };
+		AAF185F61E8848730081A1DB /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF185F51E8848730081A1DB /* TodayViewController.swift */; };
+		AAF185F91E8848730081A1DB /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAF185F71E8848730081A1DB /* MainInterface.storyboard */; };
+		AAF185FD1E8848730081A1DB /* iOS Steps Today.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = AAF185F11E8848720081A1DB /* iOS Steps Today.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +45,13 @@
 			remoteGlobalIDString = 06165F2E1D8110E600722320;
 			remoteInfo = ChartsTests;
 		};
+		AAF185FB1E8848730081A1DB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AA9D2E791E3E424C000E9C08 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AAF185F01E8848720081A1DB;
+			remoteInfo = "iOS Steps Today";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -53,6 +64,17 @@
 				AA8072CD1E86A99100E45DEC /* Charts.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AAF186041E8848730081A1DB /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				AAF185FD1E8848730081A1DB /* iOS Steps Today.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -70,6 +92,11 @@
 		AAD088411E3FBA1800612BC1 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		AAD088431E3FBA1800612BC1 /* iOS Steps.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "iOS Steps.entitlements"; sourceTree = "<group>"; };
 		AAD088461E3FC3C500612BC1 /* HealthKitManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthKitManager.swift; sourceTree = "<group>"; };
+		AAF185F11E8848720081A1DB /* iOS Steps Today.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "iOS Steps Today.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AAF185F21E8848720081A1DB /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		AAF185F51E8848730081A1DB /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		AAF185F81E8848730081A1DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		AAF185FA1E8848730081A1DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +106,14 @@
 			files = (
 				AA8072CC1E86A94800E45DEC /* Charts.framework in Frameworks */,
 				AAD088421E3FBA1800612BC1 /* HealthKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AAF185EE1E8848720081A1DB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AAF185F31E8848720081A1DB /* NotificationCenter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				AA9D2E831E3E424C000E9C08 /* iOS Steps */,
+				AAF185F41E8848730081A1DB /* iOS Steps Today */,
 				AA9D2E821E3E424C000E9C08 /* Products */,
 				AAD088401E3FBA1800612BC1 /* Frameworks */,
 			);
@@ -108,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				AA9D2E811E3E424C000E9C08 /* iOS Steps.app */,
+				AAF185F11E8848720081A1DB /* iOS Steps Today.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -133,8 +170,19 @@
 			isa = PBXGroup;
 			children = (
 				AAD088411E3FBA1800612BC1 /* HealthKit.framework */,
+				AAF185F21E8848720081A1DB /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AAF185F41E8848730081A1DB /* iOS Steps Today */ = {
+			isa = PBXGroup;
+			children = (
+				AAF185F51E8848730081A1DB /* TodayViewController.swift */,
+				AAF185F71E8848730081A1DB /* MainInterface.storyboard */,
+				AAF185FA1E8848730081A1DB /* Info.plist */,
+			);
+			path = "iOS Steps Today";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,15 +197,34 @@
 				AA9D2E7F1E3E424C000E9C08 /* Resources */,
 				AA558A0C1E42925100230075 /* ShellScript */,
 				AA8072BC1E857F5800E45DEC /* Embed Frameworks */,
+				AAF186041E8848730081A1DB /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				AAF185FC1E8848730081A1DB /* PBXTargetDependency */,
 			);
 			name = "iOS Steps";
 			productName = "iOS Steps";
 			productReference = AA9D2E811E3E424C000E9C08 /* iOS Steps.app */;
 			productType = "com.apple.product-type.application";
+		};
+		AAF185F01E8848720081A1DB /* iOS Steps Today */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AAF186031E8848730081A1DB /* Build configuration list for PBXNativeTarget "iOS Steps Today" */;
+			buildPhases = (
+				AAF185ED1E8848720081A1DB /* Sources */,
+				AAF185EE1E8848720081A1DB /* Frameworks */,
+				AAF185EF1E8848720081A1DB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "iOS Steps Today";
+			productName = "iOS Steps Today";
+			productReference = AAF185F11E8848720081A1DB /* iOS Steps Today.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -165,7 +232,7 @@
 		AA9D2E791E3E424C000E9C08 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0820;
+				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = Steve;
 				TargetAttributes = {
@@ -181,6 +248,11 @@
 								enabled = 1;
 							};
 						};
+					};
+					AAF185F01E8848720081A1DB = {
+						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = 22648A4K3P;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -204,6 +276,7 @@
 			projectRoot = "";
 			targets = (
 				AA9D2E801E3E424C000E9C08 /* iOS Steps */,
+				AAF185F01E8848720081A1DB /* iOS Steps Today */,
 			);
 		};
 /* End PBXProject section */
@@ -243,6 +316,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AAF185EF1E8848720081A1DB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AAF185F91E8848730081A1DB /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
@@ -273,7 +354,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AAF185ED1E8848720081A1DB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AAF185F61E8848730081A1DB /* TodayViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AAF185FC1E8848730081A1DB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AAF185F01E8848720081A1DB /* iOS Steps Today */;
+			targetProxy = AAF185FB1E8848730081A1DB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		AA9D2E881E3E424C000E9C08 /* Main.storyboard */ = {
@@ -290,6 +387,14 @@
 				AA9D2E8E1E3E424C000E9C08 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		AAF185F71E8848730081A1DB /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AAF185F81E8848730081A1DB /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -416,6 +521,36 @@
 			};
 			name = Release;
 		};
+		AAF185FE1E8848730081A1DB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				DEVELOPMENT_TEAM = 22648A4K3P;
+				INFOPLIST_FILE = "iOS Steps Today/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "eu.trease.iosteps.iOS-Steps.iOS-Steps-Today";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		AAF185FF1E8848730081A1DB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				DEVELOPMENT_TEAM = 22648A4K3P;
+				INFOPLIST_FILE = "iOS Steps Today/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "eu.trease.iosteps.iOS-Steps.iOS-Steps-Today";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -436,6 +571,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		AAF186031E8848730081A1DB /* Build configuration list for PBXNativeTarget "iOS Steps Today" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AAF185FE1E8848730081A1DB /* Debug */,
+				AAF185FF1E8848730081A1DB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
