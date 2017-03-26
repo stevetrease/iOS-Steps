@@ -88,46 +88,31 @@ class ViewController: UIViewController {
             OperationQueue.main.addOperation {
                 print ("healthKitManager.getTodaysHourlySteps \(healthKitManager.hourlySteps.count)")
                 
-                var x: [Double] = []
-                var y: [Double] = []
+                var dataEntries: [BarChartDataEntry] = []
                 
                 for i in 0..<healthKitManager.hourlySteps.count {
                     let cal = Calendar.current
                     let d = healthKitManager.hourlySteps[i].date
                     let components = cal.dateComponents ([.hour], from: d)
                     let hour = Double(components.hour!)
-                    x.append(hour)
-                    y.append(healthKitManager.hourlySteps[i].value)
-                    // y.append(Double(arc4random_uniform(1000) + 1))
+                    let value = healthKitManager.hourlySteps[i].value
+                    let dataEntry = BarChartDataEntry(x: hour, y: value)
+                    dataEntries.append(dataEntry)
+
+                    
                 }
-                self.setChart(dates: x, values: y)
+                let chartDataSet = BarChartDataSet(values: dataEntries, label: "")
+                let chartData = BarChartData(dataSet: chartDataSet)
+                self.chartVew.data = chartData
+                self.chartVew.data?.notifyDataChanged()
+                self.chartVew.notifyDataSetChanged()
+
             }
         })
         
         healthKitManager.getHourlyYesterdaySteps (completion: { (steps) in
             OperationQueue.main.addOperation {
                 print ("healthKitManager.getYesterdaysHourlySteps \(healthKitManager.hourlyStepsYesterday.count)")
-            }
-        })
-
-    }
-
-
-    func setChart(dates: [Double], values: [Double]) {
-
-        print ("setChart")
-        var dataEntries: [BarChartDataEntry] = []
-        
-        for i in 0..<dates.count {
-           let dataEntry = BarChartDataEntry(x: dates[i], y: values[i])
-            dataEntries.append(dataEntry)
-        }
-        
-        let chartDataSet = BarChartDataSet(values: dataEntries, label: "")
-        let chartData = BarChartData(dataSet: chartDataSet)
-        chartVew.data = chartData
-        chartVew.data?.notifyDataChanged()
-        chartVew.notifyDataSetChanged()
     }
     
     
