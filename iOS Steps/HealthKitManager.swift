@@ -355,6 +355,5 @@ class HealthKitManager {
             isHealthKitEnabled = false
         }
         print (isHealthKitEnabled)
-        // return isHealthKitEnabled
     }
 }

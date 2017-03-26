@@ -19,7 +19,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var todayFlightClimbedLabel: UILabel!
     @IBOutlet weak var yesterdayStepCountLabel: UILabel!
     @IBOutlet weak var yesterdayFlightClimbedLabel: UILabel!
-    @IBOutlet weak var barChartView: BarChartView!
+    @IBOutlet weak var chartVew: BarChartView!
 
 
     override func viewDidLoad() {
@@ -35,17 +35,19 @@ class ViewController: UIViewController {
         let appDelegate:AppDelegate = UIApplication.shared.delegate! as! AppDelegate
         appDelegate.myViewController = self
         
-        barChartView.legend.enabled = false
-        barChartView.xAxis.drawLabelsEnabled = true
-        barChartView.xAxis.labelPosition = XAxis.LabelPosition.bottom
-        barChartView.xAxis.drawGridLinesEnabled = false
-        barChartView.leftAxis.drawGridLinesEnabled = false
-        barChartView.rightAxis.drawLabelsEnabled = false
-        barChartView.leftAxis.drawLabelsEnabled = false
-        barChartView.descriptionText = ""
-        barChartView.drawBordersEnabled = false
-        barChartView.leftAxis.drawAxisLineEnabled = false
-        barChartView.rightAxis.drawAxisLineEnabled = false
+        chartVew.legend.enabled = false
+        chartVew.xAxis.drawLabelsEnabled = true
+        chartVew.xAxis.labelPosition = XAxis.LabelPosition.bottom
+        chartVew.xAxis.drawGridLinesEnabled = false
+        chartVew.leftAxis.drawGridLinesEnabled = false
+        chartVew.rightAxis.drawLabelsEnabled = false
+        chartVew.leftAxis.drawLabelsEnabled = false
+        chartVew.descriptionText = ""
+        chartVew.drawBordersEnabled = false
+        chartVew.leftAxis.drawAxisLineEnabled = false
+        chartVew.rightAxis.drawAxisLineEnabled = false
+        
+        chartVew.animate(xAxisDuration: 0.2, yAxisDuration: 1.0, easingOptionX: .easeInExpo, easingOptionY: .easeInExpo)
         
         drawScreen()
     }
@@ -88,7 +90,7 @@ class ViewController: UIViewController {
                 
                 var x: [Double] = []
                 var y: [Double] = []
-                                print ()
+                
                 for i in 0..<healthKitManager.hourlySteps.count {
                     let cal = Calendar.current
                     let d = healthKitManager.hourlySteps[i].date
@@ -96,11 +98,9 @@ class ViewController: UIViewController {
                     let hour = Double(components.hour!)
                     x.append(hour)
                     y.append(healthKitManager.hourlySteps[i].value)
+                    // y.append(Double(arc4random_uniform(1000) + 1))
                 }
-                
                 self.setChart(dates: x, values: y)
-                // self.barChartView.data?.notifyDataChanged()
-                // self.barChartView.notifyDataSetChanged()
             }
         })
         
@@ -114,6 +114,7 @@ class ViewController: UIViewController {
 
 
     func setChart(dates: [Double], values: [Double]) {
+
         print ("setChart")
         var dataEntries: [BarChartDataEntry] = []
         
@@ -124,8 +125,9 @@ class ViewController: UIViewController {
         
         let chartDataSet = BarChartDataSet(values: dataEntries, label: "")
         let chartData = BarChartData(dataSet: chartDataSet)
-        barChartView.data = chartData
-        barChartView.data?.notifyDataChanged()
+        chartVew.data = chartData
+        chartVew.data?.notifyDataChanged()
+        chartVew.notifyDataSetChanged()
     }
     
     
