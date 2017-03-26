@@ -20,6 +20,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var yesterdayStepCountLabel: UILabel!
     @IBOutlet weak var yesterdayFlightClimbedLabel: UILabel!
     @IBOutlet weak var chartVew: BarChartView!
+    @IBOutlet weak var chartVew2: CombinedChartView!
 
 
     override func viewDidLoad() {
@@ -46,8 +47,20 @@ class ViewController: UIViewController {
         chartVew.drawBordersEnabled = false
         chartVew.leftAxis.drawAxisLineEnabled = false
         chartVew.rightAxis.drawAxisLineEnabled = false
-        
         chartVew.animate(xAxisDuration: 0.2, yAxisDuration: 1.0, easingOptionX: .easeInExpo, easingOptionY: .easeInExpo)
+        
+        chartVew2.legend.enabled = false
+        chartVew2.xAxis.drawLabelsEnabled = true
+        chartVew2.xAxis.labelPosition = XAxis.LabelPosition.bottom
+        chartVew2.xAxis.drawGridLinesEnabled = false
+        chartVew2.leftAxis.drawGridLinesEnabled = false
+        chartVew2.rightAxis.drawLabelsEnabled = false
+        chartVew2.leftAxis.drawLabelsEnabled = false
+        chartVew2.descriptionText = ""
+        chartVew2.drawBordersEnabled = false
+        chartVew2.leftAxis.drawAxisLineEnabled = false
+        chartVew2.rightAxis.drawAxisLineEnabled = false
+        chartVew2.animate(xAxisDuration: 0.2, yAxisDuration: 1.0, easingOptionX: .easeInExpo, easingOptionY: .easeInExpo)
         
         drawScreen()
     }
@@ -88,31 +101,33 @@ class ViewController: UIViewController {
             OperationQueue.main.addOperation {
                 print ("healthKitManager.getTodaysHourlySteps \(healthKitManager.hourlySteps.count)")
                 
-                var dataEntries: [BarChartDataEntry] = []
+                var hourlyDataEntries: [BarChartDataEntry] = []
                 
+                var accumulator = 0.0
                 for i in 0..<healthKitManager.hourlySteps.count {
                     let cal = Calendar.current
                     let d = healthKitManager.hourlySteps[i].date
                     let components = cal.dateComponents ([.hour], from: d)
                     let hour = Double(components.hour!)
                     let value = healthKitManager.hourlySteps[i].value
-                    let dataEntry = BarChartDataEntry(x: hour, y: value)
-                    dataEntries.append(dataEntry)
-
-                    
+                    accumulator = accumulator + value
+                    // let dataEntry = BarChartDataEntry(x: hour, y: accumulator)
+                    let hourlyDataEntry = BarChartDataEntry(x: hour, y: value)
+                    hourlyDataEntries.append(hourlyDataEntry)
                 }
-                let chartDataSet = BarChartDataSet(values: dataEntries, label: "")
+                let chartDataSet = BarChartDataSet(values: hourlyDataEntries, label: "")
                 let chartData = BarChartData(dataSet: chartDataSet)
                 self.chartVew.data = chartData
                 self.chartVew.data?.notifyDataChanged()
                 self.chartVew.notifyDataSetChanged()
-
             }
         })
         
         healthKitManager.getHourlyYesterdaySteps (completion: { (steps) in
             OperationQueue.main.addOperation {
                 print ("healthKitManager.getYesterdaysHourlySteps \(healthKitManager.hourlyStepsYesterday.count)")
+            }
+        })
     }
     
     
