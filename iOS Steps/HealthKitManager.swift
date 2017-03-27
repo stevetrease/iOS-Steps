@@ -20,6 +20,8 @@ class HealthKitManager {
     init()
     {
         print ("HealthKitManager.init")
+        numberFormatter.maximumFractionDigits = 0
+        numberFormatter.numberStyle = NumberFormatter.Style.decimal
         checkHealthKitAuthorization()
     }
     
