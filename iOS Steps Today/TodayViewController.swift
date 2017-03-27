@@ -17,10 +17,12 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     
     @IBOutlet weak var stepsLabel: UILabel!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print ("viewDidLoad")
         
+        stepsLabel.text = "--"
         checkHealthKitAuthorization()
         
         updateView ()
@@ -55,7 +57,6 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     
     
     func updateView () {
-    
         getTodayStepCount (completion: { (steps) in
             print ("getTodayStepCount")
             let numberFormatter = NumberFormatter()
@@ -68,8 +69,6 @@ class TodayViewController: UIViewController, NCWidgetProviding {
                 self.stepsLabel.text = numberString!
             }
         })
-
-        
     }
     
     
@@ -97,6 +96,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         }
         print (isHealthKitEnabled)
     }
+    
     
     func getTodayStepCount(completion:@escaping (Double?)->())
     {
@@ -128,7 +128,5 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         }
         healthStore.execute(query)
     }
-
-
-    
+  
 }
