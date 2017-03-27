@@ -19,7 +19,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var todayFlightClimbedLabel: UILabel!
     @IBOutlet weak var yesterdayStepCountLabel: UILabel!
     @IBOutlet weak var yesterdayFlightClimbedLabel: UILabel!
-    @IBOutlet weak var chartVew: BarChartView!
+    @IBOutlet weak var chartView: BarChartView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,18 +34,18 @@ class ViewController: UIViewController {
         let appDelegate:AppDelegate = UIApplication.shared.delegate! as! AppDelegate
         appDelegate.myViewController = self
         
-        chartVew.legend.enabled = false
-        chartVew.xAxis.drawLabelsEnabled = true
-        chartVew.xAxis.labelPosition = XAxis.LabelPosition.bottom
-        chartVew.xAxis.drawGridLinesEnabled = false
-        chartVew.leftAxis.drawGridLinesEnabled = false
-        chartVew.rightAxis.drawLabelsEnabled = false
-        chartVew.leftAxis.drawLabelsEnabled = false
-        chartVew.descriptionText = ""
-        chartVew.drawBordersEnabled = false
-        chartVew.leftAxis.drawAxisLineEnabled = false
-        chartVew.rightAxis.drawAxisLineEnabled = false
-        chartVew.animate(xAxisDuration: 0.2, yAxisDuration: 1.0, easingOptionX: .easeInExpo, easingOptionY: .easeInExpo)
+        chartView.legend.enabled = false
+        chartView.xAxis.drawLabelsEnabled = true
+        chartView.xAxis.labelPosition = XAxis.LabelPosition.bottom
+        chartView.xAxis.drawGridLinesEnabled = false
+        chartView.leftAxis.drawGridLinesEnabled = false
+        chartView.rightAxis.drawLabelsEnabled = false
+        chartView.leftAxis.drawLabelsEnabled = false
+        chartView.descriptionText = ""
+        chartView.drawBordersEnabled = false
+        chartView.leftAxis.drawAxisLineEnabled = false
+        chartView.rightAxis.drawAxisLineEnabled = false
+        chartView.animate(xAxisDuration: 0.2, yAxisDuration: 1.0, easingOptionX: .easeInExpo, easingOptionY: .easeInExpo)
         
         drawScreen()
     }
@@ -102,9 +102,9 @@ class ViewController: UIViewController {
                 }
                 let chartDataSet = BarChartDataSet(values: hourlyDataEntries, label: "")
                 let chartData = BarChartData(dataSet: chartDataSet)
-                self.chartVew.data = chartData
-                self.chartVew.data?.notifyDataChanged()
-                self.chartVew.notifyDataSetChanged()
+                self.chartView.data = chartData
+                self.chartView.data?.notifyDataChanged()
+                self.chartView.notifyDataSetChanged()
               }
         })
         

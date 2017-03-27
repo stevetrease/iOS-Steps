@@ -579,6 +579,7 @@
 				AAF185FF1E8848730081A1DB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
