@@ -22,6 +22,8 @@
 		AAF185F91E8848730081A1DB /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAF185F71E8848730081A1DB /* MainInterface.storyboard */; };
 		AAF185FD1E8848730081A1DB /* iOS Steps Today.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = AAF185F11E8848720081A1DB /* iOS Steps Today.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		AAF421FE1E891FBA00D935FE /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAD088411E3FBA1800612BC1 /* HealthKit.framework */; };
+		AAF422001E892F1A00D935FE /* fontawesome-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AAF421FF1E892F1A00D935FE /* fontawesome-webfont.ttf */; };
+		AAF422011E892F1A00D935FE /* fontawesome-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AAF421FF1E892F1A00D935FE /* fontawesome-webfont.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +101,7 @@
 		AAF185F81E8848730081A1DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		AAF185FA1E8848730081A1DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AAF421FD1E891FBA00D935FE /* iOS Steps Today.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "iOS Steps Today.entitlements"; sourceTree = "<group>"; };
+		AAF421FF1E892F1A00D935FE /* fontawesome-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "fontawesome-webfont.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				AAF421FD1E891FBA00D935FE /* iOS Steps Today.entitlements */,
+				AAF421FF1E892F1A00D935FE /* fontawesome-webfont.ttf */,
 				AAF185F51E8848730081A1DB /* TodayViewController.swift */,
 				AAF185F71E8848730081A1DB /* MainInterface.storyboard */,
 				AAF185FA1E8848730081A1DB /* Info.plist */,
@@ -320,6 +324,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA9D2E8F1E3E424C000E9C08 /* LaunchScreen.storyboard in Resources */,
+				AAF422001E892F1A00D935FE /* fontawesome-webfont.ttf in Resources */,
 				AA9D2E8C1E3E424C000E9C08 /* Assets.xcassets in Resources */,
 				AA9D2E8A1E3E424C000E9C08 /* Main.storyboard in Resources */,
 			);
@@ -330,6 +335,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AAF185F91E8848730081A1DB /* MainInterface.storyboard in Resources */,
+				AAF422011E892F1A00D935FE /* fontawesome-webfont.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
