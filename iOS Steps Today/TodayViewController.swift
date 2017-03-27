@@ -59,9 +59,10 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         getTodayStepCount (completion: { (steps) in
             print ("getTodayStepCount")
             let numberFormatter = NumberFormatter()
+            numberFormatter.maximumFractionDigits = 0
+            numberFormatter.numberStyle = NumberFormatter.Style.decimal
             let numberString = numberFormatter.string(from: steps! as NSNumber)
             print ("numberString ", numberString!)
-
             
             OperationQueue.main.addOperation {
                 self.stepsLabel.text = numberString!

@@ -30,10 +30,10 @@
                             </label>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="bottomMargin" secondItem="daq-Px-e6X" secondAttribute="bottom" id="IOF-aZ-NAO"/>
-                            <constraint firstItem="daq-Px-e6X" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leadingMargin" id="TRq-Nc-DPx"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="daq-Px-e6X" secondAttribute="trailing" id="Xr8-cW-Cgn"/>
-                            <constraint firstItem="daq-Px-e6X" firstAttribute="top" secondItem="S3S-Oj-5AN" secondAttribute="topMargin" id="mxE-0s-KDP"/>
+                            <constraint firstItem="daq-Px-e6X" firstAttribute="trailing" secondItem="S3S-Oj-5AN" secondAttribute="trailingMargin" id="8ze-kN-C2M"/>
+                            <constraint firstItem="daq-Px-e6X" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leadingMargin" id="ImD-Zg-CAB"/>
+                            <constraint firstItem="daq-Px-e6X" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" id="oBP-i0-tlq"/>
+                            <constraint firstItem="FKl-LY-JtV" firstAttribute="top" secondItem="daq-Px-e6X" secondAttribute="bottom" id="qRa-27-3km"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
