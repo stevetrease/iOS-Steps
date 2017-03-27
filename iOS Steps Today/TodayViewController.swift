@@ -38,7 +38,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         // Dispose of any resources that can be recreated.
     }
     
-    /*
+    
     func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
         // Perform any setup necessary in order to update the view.
         print ("widgetPerformUpdate")
@@ -51,14 +51,10 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         }
         
         completionHandler(NCUpdateResult.newData)
-    } */
+    }
     
     
     func updateView () {
-        // let numberFormatter = NumberFormatter()
-        // let numberString = numberFormatter.string(from: arc4random_uniform(10000) + 1 as NSNumber)
-        //textLabel.text = numberString
-        //print (numberString!)
     
         getTodayStepCount (completion: { (steps) in
             print ("getTodayStepCount")
@@ -74,7 +70,6 @@ class TodayViewController: UIViewController, NCWidgetProviding {
 
         
     }
-    
     
     
     func checkHealthKitAuthorization() ->()
