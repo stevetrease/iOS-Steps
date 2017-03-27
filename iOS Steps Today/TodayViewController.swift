@@ -15,12 +15,17 @@ class TodayViewController: UIViewController, NCWidgetProviding {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        print ("viewDidLoad")
         // Do any additional setup after loading the view from its nib.
         
-        let numberFormatter = NumberFormatter()
-        let numberString = numberFormatter.string(from: arc4random_uniform(10000) + 1 as NSNumber)
-        textLabel.text = numberString
-        print (numberString!)
+        updateView ()
+    }
+    
+   override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        print ("viewDidAppear")
+        
+        updateView()
     }
     
     override func didReceiveMemoryWarning() {
@@ -30,19 +35,24 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     
     func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
         // Perform any setup necessary in order to update the view.
-        
+        print ("widgetPerformUpdate")
         // If an error is encountered, use NCUpdateResult.Failed
         // If there's no update required, use NCUpdateResult.NoData
         // If there's an update, use NCUpdateResult.NewData
         
         OperationQueue.main.addOperation {
-            let numberFormatter = NumberFormatter()
-            let numberString = numberFormatter.string(from: arc4random_uniform(10000) + 1 as NSNumber)
-            self.textLabel.text = numberString
-            print (numberString!)
+            self.updateView()
         }
         
         completionHandler(NCUpdateResult.newData)
+    }
+    
+    
+    func updateView () {
+        let numberFormatter = NumberFormatter()
+        let numberString = numberFormatter.string(from: arc4random_uniform(10000) + 1 as NSNumber)
+        textLabel.text = numberString
+        print (numberString!)
     }
     
 }
