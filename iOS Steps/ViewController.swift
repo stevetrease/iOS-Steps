@@ -19,7 +19,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var todayFlightClimbedLabel: UILabel!
     @IBOutlet weak var yesterdayStepCountLabel: UILabel!
     @IBOutlet weak var yesterdayFlightClimbedLabel: UILabel!
-    @IBOutlet weak var chartView: BarChartView!
+    @IBOutlet weak var chartView: CombinedChartView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,9 +38,11 @@ class ViewController: UIViewController {
         chartView.xAxis.drawLabelsEnabled = true
         chartView.xAxis.labelPosition = XAxis.LabelPosition.bottom
         chartView.xAxis.drawGridLinesEnabled = false
+        // chartView.xAxis.granularityEnabled  = true
+        // chartView.xAxis.avoidFirstLastClippingEnabled = true
         chartView.leftAxis.drawGridLinesEnabled = false
         chartView.rightAxis.drawLabelsEnabled = false
-        chartView.leftAxis.drawLabelsEnabled = false
+        chartView.leftAxis.drawLabelsEnabled = true
         chartView.descriptionText = ""
         chartView.drawBordersEnabled = false
         chartView.leftAxis.drawAxisLineEnabled = false
@@ -87,22 +89,64 @@ class ViewController: UIViewController {
                 print ("healthKitManager.getTodaysHourlySteps \(healthKitManager.hourlySteps.count)")
                 
                 var hourlyDataEntries: [BarChartDataEntry] = []
-                
-                var accumulator = 0.0
+                var line1Data: [ChartDataEntry] = []
+                var line2Data: [ChartDataEntry] = []
+
+
+                var accumulator1 = 0.0
                 for i in 0..<healthKitManager.hourlySteps.count {
                     let cal = Calendar.current
                     let d = healthKitManager.hourlySteps[i].date
                     let components = cal.dateComponents ([.hour], from: d)
                     let hour = Double(components.hour!)
                     let value = healthKitManager.hourlySteps[i].value
-                    accumulator = accumulator + value
-                    // let dataEntry = BarChartDataEntry(x: hour, y: accumulator)
+                    
+                    accumulator1 = accumulator1 + value
+ 
                     let hourlyDataEntry = BarChartDataEntry(x: hour, y: value)
                     hourlyDataEntries.append(hourlyDataEntry)
+                    
+                    let line1DataPoint = ChartDataEntry (x: hour, y: Double (accumulator1))
+                    line1Data.append (line1DataPoint)
                 }
-                let chartDataSet = BarChartDataSet(values: hourlyDataEntries, label: "")
-                let chartData = BarChartData(dataSet: chartDataSet)
-                self.chartView.data = chartData
+                
+                var accumulator2 = 0.0
+                for i in 0..<healthKitManager.hourlyStepsYesterday.count {
+                    let cal = Calendar.current
+                    let d = healthKitManager.hourlyStepsYesterday[i].date
+                    let components = cal.dateComponents ([.hour], from: d)
+                    let hour = Double(components.hour!)
+                    let value = healthKitManager.hourlyStepsYesterday[i].value
+                    
+                    accumulator2 = accumulator2 + value
+                    
+                    let line2DataPoint = ChartDataEntry (x: hour, y: Double (accumulator2))
+                    line2Data.append (line2DataPoint)
+                }
+                
+                let barDataSet = BarChartDataSet(values: hourlyDataEntries, label: "")
+                let lineDataSet1 = LineChartDataSet(values: line1Data, label: "")
+                let lineDataSet2 = LineChartDataSet(values: line2Data, label: "")
+                
+                barDataSet.colors = [UIColor.darkGray]
+                lineDataSet1.colors = [UIColor.darkGray]
+                lineDataSet1.drawCirclesEnabled = false
+                lineDataSet1.lineWidth = 3
+                lineDataSet2.colors = [UIColor.lightGray]
+                lineDataSet2.drawCirclesEnabled = false
+                lineDataSet2.lineWidth = 2
+
+                
+                let barData = BarChartData(dataSets: [barDataSet])
+                let lineData = LineChartData (dataSets: [lineDataSet1, lineDataSet2])
+                
+                lineData.setDrawValues(false)
+
+                let data: CombinedChartData = CombinedChartData()
+                data.barData = barData
+                data.lineData = lineData
+                
+                self.chartView.data = data
                 self.chartView.data?.notifyDataChanged()
                 self.chartView.notifyDataSetChanged()
               }
