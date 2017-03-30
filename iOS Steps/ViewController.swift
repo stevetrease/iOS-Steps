@@ -38,7 +38,7 @@ class ViewController: UIViewController {
         chartView.xAxis.drawLabelsEnabled = true
         chartView.xAxis.labelPosition = XAxis.LabelPosition.bottom
         chartView.xAxis.drawGridLinesEnabled = false
-        // chartView.xAxis.granularityEnabled  = true
+        chartView.leftAxis.axisMinimum = 0.0
         // chartView.xAxis.avoidFirstLastClippingEnabled = true
         chartView.leftAxis.drawGridLinesEnabled = false
         chartView.rightAxis.drawLabelsEnabled = false
@@ -47,7 +47,10 @@ class ViewController: UIViewController {
         chartView.drawBordersEnabled = false
         chartView.leftAxis.drawAxisLineEnabled = false
         chartView.rightAxis.drawAxisLineEnabled = false
-        chartView.animate(xAxisDuration: 0.2, yAxisDuration: 1.0, easingOptionX: .easeInExpo, easingOptionY: .easeInExpo)
+        chartView.animate(xAxisDuration: 1.0, yAxisDuration: 1.0, easingOptionX: .easeInExpo, easingOptionY: .easeInExpo)
+        
+        chartView.xAxis.granularity = 1.0
+        chartView.xAxis.granularityEnabled = true
         
         drawScreen()
     }
@@ -84,14 +87,17 @@ class ViewController: UIViewController {
             }
         })
         
+        let startTime = Date()
+        
         healthKitManager.getHourlyTodaySteps (completion: { (steps) in
             OperationQueue.main.addOperation {
                 print ("healthKitManager.getTodaysHourlySteps \(healthKitManager.hourlySteps.count)")
+                var elapsed = Date().timeIntervalSince(startTime)
+                print ("getHourlyTodaySteps call time = \(elapsed)")
                 
                 var hourlyDataEntries: [BarChartDataEntry] = []
                 var line1Data: [ChartDataEntry] = []
                 var line2Data: [ChartDataEntry] = []
-
 
                 var accumulator1 = 0.0
                 for i in 0..<healthKitManager.hourlySteps.count {
@@ -138,7 +144,7 @@ class ViewController: UIViewController {
 
                 
                 let barData = BarChartData(dataSets: [barDataSet])
-                let lineData = LineChartData (dataSets: [lineDataSet1, lineDataSet2])
+                let lineData = LineChartData (dataSets: [lineDataSet2, lineDataSet1])
                 
                 lineData.setDrawValues(false)
 
@@ -149,6 +155,9 @@ class ViewController: UIViewController {
                 self.chartView.data = data
                 self.chartView.data?.notifyDataChanged()
                 self.chartView.notifyDataSetChanged()
+                
+                elapsed = Date().timeIntervalSince(startTime)
+                print ("getHourlyTodaySteps finished = \(elapsed)")
               }
         })
         
@@ -175,10 +184,3 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 }
-
-
-
-
-
-
-

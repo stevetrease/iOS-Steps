@@ -33,7 +33,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             query, completionHandler, error in
             
             let dateString = formatter.string(from: Date())
-
             print ("step count query handler at  \(dateString)")
             
             if error != nil {
@@ -46,13 +45,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             completionHandler()
         }
-        
-        
+
         let flightCountQuery = HKObserverQuery(sampleType: flightCountSampleType!, predicate: nil) {
             query, completionHandler, error in
             
-           let dateString = formatter.string(from: Date())
-            
+            let dateString = formatter.string(from: Date())
             print ("flight count query handler at \(dateString)")
             
             if error != nil {
@@ -71,6 +68,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   
         return true
     }
+    
     
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -100,7 +98,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         print ("applicationWillTerminate")
     }
-
-
 }
 

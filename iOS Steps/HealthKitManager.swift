@@ -19,7 +19,7 @@ class HealthKitManager {
     
     init()
     {
-        print ("HealthKitManager.init")
+        // print ("HealthKitManager.init")
         numberFormatter.maximumFractionDigits = 0
         numberFormatter.numberStyle = NumberFormatter.Style.decimal
         checkHealthKitAuthorization()
@@ -29,7 +29,6 @@ class HealthKitManager {
     var earliestPermittedSampleDate: Date {
         return (healthStore.earliestPermittedSampleDate())
     }
-    
     
     var dateOfBirth: Date {
         let dateOfBirthComponents = try? healthStore.dateOfBirthComponents()
@@ -62,11 +61,7 @@ class HealthKitManager {
         return (ageFormatter.string(from: dateOfBirth, to: Date())!)
     }
 
-    var stepsToday: Double = 0.0 {
-        didSet {
-            print ("stepsToday \(stepsToday)")
-        }
-    }
+    var stepsToday: Double = 0.0
     var stepsTodayString: String {
         if (Int(stepsToday) != 1) {
             return (numberFormatter.string(from: stepsToday as NSNumber)! + " steps")
@@ -76,7 +71,6 @@ class HealthKitManager {
     }
 
     var stepsYesterday: Double = 0.0
-    
     var stepsYesterdayString: String {
         if (Int(stepsYesterday) != 1) {
             return (numberFormatter.string(from: stepsYesterday as NSNumber)! + " steps")
@@ -86,7 +80,6 @@ class HealthKitManager {
     }
 
     var flightsClimbedToday: Double = 0.0
-    
     var flightsClimbedTodayString: String {
         if (Int(flightsClimbedToday) != 1) {
             return (numberFormatter.string(from: flightsClimbedToday as NSNumber)! + " flights")
@@ -96,7 +89,6 @@ class HealthKitManager {
     }
     
     var flightsClimbedYesterday: Double = 0.0
-    
     var flightsClimbedYesterdayString: String {
         if (Int(flightsClimbedYesterday) != 1) {
             return (numberFormatter.string(from: flightsClimbedYesterday as NSNumber)! + " flights")
@@ -107,7 +99,6 @@ class HealthKitManager {
     
     var hourlySteps: [(date: Date, value: Double)] = []
     var hourlyStepsYesterday: [(date: Date, value: Double)] = []
-
     
     
     
@@ -125,7 +116,7 @@ class HealthKitManager {
         let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: [])
         
         let query = HKStatisticsQuery(quantityType: type!, quantitySamplePredicate: predicate, options: .cumulativeSum) { query, results, error in
-            print ("query: getTodayFlightsClimbedCount")
+            // print ("query: getTodayFlightsClimbedCount")
             let quantity = results?.sumQuantity()
             let unit = HKUnit.count()
             let flights = quantity?.doubleValue(for: unit)
@@ -142,6 +133,7 @@ class HealthKitManager {
         healthStore.execute(query)
     }
     
+    
     func getYesterdayFlightsClimbedCount(completion:@escaping (Double?)->())
     {
         
@@ -156,7 +148,7 @@ class HealthKitManager {
         let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: [])
         
         let query = HKStatisticsQuery(quantityType: type!, quantitySamplePredicate: predicate, options: .cumulativeSum) { query, results, error in
-            print ("query: getYesterdayFlightsClimbedCount")
+            // print ("query: getYesterdayFlightsClimbedCount")
             let quantity = results?.sumQuantity()
             let unit = HKUnit.count()
             let flights = quantity?.doubleValue(for: unit)
@@ -188,7 +180,7 @@ class HealthKitManager {
         let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: [])
         
         let query = HKStatisticsQuery(quantityType: type!, quantitySamplePredicate: predicate, options: .cumulativeSum) { query, results, error in
-            print ("query: getTodayStepCount")
+            // print ("query: getTodayStepCount")
             let quantity = results?.sumQuantity()
             let unit = HKUnit.count()
             let steps = quantity?.doubleValue(for: unit)
@@ -205,6 +197,7 @@ class HealthKitManager {
         healthStore.execute(query)
     }
     
+    
     func getYesterdayStepCount(completion:@escaping (Double?)->())
     {
         
@@ -219,7 +212,7 @@ class HealthKitManager {
         let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: [])
         
         let query = HKStatisticsQuery(quantityType: type!, quantitySamplePredicate: predicate, options: .cumulativeSum) { query, results, error in
-            print ("query: getYesterdayStepCount")
+            // print ("query: getYesterdayStepCount")
             let quantity = results?.sumQuantity()
             let unit = HKUnit.count()
             let steps = quantity?.doubleValue(for: unit)
@@ -258,7 +251,7 @@ class HealthKitManager {
         query.initialResultsHandler = {
             query, results, error in
             
-            print ("query: getHourlyTodaySteps")
+            // print ("query: getHourlyTodaySteps")
             guard let statsCollection = results else {
                 // Perform proper error handling here
                 fatalError("*** An error occurred while calculating the statistics: \(String(describing: error?.localizedDescription)) ***")
@@ -305,7 +298,7 @@ class HealthKitManager {
         query.initialResultsHandler = {
             query, results, error in
             
-            print ("query: getHourlyYesterdaySteps")
+            // print ("query: getHourlyYesterdaySteps")
             guard let statsCollection = results else {
                 // Perform proper error handling here
                 fatalError("*** An error occurred while calculating the statistics: \(String(describing: error?.localizedDescription)) ***")
@@ -339,8 +332,6 @@ class HealthKitManager {
         
         // Do we have access to HealthKit on this device?
         if HKHealthStore.isHealthDataAvailable() {
-            print ("healthKit is available")
- 
             let healthKitTypesToRead : Set = [
                 HKObjectType.characteristicType(forIdentifier: HKCharacteristicTypeIdentifier.dateOfBirth)!,
                 HKObjectType.quantityType(forIdentifier:HKQuantityTypeIdentifier.flightsClimbed)!,
@@ -356,6 +347,6 @@ class HealthKitManager {
         } else {
             isHealthKitEnabled = false
         }
-        print (isHealthKitEnabled)
+        print ("HeakthKit available? ", isHealthKitEnabled)
     }
 }
