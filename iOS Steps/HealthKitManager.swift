@@ -277,9 +277,16 @@ class HealthKitManager {
     }
     
     
+    private var hourlyYesterdayStepsLastUpdated: Date = Date.distantPast
     func getHourlyYesterdaySteps(completion:@escaping (Double?)->())
     {
-        let cal = Calendar.current
+        let cal = Calendar(identifier: .gregorian)
+        
+        if (cal.startOfDay(for: Date()) == cal.startOfDay(for: self.hourlyYesterdayStepsLastUpdated)) {
+                completion (0.0)
+        }
+        self.hourlyYesterdayStepsLastUpdated = Date ()
+        
         let anchorDate = cal.date(byAdding: .day, value: -1, to: cal.startOfDay(for: Date()))
         
         var interval = DateComponents()
@@ -297,6 +304,8 @@ class HealthKitManager {
         // Set the results handler
         query.initialResultsHandler = {
             query, results, error in
+            
+            let cal = Calendar(identifier: .gregorian)
             
             // print ("query: getHourlyYesterdaySteps")
             guard let statsCollection = results else {

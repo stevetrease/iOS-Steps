@@ -39,11 +39,11 @@ class ViewController: UIViewController {
         chartView.xAxis.labelPosition = XAxis.LabelPosition.bottom
         chartView.xAxis.drawGridLinesEnabled = false
         chartView.leftAxis.axisMinimum = 0.0
-        // chartView.xAxis.avoidFirstLastClippingEnabled = true
         chartView.leftAxis.drawGridLinesEnabled = false
         chartView.rightAxis.drawLabelsEnabled = false
         chartView.leftAxis.drawLabelsEnabled = true
         chartView.descriptionText = ""
+        
         chartView.drawBordersEnabled = false
         chartView.leftAxis.drawAxisLineEnabled = false
         chartView.rightAxis.drawAxisLineEnabled = false
