@@ -136,26 +136,32 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="G2h-uc-hT2">
                                 <rect key="frame" x="10" y="30" width="300" height="528"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dateOfBirthLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rqw-05-9Od" userLabel="dateOfBirthLabel">
-                                        <rect key="frame" x="30" y="0.0" width="240.5" height="132"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dateOfBirthLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rqw-05-9Od" userLabel="dateOfBirthLabel">
+                                        <rect key="frame" x="30" y="0.0" width="240.5" height="105.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ageLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="laa-bO-Brc">
-                                        <rect key="frame" x="85" y="132" width="130.5" height="132"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ageLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="laa-bO-Brc">
+                                        <rect key="frame" x="85" y="105.5" width="130.5" height="105.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ageLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jlz-9o-wlw" userLabel="nextBirthdayLabel">
-                                        <rect key="frame" x="85" y="264" width="130.5" height="132"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nextBirthdayLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jlz-9o-wlw" userLabel="nextBirthdayLabel">
+                                        <rect key="frame" x="22" y="211" width="256.5" height="106"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nextBirthdayDaysLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FTR-G9-v25" userLabel="nextBirthdayDaysLabel">
+                                        <rect key="frame" x="0.0" y="317" width="300" height="105.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iEl-Kc-Wph">
-                                        <rect key="frame" x="127" y="396" width="46" height="132"/>
+                                        <rect key="frame" x="127" y="422.5" width="46" height="105.5"/>
                                         <state key="normal" title="Return"/>
                                         <connections>
                                             <action selector="goBack" destination="Y8Z-91-V3U" eventType="touchUpInside" id="r0v-GR-7Xe"/>
@@ -178,6 +184,7 @@
                     <connections>
                         <outlet property="ageLabel" destination="laa-bO-Brc" id="aHj-Uk-RWy"/>
                         <outlet property="dateOfBirthLabel" destination="rqw-05-9Od" id="6ha-VR-Lyf"/>
+                        <outlet property="nextBirthdayDaysLabel" destination="FTR-G9-v25" id="2ad-oK-lfw"/>
                         <outlet property="nextBirthdayLabel" destination="Jlz-9o-wlw" id="OwE-P7-cGD"/>
                     </connections>
                 </viewController>

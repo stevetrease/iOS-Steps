@@ -17,6 +17,7 @@ class BackViewController: UIViewController {
     @IBOutlet weak var dateOfBirthLabel: UILabel!
     @IBOutlet weak var ageLabel: UILabel!
     @IBOutlet weak var nextBirthdayLabel: UILabel!
+    @IBOutlet weak var nextBirthdayDaysLabel: UILabel!
     
     
     override func viewDidLoad() {
@@ -27,7 +28,7 @@ class BackViewController: UIViewController {
         dateOfBirthLabel.text = healthKitManager.dateOfBirthString
         ageLabel.text = healthKitManager.ageString
         nextBirthdayLabel.text = healthKitManager.nextBirthdayString
-        
+        nextBirthdayDaysLabel.text = healthKitManager.nextBirthdayDaysString
     }
     
     
