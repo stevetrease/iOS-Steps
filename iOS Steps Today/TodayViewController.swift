@@ -104,7 +104,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         //   Define the sample type
         let type = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)
         
-        let cal = Calendar(identifier: .gregorian)
+	let cal = Calendar.current
         let startDate = cal.startOfDay(for: Date())
         let endDate = Date()
         

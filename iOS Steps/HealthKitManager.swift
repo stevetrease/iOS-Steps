@@ -15,9 +15,8 @@ var healthKitManager = HealthKitManager()
 class HealthKitManager {
     
     let healthStore = HKHealthStore()
-    let numberFormatter = NumberFormatter()
-    
-    let cal = Calendar.current
+    private let numberFormatter = NumberFormatter()
+    private let cal = Calendar.current
     
     init()
     {
@@ -117,11 +116,9 @@ class HealthKitManager {
     
     func getTodayFlightsClimbedCount(completion:@escaping (Double?)->())
     {
-        
         //   Define the sample type
         let type = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.flightsClimbed)
         
-        // let cal = Calendar(identifier: .gregorian)
         let startDate = cal.startOfDay(for: Date())
         let endDate = Date()
         
@@ -149,11 +146,9 @@ class HealthKitManager {
     
     func getYesterdayFlightsClimbedCount(completion:@escaping (Double?)->())
     {
-        
         //   Define the sample type
         let type = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.flightsClimbed)
         
-        // let cal = Calendar(identifier: .gregorian)
         let endDate = cal.startOfDay(for: Date())
         let startDate =  cal.date(byAdding: .day, value: -1, to: endDate)
         
@@ -181,11 +176,9 @@ class HealthKitManager {
     
     func getTodayStepCount(completion:@escaping (Double?)->())
     {
-
         //   Define the sample type
         let type = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)
         
-        // let cal = Calendar(identifier: .gregorian)
         let startDate = cal.startOfDay(for: Date())
         let endDate = Date()
         
@@ -213,11 +206,9 @@ class HealthKitManager {
     
     func getYesterdayStepCount(completion:@escaping (Double?)->())
     {
-        
         //   Define the sample type
         let type = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)
         
-        // let cal = Calendar(identifier: .gregorian)
         let endDate = cal.startOfDay(for: Date())
         let startDate =  cal.date(byAdding: .day, value: -1, to: endDate)
         
@@ -245,7 +236,6 @@ class HealthKitManager {
  
     func getHourlyTodaySteps(completion:@escaping (Double?)->())
     {
-        // let cal = Calendar.current
         let anchorDate = cal.startOfDay(for: Date())
         
         var interval = DateComponents()
@@ -293,8 +283,6 @@ class HealthKitManager {
     private var hourlyYesterdayStepsLastUpdated: Date = Date.distantPast
     func getHourlyYesterdaySteps(completion:@escaping (Double?)->())
     {
-        // let cal = Calendar(identifier: .gregorian)
-        
         if (cal.startOfDay(for: Date()) == cal.startOfDay(for: self.hourlyYesterdayStepsLastUpdated)) {
                 completion (0.0)
         }
@@ -317,9 +305,7 @@ class HealthKitManager {
         // Set the results handler
         query.initialResultsHandler = {
             query, results, error in
-            
-            // let cal = Calendar(identifier: .gregorian)
-            
+
             // print ("query: getHourlyYesterdaySteps")
             guard let statsCollection = results else {
                 // Perform proper error handling here
