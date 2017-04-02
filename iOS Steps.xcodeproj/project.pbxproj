@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AA67AFCD1E5768CF00EE0630 /* BackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA67AFCC1E5768CF00EE0630 /* BackViewController.swift */; };
+		AA6D1ABC1E91097F00C17355 /* DSEG14Classic-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AA6D1ABB1E91097F00C17355 /* DSEG14Classic-Regular.ttf */; };
 		AA8072CC1E86A94800E45DEC /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA8072C51E86A78800E45DEC /* Charts.framework */; };
 		AA8072CD1E86A99100E45DEC /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AA8072C51E86A78800E45DEC /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AA9D2E851E3E424C000E9C08 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9D2E841E3E424C000E9C08 /* AppDelegate.swift */; };
@@ -84,6 +85,7 @@
 
 /* Begin PBXFileReference section */
 		AA67AFCC1E5768CF00EE0630 /* BackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackViewController.swift; sourceTree = "<group>"; };
+		AA6D1ABB1E91097F00C17355 /* DSEG14Classic-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DSEG14Classic-Regular.ttf"; sourceTree = "<group>"; };
 		AA8072BE1E86A78800E45DEC /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "Charts-master/Charts.xcodeproj"; sourceTree = SOURCE_ROOT; };
 		AA9D2E811E3E424C000E9C08 /* iOS Steps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS Steps.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA9D2E841E3E424C000E9C08 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -185,10 +187,11 @@
 			isa = PBXGroup;
 			children = (
 				AAF421FD1E891FBA00D935FE /* iOS Steps Today.entitlements */,
-				AAF421FF1E892F1A00D935FE /* fontawesome-webfont.ttf */,
 				AAF185F51E8848730081A1DB /* TodayViewController.swift */,
 				AAF185F71E8848730081A1DB /* MainInterface.storyboard */,
 				AAF185FA1E8848730081A1DB /* Info.plist */,
+				AA6D1ABB1E91097F00C17355 /* DSEG14Classic-Regular.ttf */,
+				AAF421FF1E892F1A00D935FE /* fontawesome-webfont.ttf */,
 			);
 			path = "iOS Steps Today";
 			sourceTree = "<group>";
@@ -336,6 +339,7 @@
 			files = (
 				AAF185F91E8848730081A1DB /* MainInterface.storyboard in Resources */,
 				AAF422011E892F1A00D935FE /* fontawesome-webfont.ttf in Resources */,
+				AA6D1ABC1E91097F00C17355 /* DSEG14Classic-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
