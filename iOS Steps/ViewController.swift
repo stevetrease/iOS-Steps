@@ -134,8 +134,8 @@ class ViewController: UIViewController {
                 let lineDataSet1 = LineChartDataSet(values: line1Data, label: "")
                 let lineDataSet2 = LineChartDataSet(values: line2Data, label: "")
                 
-                barDataSet.colors = [UIColor.darkGray]
-                lineDataSet1.colors = [UIColor.darkGray]
+                barDataSet.colors = [UIColor.darkText]
+                lineDataSet1.colors = [UIColor.darkText]
                 lineDataSet1.drawCirclesEnabled = false
                 lineDataSet1.lineWidth = 3
                 lineDataSet2.colors = [UIColor.lightGray]
