@@ -33,7 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             query, completionHandler, error in
             
             let dateString = formatter.string(from: Date())
-            print ("step count query handler at  \(dateString)")
+            print ("step count query handler at   \(dateString)")
             
             if error != nil {
                 // Perform Proper Error Handling Here...

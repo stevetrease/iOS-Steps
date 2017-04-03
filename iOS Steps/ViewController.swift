@@ -157,7 +157,7 @@ class ViewController: UIViewController {
                 self.chartView.notifyDataSetChanged()
                 
                 elapsed = Date().timeIntervalSince(startTime)
-                print ("getHourlyTodaySteps finished = \(elapsed)")
+                print ("getHourlyTodaySteps finished =  \(elapsed)")
               }
         })
         
