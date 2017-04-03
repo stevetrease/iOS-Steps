@@ -169,11 +169,17 @@ class ViewController: UIViewController {
     }
     
     
-    @IBAction func actionTriggered(sender: AnyObject) {
+    @IBAction func buttonPressedTriggered(sender: AnyObject) {
         print ("Button pressed")
         drawScreen()
     }
     
+    
+    @IBAction func screenTappedTriggered(sender: AnyObject) {
+        print ("Screen tapped")
+        drawScreen()
+    }
+
     
     @IBAction func unWindToViewControllerSegue (segue: UIStoryboardSegue) {}
     
