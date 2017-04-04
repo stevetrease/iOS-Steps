@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		AA67AFCD1E5768CF00EE0630 /* BackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA67AFCC1E5768CF00EE0630 /* BackViewController.swift */; };
-		AA6D1ABC1E91097F00C17355 /* DSEG14Classic-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AA6D1ABB1E91097F00C17355 /* DSEG14Classic-Regular.ttf */; };
 		AA8072CC1E86A94800E45DEC /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA8072C51E86A78800E45DEC /* Charts.framework */; };
 		AA8072CD1E86A99100E45DEC /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AA8072C51E86A78800E45DEC /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AA9D2E851E3E424C000E9C08 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9D2E841E3E424C000E9C08 /* AppDelegate.swift */; };
@@ -23,8 +22,6 @@
 		AAF185F91E8848730081A1DB /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAF185F71E8848730081A1DB /* MainInterface.storyboard */; };
 		AAF185FD1E8848730081A1DB /* iOS Steps Today.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = AAF185F11E8848720081A1DB /* iOS Steps Today.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		AAF421FE1E891FBA00D935FE /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAD088411E3FBA1800612BC1 /* HealthKit.framework */; };
-		AAF422001E892F1A00D935FE /* fontawesome-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AAF421FF1E892F1A00D935FE /* fontawesome-webfont.ttf */; };
-		AAF422011E892F1A00D935FE /* fontawesome-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AAF421FF1E892F1A00D935FE /* fontawesome-webfont.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,7 +82,6 @@
 
 /* Begin PBXFileReference section */
 		AA67AFCC1E5768CF00EE0630 /* BackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackViewController.swift; sourceTree = "<group>"; };
-		AA6D1ABB1E91097F00C17355 /* DSEG14Classic-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DSEG14Classic-Regular.ttf"; sourceTree = "<group>"; };
 		AA8072BE1E86A78800E45DEC /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "Charts-master/Charts.xcodeproj"; sourceTree = SOURCE_ROOT; };
 		AA9D2E811E3E424C000E9C08 /* iOS Steps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS Steps.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA9D2E841E3E424C000E9C08 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -103,7 +99,6 @@
 		AAF185F81E8848730081A1DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		AAF185FA1E8848730081A1DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AAF421FD1E891FBA00D935FE /* iOS Steps Today.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "iOS Steps Today.entitlements"; sourceTree = "<group>"; };
-		AAF421FF1E892F1A00D935FE /* fontawesome-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "fontawesome-webfont.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,8 +185,6 @@
 				AAF185F51E8848730081A1DB /* TodayViewController.swift */,
 				AAF185F71E8848730081A1DB /* MainInterface.storyboard */,
 				AAF185FA1E8848730081A1DB /* Info.plist */,
-				AA6D1ABB1E91097F00C17355 /* DSEG14Classic-Regular.ttf */,
-				AAF421FF1E892F1A00D935FE /* fontawesome-webfont.ttf */,
 			);
 			path = "iOS Steps Today";
 			sourceTree = "<group>";
@@ -327,7 +320,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA9D2E8F1E3E424C000E9C08 /* LaunchScreen.storyboard in Resources */,
-				AAF422001E892F1A00D935FE /* fontawesome-webfont.ttf in Resources */,
 				AA9D2E8C1E3E424C000E9C08 /* Assets.xcassets in Resources */,
 				AA9D2E8A1E3E424C000E9C08 /* Main.storyboard in Resources */,
 			);
@@ -338,8 +330,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				AAF185F91E8848730081A1DB /* MainInterface.storyboard in Resources */,
-				AAF422011E892F1A00D935FE /* fontawesome-webfont.ttf in Resources */,
-				AA6D1ABC1E91097F00C17355 /* DSEG14Classic-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
