@@ -56,6 +56,11 @@ class ViewController: UIViewController {
     }
     
     
+    func drawScreenHKObserverQuery () {
+        print (drawScreenHKObserverQuery)
+        drawScreen()
+    }
+    
     func drawScreen () {
         print ("drawScreen")
 
@@ -170,8 +175,7 @@ class ViewController: UIViewController {
     
     
     @IBAction func screenTappedTriggered(sender: AnyObject) {
-        print ("Screen tapped")
-        print (type (of: sender))
+        print ("Screen tapped", type (of: sender))
         drawScreen()
     }
 

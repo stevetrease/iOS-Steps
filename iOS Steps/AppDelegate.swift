@@ -41,7 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 abort()
             }
             
-            self.myViewController?.drawScreen()
+            self.myViewController?.drawScreenHKObserverQuery()
             
             completionHandler()
         }
