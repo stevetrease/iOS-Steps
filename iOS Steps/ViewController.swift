@@ -91,7 +91,7 @@ class ViewController: UIViewController {
         
         healthKitManager.getHourlyTodaySteps (completion: { (steps) in
             OperationQueue.main.addOperation {
-                print ("healthKitManager.getTodaysHourlySteps \(healthKitManager.hourlySteps.count)")
+                print ("healthKitManager.getTodaysHourlySteps     \(healthKitManager.hourlySteps.count)")
                 var elapsed = Date().timeIntervalSince(startTime)
                 print ("getHourlyTodaySteps call time = \(elapsed)")
                 
@@ -169,14 +169,9 @@ class ViewController: UIViewController {
     }
     
     
-    @IBAction func buttonPressedTriggered(sender: AnyObject) {
-        print ("Button pressed")
-        drawScreen()
-    }
-    
-    
     @IBAction func screenTappedTriggered(sender: AnyObject) {
         print ("Screen tapped")
+        print (type (of: sender))
         drawScreen()
     }
 
