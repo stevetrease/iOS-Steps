@@ -42,7 +42,7 @@ class ViewController: UIViewController {
         chartView.leftAxis.drawGridLinesEnabled = false
         chartView.rightAxis.drawLabelsEnabled = false
         chartView.leftAxis.drawLabelsEnabled = true
-        chartView.descriptionText = ""
+        // chartView.descriptionText = ""
         
         chartView.drawBordersEnabled = false
         chartView.leftAxis.drawAxisLineEnabled = false
