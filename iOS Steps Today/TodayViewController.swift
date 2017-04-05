@@ -38,6 +38,18 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
+    
+    @IBAction func screenTappedTriggered(sender: AnyObject) {
+        print ("Screen tapped in Today Extension ", type (of: sender))
+        
+        let appURL = NSURL(string: "main-screen:/")
+        self.extensionContext?.open(appURL! as URL, completionHandler: { (success) in
+            if (!success) {
+                print("error: failed to open app from Today Extension")
+            }
+        })
+    }
     
     
     func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {

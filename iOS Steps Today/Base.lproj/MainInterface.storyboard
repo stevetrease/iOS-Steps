@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16F43c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="M4Y-Lb-cyx">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina3_5" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -29,12 +29,16 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="daq-Px-e6X" firstAttribute="trailing" secondItem="S3S-Oj-5AN" secondAttribute="trailingMargin" id="8ze-kN-C2M"/>
-                            <constraint firstItem="daq-Px-e6X" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leadingMargin" id="ImD-Zg-CAB"/>
-                            <constraint firstItem="daq-Px-e6X" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" id="oBP-i0-tlq"/>
-                            <constraint firstItem="FKl-LY-JtV" firstAttribute="top" secondItem="daq-Px-e6X" secondAttribute="bottom" id="qRa-27-3km"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="daq-Px-e6X" secondAttribute="trailing" id="3Lc-u5-UAL"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="daq-Px-e6X" secondAttribute="bottom" id="LNl-Qm-63F"/>
+                            <constraint firstItem="daq-Px-e6X" firstAttribute="top" secondItem="S3S-Oj-5AN" secondAttribute="topMargin" id="Mvp-6s-t3m"/>
+                            <constraint firstItem="daq-Px-e6X" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leadingMargin" id="jA2-aj-XyP"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="O2w-ql-fca" appends="YES" id="HSH-06-eog"/>
+                        </connections>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <nil key="simulatedStatusBarMetrics"/>
@@ -47,6 +51,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="O2w-ql-fca">
+                    <connections>
+                        <action selector="screenTappedTriggeredWithSender:" destination="M4Y-Lb-cyx" id="sWJ-dx-dbk"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
         </scene>
     </scenes>

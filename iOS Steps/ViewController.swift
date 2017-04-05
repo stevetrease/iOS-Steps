@@ -175,7 +175,7 @@ class ViewController: UIViewController {
     
     
     @IBAction func screenTappedTriggered(sender: AnyObject) {
-        print ("Screen tapped", type (of: sender))
+        print ("Screen tapped ", type (of: sender))
         drawScreen()
     }
 
