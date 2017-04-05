@@ -13,7 +13,6 @@ import HealthKit
 class TodayViewController: UIViewController, NCWidgetProviding {
     
     let healthStore = HKHealthStore()
-    var stepsToday: Double = 0.0
     
     @IBOutlet weak var stepsLabel: UILabel!
     
@@ -58,15 +57,23 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     
     func updateView () {
         getTodayStepCount (completion: { (steps) in
-            print ("getTodayStepCount")
+            // print ("getTodayStepCount")
             let numberFormatter = NumberFormatter()
             numberFormatter.maximumFractionDigits = 0
             numberFormatter.numberStyle = NumberFormatter.Style.decimal
             let numberString = numberFormatter.string(from: steps! as NSNumber)
-            print ("numberString ", numberString!)
             
-            OperationQueue.main.addOperation {
-                self.stepsLabel.text = numberString!
+            if steps != -1.0 {
+                OperationQueue.main.addOperation {
+                    if (self.stepsLabel.text != numberString!) {
+                        print ("changed  ", self.stepsLabel.text!, numberString!)
+                        self.stepsLabel.text = numberString!
+                    } else {
+                        print ("unchanged ",self.stepsLabel.text!,  numberString!)
+                    }
+                }
+            } else {
+                print ("steps are nil")
             }
         })
     }
@@ -104,7 +111,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         //   Define the sample type
         let type = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)
         
-	let cal = Calendar.current
+        let cal = Calendar.current
         let startDate = cal.startOfDay(for: Date())
         let endDate = Date()
         
@@ -112,18 +119,16 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: [])
         
         let query = HKStatisticsQuery(quantityType: type!, quantitySamplePredicate: predicate, options: .cumulativeSum) { query, results, error in
-            print ("query: getTodayStepCount")
+            // print ("query: getTodayStepCount")
             let quantity = results?.sumQuantity()
             let unit = HKUnit.count()
             let steps = quantity?.doubleValue(for: unit)
             
             if steps != nil {
-                self.stepsToday = steps!
                 completion(steps)
             } else {
-                print("getTodayStepCount: results are nil - returning zero steps")
-                self.stepsToday = 0.0
-                completion(0.0)
+                print("getTodayStepCount: results are nil - returning nil steps")
+                completion(-1.0)
             }
         }
         healthStore.execute(query)
