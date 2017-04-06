@@ -69,6 +69,7 @@ class InterfaceController: WKInterfaceController {
             let numberString = numberFormatter.string(from: steps! as NSNumber)
             
             if steps != -1.0 {
+                WKInterfaceDevice.current().play(.click)
                 OperationQueue.main.addOperation {
                     self.stepsLabel.setText(numberString!)
                 }

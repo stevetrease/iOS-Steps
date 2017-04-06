@@ -849,6 +849,7 @@
 				AA3AF9171E95501500903F2B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AA3AF91D1E95501500903F2B /* Build configuration list for PBXNativeTarget "iOS Steps Watch" */ = {
 			isa = XCConfigurationList;
@@ -857,6 +858,7 @@
 				AA3AF9151E95501500903F2B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AA9D2E7C1E3E424C000E9C08 /* Build configuration list for PBXProject "iOS Steps" */ = {
 			isa = XCConfigurationList;
