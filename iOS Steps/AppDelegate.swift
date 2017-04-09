@@ -8,19 +8,28 @@
 
 import UIKit
 import HealthKit
+import WatchConnectivity
+
+// var watchConnectivityHandler : WatchConnectivityHandler?
 
 
-@UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+@UIApplicationMain class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var myViewController:ViewController?
-
+    
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         print ("didFinishLaunchingWithOptions")
         UserDefaults.standard.setValue(false, forKey: "_UIConstraintBasedLayoutLogUnsatisfiable")
+        
+        // if WCSession.isSupported() {
+        //     watchConnectivityHandler = WatchConnectivityHandler()
+        //     print ("WCSession supported")
+        // } else {
+        //     print ("WCSession not supported")
+        // }
         
         let formatter = DateFormatter()
         formatter.dateFormat = "HH:mm"
@@ -28,7 +37,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let stepCountSampleType = HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)
         let flightCountSampleType = HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.flightsClimbed)
 
-  
         let stepCountQuery = HKObserverQuery(sampleType: stepCountSampleType!, predicate: nil) {
             query, completionHandler, error in
             

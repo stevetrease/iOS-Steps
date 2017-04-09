@@ -62,8 +62,11 @@ class ViewController: UIViewController {
         drawScreen()
     }
     
+    
     func drawScreen () {
         print ("drawScreen")
+        
+        // watchConnectivityHandler?.sendMessage (message: "Hello")
 
         let generator = UIImpactFeedbackGenerator(style: .light)
 

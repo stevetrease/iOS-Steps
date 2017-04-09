@@ -9,14 +9,15 @@
 import WatchKit
 import Foundation
 import HealthKit
+import WatchConnectivity
 
-
+// class InterfaceController: WKInterfaceController, WCSessionDelegate {
 class InterfaceController: WKInterfaceController {
 
     @IBOutlet var stepsLabel: WKInterfaceLabel!
     
     let healthStore = HKHealthStore()
-
+    var session : WCSession?
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
@@ -29,6 +30,11 @@ class InterfaceController: WKInterfaceController {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
         print ("willActivate")
+        
+        // session = WCSession.default()
+        // session?.delegate = self
+        // session?.activate()
+        
         
         guard HKHealthStore.isHealthDataAvailable() == true else {
             stepsLabel.setText("not available")
@@ -48,8 +54,8 @@ class InterfaceController: WKInterfaceController {
         }
 
         self.updateView()
-    
     }
+    
     
     override func didDeactivate() {
         // This method is called when watch view controller is no longer visible
@@ -76,8 +82,18 @@ class InterfaceController: WKInterfaceController {
             }
         })
     }
+
+    
+    // func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+    //     print("activationDidCompleteWith activationState:\(activationState) error:\(String(describing: error))")
+    // }
     
     
+    // func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String : Any]) {
+    //     print ("didReceiveApplicationContext \"\(applicationContext).self\"")
+    //     self.updateView()
+    // }
+
     
     func getTodayStepCount(completion:@escaping (Double?)->())
     {

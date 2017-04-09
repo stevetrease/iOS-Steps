@@ -33,6 +33,10 @@
 	<true/>
 	<key>NSHealthShareUsageDescription</key>
 	<string>This application requires read only access to HealthKit data.</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>fetch</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

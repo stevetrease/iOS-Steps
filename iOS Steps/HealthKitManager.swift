@@ -9,7 +9,9 @@
 import Foundation
 import HealthKit
 
+
 var healthKitManager = HealthKitManager()
+
 
 
 class HealthKitManager {
