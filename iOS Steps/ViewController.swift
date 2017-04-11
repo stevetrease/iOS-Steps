@@ -98,7 +98,7 @@ class ViewController: UIViewController {
             }
         })
         
-        healthKitManager.updateStepsArray(completion: { (x) in
+        healthKitManager.updateHourlyStepsArray(completion: { (x) in
             OperationQueue.main.addOperation {
                 var elapsed = Date().timeIntervalSince(startTime)
                 print ("updateStepsArray call time = \(elapsed)")

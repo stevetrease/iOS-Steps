@@ -231,7 +231,7 @@ class HealthKitManager {
     var hourlyStepsYesterday: [(date: Date, value: Double)] = []
     private var stepsArray: [(date: Date, value: Double)] = []
     private var stepsArrayLastUpdated: Date = Date.distantPast
-    func updateStepsArray(completion:@escaping (Double?)->())
+    func updateHourlyStepsArray(completion:@escaping (Double?)->())
     {
         if (cal.startOfDay(for: Date()) == cal.startOfDay(for: self.stepsArrayLastUpdated)) {
             completion (0.0)
