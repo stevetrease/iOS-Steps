@@ -66,7 +66,6 @@ class HealthKitManager {
         return (ageFormatter.string(from: Date(), to: nextBirthday!)!)
     }
 
-    
     var ageString: String {
         let ageFormatter = DateComponentsFormatter()
         ageFormatter.unitsStyle = .full
@@ -75,24 +74,7 @@ class HealthKitManager {
         return (ageFormatter.string(from: dateOfBirth, to: Date())!)
     }
 
-    var stepsToday: Double = 0.0
-    var stepsTodayString: String {
-        if (Int(stepsToday) != 1) {
-            return (numberFormatter.string(from: stepsToday as NSNumber)! + " steps")
-        } else {
-            return "1 step"
-        }
-    }
-
-    var stepsYesterday: Double = 0.0
-    var stepsYesterdayString: String {
-        if (Int(stepsYesterday) != 1) {
-            return (numberFormatter.string(from: stepsYesterday as NSNumber)! + " steps")
-        } else {
-            return "1 step"
-        }
-    }
-
+    
     var flightsClimbedToday: Double = 0.0
     var flightsClimbedTodayString: String {
         if (Int(flightsClimbedToday) != 1) {
@@ -101,21 +83,6 @@ class HealthKitManager {
             return "1 flight"
         }
     }
-    
-    var flightsClimbedYesterday: Double = 0.0
-    var flightsClimbedYesterdayString: String {
-        if (Int(flightsClimbedYesterday) != 1) {
-            return (numberFormatter.string(from: flightsClimbedYesterday as NSNumber)! + " flights")
-        } else {
-            return "1 flight"
-        }
-    }
-    
-    var hourlySteps: [(date: Date, value: Double)] = []
-    var hourlyStepsYesterday: [(date: Date, value: Double)] = []
-    
-    
-    
     func getTodayFlightsClimbedCount(completion:@escaping (Double?)->())
     {
         //   Define the sample type
@@ -146,6 +113,14 @@ class HealthKitManager {
     }
     
     
+    var flightsClimbedYesterday: Double = 0.0
+    var flightsClimbedYesterdayString: String {
+        if (Int(flightsClimbedYesterday) != 1) {
+            return (numberFormatter.string(from: flightsClimbedYesterday as NSNumber)! + " flights")
+        } else {
+            return "1 flight"
+        }
+    }
     func getYesterdayFlightsClimbedCount(completion:@escaping (Double?)->())
     {
         //   Define the sample type
@@ -176,6 +151,14 @@ class HealthKitManager {
     }
 
     
+    var stepsToday: Double = 0.0
+    var stepsTodayString: String {
+        if (Int(stepsToday) != 1) {
+            return (numberFormatter.string(from: stepsToday as NSNumber)! + " steps")
+        } else {
+            return "1 step"
+        }
+    }
     func getTodayStepCount(completion:@escaping (Double?)->())
     {
         //   Define the sample type
@@ -205,7 +188,15 @@ class HealthKitManager {
         healthStore.execute(query)
     }
     
-    
+
+    var stepsYesterday: Double = 0.0
+    var stepsYesterdayString: String {
+        if (Int(stepsYesterday) != 1) {
+            return (numberFormatter.string(from: stepsYesterday as NSNumber)! + " steps")
+        } else {
+            return "1 step"
+        }
+    }
     func getYesterdayStepCount(completion:@escaping (Double?)->())
     {
         //   Define the sample type
@@ -234,61 +225,18 @@ class HealthKitManager {
         }
         healthStore.execute(query)
     }
+
     
- 
-    func getHourlyTodaySteps(completion:@escaping (Double?)->())
+    var hourlySteps: [(date: Date, value: Double)] = []
+    var hourlyStepsYesterday: [(date: Date, value: Double)] = []
+    private var stepsArray: [(date: Date, value: Double)] = []
+    private var stepsArrayLastUpdated: Date = Date.distantPast
+    func updateStepsArray(completion:@escaping (Double?)->())
     {
-        let anchorDate = cal.startOfDay(for: Date())
-        
-        var interval = DateComponents()
-        interval.hour = 1
-        
-        let type = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)
-        
-        // Create the query
-        let query = HKStatisticsCollectionQuery(quantityType: type!,
-                                                quantitySamplePredicate: nil,
-                                                options: .cumulativeSum,
-                                                anchorDate: anchorDate,
-                                                intervalComponents: interval)
-        
-        // Set the results handler
-        query.initialResultsHandler = {
-            query, results, error in
-            
-            // print ("query: getHourlyTodaySteps")
-            guard let statsCollection = results else {
-                // Perform proper error handling here
-                fatalError("*** An error occurred while calculating the statistics: \(String(describing: error?.localizedDescription)) ***")
-            }
-            
-            let startDate = self.cal.startOfDay(for: Date())
-            let endDate = Date()
-            
-            self.hourlySteps = []
-            
-            statsCollection.enumerateStatistics(from: startDate, to: endDate) { [unowned self] statistics, stop in
-                
-                if let quantity = statistics.sumQuantity() {
-                    let date = statistics.startDate
-                    let steps = quantity.doubleValue(for: HKUnit.count())
-                    
-                    self.hourlySteps.append(date: date, value: steps)
-                }
-            }
+        if (cal.startOfDay(for: Date()) == cal.startOfDay(for: self.stepsArrayLastUpdated)) {
             completion (0.0)
         }
-        healthStore.execute(query)
-    }
-    
-    
-    private var hourlyYesterdayStepsLastUpdated: Date = Date.distantPast
-    func getHourlyYesterdaySteps(completion:@escaping (Double?)->())
-    {
-        if (cal.startOfDay(for: Date()) == cal.startOfDay(for: self.hourlyYesterdayStepsLastUpdated)) {
-                completion (0.0)
-        }
-        self.hourlyYesterdayStepsLastUpdated = Date ()
+        self.stepsArrayLastUpdated = Date ()
         
         let anchorDate = cal.date(byAdding: .day, value: -1, to: cal.startOfDay(for: Date()))
         
@@ -307,17 +255,17 @@ class HealthKitManager {
         // Set the results handler
         query.initialResultsHandler = {
             query, results, error in
-
-            // print ("query: getHourlyYesterdaySteps")
+            
+            print ("query: updateStepsArray")
             guard let statsCollection = results else {
                 // Perform proper error handling here
                 fatalError("*** An error occurred while calculating the statistics: \(String(describing: error?.localizedDescription)) ***")
             }
             
-            let endDate = self.cal.startOfDay(for: Date())
-            let startDate = self.cal.date(byAdding: .day, value: -1, to: endDate)
-
-            self.hourlyStepsYesterday = []
+            let endDate = Date()
+            let startDate = self.cal.date(byAdding: .day, value: -2, to: endDate)
+            
+            self.stepsArray = []
             
             statsCollection.enumerateStatistics(from: startDate!, to: endDate) { [unowned self] statistics, stop in
                 
@@ -325,15 +273,21 @@ class HealthKitManager {
                     let date = statistics.startDate
                     let steps = quantity.doubleValue(for: HKUnit.count())
                     
-                    self.hourlyStepsYesterday.append(date: date, value: steps)
+                    self.stepsArray.append(date: date, value: steps)
                 }
             }
+            print ("steps array length: \(self.stepsArray.count)")
+            
+            // filter today's steps
+            self.hourlySteps = self.stepsArray.filter { self.cal.startOfDay(for: $0.date) == self.cal.startOfDay(for: Date()) }
+            // filter yesterday's steps
+            self.hourlyStepsYesterday = self.stepsArray.filter { self.cal.startOfDay(for: $0.date) == self.cal.date(byAdding: .day, value: -1, to: self.cal.startOfDay(for: Date())) }
+
             completion (0.0)
         }
         healthStore.execute(query)
     }
-
-
+    
 
     func checkHealthKitAuthorization() ->()
     {

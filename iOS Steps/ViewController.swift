@@ -66,6 +66,8 @@ class ViewController: UIViewController {
     func drawScreen () {
         print ("drawScreen")
         
+        let startTime = Date()
+
         // watchConnectivityHandler?.sendMessage (message: "Hello")
 
         let generator = UIImpactFeedbackGenerator(style: .light)
@@ -96,18 +98,15 @@ class ViewController: UIViewController {
             }
         })
         
-        let startTime = Date()
-        
-        healthKitManager.getHourlyTodaySteps (completion: { (steps) in
+        healthKitManager.updateStepsArray(completion: { (x) in
             OperationQueue.main.addOperation {
-                print ("healthKitManager.getTodaysHourlySteps     \(healthKitManager.hourlySteps.count)")
                 var elapsed = Date().timeIntervalSince(startTime)
-                print ("getHourlyTodaySteps call time = \(elapsed)")
+                print ("updateStepsArray call time = \(elapsed)")
                 
                 var hourlyDataEntries: [BarChartDataEntry] = []
                 var line1Data: [ChartDataEntry] = []
                 var line2Data: [ChartDataEntry] = []
-
+                
                 var accumulator1 = 0.0
                 for i in 0..<healthKitManager.hourlySteps.count {
                     let cal = Calendar.current
@@ -117,7 +116,7 @@ class ViewController: UIViewController {
                     let value = healthKitManager.hourlySteps[i].value
                     
                     accumulator1 = accumulator1 + value
- 
+                    
                     let hourlyDataEntry = BarChartDataEntry(x: hour, y: value)
                     hourlyDataEntries.append(hourlyDataEntry)
                     
@@ -150,13 +149,12 @@ class ViewController: UIViewController {
                 lineDataSet2.colors = [UIColor.lightGray]
                 lineDataSet2.drawCirclesEnabled = false
                 lineDataSet2.lineWidth = 2
-
                 
                 let barData = BarChartData(dataSets: [barDataSet])
                 let lineData = LineChartData (dataSets: [lineDataSet2, lineDataSet1])
                 
                 lineData.setDrawValues(false)
-
+                
                 let data: CombinedChartData = CombinedChartData()
                 data.barData = barData
                 data.lineData = lineData
@@ -166,13 +164,7 @@ class ViewController: UIViewController {
                 self.chartView.notifyDataSetChanged()
                 
                 elapsed = Date().timeIntervalSince(startTime)
-                print ("getHourlyTodaySteps finished =  \(elapsed)")
-              }
-        })
-        
-        healthKitManager.getHourlyYesterdaySteps (completion: { (steps) in
-            OperationQueue.main.addOperation {
-                print ("healthKitManager.getYesterdaysHourlySteps \(healthKitManager.hourlyStepsYesterday.count)")
+                print ("updateStepsArray finished =  \(elapsed)")
             }
         })
     }
