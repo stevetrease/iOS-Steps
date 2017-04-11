@@ -67,11 +67,9 @@ class ViewController: UIViewController {
         print ("drawScreen")
         
         let startTime = Date()
-
-        // watchConnectivityHandler?.sendMessage (message: "Hello")
-
         let generator = UIImpactFeedbackGenerator(style: .light)
-
+        // watchConnectivityHandler?.sendMessage (message: "Hello")
+        
         healthKitManager.getTodayStepCount (completion: { (steps) in
             OperationQueue.main.addOperation {
                 self.todayStepCountLabel.text = healthKitManager.stepsTodayString + " today"
