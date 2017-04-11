@@ -17,6 +17,7 @@
 		AA3AF9131E95501500903F2B /* iOS Steps Watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = AA3AF8F51E95501500903F2B /* iOS Steps Watch.app */; };
 		AA3AF9211E95581A00903F2B /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA3AF9201E95581A00903F2B /* HealthKit.framework */; };
 		AA3BDF031E9A05A500DF1B98 /* WatchKitSessionMananager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3BDF021E9A05A500DF1B98 /* WatchKitSessionMananager.swift */; };
+		AA4154D51E9D3BA500C2FADF /* BackViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4154D41E9D3BA500C2FADF /* BackViewController2.swift */; };
 		AA67AFCD1E5768CF00EE0630 /* BackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA67AFCC1E5768CF00EE0630 /* BackViewController.swift */; };
 		AA8072CC1E86A94800E45DEC /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA8072C51E86A78800E45DEC /* Charts.framework */; };
 		AA8072CD1E86A99100E45DEC /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AA8072C51E86A78800E45DEC /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -141,6 +142,7 @@
 		AA3AF91F1E95581A00903F2B /* iOS Steps Watch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "iOS Steps Watch Extension.entitlements"; sourceTree = "<group>"; };
 		AA3AF9201E95581A00903F2B /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS3.2.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
 		AA3BDF021E9A05A500DF1B98 /* WatchKitSessionMananager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchKitSessionMananager.swift; sourceTree = "<group>"; };
+		AA4154D41E9D3BA500C2FADF /* BackViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BackViewController2.swift; path = ../BackViewController2.swift; sourceTree = "<group>"; };
 		AA67AFCC1E5768CF00EE0630 /* BackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackViewController.swift; sourceTree = "<group>"; };
 		AA8072BE1E86A78800E45DEC /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "Charts-master/Charts.xcodeproj"; sourceTree = SOURCE_ROOT; };
 		AA9D2E811E3E424C000E9C08 /* iOS Steps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS Steps.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -262,9 +264,10 @@
 				AAD088431E3FBA1800612BC1 /* iOS Steps.entitlements */,
 				AA9D2E841E3E424C000E9C08 /* AppDelegate.swift */,
 				AA67AFCC1E5768CF00EE0630 /* BackViewController.swift */,
+				AA4154D41E9D3BA500C2FADF /* BackViewController2.swift */,
 				AAD088461E3FC3C500612BC1 /* HealthKitManager.swift */,
-				AA9D2E861E3E424C000E9C08 /* ViewController.swift */,
 				AA3BDF021E9A05A500DF1B98 /* WatchKitSessionMananager.swift */,
+				AA9D2E861E3E424C000E9C08 /* ViewController.swift */,
 				AA9D2E8D1E3E424C000E9C08 /* LaunchScreen.storyboard */,
 				AA9D2E881E3E424C000E9C08 /* Main.storyboard */,
 				AA9D2E901E3E424C000E9C08 /* Info.plist */,
@@ -554,6 +557,7 @@
 				AA9D2E851E3E424C000E9C08 /* AppDelegate.swift in Sources */,
 				AAD088471E3FC3C500612BC1 /* HealthKitManager.swift in Sources */,
 				AA67AFCD1E5768CF00EE0630 /* BackViewController.swift in Sources */,
+				AA4154D51E9D3BA500C2FADF /* BackViewController2.swift in Sources */,
 				AA3BDF031E9A05A500DF1B98 /* WatchKitSessionMananager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

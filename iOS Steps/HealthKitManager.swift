@@ -267,8 +267,7 @@ class HealthKitManager {
             
             self.stepsArray = []
             
-            statsCollection.enumerateStatistics(from: startDate!, to: endDate) { [unowned self] statistics, stop in
-                
+            statsCollection.enumerateStatistics(from: startDate!, to: endDate) { [unowned self] statistics, stop in  
                 if let quantity = statistics.sumQuantity() {
                     let date = statistics.startDate
                     let steps = quantity.doubleValue(for: HKUnit.count())
