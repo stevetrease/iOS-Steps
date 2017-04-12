@@ -30,7 +30,7 @@
             </objects>
             <point key="canvasLocation" x="-701" y="-843"/>
         </scene>
-        <!--Today-->
+        <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -55,13 +55,13 @@
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="403"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="todayStepCountLabel" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="24" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oJu-oP-i4O" userLabel="todayStepCountLabel">
-                                                <rect key="frame" x="150" y="0.0" width="0.0" height="95.5"/>
+                                                <rect key="frame" x="6.5" y="0.0" width="287.5" height="95.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="yesterdayStepCountLabel" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="24" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WPY-JI-Jbe" userLabel="yesterdayStepCountLabel">
-                                                <rect key="frame" x="150" y="95.5" width="0.0" height="76.5"/>
+                                                <rect key="frame" x="5.5" y="95.5" width="289.5" height="76.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -115,7 +115,7 @@
                             <outletCollection property="gestureRecognizers" destination="Ehe-mo-Wfg" appends="YES" id="m36-Y1-WWc"/>
                         </connections>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Today" id="kg1-fp-8Hz"/>
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="kg1-fp-8Hz"/>
                     <connections>
                         <outlet property="chartView" destination="iZi-bJ-8bk" id="bPY-mj-1kV"/>
                         <outlet property="todayFlightClimbedLabel" destination="j1u-TF-Awu" id="dcz-Zn-WS4"/>

@@ -50,8 +50,6 @@ class BackViewController2: UIViewController {
     func drawScreen () {
         print ("BackViewController2 - drawScreen")
         
-        print (healthKitManager.historyDays)
-
         var dailyStepDataEntries: [BarChartDataEntry] = []
         
         for day in -healthKitManager.historyDays...0 {
@@ -64,7 +62,7 @@ class BackViewController2: UIViewController {
                 let value = hour.value
                 accumulator = accumulator + value
             }
-            print (day, stepsForDay.count, accumulator)
+            // print (day, stepsForDay.count, accumulator)
 
             let dailyStepEntry = BarChartDataEntry(x: Double(day), y: accumulator)
             dailyStepDataEntries.append(dailyStepEntry)
