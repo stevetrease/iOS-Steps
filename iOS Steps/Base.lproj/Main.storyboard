@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16F54b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16F54b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="HQR-Yx-edT">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -7,13 +7,37 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Segues with Peek and Pop" minToolsVersion="7.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Tab Bar Controller-->
+        <scene sceneID="30B-Dn-Jzf">
+            <objects>
+                <tabBarController id="HQR-Yx-edT" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="Gau-GR-aRF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="tf9-b3-YY4"/>
+                        <segue destination="TKc-jX-oaP" kind="relationship" relationship="viewControllers" id="wEx-Lp-zyz"/>
+                        <segue destination="6yh-p4-nxq" kind="relationship" relationship="viewControllers" id="hQt-G2-JWW"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zBq-2k-MXu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-701" y="-843"/>
+        </scene>
+        <!--Today-->
         <scene sceneID="tne-QT-ifu">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Ehe-mo-Wfg">
+                    <connections>
+                        <action selector="screenTappedTriggeredWithSender:" destination="BYZ-38-t0r" id="PPD-a1-7pE"/>
+                    </connections>
+                </tapGestureRecognizer>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="iOS_Steps" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
@@ -24,25 +48,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Vvw-VY-4ya">
-                                <rect key="frame" x="10" y="30" width="300" height="528"/>
+                                <rect key="frame" x="10" y="30" width="300" height="479"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Wj2-Ac-Zpc">
-                                        <rect key="frame" x="0.0" y="0.0" width="300" height="438"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="403"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="todayStepCountLabel" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="24" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oJu-oP-i4O" userLabel="todayStepCountLabel">
-                                                <rect key="frame" x="6.5" y="0.0" width="287.5" height="81.5"/>
+                                                <rect key="frame" x="6.5" y="0.0" width="287.5" height="95.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="yesterdayStepCountLabel" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="24" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WPY-JI-Jbe" userLabel="yesterdayStepCountLabel">
-                                                <rect key="frame" x="5.5" y="81.5" width="289.5" height="76.5"/>
+                                                <rect key="frame" x="5.5" y="95.5" width="289.5" height="76.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iZi-bJ-8bk" customClass="CombinedChartView" customModule="Charts">
-                                                <rect key="frame" x="0.0" y="158" width="300" height="280"/>
+                                                <rect key="frame" x="0.0" y="172" width="300" height="231"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <accessibility key="accessibilityConfiguration">
                                                     <accessibilityTraits key="traits" notEnabled="YES"/>
@@ -55,47 +79,20 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ULM-lZ-ccC">
-                                        <rect key="frame" x="0.0" y="438" width="300" height="90"/>
+                                        <rect key="frame" x="0.0" y="403" width="300" height="76"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="todayFlightClimbedLabel" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="24" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j1u-TF-Awu" userLabel="todayFlightClimbedLabel">
-                                                <rect key="frame" x="22" y="0.0" width="256" height="30"/>
+                                                <rect key="frame" x="22" y="0.0" width="256" height="38"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="yesterdayFlightClimbedLabel" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="24" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3kt-C4-gcd" userLabel="yesterdayFlightClimbedLabel">
-                                                <rect key="frame" x="36" y="30" width="228" height="30"/>
+                                                <rect key="frame" x="36" y="38" width="228" height="38"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="C5v-5M-YEH">
-                                                <rect key="frame" x="52" y="60" width="196" height="30"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jl4-7U-TgV" userLabel="BirthdayView">
-                                                        <rect key="frame" x="0.0" y="0.0" width="93" height="30"/>
-                                                        <gestureRecognizers/>
-                                                        <state key="normal" title="Birthday view"/>
-                                                        <connections>
-                                                            <segue destination="6yh-p4-nxq" kind="presentation" id="zg1-XC-ZIN">
-                                                                <segue key="commit" inheritsFrom="parent" id="zyz-93-OgY"/>
-                                                                <segue key="preview" inheritsFrom="commit" id="Gux-Y7-Brb"/>
-                                                            </segue>
-                                                        </connections>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d0W-ha-qba" userLabel="BirthdayView">
-                                                        <rect key="frame" x="103" y="0.0" width="93" height="30"/>
-                                                        <gestureRecognizers/>
-                                                        <state key="normal" title="Daily Steps"/>
-                                                        <connections>
-                                                            <segue destination="TKc-jX-oaP" kind="presentation" id="pmi-FV-1Ph">
-                                                                <segue key="commit" inheritsFrom="parent" id="q9U-MF-Att"/>
-                                                                <segue key="preview" inheritsFrom="commit" id="oCR-8U-gEC"/>
-                                                            </segue>
-                                                        </connections>
-                                                    </button>
-                                                </subviews>
-                                            </stackView>
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="3kt-C4-gcd" firstAttribute="leading" secondItem="ULM-lZ-ccC" secondAttribute="leading" constant="36" id="GCy-ek-mdW"/>
@@ -117,6 +114,7 @@
                             <outletCollection property="gestureRecognizers" destination="Ehe-mo-Wfg" appends="YES" id="m36-Y1-WWc"/>
                         </connections>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Today" id="kg1-fp-8Hz"/>
                     <connections>
                         <outlet property="chartView" destination="iZi-bJ-8bk" id="bPY-mj-1kV"/>
                         <outlet property="todayFlightClimbedLabel" destination="j1u-TF-Awu" id="dcz-Zn-WS4"/>
@@ -125,15 +123,8 @@
                         <outlet property="yesterdayStepCountLabel" destination="WPY-JI-Jbe" id="vjb-xs-0Fd"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <exit id="T38-1X-nae" userLabel="Exit" sceneMemberID="exit"/>
-                <tapGestureRecognizer id="Ehe-mo-Wfg">
-                    <connections>
-                        <action selector="screenTappedTriggeredWithSender:" destination="BYZ-38-t0r" id="PPD-a1-7pE"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-143" y="33"/>
+            <point key="canvasLocation" x="-1429" y="114"/>
         </scene>
         <!--BackView Controller-->
         <scene sceneID="L0T-8W-Kgt">
@@ -148,7 +139,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="G2h-uc-hT2">
-                                <rect key="frame" x="10" y="30" width="300" height="528"/>
+                                <rect key="frame" x="10" y="30" width="300" height="479"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dateOfBirthLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rqw-05-9Od" userLabel="dateOfBirthLabel">
                                         <rect key="frame" x="30" y="0.0" width="240.5" height="38.5"/>
@@ -157,13 +148,13 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ageLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="laa-bO-Brc">
-                                        <rect key="frame" x="85" y="153" width="130.5" height="38.5"/>
+                                        <rect key="frame" x="85" y="201" width="130.5" height="38.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="FgD-mJ-L52">
-                                        <rect key="frame" x="0.0" y="306.5" width="300" height="77"/>
+                                        <rect key="frame" x="0.0" y="402" width="300" height="77"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nextBirthdayLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jlz-9o-wlw" userLabel="nextBirthdayLabel">
                                                 <rect key="frame" x="22" y="0.0" width="256.5" height="38.5"/>
@@ -179,16 +170,6 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iEl-Kc-Wph">
-                                        <rect key="frame" x="127" y="498" width="46" height="30"/>
-                                        <state key="normal" title="Return"/>
-                                        <connections>
-                                            <action selector="goBack" destination="Y8Z-91-V3U" eventType="touchUpInside" id="r0v-GR-7Xe"/>
-                                            <action selector="unWindSegueWithSegue:" destination="Y8Z-91-V3U" eventType="touchUpInside" id="fFf-ik-tqJ"/>
-                                            <action selector="unWindToViewControllerSegueWithSegue:" destination="Y8Z-91-V3U" eventType="touchUpInside" id="QEW-GL-lJi"/>
-                                            <segue destination="T38-1X-nae" kind="unwind" unwindAction="unWindToViewControllerSegueWithSegue:" id="nGz-lx-XNk"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -200,6 +181,7 @@
                             <constraint firstItem="4Rx-aj-lFR" firstAttribute="top" secondItem="G2h-uc-hT2" secondAttribute="bottom" constant="10" id="xVy-l4-YAf"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Birthday" id="U2P-vG-PpF"/>
                     <connections>
                         <outlet property="ageLabel" destination="laa-bO-Brc" id="aHj-Uk-RWy"/>
                         <outlet property="dateOfBirthLabel" destination="rqw-05-9Od" id="6ha-VR-Lyf"/>
@@ -209,7 +191,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y8Z-91-V3U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1250" y="4"/>
+            <point key="canvasLocation" x="480" y="113"/>
         </scene>
         <!--BackView2 Controller-->
         <scene sceneID="gEN-Lm-YFF">
@@ -224,10 +206,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="lWj-pe-imn">
-                                <rect key="frame" x="25" y="29" width="270" height="530"/>
+                                <rect key="frame" x="25" y="29" width="270" height="481"/>
                                 <subviews>
-                                    <view userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5kP-R3-jHh" customClass="BarChartView" customModule="Charts">
-                                        <rect key="frame" x="0.0" y="0.0" width="270" height="280"/>
+                                    <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5kP-R3-jHh" customClass="BarChartView" customModule="Charts">
+                                        <rect key="frame" x="0.0" y="0.0" width="270" height="481"/>
                                         <subviews>
                                             <view userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NP7-Av-6Je" customClass="CombinedChartView" customModule="Charts">
                                                 <rect key="frame" x="0.0" y="0.0" width="328" height="280"/>
@@ -243,16 +225,6 @@
                                             <accessibilityTraits key="traits" notEnabled="YES"/>
                                         </accessibility>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dvl-eX-gAS">
-                                        <rect key="frame" x="112" y="500" width="46" height="30"/>
-                                        <state key="normal" title="Return"/>
-                                        <connections>
-                                            <action selector="goBack" destination="O4B-Pu-wIt" eventType="touchUpInside" id="D9W-85-hCW"/>
-                                            <action selector="unWindSegueWithSegue:" destination="O4B-Pu-wIt" eventType="touchUpInside" id="mhf-At-Qic"/>
-                                            <action selector="unWindToViewControllerSegueWithSegue:" destination="O4B-Pu-wIt" eventType="touchUpInside" id="feh-IA-udA"/>
-                                            <segue destination="IPE-RR-XZ4" kind="unwind" unwindAction="unWindToViewControllerSegueWithSegue:" id="U8E-UT-8uG"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailingMargin" secondItem="5kP-R3-jHh" secondAttribute="trailing" id="THe-cJ-zbr"/>
@@ -268,18 +240,14 @@
                             <constraint firstItem="lWj-pe-imn" firstAttribute="leading" secondItem="SHl-Wv-p2X" secondAttribute="leadingMargin" constant="9" id="K47-1M-UWz"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Week" id="imV-WR-Afu"/>
                     <connections>
                         <outlet property="chartView2" destination="NP7-Av-6Je" id="KOv-E9-HaZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O4B-Pu-wIt" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="IPE-RR-XZ4" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1060" y="713"/>
+            <point key="canvasLocation" x="-424" y="113"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="pmi-FV-1Ph"/>
-        <segue reference="zg1-XC-ZIN"/>
-    </inferredMetricsTieBreakers>
 </document>
