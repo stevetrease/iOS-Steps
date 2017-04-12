@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -54,13 +55,13 @@
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="403"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="todayStepCountLabel" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="24" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oJu-oP-i4O" userLabel="todayStepCountLabel">
-                                                <rect key="frame" x="6.5" y="0.0" width="287.5" height="95.5"/>
+                                                <rect key="frame" x="150" y="0.0" width="0.0" height="95.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="yesterdayStepCountLabel" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="24" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WPY-JI-Jbe" userLabel="yesterdayStepCountLabel">
-                                                <rect key="frame" x="5.5" y="95.5" width="289.5" height="76.5"/>
+                                                <rect key="frame" x="150" y="95.5" width="0.0" height="76.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -205,44 +206,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="lWj-pe-imn">
-                                <rect key="frame" x="25" y="29" width="270" height="481"/>
-                                <subviews>
-                                    <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5kP-R3-jHh" customClass="BarChartView" customModule="Charts">
-                                        <rect key="frame" x="0.0" y="0.0" width="270" height="481"/>
-                                        <subviews>
-                                            <view userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NP7-Av-6Je" customClass="CombinedChartView" customModule="Charts">
-                                                <rect key="frame" x="0.0" y="0.0" width="328" height="280"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <accessibility key="accessibilityConfiguration">
-                                                    <accessibilityTraits key="traits" notEnabled="YES"/>
-                                                </accessibility>
-                                            </view>
-                                        </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <accessibility key="accessibilityConfiguration">
-                                            <accessibilityTraits key="traits" notEnabled="YES"/>
-                                        </accessibility>
-                                    </view>
-                                </subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hen-Jn-og8" customClass="CombinedChartView" customModule="Charts">
+                                <rect key="frame" x="16" y="140" width="288" height="288"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailingMargin" secondItem="5kP-R3-jHh" secondAttribute="trailing" id="THe-cJ-zbr"/>
-                                    <constraint firstItem="5kP-R3-jHh" firstAttribute="leading" secondItem="lWj-pe-imn" secondAttribute="leadingMargin" id="w6v-2Y-Jfn"/>
+                                    <constraint firstAttribute="width" secondItem="hen-Jn-og8" secondAttribute="height" multiplier="1:1" id="WvM-6Y-pZa"/>
                                 </constraints>
-                            </stackView>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="fR9-aN-AMs" firstAttribute="top" secondItem="lWj-pe-imn" secondAttribute="bottom" constant="9" id="3vo-hQ-4tK"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="lWj-pe-imn" secondAttribute="trailing" constant="9" id="6za-N5-D2P"/>
-                            <constraint firstItem="lWj-pe-imn" firstAttribute="top" secondItem="kwe-DW-U14" secondAttribute="bottom" constant="9" id="BVN-I8-vuK"/>
-                            <constraint firstItem="lWj-pe-imn" firstAttribute="leading" secondItem="SHl-Wv-p2X" secondAttribute="leadingMargin" constant="9" id="K47-1M-UWz"/>
+                            <constraint firstItem="hen-Jn-og8" firstAttribute="leading" secondItem="SHl-Wv-p2X" secondAttribute="leadingMargin" id="DNN-z3-QYi"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hen-Jn-og8" secondAttribute="trailing" id="i9V-AL-6BP"/>
+                            <constraint firstItem="hen-Jn-og8" firstAttribute="centerY" secondItem="SHl-Wv-p2X" secondAttribute="centerY" id="t6J-9s-U5g"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Week" id="imV-WR-Afu"/>
                     <connections>
-                        <outlet property="chartView2" destination="NP7-Av-6Je" id="KOv-E9-HaZ"/>
+                        <outlet property="chartView2" destination="hen-Jn-og8" id="hz9-uJ-FOe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O4B-Pu-wIt" userLabel="First Responder" sceneMemberID="firstResponder"/>
