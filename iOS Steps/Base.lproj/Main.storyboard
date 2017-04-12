@@ -30,7 +30,7 @@
             </objects>
             <point key="canvasLocation" x="-701" y="-843"/>
         </scene>
-        <!--View Controller-->
+        <!--Day-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -115,7 +115,7 @@
                             <outletCollection property="gestureRecognizers" destination="Ehe-mo-Wfg" appends="YES" id="m36-Y1-WWc"/>
                         </connections>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="favorites" id="kg1-fp-8Hz"/>
+                    <tabBarItem key="tabBarItem" title="Day" id="kg1-fp-8Hz"/>
                     <connections>
                         <outlet property="chartView" destination="iZi-bJ-8bk" id="bPY-mj-1kV"/>
                         <outlet property="todayFlightClimbedLabel" destination="j1u-TF-Awu" id="dcz-Zn-WS4"/>

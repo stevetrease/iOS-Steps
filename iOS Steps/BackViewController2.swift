@@ -66,16 +66,20 @@ class BackViewController2: UIViewController {
 
             let dailyStepEntry = BarChartDataEntry(x: Double(day), y: accumulator)
             dailyStepDataEntries.append(dailyStepEntry)
+            
         }
         
         let barDataSet = BarChartDataSet(values: dailyStepDataEntries, label: "")
         
-        barDataSet.colors = [UIColor.darkText]
+        barDataSet.colors = [UIColor.darkGray]
         
         let barData = BarChartData(dataSets: [barDataSet])
         
         let data: CombinedChartData = CombinedChartData()
         data.barData = barData
+        
+        self.chartView2.xAxis.axisMinimum = -(Double(healthKitManager.historyDays) + 0.5)
+        self.chartView2.xAxis.axisMaximum = 0.5
         
         self.chartView2.data = data
         self.chartView2.data?.notifyDataChanged()

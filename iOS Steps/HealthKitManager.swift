@@ -263,7 +263,7 @@ class HealthKitManager {
             }
             
             let endDate = Date()
-            let startDate = self.cal.date(byAdding: .day, value: -self.historyDays, to: endDate)
+            let startDate = self.cal.date(byAdding: .day, value: -(self.historyDays + 1), to: endDate)
             
             self.stepsArray = []
             
