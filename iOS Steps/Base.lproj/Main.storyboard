@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16F43c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16F54b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -86,7 +86,7 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d0W-ha-qba" userLabel="BirthdayView">
                                                         <rect key="frame" x="103" y="0.0" width="93" height="30"/>
                                                         <gestureRecognizers/>
-                                                        <state key="normal" title="Birthday view"/>
+                                                        <state key="normal" title="Daily Steps"/>
                                                         <connections>
                                                             <segue destination="TKc-jX-oaP" kind="presentation" id="pmi-FV-1Ph">
                                                                 <segue key="commit" inheritsFrom="parent" id="q9U-MF-Att"/>
@@ -223,41 +223,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="lWj-pe-imn">
-                                <rect key="frame" x="10" y="20" width="328.5" height="184"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="lWj-pe-imn">
+                                <rect key="frame" x="25" y="29" width="270" height="530"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="dateOfBirthLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A8K-fW-cNS" userLabel="dateOfBirthLabel">
-                                        <rect key="frame" x="44" y="0.0" width="240.5" height="38.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="ageLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wjI-tT-dxX">
-                                        <rect key="frame" x="99" y="38.5" width="130.5" height="38.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="H5w-Sk-NK5">
-                                        <rect key="frame" x="0.0" y="77" width="328.5" height="77"/>
+                                    <view userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5kP-R3-jHh" customClass="BarChartView" customModule="Charts">
+                                        <rect key="frame" x="0.0" y="0.0" width="270" height="280"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="nextBirthdayLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P4v-8A-IZ1" userLabel="nextBirthdayLabel">
-                                                <rect key="frame" x="36" y="0.0" width="256.5" height="38.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="nextBirthdayDaysLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eu1-tn-TeB" userLabel="nextBirthdayDaysLabel">
-                                                <rect key="frame" x="0.0" y="38.5" width="328.5" height="38.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                            <view userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NP7-Av-6Je" customClass="CombinedChartView" customModule="Charts">
+                                                <rect key="frame" x="0.0" y="0.0" width="328" height="280"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <accessibility key="accessibilityConfiguration">
+                                                    <accessibilityTraits key="traits" notEnabled="YES"/>
+                                                </accessibility>
+                                            </view>
                                         </subviews>
-                                    </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dvl-eX-gAS">
-                                        <rect key="frame" x="141.5" y="154" width="46" height="30"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <accessibilityTraits key="traits" notEnabled="YES"/>
+                                        </accessibility>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dvl-eX-gAS">
+                                        <rect key="frame" x="112" y="500" width="46" height="30"/>
                                         <state key="normal" title="Return"/>
                                         <connections>
                                             <action selector="goBack" destination="O4B-Pu-wIt" eventType="touchUpInside" id="D9W-85-hCW"/>
@@ -267,15 +254,22 @@
                                         </connections>
                                     </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailingMargin" secondItem="5kP-R3-jHh" secondAttribute="trailing" id="THe-cJ-zbr"/>
+                                    <constraint firstItem="5kP-R3-jHh" firstAttribute="leading" secondItem="lWj-pe-imn" secondAttribute="leadingMargin" id="w6v-2Y-Jfn"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fR9-aN-AMs" firstAttribute="top" secondItem="lWj-pe-imn" secondAttribute="bottom" constant="9" id="3vo-hQ-4tK"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="lWj-pe-imn" secondAttribute="trailing" constant="9" id="6za-N5-D2P"/>
+                            <constraint firstItem="lWj-pe-imn" firstAttribute="top" secondItem="kwe-DW-U14" secondAttribute="bottom" constant="9" id="BVN-I8-vuK"/>
+                            <constraint firstItem="lWj-pe-imn" firstAttribute="leading" secondItem="SHl-Wv-p2X" secondAttribute="leadingMargin" constant="9" id="K47-1M-UWz"/>
+                        </constraints>
                     </view>
                     <connections>
-                        <outlet property="ageLabel" destination="wjI-tT-dxX" id="jmL-aK-ISr"/>
-                        <outlet property="dateOfBirthLabel" destination="A8K-fW-cNS" id="bzl-ce-uYb"/>
-                        <outlet property="nextBirthdayDaysLabel" destination="eu1-tn-TeB" id="twO-3b-E03"/>
-                        <outlet property="nextBirthdayLabel" destination="P4v-8A-IZ1" id="no1-zf-wag"/>
+                        <outlet property="chartView2" destination="NP7-Av-6Je" id="pOg-d2-dsK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O4B-Pu-wIt" userLabel="First Responder" sceneMemberID="firstResponder"/>

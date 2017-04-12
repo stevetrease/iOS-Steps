@@ -13,7 +13,6 @@ import HealthKit
 var healthKitManager = HealthKitManager()
 
 
-
 class HealthKitManager {
     
     let healthStore = HKHealthStore()
@@ -28,6 +27,7 @@ class HealthKitManager {
         checkHealthKitAuthorization()
     }
     
+    let historyDays = 7
     
     var earliestPermittedSampleDate: Date {
         return (healthStore.earliestPermittedSampleDate())
@@ -229,7 +229,7 @@ class HealthKitManager {
     
     var hourlySteps: [(date: Date, value: Double)] = []
     var hourlyStepsYesterday: [(date: Date, value: Double)] = []
-    private var stepsArray: [(date: Date, value: Double)] = []
+    var stepsArray: [(date: Date, value: Double)] = []
     private var stepsArrayLastUpdated: Date = Date.distantPast
     func updateHourlyStepsArray(completion:@escaping (Double?)->())
     {
@@ -263,7 +263,7 @@ class HealthKitManager {
             }
             
             let endDate = Date()
-            let startDate = self.cal.date(byAdding: .day, value: -2, to: endDate)
+            let startDate = self.cal.date(byAdding: .day, value: -self.historyDays, to: endDate)
             
             self.stepsArray = []
             
