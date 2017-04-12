@@ -77,7 +77,7 @@
                                                         <gestureRecognizers/>
                                                         <state key="normal" title="Birthday view"/>
                                                         <connections>
-                                                            <segue destination="6yh-p4-nxq" kind="presentation" modalTransitionStyle="flipHorizontal" id="zg1-XC-ZIN">
+                                                            <segue destination="6yh-p4-nxq" kind="presentation" id="zg1-XC-ZIN">
                                                                 <segue key="commit" inheritsFrom="parent" id="zyz-93-OgY"/>
                                                                 <segue key="preview" inheritsFrom="commit" id="Gux-Y7-Brb"/>
                                                             </segue>
@@ -269,7 +269,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="chartView2" destination="NP7-Av-6Je" id="pOg-d2-dsK"/>
+                        <outlet property="chartView2" destination="NP7-Av-6Je" id="KOv-E9-HaZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O4B-Pu-wIt" userLabel="First Responder" sceneMemberID="firstResponder"/>
