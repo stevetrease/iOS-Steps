@@ -109,7 +109,7 @@
                             <outletCollection property="gestureRecognizers" destination="Ehe-mo-Wfg" appends="YES" id="m36-Y1-WWc"/>
                         </connections>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Day" id="kg1-fp-8Hz"/>
+                    <tabBarItem key="tabBarItem" title="Day" image="Bridge" selectedImage="Bridge" id="kg1-fp-8Hz"/>
                     <connections>
                         <outlet property="chartView" destination="iZi-bJ-8bk" id="bPY-mj-1kV"/>
                         <outlet property="todayFlightClimbedLabel" destination="j1u-TF-Awu" id="dcz-Zn-WS4"/>
@@ -182,7 +182,7 @@
                             <constraint firstItem="4Rx-aj-lFR" firstAttribute="top" secondItem="G2h-uc-hT2" secondAttribute="bottom" constant="10" id="xVy-l4-YAf"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Birthday" id="U2P-vG-PpF"/>
+                    <tabBarItem key="tabBarItem" title="Birthday" image="Hazard" selectedImage="Hazard" id="U2P-vG-PpF"/>
                     <connections>
                         <outlet property="ageLabel" destination="laa-bO-Brc" id="aHj-Uk-RWy"/>
                         <outlet property="dateOfBirthLabel" destination="rqw-05-9Od" id="6ha-VR-Lyf"/>
@@ -224,7 +224,7 @@
                             <constraint firstItem="hen-Jn-og8" firstAttribute="centerY" secondItem="SHl-Wv-p2X" secondAttribute="centerY" id="t6J-9s-U5g"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Week" id="imV-WR-Afu"/>
+                    <tabBarItem key="tabBarItem" title="Week" image="Maintenance" selectedImage="Maintenance" id="imV-WR-Afu"/>
                     <connections>
                         <outlet property="chartView2" destination="hen-Jn-og8" id="hz9-uJ-FOe"/>
                     </connections>
@@ -234,4 +234,9 @@
             <point key="canvasLocation" x="-424" y="113"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Bridge" width="25" height="25"/>
+        <image name="Hazard" width="25" height="25"/>
+        <image name="Maintenance" width="25" height="25"/>
+    </resources>
 </document>
