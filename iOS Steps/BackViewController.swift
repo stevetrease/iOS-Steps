@@ -25,6 +25,18 @@ class BackViewController: UIViewController {
         
         print ("BackViewController - viewDidLoad")
         
+        drawScreen()
+    }
+    
+    
+    func viewWillAppear() {
+        print ("BackViewController - viewWillAppear")
+        
+        drawScreen()
+    }
+    
+    
+    func drawScreen() {
         dateOfBirthLabel.text = healthKitManager.dateOfBirthString
         ageLabel.text = healthKitManager.ageString
         nextBirthdayLabel.text = healthKitManager.nextBirthdayString

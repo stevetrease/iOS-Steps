@@ -33,12 +33,6 @@
         <!--Day-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="Ehe-mo-Wfg">
-                    <connections>
-                        <action selector="screenTappedTriggeredWithSender:" destination="BYZ-38-t0r" id="PPD-a1-7pE"/>
-                    </connections>
-                </tapGestureRecognizer>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="iOS_Steps" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
@@ -124,6 +118,12 @@
                         <outlet property="yesterdayStepCountLabel" destination="WPY-JI-Jbe" id="vjb-xs-0Fd"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Ehe-mo-Wfg">
+                    <connections>
+                        <action selector="screenTappedTriggeredWithSender:" destination="BYZ-38-t0r" id="PPD-a1-7pE"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-1429" y="114"/>
         </scene>
@@ -206,9 +206,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hen-Jn-og8" customClass="CombinedChartView" customModule="Charts">
+                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hen-Jn-og8" customClass="CombinedChartView" customModule="Charts">
                                 <rect key="frame" x="16" y="140" width="288" height="288"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" notEnabled="YES"/>
+                                </accessibility>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="hen-Jn-og8" secondAttribute="height" multiplier="1:1" id="WvM-6Y-pZa"/>
                                 </constraints>

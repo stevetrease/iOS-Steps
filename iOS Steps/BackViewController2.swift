@@ -38,10 +38,17 @@ class BackViewController2: UIViewController {
         chartView2.drawBordersEnabled = false
         chartView2.leftAxis.drawAxisLineEnabled = false
         chartView2.rightAxis.drawAxisLineEnabled = false
-        chartView2.animate(xAxisDuration: 1.0, yAxisDuration: 1.0, easingOptionX: .easeInExpo, easingOptionY: .easeInExpo)
+        chartView2.animate(xAxisDuration: 0.5, yAxisDuration: 1.0, easingOptionX: .easeInExpo, easingOptionY: .easeInExpo)
         
         chartView2.xAxis.granularity = 1.0
         chartView2.xAxis.granularityEnabled = true
+        
+        drawScreen()
+    }
+    
+    
+    func viewWillAppear() {
+        print ("BackViewController2 - viewWillAppear")
         
         drawScreen()
     }
@@ -66,7 +73,6 @@ class BackViewController2: UIViewController {
 
             let dailyStepEntry = BarChartDataEntry(x: Double(day), y: accumulator)
             dailyStepDataEntries.append(dailyStepEntry)
-            
         }
         
         let barDataSet = BarChartDataSet(values: dailyStepDataEntries, label: "")

@@ -24,7 +24,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print ("viewDidLoad")
+        print ("ViewController: viewDidLoad")
         
         todayStepCountLabel.text = " "
         todayFlightClimbedLabel.text = " "
@@ -64,7 +64,7 @@ class ViewController: UIViewController {
     
     
     func drawScreen () {
-        print ("drawScreen")
+        print ("ViewController: drawScreen")
         
         let startTime = Date()
         let generator = UIImpactFeedbackGenerator(style: .light)
@@ -178,7 +178,7 @@ class ViewController: UIViewController {
     
     
     override func didReceiveMemoryWarning() {
-        print ("didReceiveMemoryWarning")
+        print ("ViewController: didReceiveMemoryWarning")
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
