@@ -255,8 +255,8 @@ class HealthKitManager {
         // Set the results handler
         query.initialResultsHandler = {
             query, results, error in
+            print("\(#file) - \(#function)")
             
-            print ("query: updateStepsArray")
             guard let statsCollection = results else {
                 // Perform proper error handling here
                 fatalError("*** An error occurred while calculating the statistics: \(String(describing: error?.localizedDescription)) ***")
