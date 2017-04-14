@@ -1,5 +1,6 @@
 /bin/sh
 
+LAST_BUILD=0
 LAST_BUILD=`cat ./build`
 NEW_BUILD=$(($LAST_BUILD + 1))
 
