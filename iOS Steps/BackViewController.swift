@@ -23,20 +23,22 @@ class BackViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print ("BackViewController - viewDidLoad")
+        print("\(#file) - \(#function)")
         
         drawScreen()
     }
     
     
     func viewWillAppear() {
-        print ("BackViewController - viewWillAppear")
+        print("\(#file) - \(#function)")
         
         drawScreen()
     }
     
     
     func drawScreen() {
+        print("\(#file) - \(#function)")
+        
         dateOfBirthLabel.text = healthKitManager.dateOfBirthString
         ageLabel.text = healthKitManager.ageString
         nextBirthdayLabel.text = healthKitManager.nextBirthdayString
@@ -45,7 +47,7 @@ class BackViewController: UIViewController {
     
     
     override func didReceiveMemoryWarning() {
-        print ("BackViewController - didReceiveMemoryWarning")
+        print("\(#file) - \(#function)")
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }

@@ -22,7 +22,7 @@ class BackViewController2: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print ("BackViewController2 - viewDidLoad")
+        print("\(#file) - \(#function)")
         
         chartView2.legend.enabled = false
         chartView2.xAxis.drawLabelsEnabled = true
@@ -48,14 +48,14 @@ class BackViewController2: UIViewController {
     
     
     func viewWillAppear() {
-        print ("BackViewController2 - viewWillAppear")
+        print("\(#file) - \(#function)")
         
         drawScreen()
     }
     
     
     func drawScreen () {
-        print ("BackViewController2 - drawScreen")
+        print("\(#file) - \(#function)")
         
         var dailyStepDataEntries: [BarChartDataEntry] = []
         
@@ -94,7 +94,7 @@ class BackViewController2: UIViewController {
     
     
     override func didReceiveMemoryWarning() {
-        print ("BackViewController2 - didReceiveMemoryWarning")
+        print("\(#file) - \(#function)")
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }

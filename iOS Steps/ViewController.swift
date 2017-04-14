@@ -24,7 +24,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print ("ViewController: viewDidLoad")
+        print("\(#file) - \(#function)")
         
         todayStepCountLabel.text = " "
         todayFlightClimbedLabel.text = " "
@@ -58,13 +58,14 @@ class ViewController: UIViewController {
     
     
     func drawScreenHKObserverQuery () {
-        print (drawScreenHKObserverQuery)
+        print("\(#file) - \(#function)")
+        
         drawScreen()
     }
     
     
     func drawScreen () {
-        print ("ViewController: drawScreen")
+        print("\(#file) - \(#function)")
         
         let startTime = Date()
         let generator = UIImpactFeedbackGenerator(style: .light)
@@ -169,7 +170,9 @@ class ViewController: UIViewController {
     
     
     @IBAction func screenTappedTriggered(sender: AnyObject) {
+        print ("\(#file) - \(#function)")
         print ("Screen tapped ", type (of: sender))
+        
         drawScreen()
     }
 
@@ -178,7 +181,7 @@ class ViewController: UIViewController {
     
     
     override func didReceiveMemoryWarning() {
-        print ("ViewController: didReceiveMemoryWarning")
+        print("\(#file) - \(#function)")
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
