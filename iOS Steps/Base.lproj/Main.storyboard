@@ -223,6 +223,9 @@
                             <constraint firstAttribute="trailingMargin" secondItem="hen-Jn-og8" secondAttribute="trailing" id="i9V-AL-6BP"/>
                             <constraint firstItem="hen-Jn-og8" firstAttribute="centerY" secondItem="SHl-Wv-p2X" secondAttribute="centerY" id="t6J-9s-U5g"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="9RX-nZ-GBD" appends="YES" id="7la-3H-BAy"/>
+                        </connections>
                     </view>
                     <tabBarItem key="tabBarItem" title="Week" image="Maintenance" selectedImage="Maintenance" id="imV-WR-Afu"/>
                     <connections>
@@ -230,6 +233,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O4B-Pu-wIt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="9RX-nZ-GBD">
+                    <connections>
+                        <action selector="screenTappedTriggeredWithSender:" destination="TKc-jX-oaP" id="HhK-CC-EFx"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-424" y="113"/>
         </scene>

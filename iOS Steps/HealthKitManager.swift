@@ -281,7 +281,7 @@ class HealthKitManager {
             self.hourlySteps = self.stepsArray.filter { self.cal.startOfDay(for: $0.date) == self.cal.startOfDay(for: Date()) }
             // filter yesterday's steps
             self.hourlyStepsYesterday = self.stepsArray.filter { self.cal.startOfDay(for: $0.date) == self.cal.date(byAdding: .day, value: -1, to: self.cal.startOfDay(for: Date())) }
-
+            
             completion (0.0)
         }
         healthStore.execute(query)

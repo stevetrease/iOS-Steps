@@ -93,6 +93,15 @@ class BackViewController2: UIViewController {
     }
     
     
+    @IBAction func screenTappedTriggered(sender: AnyObject) {
+        print ("\(#file) - \(#function)")
+        print ("Screen tapped ", type (of: sender))
+        
+        drawScreen()
+    }
+    
+
+    
     override func didReceiveMemoryWarning() {
         print("\(#file) - \(#function)")
         super.didReceiveMemoryWarning()
