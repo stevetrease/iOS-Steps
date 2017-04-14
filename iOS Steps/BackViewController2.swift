@@ -58,6 +58,7 @@ class BackViewController2: UIViewController {
         print("\(#file) - \(#function)")
         
         var dailyStepDataEntries: [BarChartDataEntry] = []
+        var xLabels: [String] = []
         
         for day in -healthKitManager.historyDays...0 {
             let filterDay = cal.date(byAdding: .day, value: day, to: cal.startOfDay(for: Date()))
@@ -73,6 +74,10 @@ class BackViewController2: UIViewController {
 
             let dailyStepEntry = BarChartDataEntry(x: Double(day), y: accumulator)
             dailyStepDataEntries.append(dailyStepEntry)
+            
+            let formatter = DateFormatter()
+            formatter.dateFormat = "E"
+            xLabels.append (formatter.string (from: filterDay!))
         }
         
         let barDataSet = BarChartDataSet(values: dailyStepDataEntries, label: "")
@@ -83,6 +88,11 @@ class BackViewController2: UIViewController {
         
         let data: CombinedChartData = CombinedChartData()
         data.barData = barData
+        
+        self.chartView2.xAxis.valueFormatter = DefaultAxisValueFormatter(block: {(value, _) in
+            let index = Int(value) + healthKitManager.historyDays
+            return (xLabels[index])
+        })
         
         self.chartView2.xAxis.axisMinimum = -(Double(healthKitManager.historyDays) + 0.5)
         self.chartView2.xAxis.axisMaximum = 0.5
