@@ -91,7 +91,11 @@ class BackViewController2: UIViewController {
         
         self.chartView2.xAxis.valueFormatter = DefaultAxisValueFormatter(block: {(value, _) in
             let index = Int(value) + healthKitManager.historyDays
-            return (xLabels[index])
+            if (value == 0) {
+                return "Today"
+            } else {
+                return (xLabels[index])
+            }
         })
         
         self.chartView2.xAxis.axisMinimum = -(Double(healthKitManager.historyDays) + 0.5)

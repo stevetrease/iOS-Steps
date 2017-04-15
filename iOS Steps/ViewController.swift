@@ -42,7 +42,6 @@ class ViewController: UIViewController {
         chartView.leftAxis.drawGridLinesEnabled = false
         chartView.rightAxis.drawLabelsEnabled = false
         chartView.leftAxis.drawLabelsEnabled = true
-        // chartView.descriptionText = ""
         chartView.chartDescription?.text = ""
         
         chartView.drawBordersEnabled = false
@@ -106,6 +105,9 @@ class ViewController: UIViewController {
                 var line1Data: [ChartDataEntry] = []
                 var line2Data: [ChartDataEntry] = []
                 
+                var firstHour = 24.0
+                var lastHour = 0.0
+                
                 var accumulator1 = 0.0
                 for i in 0..<healthKitManager.hourlySteps.count {
                     let cal = Calendar.current
@@ -114,6 +116,13 @@ class ViewController: UIViewController {
                     let hour = Double(components.hour!)
                     let value = healthKitManager.hourlySteps[i].value
                     
+                    if (hour < firstHour) {
+                        firstHour = hour
+                    }
+                    if (hour > lastHour) {
+                        lastHour = hour
+                    }
+                
                     accumulator1 = accumulator1 + value
                     
                     let hourlyDataEntry = BarChartDataEntry(x: hour, y: value)
@@ -131,6 +140,14 @@ class ViewController: UIViewController {
                     let hour = Double(components.hour!)
                     let value = healthKitManager.hourlyStepsYesterday[i].value
                     
+                    if (hour < firstHour) {
+                        firstHour = hour
+                    }
+                    if (hour > lastHour) {
+                        
+                        lastHour = hour
+                    }
+                    
                     accumulator2 = accumulator2 + value
                     
                     let line2DataPoint = ChartDataEntry (x: hour, y: Double (accumulator2))
@@ -138,8 +155,8 @@ class ViewController: UIViewController {
                 }
                 
                 let barDataSet = BarChartDataSet(values: hourlyDataEntries, label: "")
-                let lineDataSet1 = LineChartDataSet(values: line1Data, label: "")
-                let lineDataSet2 = LineChartDataSet(values: line2Data, label: "")
+                let lineDataSet1 = LineChartDataSet(values: line1Data, label: "Today")
+                let lineDataSet2 = LineChartDataSet(values: line2Data, label: "Yesterday")
                 
                 barDataSet.colors = [UIColor.darkText]
                 lineDataSet1.colors = [UIColor.darkText]
@@ -158,6 +175,10 @@ class ViewController: UIViewController {
                 data.barData = barData
                 data.lineData = lineData
                 
+                
+                self.chartView.xAxis.axisMinimum = firstHour - 0.5
+                self.chartView.xAxis.axisMaximum = lastHour + 0.5
+
                 self.chartView.data = data
                 self.chartView.data?.notifyDataChanged()
                 self.chartView.notifyDataSetChanged()
