@@ -175,7 +175,6 @@ class ViewController: UIViewController {
                 data.barData = barData
                 data.lineData = lineData
                 
-                
                 self.chartView.xAxis.axisMinimum = firstHour - 0.5
                 self.chartView.xAxis.axisMaximum = lastHour + 0.5
 
