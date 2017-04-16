@@ -29,11 +29,11 @@ class HealthKitManager {
     
     let historyDays = 7
     
-    var earliestPermittedSampleDate: Date {
+    private var earliestPermittedSampleDate: Date {
         return (healthStore.earliestPermittedSampleDate())
     }
     
-    var dateOfBirth: Date {
+    private var dateOfBirth: Date {
         let dateOfBirthComponents = try? healthStore.dateOfBirthComponents()
         return (Calendar.current.date(from: dateOfBirthComponents!)!)
     }
