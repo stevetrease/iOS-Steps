@@ -40,7 +40,7 @@ class HealthKitManager {
     
     var dateOfBirthString: String {
         let formatter = DateFormatter()
-        formatter.dateStyle = .long
+        formatter.dateStyle = .full
         return (formatter.string(from: dateOfBirth))
     }
     
