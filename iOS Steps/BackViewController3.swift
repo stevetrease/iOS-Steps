@@ -100,7 +100,6 @@ class BackViewController3: UIViewController {
             lineDataSet.colors = [UIColor(white: CGFloat(whiteValue), alpha: 1.0)]
             lineDataSet.drawCirclesEnabled = false
             
-            
             if (day == 0) {
                 lineDataSet.lineWidth = 3
             } else {
