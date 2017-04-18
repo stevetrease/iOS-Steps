@@ -17,6 +17,7 @@
 		AA3AF9131E95501500903F2B /* iOS Steps Watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = AA3AF8F51E95501500903F2B /* iOS Steps Watch.app */; };
 		AA3AF9211E95581A00903F2B /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA3AF9201E95581A00903F2B /* HealthKit.framework */; };
 		AA3BDF031E9A05A500DF1B98 /* WatchKitSessionMananager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3BDF021E9A05A500DF1B98 /* WatchKitSessionMananager.swift */; };
+		AA3F34971EA63C6B00D976C5 /* BackViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3F34961EA63C6B00D976C5 /* BackViewController3.swift */; };
 		AA67AFCD1E5768CF00EE0630 /* BackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA67AFCC1E5768CF00EE0630 /* BackViewController.swift */; };
 		AA8072CC1E86A94800E45DEC /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA8072C51E86A78800E45DEC /* Charts.framework */; };
 		AA8072CD1E86A99100E45DEC /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AA8072C51E86A78800E45DEC /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -56,13 +57,6 @@
 			proxyType = 2;
 			remoteGlobalIDString = 06165F241D8110E600722320;
 			remoteInfo = Charts;
-		};
-		AA8072C61E86A78800E45DEC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = AA8072BE1E86A78800E45DEC /* Charts.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 06B120D51D811E6200D14B02;
-			remoteInfo = ChartsRealm;
 		};
 		AA8072C81E86A78800E45DEC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -142,6 +136,7 @@
 		AA3AF91F1E95581A00903F2B /* iOS Steps Watch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "iOS Steps Watch Extension.entitlements"; sourceTree = "<group>"; };
 		AA3AF9201E95581A00903F2B /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS3.2.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
 		AA3BDF021E9A05A500DF1B98 /* WatchKitSessionMananager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchKitSessionMananager.swift; sourceTree = "<group>"; };
+		AA3F34961EA63C6B00D976C5 /* BackViewController3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackViewController3.swift; sourceTree = "<group>"; };
 		AA67AFCC1E5768CF00EE0630 /* BackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackViewController.swift; sourceTree = "<group>"; };
 		AA8072BE1E86A78800E45DEC /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "Charts-master/Charts.xcodeproj"; sourceTree = SOURCE_ROOT; };
 		AA9D2E811E3E424C000E9C08 /* iOS Steps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS Steps.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -229,7 +224,6 @@
 			isa = PBXGroup;
 			children = (
 				AA8072C51E86A78800E45DEC /* Charts.framework */,
-				AA8072C71E86A78800E45DEC /* ChartsRealm.framework */,
 				AA8072C91E86A78800E45DEC /* ChartsTests.xctest */,
 			);
 			name = Products;
@@ -265,6 +259,7 @@
 				AA9D2E841E3E424C000E9C08 /* AppDelegate.swift */,
 				AA67AFCC1E5768CF00EE0630 /* BackViewController.swift */,
 				AABD2EF01E9E999D00575B92 /* BackViewController2.swift */,
+				AA3F34961EA63C6B00D976C5 /* BackViewController3.swift */,
 				AAD088461E3FC3C500612BC1 /* HealthKitManager.swift */,
 				AA9D2E861E3E424C000E9C08 /* ViewController.swift */,
 				AA3BDF021E9A05A500DF1B98 /* WatchKitSessionMananager.swift */,
@@ -468,13 +463,6 @@
 			remoteRef = AA8072C41E86A78800E45DEC /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		AA8072C71E86A78800E45DEC /* ChartsRealm.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = ChartsRealm.framework;
-			remoteRef = AA8072C61E86A78800E45DEC /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		AA8072C91E86A78800E45DEC /* ChartsTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
@@ -558,6 +546,7 @@
 				AAD088471E3FC3C500612BC1 /* HealthKitManager.swift in Sources */,
 				AABD2EF11E9E999D00575B92 /* BackViewController2.swift in Sources */,
 				AA67AFCD1E5768CF00EE0630 /* BackViewController.swift in Sources */,
+				AA3F34971EA63C6B00D976C5 /* BackViewController3.swift in Sources */,
 				AA3BDF031E9A05A500DF1B98 /* WatchKitSessionMananager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
