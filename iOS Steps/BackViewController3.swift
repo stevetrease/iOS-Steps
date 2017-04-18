@@ -95,8 +95,7 @@ class BackViewController3: UIViewController {
             let lineDataSet = LineChartDataSet(values: dailyLineDataEntries, label: "Today")
             
             let colourFraction = 1.0 / Double(healthKitManager.historyDays + 1)
-            // let whiteValue = 1.0 - (Double(day - 1) * colourFraction * -1.0)
-            let whiteValue = (Double(day - 1) * colourFraction * -1.0)
+            let whiteValue = (Double(day) * colourFraction * -1.0)
 
             print (whiteValue)
             
