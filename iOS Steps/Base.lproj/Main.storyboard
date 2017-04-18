@@ -255,9 +255,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vhU-LG-tgP" customClass="CombinedChartView" customModule="Charts">
+                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vhU-LG-tgP" customClass="CombinedChartView" customModule="Charts">
                                 <rect key="frame" x="16" y="140" width="288" height="288"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" notEnabled="YES"/>
+                                </accessibility>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="vhU-LG-tgP" secondAttribute="height" multiplier="1:1" id="bOu-yu-gFd"/>
                                 </constraints>

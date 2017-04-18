@@ -59,7 +59,6 @@ class BackViewController3: UIViewController {
     func drawScreen () {
         print("\(#file) - \(#function)")
         
-        var xLabels: [String] = []
         var firstHour = 24.0
         var lastHour = 0.0
         var lines: [LineChartDataSet] = []
