@@ -59,49 +59,71 @@ class BackViewController3: UIViewController {
     func drawScreen () {
         print("\(#file) - \(#function)")
         
-        var dailyStepDataEntries: [BarChartDataEntry] = []
         var xLabels: [String] = []
+        var firstHour = 24.0
+        var lastHour = 0.0
+        var lines: [LineChartDataSet] = []
         
         for day in -healthKitManager.historyDays...0 {
             let filterDay = cal.date(byAdding: .day, value: day, to: cal.startOfDay(for: Date()))
             
-            let stepsForDay: [(date: Date, value: Double)] = healthKitManager.stepsArray.filter { cal.startOfDay(for: $0.date) == filterDay }
+            var dailySteps = healthKitManager.stepsArray.filter { cal.startOfDay(for: $0.date) == filterDay }
+            
+            // print (day, dailySteps.count)
+            
+            var dailyLineDataEntries: [BarChartDataEntry] = []
             
             var accumulator = 0.0
-            for hour in stepsForDay {
-                let value = hour.value
-                accumulator = accumulator + value
+            for i in 0..<dailySteps.count {
+                let cal = Calendar.current
+                let d = dailySteps[i].date
+                let components = cal.dateComponents ([.hour], from: d)
+                let hour = Double(components.hour!)
+                
+                accumulator = accumulator + dailySteps[i].value
+                let value = accumulator
+                
+                if (hour < firstHour) {
+                    firstHour = hour
+                }
+                if (hour > lastHour) {
+                    lastHour = hour
+                }
+                
+                // print ("\t", hour, value)
+        
+                let dailyLineDataEntry = BarChartDataEntry(x: hour, y: value)
+                dailyLineDataEntries.append(dailyLineDataEntry)
             }
-            // print (day, stepsForDay.count, accumulator)
+
+            let lineDataSet = LineChartDataSet(values: dailyLineDataEntries, label: "Today")
             
-            let dailyStepEntry = BarChartDataEntry(x: Double(day), y: accumulator)
-            dailyStepDataEntries.append(dailyStepEntry)
+            let colourFraction = 1.0 / Double(healthKitManager.historyDays + 1)
+            // let whiteValue = 1.0 - (Double(day - 1) * colourFraction * -1.0)
+            let whiteValue = (Double(day - 1) * colourFraction * -1.0)
+
+            print (whiteValue)
             
-            let formatter = DateFormatter()
-            formatter.dateFormat = "E"
-            xLabels.append (formatter.string (from: filterDay!))
+            lineDataSet.colors = [UIColor(white: CGFloat(whiteValue), alpha: 1.0)]
+            lineDataSet.drawCirclesEnabled = false
+            lineDataSet.lineWidth = 2
+            
+            if (day == 0) {
+                lineDataSet.lineWidth = 3
+            }
+         
+            // let formatter = DateFormatter()
+            //formatter.dateFormat = "E"
+            // xLabels.append (formatter.string (from: filterDay!))
+            
+            // lines.insert(lineDataSet, at: 0)
+            lines.append(lineDataSet)
         }
         
-        let barDataSet = BarChartDataSet(values: dailyStepDataEntries, label: "")
-        
-        barDataSet.colors = [UIColor.darkGray]
-        
-        let barData = BarChartData(dataSets: [barDataSet])
-        
         let data: CombinedChartData = CombinedChartData()
-        data.barData = barData
-        
-        self.chartView3.xAxis.valueFormatter = DefaultAxisValueFormatter(block: {(value, _) in
-            let index = Int(value) + healthKitManager.historyDays
-            if (value == 0) {
-                return "Today"
-            } else {
-                return (xLabels[index])
-            }
-        })
-        
-        self.chartView3.xAxis.axisMinimum = -(Double(healthKitManager.historyDays) + 0.5)
-        self.chartView3.xAxis.axisMaximum = 0.5
+        let lineData = LineChartData (dataSets: lines)
+ 
+        data.lineData = lineData
         
         self.chartView3.data = data
         self.chartView3.data?.notifyDataChanged()

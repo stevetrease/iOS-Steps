@@ -257,11 +257,11 @@
 			children = (
 				AAD088431E3FBA1800612BC1 /* iOS Steps.entitlements */,
 				AA9D2E841E3E424C000E9C08 /* AppDelegate.swift */,
+				AA9D2E861E3E424C000E9C08 /* ViewController.swift */,
 				AA67AFCC1E5768CF00EE0630 /* BackViewController.swift */,
 				AABD2EF01E9E999D00575B92 /* BackViewController2.swift */,
 				AA3F34961EA63C6B00D976C5 /* BackViewController3.swift */,
 				AAD088461E3FC3C500612BC1 /* HealthKitManager.swift */,
-				AA9D2E861E3E424C000E9C08 /* ViewController.swift */,
 				AA3BDF021E9A05A500DF1B98 /* WatchKitSessionMananager.swift */,
 				AA9D2E8D1E3E424C000E9C08 /* LaunchScreen.storyboard */,
 				AA9D2E881E3E424C000E9C08 /* Main.storyboard */,
