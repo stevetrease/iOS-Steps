@@ -243,7 +243,7 @@
             </objects>
             <point key="canvasLocation" x="-424" y="113"/>
         </scene>
-        <!--Item-->
+        <!--Week-->
         <scene sceneID="b3M-2Y-YWp">
             <objects>
                 <viewController id="PGX-2h-JkP" customClass="BackViewController3" customModule="iOS_Steps" customModuleProvider="target" sceneMemberID="viewController">
@@ -273,7 +273,7 @@
                             <outletCollection property="gestureRecognizers" destination="zxK-5e-t6C" appends="YES" id="yC7-fS-SwZ"/>
                         </connections>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="dg3-iJ-hNE"/>
+                    <tabBarItem key="tabBarItem" title="Week" image="Hazard" selectedImage="Hazard" id="dg3-iJ-hNE"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="chartView3" destination="vhU-LG-tgP" id="LPL-dJ-Ejv"/>

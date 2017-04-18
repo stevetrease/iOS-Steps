@@ -96,8 +96,6 @@ class BackViewController3: UIViewController {
             
             let colourFraction = 1.0 / Double(healthKitManager.historyDays + 1)
             let whiteValue = (Double(day) * colourFraction * -1.0)
-
-            print (whiteValue)
             
             lineDataSet.colors = [UIColor(white: CGFloat(whiteValue), alpha: 1.0)]
             lineDataSet.drawCirclesEnabled = false
