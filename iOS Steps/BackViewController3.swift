@@ -69,8 +69,6 @@ class BackViewController3: UIViewController {
             
             var dailySteps = healthKitManager.stepsArray.filter { cal.startOfDay(for: $0.date) == filterDay }
             
-            // print (day, dailySteps.count)
-            
             var dailyLineDataEntries: [BarChartDataEntry] = []
             
             var accumulator = 0.0
@@ -90,8 +88,6 @@ class BackViewController3: UIViewController {
                     lastHour = hour
                 }
                 
-                // print ("\t", hour, value)
-        
                 let dailyLineDataEntry = BarChartDataEntry(x: hour, y: value)
                 dailyLineDataEntries.append(dailyLineDataEntry)
             }
@@ -112,11 +108,6 @@ class BackViewController3: UIViewController {
                 lineDataSet.lineWidth = 3
             }
          
-            // let formatter = DateFormatter()
-            //formatter.dateFormat = "E"
-            // xLabels.append (formatter.string (from: filterDay!))
-            
-            // lines.insert(lineDataSet, at: 0)
             lines.append(lineDataSet)
         }
         
