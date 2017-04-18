@@ -99,12 +99,14 @@ class BackViewController3: UIViewController {
             
             lineDataSet.colors = [UIColor(white: CGFloat(whiteValue), alpha: 1.0)]
             lineDataSet.drawCirclesEnabled = false
-            lineDataSet.lineWidth = 2
+            
             
             if (day == 0) {
                 lineDataSet.lineWidth = 3
+            } else {
+                lineDataSet.lineWidth = 1
             }
-         
+            
             lines.append(lineDataSet)
         }
         
