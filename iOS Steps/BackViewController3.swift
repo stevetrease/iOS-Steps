@@ -26,7 +26,7 @@ class BackViewController3: UIViewController {
         
         print("\(#file) - \(#function)")
         
-        chartView3.legend.enabled = false
+        chartView3.legend.enabled = true
         chartView3.xAxis.drawLabelsEnabled = true
         chartView3.xAxis.labelPosition = XAxis.LabelPosition.bottom
         chartView3.xAxis.drawGridLinesEnabled = false
@@ -34,7 +34,6 @@ class BackViewController3: UIViewController {
         chartView3.leftAxis.drawGridLinesEnabled = false
         chartView3.rightAxis.drawLabelsEnabled = false
         chartView3.leftAxis.drawLabelsEnabled = true
-        // chartView3.descriptionText = ""
         chartView3.chartDescription?.text = ""
         
         chartView3.drawBordersEnabled = false
@@ -90,8 +89,16 @@ class BackViewController3: UIViewController {
                 let dailyLineDataEntry = BarChartDataEntry(x: hour, y: value)
                 dailyLineDataEntries.append(dailyLineDataEntry)
             }
+            
+            let formatter = DateFormatter()
+            formatter.dateFormat = "E"
+            var dayString = formatter.string (from: filterDay!)
 
-            let lineDataSet = LineChartDataSet(values: dailyLineDataEntries, label: "Today")
+            if (day == 0) {
+                dayString = "Today"
+            }
+ 
+            let lineDataSet = LineChartDataSet(values: dailyLineDataEntries, label: dayString)
             
             let colourFraction = 1.0 / Double(healthKitManager.historyDays + 1)
             let whiteValue = (Double(day) * colourFraction * -1.0)

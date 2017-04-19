@@ -68,7 +68,6 @@ class ViewController: UIViewController {
         
         let startTime = Date()
         let generator = UIImpactFeedbackGenerator(style: .light)
-        // watchConnectivityHandler?.sendMessage (message: "Hello")
         
         healthKitManager.getTodayStepCount (completion: { (steps) in
             OperationQueue.main.addOperation {
