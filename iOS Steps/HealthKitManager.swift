@@ -230,14 +230,8 @@ class HealthKitManager {
     var hourlySteps: [(date: Date, value: Double)] = []
     var hourlyStepsYesterday: [(date: Date, value: Double)] = []
     var stepsArray: [(date: Date, value: Double)] = []
-    private var stepsArrayLastUpdated: Date = Date.distantPast
     func updateHourlyStepsArray(completion:@escaping (Double?)->())
     {
-        if (cal.startOfDay(for: Date()) == cal.startOfDay(for: self.stepsArrayLastUpdated)) {
-            completion (0.0)
-        }
-        self.stepsArrayLastUpdated = Date ()
-        
         let anchorDate = cal.date(byAdding: .day, value: -1, to: cal.startOfDay(for: Date()))
         
         var interval = DateComponents()
