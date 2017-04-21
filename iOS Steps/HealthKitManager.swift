@@ -254,9 +254,9 @@ class HealthKitManager {
             print ("steps array length: \(self.stepsArray.count)")
             
             // filter today's steps
-            self.hourlySteps = self.stepsArray.filter { self.cal.startOfDay(for: $0.date) == self.cal.startOfDay(for: Date()) }
+            self.hourlySteps = self.stepsArray.filter { self.cal.isDateInToday ($0.date) }
             // filter yesterday's steps
-            self.hourlyStepsYesterday = self.stepsArray.filter { self.cal.startOfDay(for: $0.date) == self.cal.date(byAdding: .day, value: -1, to: self.cal.startOfDay(for: Date())) }
+            self.hourlyStepsYesterday = self.stepsArray.filter { self.cal.isDateInYesterday($0.date) }
             
             completion (0.0)
         }
