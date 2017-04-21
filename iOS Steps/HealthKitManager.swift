@@ -34,24 +34,24 @@ class HealthKitManager {
     }
     
     
-    private var dateofBirthComponets: DateComponents {
+    private var dateofBirthComponents: DateComponents {
         return try! healthStore.dateOfBirthComponents()
     }
     
     var dateOfBirth: Date {
-        return (Calendar.current.date(from: dateofBirthComponets)!)
+        return (Calendar.current.date(from: dateofBirthComponents)!)
     }
     var dateOfNextBirthday: Date {
         var components = DateComponents ()
-        components.day = dateofBirthComponets.day
-        components.month = dateofBirthComponets.month
+        components.day = dateofBirthComponents.day
+        components.month = dateofBirthComponents.month
             
         return (cal.nextDate(after: Date(), matching: components, matchingPolicy: .nextTime, direction: .forward))!
     }
     var dateOfLastBirthday: Date {
         var components = DateComponents ()
-        components.day = dateofBirthComponets.day
-        components.month = dateofBirthComponets.month
+        components.day = dateofBirthComponents.day
+        components.month = dateofBirthComponents.month
         
         return (cal.nextDate(after: Date(), matching: components, matchingPolicy: .nextTime, direction: .backward))!
     }
