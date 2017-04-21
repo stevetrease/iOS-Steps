@@ -33,47 +33,29 @@ class HealthKitManager {
         return (healthStore.earliestPermittedSampleDate())
     }
     
-    private var dateOfBirth: Date {
-        let dateOfBirthComponents = try? healthStore.dateOfBirthComponents()
-        return (Calendar.current.date(from: dateOfBirthComponents!)!)
+    
+    private var dateofBirthComponets: DateComponents {
+        return try! healthStore.dateOfBirthComponents()
     }
     
-    var dateOfBirthString: String {
-        let formatter = DateFormatter()
-        formatter.dateStyle = .full
-        return (formatter.string(from: dateOfBirth))
+    var dateOfBirth: Date {
+        return (Calendar.current.date(from: dateofBirthComponets)!)
+    }
+    var dateOfNextBirthday: Date {
+        var components = DateComponents ()
+        components.day = dateofBirthComponets.day
+        components.month = dateofBirthComponets.month
+            
+        return (cal.nextDate(after: Date(), matching: components, matchingPolicy: .nextTime, direction: .forward))!
+    }
+    var dateOfLastBirthday: Date {
+        var components = DateComponents ()
+        components.day = dateofBirthComponets.day
+        components.month = dateofBirthComponets.month
+        
+        return (cal.nextDate(after: Date(), matching: components, matchingPolicy: .nextTime, direction: .backward))!
     }
     
-    var nextBirthdayString: String {
-        let ageComponents = cal.dateComponents ([.year], from: dateOfBirth, to: Date())
-        let age = ageComponents.year
-        let nextBirthday = cal.date(byAdding: .year, value: age! + 1, to: dateOfBirth)
-        let ageFormatter = DateComponentsFormatter()
-        ageFormatter.unitsStyle = .full
-        ageFormatter.allowedUnits = [.month, .day]
-        ageFormatter.maximumUnitCount = 2
-        return (ageFormatter.string(from: Date(), to: nextBirthday!)!)
-    }
-    
-    var nextBirthdayDaysString: String {
-        let ageComponents = cal.dateComponents ([.year], from: dateOfBirth, to: Date())
-        let age = ageComponents.year
-        let nextBirthday = cal.date(byAdding: .year, value: age! + 1, to: dateOfBirth)
-        let ageFormatter = DateComponentsFormatter()
-        ageFormatter.unitsStyle = .full
-        ageFormatter.allowedUnits = [.day]
-        ageFormatter.maximumUnitCount = 1
-        return (ageFormatter.string(from: Date(), to: nextBirthday!)!)
-    }
-
-    var ageString: String {
-        let ageFormatter = DateComponentsFormatter()
-        ageFormatter.unitsStyle = .full
-        ageFormatter.allowedUnits = [.year, .month, .day]
-        ageFormatter.maximumUnitCount = 3
-        return (ageFormatter.string(from: dateOfBirth, to: Date())!)
-    }
-
     
     var flightsClimbedToday: Double = 0.0
     var flightsClimbedTodayString: String {
