@@ -279,7 +279,7 @@ class HealthKitManager {
         let query = HKStatisticsQuery(quantityType: type!, quantitySamplePredicate: predicate, options: .cumulativeSum) { query, results, error in
             // print ("query: getYesterdayStepCount")
             let quantity = results?.sumQuantity()
-            let unit = HKUnit.count()
+            let unit = HKUnit.calorie()
             let calories = quantity?.doubleValue(for: unit)
             
             if calories != nil {
@@ -309,7 +309,7 @@ class HealthKitManager {
         let query = HKStatisticsQuery(quantityType: type!, quantitySamplePredicate: predicate, options: .cumulativeSum) { query, results, error in
             // print ("query: getYesterdayStepCount")
             let quantity = results?.sumQuantity()
-            let unit = HKUnit.count()
+            let unit = HKUnit.calorie()
             let calories = quantity?.doubleValue(for: unit)
             
             if calories != nil {
@@ -338,7 +338,7 @@ class HealthKitManager {
         let query = HKStatisticsQuery(quantityType: type!, quantitySamplePredicate: predicate, options: .cumulativeSum) { query, results, error in
             // print ("query: getTodayStepCount")
             let quantity = results?.sumQuantity()
-            let unit = HKUnit.count()
+            let unit = HKUnit.calorie()
             let calories = quantity?.doubleValue(for: unit)
             
             if calories != nil {
@@ -367,7 +367,7 @@ class HealthKitManager {
         
         let query = HKStatisticsQuery(quantityType: type!, quantitySamplePredicate: predicate, options: .cumulativeSum) { query, results, error in
             let quantity = results?.sumQuantity()
-            let unit = HKUnit.count()
+            let unit = HKUnit.calorie()
             let calories = quantity?.doubleValue(for: unit)
             
             if calories != nil {

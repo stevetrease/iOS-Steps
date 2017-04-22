@@ -29,7 +29,10 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         print("\(#file) - \(#function)")
-        
+        activeCaloriesYesterday.text = " "
+        passiveCaloriesYesterday.text = " "
+        activeCaloriesToday.text = " "
+        passiveCaloriesToday.text = " "
         todayStepCountLabel.text = " "
         todayFlightClimbedLabel.text = " "
         yesterdayStepCountLabel.text = " "
@@ -73,6 +76,9 @@ class ViewController: UIViewController {
         let startTime = Date()
         let generator = UIImpactFeedbackGenerator(style: .light)
         
+        let energyFormatter = EnergyFormatter()
+        energyFormatter.numberFormatter.maximumFractionDigits = 0
+        
         healthKitManager.getTodayStepCount (completion: { (steps) in
             OperationQueue.main.addOperation {
                 self.todayStepCountLabel.text = healthKitManager.stepsTodayString + " today"
@@ -99,27 +105,27 @@ class ViewController: UIViewController {
             }
         })
         
-        healthKitManager.getPassiveCaloriesYesterday (completion: { (calories) in
+        healthKitManager.getPassiveCaloriesYesterday (completion: { (Energy) in
             OperationQueue.main.addOperation {
-                self.passiveCaloriesYesterday.text = "\(healthKitManager.passiveCaloriesYesterday)"
+                self.passiveCaloriesYesterday.text = energyFormatter.string(fromJoules: healthKitManager.passiveCaloriesYesterday)
             }
         })
         
-        healthKitManager.getActiveCaloriesYesterday (completion: { (calories) in
+        healthKitManager.getActiveCaloriesYesterday (completion: { (Energy) in
             OperationQueue.main.addOperation {
-                self.activeCaloriesYesterday.text = "\(healthKitManager.activeCaloriesYesterday)"
+                self.activeCaloriesYesterday.text = energyFormatter.string(fromJoules: healthKitManager.activeCaloriesYesterday)
             }
         })
         
-        healthKitManager.getPassiveCaloriesToday (completion: { (calories) in
+        healthKitManager.getPassiveCaloriesToday (completion: { (Energy) in
             OperationQueue.main.addOperation {
-                self.passiveCaloriesToday.text = "\(healthKitManager.passiveCaloriesToday)"
+                self.passiveCaloriesToday.text = energyFormatter.string(fromJoules: healthKitManager.passiveCaloriesToday)
             }
         })
         
-        healthKitManager.getActiveCaloriesToday (completion: { (calories) in
+        healthKitManager.getActiveCaloriesToday (completion: { (Energy) in
             OperationQueue.main.addOperation {
-                self.activeCaloriesToday.text = "\(healthKitManager.activeCaloriesToday)"
+                self.activeCaloriesToday.text = energyFormatter.string(fromJoules: healthKitManager.activeCaloriesToday)
             }
         })
 
