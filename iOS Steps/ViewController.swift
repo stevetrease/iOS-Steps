@@ -19,6 +19,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var todayFlightClimbedLabel: UILabel!
     @IBOutlet weak var yesterdayStepCountLabel: UILabel!
     @IBOutlet weak var yesterdayFlightClimbedLabel: UILabel!
+    @IBOutlet weak var activeCaloriesYesterday: UILabel!
+    @IBOutlet weak var passiveCaloriesYesterday: UILabel!
+    @IBOutlet weak var activeCaloriesToday: UILabel!
+    @IBOutlet weak var passiveCaloriesToday: UILabel!
     @IBOutlet weak var chartView: CombinedChartView!
 
     override func viewDidLoad() {
@@ -94,6 +98,33 @@ class ViewController: UIViewController {
                 self.yesterdayFlightClimbedLabel.text = healthKitManager.flightsClimbedYesterdayString + " yesterday"
             }
         })
+        
+        healthKitManager.getPassiveCaloriesYesterday (completion: { (calories) in
+            OperationQueue.main.addOperation {
+                self.passiveCaloriesYesterday.text = "\(healthKitManager.passiveCaloriesYesterday)"
+            }
+        })
+        
+        healthKitManager.getActiveCaloriesYesterday (completion: { (calories) in
+            OperationQueue.main.addOperation {
+                self.activeCaloriesYesterday.text = "\(healthKitManager.activeCaloriesYesterday)"
+            }
+        })
+        
+        healthKitManager.getPassiveCaloriesToday (completion: { (calories) in
+            OperationQueue.main.addOperation {
+                self.passiveCaloriesToday.text = "\(healthKitManager.passiveCaloriesToday)"
+            }
+        })
+        
+        healthKitManager.getActiveCaloriesToday (completion: { (calories) in
+            OperationQueue.main.addOperation {
+                self.activeCaloriesToday.text = "\(healthKitManager.activeCaloriesToday)"
+            }
+        })
+
+
+        
         
         healthKitManager.updateHourlyStepsArray(completion: { (x) in
             OperationQueue.main.addOperation {
