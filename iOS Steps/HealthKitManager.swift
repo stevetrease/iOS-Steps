@@ -263,6 +263,124 @@ class HealthKitManager {
         healthStore.execute(query)
     }
     
+    
+    var activeCaloriesYesterday: Double = 0.0
+    func getActiveCaloriesYesterday(completion:@escaping (Double?)->())
+    {
+        //   Define the sample type
+        let type = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.activeEnergyBurned)
+        
+        let endDate = cal.startOfDay(for: Date())
+        let startDate =  cal.date(byAdding: .day, value: -1, to: endDate)
+        
+        //  Set the predicate
+        let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: [])
+        
+        let query = HKStatisticsQuery(quantityType: type!, quantitySamplePredicate: predicate, options: .cumulativeSum) { query, results, error in
+            // print ("query: getYesterdayStepCount")
+            let quantity = results?.sumQuantity()
+            let unit = HKUnit.calorie()
+            let calories = quantity?.doubleValue(for: unit)
+            
+            if calories != nil {
+                self.activeCaloriesYesterday = calories!
+                completion(calories)
+            } else {
+                self.activeCaloriesYesterday = 0.0
+                completion(0.0)
+            }
+        }
+        healthStore.execute(query)
+    }
+    
+    
+    var passiveCaloriesYesterday: Double = 0.0
+    func getPassiveCaloriesYesterday(completion:@escaping (Double?)->())
+    {
+        //   Define the sample type
+        let type = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.basalEnergyBurned)
+        
+        let endDate = cal.startOfDay(for: Date())
+        let startDate =  cal.date(byAdding: .day, value: -1, to: endDate)
+        
+        //  Set the predicate
+        let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: [])
+        
+        let query = HKStatisticsQuery(quantityType: type!, quantitySamplePredicate: predicate, options: .cumulativeSum) { query, results, error in
+            // print ("query: getYesterdayStepCount")
+            let quantity = results?.sumQuantity()
+            let unit = HKUnit.calorie()
+            let calories = quantity?.doubleValue(for: unit)
+            
+            if calories != nil {
+                self.passiveCaloriesYesterday = calories!
+                completion(calories)
+            } else {
+                self.passiveCaloriesYesterday = 0.0
+                completion(0.0)
+            }
+        }
+        healthStore.execute(query)
+    }
+    
+    var activeCaloriesToday: Double = 0.0
+    func getActiveCaloriesToday(completion:@escaping (Double?)->())
+    {
+        //   Define the sample type
+        let type = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.activeEnergyBurned)
+        
+        let startDate = cal.startOfDay(for: Date())
+        let endDate = Date()
+        
+        //  Set the predicate
+        let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: [])
+        
+        let query = HKStatisticsQuery(quantityType: type!, quantitySamplePredicate: predicate, options: .cumulativeSum) { query, results, error in
+            // print ("query: getTodayStepCount")
+            let quantity = results?.sumQuantity()
+            let unit = HKUnit.calorie()
+            let calories = quantity?.doubleValue(for: unit)
+            
+            if calories != nil {
+                self.activeCaloriesToday = calories!
+                completion(calories)
+            } else {
+                self.activeCaloriesToday = 0.0
+                completion(0.0)
+            }
+        }
+        healthStore.execute(query)
+    }
+    
+    
+    var passiveCaloriesToday: Double = 0.0
+    func getPassiveCaloriesToday(completion:@escaping (Double?)->())
+    {
+        //   Define the sample type
+        let type = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.basalEnergyBurned)
+        
+        let startDate = cal.startOfDay(for: Date())
+        let endDate = Date()
+        
+        //  Set the predicate
+        let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: [])
+        
+        let query = HKStatisticsQuery(quantityType: type!, quantitySamplePredicate: predicate, options: .cumulativeSum) { query, results, error in
+            let quantity = results?.sumQuantity()
+            let unit = HKUnit.calorie()
+            let calories = quantity?.doubleValue(for: unit)
+            
+            if calories != nil {
+                self.passiveCaloriesToday = calories!
+                completion(calories)
+            } else {
+                self.passiveCaloriesToday = 0.0
+                completion(0.0)
+            }
+        }
+        healthStore.execute(query)
+    }
+
 
     func checkHealthKitAuthorization() ->()
     {
@@ -274,6 +392,8 @@ class HealthKitManager {
             let healthKitTypesToRead : Set = [
                 HKObjectType.characteristicType(forIdentifier: HKCharacteristicTypeIdentifier.dateOfBirth)!,
                 HKObjectType.quantityType(forIdentifier:HKQuantityTypeIdentifier.flightsClimbed)!,
+                HKObjectType.quantityType(forIdentifier:HKQuantityTypeIdentifier.activeEnergyBurned)!,
+                HKObjectType.quantityType(forIdentifier:HKQuantityTypeIdentifier.basalEnergyBurned)!,
                 HKObjectType.quantityType(forIdentifier:HKQuantityTypeIdentifier.stepCount)!
             ]
             healthStore.requestAuthorization(toShare: nil, read: healthKitTypesToRead) { (success, error) -> Void in
