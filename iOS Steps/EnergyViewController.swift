@@ -1,8 +1,8 @@
 //
-//  BackViewController2.swift
+//  EnergyViewController.swift
 //  iOS Steps
 //
-//  Created by Steve on 11/04/2017.
+//  Created by Steve on 23/04/2017.
 //  Copyright © 2017 Steve. All rights reserved.
 //
 
@@ -13,10 +13,10 @@ import Charts
 
 
 
-class BackViewController2: UIViewController {
-
-    @IBOutlet weak var chartView2: CombinedChartView!
-
+class EnergyViewController: UIViewController {
+    
+    @IBOutlet weak var chartView4: CombinedChartView!
+    
     private let cal = Calendar.current
     
     override func viewDidLoad() {
@@ -24,23 +24,23 @@ class BackViewController2: UIViewController {
         
         print("\(#file) - \(#function)")
         
-        chartView2.legend.enabled = false
-        chartView2.xAxis.drawLabelsEnabled = true
-        chartView2.xAxis.labelPosition = XAxis.LabelPosition.bottom
-        chartView2.xAxis.drawGridLinesEnabled = false
-        chartView2.leftAxis.axisMinimum = 0
-        chartView2.leftAxis.drawGridLinesEnabled = false
-        chartView2.rightAxis.drawLabelsEnabled = false
-        chartView2.leftAxis.drawLabelsEnabled = true
-        chartView2.chartDescription?.text = ""
+        chartView4.legend.enabled = false
+        chartView4.xAxis.drawLabelsEnabled = true
+        chartView4.xAxis.labelPosition = XAxis.LabelPosition.bottom
+        chartView4.xAxis.drawGridLinesEnabled = false
+        chartView4.leftAxis.axisMinimum = 0
+        chartView4.leftAxis.drawGridLinesEnabled = false
+        chartView4.rightAxis.drawLabelsEnabled = false
+        chartView4.leftAxis.drawLabelsEnabled = true
+        chartView4.chartDescription?.text = ""
         
-        chartView2.drawBordersEnabled = false
-        chartView2.leftAxis.drawAxisLineEnabled = false
-        chartView2.rightAxis.drawAxisLineEnabled = false
-        chartView2.animate(xAxisDuration: 0.5, yAxisDuration: 1.0, easingOptionX: .easeInExpo, easingOptionY: .easeInExpo)
+        chartView4.drawBordersEnabled = false
+        chartView4.leftAxis.drawAxisLineEnabled = false
+        chartView4.rightAxis.drawAxisLineEnabled = false
+        chartView4.animate(xAxisDuration: 0.5, yAxisDuration: 1.0, easingOptionX: .easeInExpo, easingOptionY: .easeInExpo)
         
-        chartView2.xAxis.granularity = 1.0
-        chartView2.xAxis.granularityEnabled = true
+        chartView4.xAxis.granularity = 1.0
+        chartView4.xAxis.granularityEnabled = true
         
         drawScreen()
     }
@@ -63,14 +63,14 @@ class BackViewController2: UIViewController {
             let filterDay = cal.date(byAdding: .day, value: day, to: cal.startOfDay(for: Date()))
             
             let stepsForDay: [(date: Date, value: Double)] = healthKitManager.stepsArray.filter { cal.startOfDay(for: $0.date) == filterDay }
-        
+            
             var accumulator = 0.0
             for hour in stepsForDay {
                 let value = hour.value
                 accumulator = accumulator + value
             }
             // print (day, stepsForDay.count, accumulator)
-
+            
             let dailyStepEntry = BarChartDataEntry(x: Double(day), y: accumulator)
             dailyStepDataEntries.append(dailyStepEntry)
             
@@ -88,7 +88,7 @@ class BackViewController2: UIViewController {
         let data: CombinedChartData = CombinedChartData()
         data.barData = barData
         
-        self.chartView2.xAxis.valueFormatter = DefaultAxisValueFormatter(block: {(value, _) in
+        self.chartView4.xAxis.valueFormatter = DefaultAxisValueFormatter(block: {(value, _) in
             let index = Int(value) + healthKitManager.historyDays
             if (value == 0) {
                 return "Today"
@@ -97,12 +97,12 @@ class BackViewController2: UIViewController {
             }
         })
         
-        self.chartView2.xAxis.axisMinimum = -(Double(healthKitManager.historyDays) + 0.5)
-        self.chartView2.xAxis.axisMaximum = 0.5
+        self.chartView4.xAxis.axisMinimum = -(Double(healthKitManager.historyDays) + 0.5)
+        self.chartView4.xAxis.axisMaximum = 0.5
         
-        self.chartView2.data = data
-        self.chartView2.data?.notifyDataChanged()
-        self.chartView2.notifyDataSetChanged()
+        self.chartView4.data = data
+        self.chartView4.data?.notifyDataChanged()
+        self.chartView4.notifyDataSetChanged()
     }
     
     
@@ -112,7 +112,7 @@ class BackViewController2: UIViewController {
         drawScreen()
     }
     
-
+    
     
     override func didReceiveMemoryWarning() {
         print("\(#file) - \(#function)")

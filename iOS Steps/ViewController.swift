@@ -227,7 +227,6 @@ class ViewController: UIViewController {
     
     @IBAction func screenTappedTriggered(sender: AnyObject) {
         print ("\(#file) - \(#function)")
-        print ("Screen tapped ", type (of: sender))
         
         drawScreen()
     }

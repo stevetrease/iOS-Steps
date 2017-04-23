@@ -25,6 +25,7 @@
                         <segue destination="6yh-p4-nxq" kind="relationship" relationship="viewControllers" id="hQt-G2-JWW"/>
                         <segue destination="TKc-jX-oaP" kind="relationship" relationship="viewControllers" id="wEx-Lp-zyz"/>
                         <segue destination="PGX-2h-JkP" kind="relationship" relationship="viewControllers" id="J5b-iJ-pac"/>
+                        <segue destination="hXx-Ip-P8M" kind="relationship" relationship="viewControllers" id="hGe-ut-l1T"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zBq-2k-MXu" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -240,6 +241,54 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y8Z-91-V3U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1416" y="112"/>
+        </scene>
+        <!--EnergyView Controller-->
+        <scene sceneID="trk-lG-VA5">
+            <objects>
+                <viewController id="hXx-Ip-P8M" userLabel="EnergyView Controller" customClass="EnergyViewController" customModule="iOS_Steps" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Txt-S2-Qqp"/>
+                        <viewControllerLayoutGuide type="bottom" id="aDC-cr-hO5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="EZX-q2-t0I">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XLg-1G-cce" userLabel="Chart View4" customClass="CombinedChartView" customModule="Charts">
+                                <rect key="frame" x="16" y="140" width="288" height="288"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" notEnabled="YES"/>
+                                </accessibility>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="XLg-1G-cce" secondAttribute="height" multiplier="1:1" id="rJV-kk-Gpc"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="XLg-1G-cce" firstAttribute="centerY" secondItem="EZX-q2-t0I" secondAttribute="centerY" id="DpP-YP-yLe"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="XLg-1G-cce" secondAttribute="leading" id="LZ1-VO-3si"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="XLg-1G-cce" secondAttribute="trailing" id="Oiy-mP-YKy"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="KJw-eb-xLN" appends="YES" id="4n5-GK-jlG"/>
+                        </connections>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Energy" image="Hazard" selectedImage="Hazard" id="OOV-O2-wrs" userLabel="Energy"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="chartView4" destination="XLg-1G-cce" id="XUN-LM-XeX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hiW-tu-F3j" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="KJw-eb-xLN">
+                    <connections>
+                        <action selector="screenTappedTriggeredWithSender:" destination="hXx-Ip-P8M" id="mcS-93-BAC"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="2416.875" y="109.85915492957747"/>
         </scene>
         <!--BackView2 Controller-->
         <scene sceneID="gEN-Lm-YFF">
