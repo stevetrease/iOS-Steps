@@ -264,6 +264,108 @@ class HealthKitManager {
     }
     
     
+    var activeEnergyArray: [(date: Date, value: Double)] = []
+    func updateHourlyActiveEnergyArray(completion:@escaping (Double?)->())
+    {
+        let anchorDate = cal.date(byAdding: .day, value: -1, to: cal.startOfDay(for: Date()))
+        
+        var interval = DateComponents()
+        interval.hour = 1
+        
+        let type = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.activeEnergyBurned)
+        
+        // Create the query
+        let query = HKStatisticsCollectionQuery(quantityType: type!,
+                                                quantitySamplePredicate: nil,
+                                                options: .cumulativeSum,
+                                                anchorDate: anchorDate!,
+                                                intervalComponents: interval)
+        
+        // Set the results handler
+        query.initialResultsHandler = {
+            query, results, error in
+            print("\(#file) - \(#function)")
+            
+            guard let statsCollection = results else {
+                // Perform proper error handling here
+                fatalError("*** An error occurred while calculating the statistics: \(String(describing: error?.localizedDescription)) ***")
+            }
+            
+            let endDate = Date()
+            let startDate = self.cal.date(byAdding: .day, value: -(self.historyDays + 1), to: endDate)
+            
+            self.activeEnergyArray = []
+            
+            statsCollection.enumerateStatistics(from: startDate!, to: endDate) { [unowned self] statistics, stop in
+                if let quantity = statistics.sumQuantity() {
+                    let date = statistics.startDate
+                    let energy = quantity.doubleValue(for: HKUnit.calorie())
+                    
+                    self.activeEnergyArray.append(date: date, value: energy)
+                }
+            }
+            print ("active energy array length: \(self.activeEnergyArray.count)")
+            
+            completion (0.0)
+        }
+        healthStore.execute(query)
+    }
+    
+    var passiveEnergyArray: [(date: Date, value: Double)] = []
+    func updateHourlyPassiveEnergyArray(completion:@escaping (Double?)->())
+    {
+        let anchorDate = cal.date(byAdding: .day, value: -1, to: cal.startOfDay(for: Date()))
+        
+        var interval = DateComponents()
+        interval.hour = 1
+        
+        let type = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.basalEnergyBurned)
+        
+        // Create the query
+        let query = HKStatisticsCollectionQuery(quantityType: type!,
+                                                quantitySamplePredicate: nil,
+                                                options: .cumulativeSum,
+                                                anchorDate: anchorDate!,
+                                                intervalComponents: interval)
+        
+        // Set the results handler
+        query.initialResultsHandler = {
+            query, results, error in
+            print("\(#file) - \(#function)")
+            
+            guard let statsCollection = results else {
+                // Perform proper error handling here
+                fatalError("*** An error occurred while calculating the statistics: \(String(describing: error?.localizedDescription)) ***")
+            }
+            
+            let endDate = Date()
+            let startDate = self.cal.date(byAdding: .day, value: -(self.historyDays + 1), to: endDate)
+            
+            self.passiveEnergyArray = []
+            
+            statsCollection.enumerateStatistics(from: startDate!, to: endDate) { [unowned self] statistics, stop in
+                if let quantity = statistics.sumQuantity() {
+                    let date = statistics.startDate
+                    let energy = quantity.doubleValue(for: HKUnit.calorie())
+                    
+                    self.passiveEnergyArray.append(date: date, value: energy)
+                }
+            }
+            print ("passive energy array length: \(self.passiveEnergyArray.count)")
+            
+            completion (0.0)
+        }
+        healthStore.execute(query)
+    }
+
+
+    
+    
+    
+    
+    
+    
+    
     var activeCaloriesYesterday: Double = 0.0
     func getActiveCaloriesYesterday(completion:@escaping (Double?)->())
     {

@@ -24,7 +24,7 @@ class EnergyViewController: UIViewController {
         
         print("\(#file) - \(#function)")
         
-        chartView4.legend.enabled = false
+        chartView4.legend.enabled = true
         chartView4.xAxis.drawLabelsEnabled = true
         chartView4.xAxis.labelPosition = XAxis.LabelPosition.bottom
         chartView4.xAxis.drawGridLinesEnabled = false
@@ -56,37 +56,62 @@ class EnergyViewController: UIViewController {
     func drawScreen () {
         print("\(#file) - \(#function)")
         
-        var dailyStepDataEntries: [BarChartDataEntry] = []
         var xLabels: [String] = []
         
+        
+        // Active energy
+        var dailyActiveEnergyDataEntries: [BarChartDataEntry] = []
         for day in -healthKitManager.historyDays...0 {
             let filterDay = cal.date(byAdding: .day, value: day, to: cal.startOfDay(for: Date()))
             
-            let stepsForDay: [(date: Date, value: Double)] = healthKitManager.stepsArray.filter { cal.startOfDay(for: $0.date) == filterDay }
+            let activeEnergyForDay: [(date: Date, value: Double)] = healthKitManager.activeEnergyArray.filter { cal.startOfDay(for: $0.date) == filterDay }
             
             var accumulator = 0.0
-            for hour in stepsForDay {
+            for hour in activeEnergyForDay {
                 let value = hour.value
                 accumulator = accumulator + value
             }
-            // print (day, stepsForDay.count, accumulator)
-            
-            let dailyStepEntry = BarChartDataEntry(x: Double(day), y: accumulator)
-            dailyStepDataEntries.append(dailyStepEntry)
+
+            let dailyActiveEnergyEntry = BarChartDataEntry(x: Double(day), y: accumulator / 1000)
+            dailyActiveEnergyDataEntries.append(dailyActiveEnergyEntry)
             
             let formatter = DateFormatter()
             formatter.dateFormat = "E"
             xLabels.append (formatter.string (from: filterDay!))
         }
+        let activeEnergyBarDataSet = BarChartDataSet(values: dailyActiveEnergyDataEntries, label: "Active energy")
+        activeEnergyBarDataSet.colors = [UIColor.darkGray]
+        activeEnergyBarDataSet.drawValuesEnabled = false
         
-        let barDataSet = BarChartDataSet(values: dailyStepDataEntries, label: "")
+        // Passive energy
+        var dailyPassiveEnergyDataEntries: [BarChartDataEntry] = []
+        for day in -healthKitManager.historyDays...0 {
+            let filterDay = cal.date(byAdding: .day, value: day, to: cal.startOfDay(for: Date()))
+            
+            let passiveEnergyForDay: [(date: Date, value: Double)] = healthKitManager.passiveEnergyArray.filter { cal.startOfDay(for: $0.date) == filterDay }
+            
+            var accumulator = 0.0
+            for hour in passiveEnergyForDay {
+                let value = hour.value
+                accumulator = accumulator + value
+            }
+            
+            let dailyPassiveEnergyEntry = BarChartDataEntry(x: Double(day), y: accumulator / 1000)
+            dailyPassiveEnergyDataEntries.append(dailyPassiveEnergyEntry)
+            
+            let formatter = DateFormatter()
+            formatter.dateFormat = "E"
+        }
+        let passiveEnergyBarDataSet = BarChartDataSet(values: dailyPassiveEnergyDataEntries, label: "Passive energy")
+        passiveEnergyBarDataSet.colors = [UIColor.lightGray]
+        passiveEnergyBarDataSet.drawValuesEnabled = false
+       
         
-        barDataSet.colors = [UIColor.darkGray]
-        
-        let barData = BarChartData(dataSets: [barDataSet])
+        let barData = BarChartData(dataSets: [passiveEnergyBarDataSet, activeEnergyBarDataSet])
         
         let data: CombinedChartData = CombinedChartData()
         data.barData = barData
+        
         
         self.chartView4.xAxis.valueFormatter = DefaultAxisValueFormatter(block: {(value, _) in
             let index = Int(value) + healthKitManager.historyDays

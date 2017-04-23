@@ -129,8 +129,11 @@ class ViewController: UIViewController {
             }
         })
 
-
+        healthKitManager.updateHourlyActiveEnergyArray (completion: { (x) in
+        })
         
+        healthKitManager.updateHourlyPassiveEnergyArray (completion: { (x) in
+        })
         
         healthKitManager.updateHourlyStepsArray(completion: { (x) in
             OperationQueue.main.addOperation {
