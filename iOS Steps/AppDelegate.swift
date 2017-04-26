@@ -58,7 +58,7 @@ import WatchConnectivity
         let flightCountQuery = HKObserverQuery(sampleType: flightCountSampleType!, predicate: nil) {
             query, completionHandler, error in
             
-            // let dateString = formatter.string(from: Date())
+            let dateString = formatter.string(from: Date())
             print ("flight count query handler called at \(dateString)")
             
             if error != nil {
@@ -81,6 +81,22 @@ import WatchConnectivity
     
     func application (_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
         print (NSURL (fileURLWithPath: "\(#file)").lastPathComponent!, "\(#function) \(shortcutItem.type)")
+        
+        guard let tabBarController = window?.rootViewController as? UITabBarController else {
+            return
+        }
+        
+        switch shortcutItem.type {
+        case "eu.trease.iosteps.option1":
+            tabBarController.selectedIndex = 0
+        case "eu.trease.iosteps.week":
+            tabBarController.selectedIndex = 3
+        case "eu.trease.iosteps.energy":
+            tabBarController.selectedIndex = 4
+
+        default:
+            print ("error \(shortcutItem.type)")
+        }
     }
     
     
