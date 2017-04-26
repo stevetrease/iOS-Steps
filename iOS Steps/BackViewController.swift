@@ -24,21 +24,21 @@ class BackViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("\(#file) - \(#function)")
+        print (NSURL (fileURLWithPath: "\(#file)").lastPathComponent!, "\(#function)")
         
         drawScreen()
     }
     
     
     func viewWillAppear() {
-        print("\(#file) - \(#function)")
+        print (NSURL (fileURLWithPath: "\(#file)").lastPathComponent!, "\(#function)")
         
         drawScreen()
     }
     
     
     func drawScreen() {
-        print("\(#file) - \(#function)")
+        print (NSURL (fileURLWithPath: "\(#file)").lastPathComponent!, "\(#function)")
         
         let dateOfBirth = healthKitManager.dateOfBirth
         let nextBirthday = healthKitManager.dateOfNextBirthday
@@ -64,7 +64,7 @@ class BackViewController: UIViewController {
     
     
     override func didReceiveMemoryWarning() {
-        print("\(#file) - \(#function)")
+        print (NSURL (fileURLWithPath: "\(#file)").lastPathComponent!, "\(#function)")
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }

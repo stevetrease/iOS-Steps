@@ -24,7 +24,7 @@ class BackViewController3: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("\(#file) - \(#function)")
+        print (NSURL (fileURLWithPath: "\(#file)").lastPathComponent!, "\(#function)")
         
         chartView3.legend.enabled = true
         chartView3.xAxis.drawLabelsEnabled = true
@@ -49,14 +49,14 @@ class BackViewController3: UIViewController {
     
     
     func viewWillAppear() {
-        print("\(#file) - \(#function)")
+        print (NSURL (fileURLWithPath: "\(#file)").lastPathComponent!, "\(#function)")
         
         drawScreen()
     }
     
     
     func drawScreen () {
-        print("\(#file) - \(#function)")
+        print (NSURL (fileURLWithPath: "\(#file)").lastPathComponent!, "\(#function)")
         
         var firstHour = 24.0
         var lastHour = 0.0
@@ -135,7 +135,7 @@ class BackViewController3: UIViewController {
     
     
     override func didReceiveMemoryWarning() {
-        print("\(#file) - \(#function)")
+        print (NSURL (fileURLWithPath: "\(#file)").lastPathComponent!, "\(#function)")
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }

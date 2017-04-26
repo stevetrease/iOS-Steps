@@ -226,7 +226,7 @@ class HealthKitManager {
         // Set the results handler
         query.initialResultsHandler = {
             query, results, error in
-            print("\(#file) - \(#function)")
+            print (NSURL (fileURLWithPath: "\(#file)").lastPathComponent!, "\(#function)")
             
             guard let statsCollection = results else {
                 // Perform proper error handling here
@@ -279,7 +279,7 @@ class HealthKitManager {
         // Set the results handler
         query.initialResultsHandler = {
             query, results, error in
-            print("\(#file) - \(#function)")
+            print (NSURL (fileURLWithPath: "\(#file)").lastPathComponent!, "\(#function)")
             
             guard let statsCollection = results else {
                 // Perform proper error handling here
@@ -326,7 +326,7 @@ class HealthKitManager {
         // Set the results handler
         query.initialResultsHandler = {
             query, results, error in
-            print("\(#file) - \(#function)")
+            print (NSURL (fileURLWithPath: "\(#file)").lastPathComponent!, "\(#function)")
             
             guard let statsCollection = results else {
                 // Perform proper error handling here

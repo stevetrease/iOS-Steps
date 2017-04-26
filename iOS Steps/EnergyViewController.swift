@@ -22,7 +22,7 @@ class EnergyViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("\(#file) - \(#function)")
+        print (NSURL (fileURLWithPath: "\(#file)").lastPathComponent!, "\(#function)")
         
         chartView4.legend.enabled = true
         chartView4.xAxis.drawLabelsEnabled = true
@@ -47,14 +47,14 @@ class EnergyViewController: UIViewController {
     
     
     func viewWillAppear() {
-        print("\(#file) - \(#function)")
+        print (NSURL (fileURLWithPath: "\(#file)").lastPathComponent!, "\(#function)")
         
         drawScreen()
     }
     
     
     func drawScreen () {
-        print("\(#file) - \(#function)")
+        print (NSURL (fileURLWithPath: "\(#file)").lastPathComponent!, "\(#function)")
         
         var xLabels: [String] = []
         
@@ -140,7 +140,7 @@ class EnergyViewController: UIViewController {
     
     
     override func didReceiveMemoryWarning() {
-        print("\(#file) - \(#function)")
+        print (NSURL (fileURLWithPath: "\(#file)").lastPathComponent!, "\(#function)")
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
