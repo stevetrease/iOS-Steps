@@ -59,7 +59,7 @@ import WatchConnectivity
             query, completionHandler, error in
             
             // let dateString = formatter.string(from: Date())
-            // print ("flight count query handler at \(dateString)")
+            print ("flight count query handler called at \(dateString)")
             
             if error != nil {
                 // Perform Proper Error Handling Here...
