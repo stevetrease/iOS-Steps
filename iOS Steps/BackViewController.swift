@@ -18,7 +18,6 @@ class BackViewController: UIViewController {
     @IBOutlet weak var ageLabel: UILabel!
     @IBOutlet weak var nextBirthdayLabel: UILabel!
     @IBOutlet weak var timeToNextBirthdayDaysLabel: UILabel!
-    @IBOutlet weak var timeToNextBirthdayComponentsLabel: UILabel!
     
     
     override func viewDidLoad() {
@@ -51,9 +50,7 @@ class BackViewController: UIViewController {
 
         let ageFormatter = DateComponentsFormatter()
         ageFormatter.unitsStyle = .full
-        ageFormatter.maximumUnitCount = 3
-        timeToNextBirthdayComponentsLabel.text = ageFormatter.string(from: Date(), to: nextBirthday)
-        
+    
         ageFormatter.allowedUnits = [.day]
         timeToNextBirthdayDaysLabel.text =  ageFormatter.string(from: Date(), to: nextBirthday)
         
