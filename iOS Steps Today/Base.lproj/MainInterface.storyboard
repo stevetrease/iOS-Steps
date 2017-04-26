@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16F43c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="M4Y-Lb-cyx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F67a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="M4Y-Lb-cyx">
     <device id="retina3_5" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,19 +22,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="37"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="daq-Px-e6X">
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="2qM-Op-mLy">
                                 <rect key="frame" x="16" y="0.0" width="288" height="37"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="daq-Px-e6X">
+                                        <rect key="frame" x="0.0" y="0.0" width="144" height="37"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ve-uN-6hM">
+                                        <rect key="frame" x="144" y="0.0" width="144" height="37"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="daq-Px-e6X" secondAttribute="trailing" id="3Lc-u5-UAL"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="daq-Px-e6X" secondAttribute="bottom" id="LNl-Qm-63F"/>
-                            <constraint firstItem="daq-Px-e6X" firstAttribute="top" secondItem="S3S-Oj-5AN" secondAttribute="topMargin" id="Mvp-6s-t3m"/>
-                            <constraint firstItem="daq-Px-e6X" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leadingMargin" id="jA2-aj-XyP"/>
+                            <constraint firstItem="2qM-Op-mLy" firstAttribute="centerX" secondItem="S3S-Oj-5AN" secondAttribute="centerX" id="7UC-hj-vB7"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="2qM-Op-mLy" secondAttribute="trailing" id="Dez-FS-EnR"/>
+                            <constraint firstItem="2qM-Op-mLy" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leadingMargin" id="Unv-LO-8r4"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="2qM-Op-mLy" secondAttribute="bottom" id="g3p-54-dgC"/>
+                            <constraint firstItem="2qM-Op-mLy" firstAttribute="centerY" secondItem="S3S-Oj-5AN" secondAttribute="centerY" id="pKI-Hl-3Gt"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="O2w-ql-fca" appends="YES" id="HSH-06-eog"/>
@@ -47,6 +59,7 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="37"/>
                     <connections>
+                        <outlet property="activeCaloriesLabel" destination="8Ve-uN-6hM" id="ZQ2-oK-m9e"/>
                         <outlet property="stepsLabel" destination="daq-Px-e6X" id="ngz-dO-7vv"/>
                     </connections>
                 </viewController>

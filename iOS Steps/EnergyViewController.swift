@@ -58,7 +58,6 @@ class EnergyViewController: UIViewController {
         
         var xLabels: [String] = []
         
-        
         // Active energy
         var dailyActiveEnergyDataEntries: [BarChartDataEntry] = []
         for day in -healthKitManager.historyDays...0 {

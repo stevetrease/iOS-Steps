@@ -13,15 +13,18 @@ import HealthKit
 class TodayViewController: UIViewController, NCWidgetProviding {
     
     let healthStore = HKHealthStore()
+    let cal = Calendar.current
     
     @IBOutlet weak var stepsLabel: UILabel!
-    
+    @IBOutlet weak var activeCaloriesLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print ("viewDidLoad")
         
-        stepsLabel.text = "--"
+        stepsLabel.text = ""
+        activeCaloriesLabel.text = ""
+        
         checkHealthKitAuthorization()
         
         updateView ()
@@ -68,24 +71,34 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     
     
     func updateView () {
+        let energyFormatter = EnergyFormatter()
+        energyFormatter.numberFormatter.maximumFractionDigits = 0
+        
+        let numberFormatter = NumberFormatter()
+        numberFormatter.maximumFractionDigits = 0
+        numberFormatter.numberStyle = NumberFormatter.Style.decimal
+        
         getTodayStepCount (completion: { (steps) in
-            // print ("getTodayStepCount")
-            let numberFormatter = NumberFormatter()
-            numberFormatter.maximumFractionDigits = 0
-            numberFormatter.numberStyle = NumberFormatter.Style.decimal
             let numberString = numberFormatter.string(from: steps! as NSNumber)
             
             if steps != -1.0 {
                 OperationQueue.main.addOperation {
                     if (self.stepsLabel.text != numberString!) {
-                        print ("changed  ", self.stepsLabel.text!, numberString!)
                         self.stepsLabel.text = numberString!
-                    } else {
-                        print ("unchanged ",self.stepsLabel.text!,  numberString!)
                     }
                 }
-            } else {
-                print ("steps are nil")
+            }
+        })
+        
+        getActiveCaloriesToday (completion: { (calories) in
+            let energyString = energyFormatter.string(fromJoules: calories!)
+            
+            if calories != -1.0 {
+                OperationQueue.main.addOperation {
+                    if (self.activeCaloriesLabel.text != energyString) {
+                        self.activeCaloriesLabel.text = energyString
+                    }
+                }
             }
         })
     }
@@ -101,6 +114,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
             print ("healthKit is available")
             
             let healthKitTypesToRead : Set = [
+                HKObjectType.quantityType(forIdentifier:HKQuantityTypeIdentifier.activeEnergyBurned)!,
                 HKObjectType.quantityType(forIdentifier:HKQuantityTypeIdentifier.stepCount)!
             ]
             healthStore.requestAuthorization(toShare: nil, read: healthKitTypesToRead) { (success, error) -> Void in
@@ -117,13 +131,11 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     }
     
     
-    func getTodayStepCount(completion:@escaping (Double?)->())
+    func getActiveCaloriesToday(completion:@escaping (Double?)->())
     {
-        
         //   Define the sample type
-        let type = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)
+        let type = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.activeEnergyBurned)
         
-        let cal = Calendar.current
         let startDate = cal.startOfDay(for: Date())
         let endDate = Date()
         
@@ -131,7 +143,59 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: [])
         
         let query = HKStatisticsQuery(quantityType: type!, quantitySamplePredicate: predicate, options: .cumulativeSum) { query, results, error in
-            // print ("query: getTodayStepCount")
+            let quantity = results?.sumQuantity()
+            let unit = HKUnit.calorie()
+            let calories = quantity?.doubleValue(for: unit)
+            
+            if calories != nil {
+                completion(calories)
+            } else {
+                completion(0.0)
+            }
+        }
+        healthStore.execute(query)
+    }
+    
+    
+    func getPassiveCaloriesToday(completion:@escaping (Double?)->())
+    {
+        //   Define the sample type
+        let type = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.basalEnergyBurned)
+        
+        let startDate = cal.startOfDay(for: Date())
+        let endDate = Date()
+        
+        //  Set the predicate
+        let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: [])
+        
+        let query = HKStatisticsQuery(quantityType: type!, quantitySamplePredicate: predicate, options: .cumulativeSum) { query, results, error in
+            let quantity = results?.sumQuantity()
+            let unit = HKUnit.calorie()
+            let calories = quantity?.doubleValue(for: unit)
+            
+            if calories != nil {
+                completion(calories)
+            } else {
+                completion(0.0)
+            }
+        }
+        healthStore.execute(query)
+    }
+    
+    
+    func getTodayStepCount(completion:@escaping (Double?)->())
+    {
+        
+        //   Define the sample type
+        let type = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)
+        
+        let startDate = cal.startOfDay(for: Date())
+        let endDate = Date()
+        
+        //  Set the predicate
+        let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: [])
+        
+        let query = HKStatisticsQuery(quantityType: type!, quantitySamplePredicate: predicate, options: .cumulativeSum) { query, results, error in
             let quantity = results?.sumQuantity()
             let unit = HKUnit.count()
             let steps = quantity?.doubleValue(for: unit)
