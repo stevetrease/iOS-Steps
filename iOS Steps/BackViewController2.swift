@@ -69,7 +69,6 @@ class BackViewController2: UIViewController {
                 let value = hour.value
                 accumulator = accumulator + value
             }
-            // print (day, stepsForDay.count, accumulator)
 
             let dailyStepEntry = BarChartDataEntry(x: Double(day), y: accumulator)
             dailyStepDataEntries.append(dailyStepEntry)

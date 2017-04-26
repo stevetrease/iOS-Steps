@@ -23,8 +23,8 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        print (NSURL (fileURLWithPath: "\(#file)").lastPathComponent!, "\(#function)")
         
-        print("\(#file) - \(#function)")
         todayStepCountLabel.text = " "
         todayFlightClimbedLabel.text = " "
         yesterdayStepCountLabel.text = " "
@@ -56,14 +56,14 @@ class ViewController: UIViewController {
     
     
     func drawScreenHKObserverQuery () {
-        print("\(#file) - \(#function)")
+        print (NSURL (fileURLWithPath: "\(#file)").lastPathComponent!, "\(#function)")
         
         drawScreen()
     }
     
     
     func drawScreen () {
-        print("\(#file) - \(#function)")
+        print (NSURL (fileURLWithPath: "\(#file)").lastPathComponent!, "\(#function)")
         
         let startTime = Date()
         let generator = UIImpactFeedbackGenerator(style: .light)
@@ -97,16 +97,16 @@ class ViewController: UIViewController {
             }
         })
 
-        healthKitManager.updateHourlyActiveEnergyArray (completion: { (x) in
+        healthKitManager.updateHourlyActiveEnergyArray (completion: { (calories) in
         })
         
-        healthKitManager.updateHourlyPassiveEnergyArray (completion: { (x) in
+        healthKitManager.updateHourlyPassiveEnergyArray (completion: { (calories) in
         })
         
-        healthKitManager.updateHourlyStepsArray(completion: { (x) in
+        healthKitManager.updateHourlyStepsArray(completion: { (steps) in
             OperationQueue.main.addOperation {
                 var elapsed = Date().timeIntervalSince(startTime)
-                print ("updateStepsArray call time = \(elapsed)")
+                // print ("updateStepsArray call time = \(elapsed)")
                 
                 var hourlyDataEntries: [BarChartDataEntry] = []
                 var line1Data: [ChartDataEntry] = []
@@ -197,7 +197,7 @@ class ViewController: UIViewController {
     
     
     @IBAction func screenTappedTriggered(sender: AnyObject) {
-        print ("\(#file) - \(#function)")
+        print (NSURL (fileURLWithPath: "\(#file)").lastPathComponent!, "\(#function)")
         
         drawScreen()
     }
@@ -208,7 +208,6 @@ class ViewController: UIViewController {
     
     override func didReceiveMemoryWarning() {
         print("\(#file) - \(#function)")
-        super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 }

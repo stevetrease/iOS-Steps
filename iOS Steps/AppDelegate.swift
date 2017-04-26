@@ -24,6 +24,7 @@ import WatchConnectivity
         print("\(#file) - \(#function)")
         UserDefaults.standard.setValue(false, forKey: "_UIConstraintBasedLayoutLogUnsatisfiable")
         
+        
         // if WCSession.isSupported() {
         //     watchConnectivityHandler = WatchConnectivityHandler()
         //     print ("WCSession supported")
@@ -40,8 +41,8 @@ import WatchConnectivity
         let stepCountQuery = HKObserverQuery(sampleType: stepCountSampleType!, predicate: nil) {
             query, completionHandler, error in
             
-            let dateString = formatter.string(from: Date())
-            print ("step count query handler at   \(dateString)")
+            // let dateString = formatter.string(from: Date())
+            // print ("step count query handler at   \(dateString)")
             
             if error != nil {
                 // Perform Proper Error Handling Here...
@@ -57,8 +58,8 @@ import WatchConnectivity
         let flightCountQuery = HKObserverQuery(sampleType: flightCountSampleType!, predicate: nil) {
             query, completionHandler, error in
             
-            let dateString = formatter.string(from: Date())
-            print ("flight count query handler at \(dateString)")
+            // let dateString = formatter.string(from: Date())
+            // print ("flight count query handler at \(dateString)")
             
             if error != nil {
                 // Perform Proper Error Handling Here...
@@ -77,6 +78,19 @@ import WatchConnectivity
         return true
     }
     
+    
+    func application (_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
+        print("\(#file) - \(#function) \(shortcutItem.type)")
+    }
+    
+    
+    /*
+    func application (application: UIApplicationShortcutItem, shortcutItem: UIApplicationShortcutItem, completionHandeler: (Bool) -> Void) {
+        print("\(#file) - \(#function)")
+        print(shortcutItem.type)
+    }
+    */
+
     
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

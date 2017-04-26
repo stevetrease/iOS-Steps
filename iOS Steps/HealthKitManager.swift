@@ -21,7 +21,6 @@ class HealthKitManager {
     
     init()
     {
-        // print ("HealthKitManager.init")
         numberFormatter.maximumFractionDigits = 0
         numberFormatter.numberStyle = NumberFormatter.Style.decimal
         checkHealthKitAuthorization()
@@ -77,7 +76,6 @@ class HealthKitManager {
         let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: [])
         
         let query = HKStatisticsQuery(quantityType: type!, quantitySamplePredicate: predicate, options: .cumulativeSum) { query, results, error in
-            // print ("query: getTodayFlightsClimbedCount")
             let quantity = results?.sumQuantity()
             let unit = HKUnit.count()
             let flights = quantity?.doubleValue(for: unit)
@@ -115,7 +113,6 @@ class HealthKitManager {
         let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: [])
         
         let query = HKStatisticsQuery(quantityType: type!, quantitySamplePredicate: predicate, options: .cumulativeSum) { query, results, error in
-            // print ("query: getYesterdayFlightsClimbedCount")
             let quantity = results?.sumQuantity()
             let unit = HKUnit.count()
             let flights = quantity?.doubleValue(for: unit)
@@ -153,7 +150,6 @@ class HealthKitManager {
         let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: [])
         
         let query = HKStatisticsQuery(quantityType: type!, quantitySamplePredicate: predicate, options: .cumulativeSum) { query, results, error in
-            // print ("query: getTodayStepCount")
             let quantity = results?.sumQuantity()
             let unit = HKUnit.count()
             let steps = quantity?.doubleValue(for: unit)
@@ -191,7 +187,6 @@ class HealthKitManager {
         let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: [])
         
         let query = HKStatisticsQuery(quantityType: type!, quantitySamplePredicate: predicate, options: .cumulativeSum) { query, results, error in
-            // print ("query: getYesterdayStepCount")
             let quantity = results?.sumQuantity()
             let unit = HKUnit.count()
             let steps = quantity?.doubleValue(for: unit)
@@ -359,13 +354,6 @@ class HealthKitManager {
     }
 
 
-    
-    
-    
-    
-    
-    
-    
     var activeCaloriesYesterday: Double = 0.0
     func getActiveCaloriesYesterday(completion:@escaping (Double?)->())
     {
@@ -379,7 +367,6 @@ class HealthKitManager {
         let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: [])
         
         let query = HKStatisticsQuery(quantityType: type!, quantitySamplePredicate: predicate, options: .cumulativeSum) { query, results, error in
-            // print ("query: getYesterdayStepCount")
             let quantity = results?.sumQuantity()
             let unit = HKUnit.calorie()
             let calories = quantity?.doubleValue(for: unit)
@@ -409,7 +396,6 @@ class HealthKitManager {
         let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: [])
         
         let query = HKStatisticsQuery(quantityType: type!, quantitySamplePredicate: predicate, options: .cumulativeSum) { query, results, error in
-            // print ("query: getYesterdayStepCount")
             let quantity = results?.sumQuantity()
             let unit = HKUnit.calorie()
             let calories = quantity?.doubleValue(for: unit)
@@ -438,7 +424,6 @@ class HealthKitManager {
         let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: [])
         
         let query = HKStatisticsQuery(quantityType: type!, quantitySamplePredicate: predicate, options: .cumulativeSum) { query, results, error in
-            // print ("query: getTodayStepCount")
             let quantity = results?.sumQuantity()
             let unit = HKUnit.calorie()
             let calories = quantity?.doubleValue(for: unit)

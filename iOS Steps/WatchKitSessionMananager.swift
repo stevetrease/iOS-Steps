@@ -22,8 +22,6 @@ class WatchConnectivityHandler: NSObject, WCSessionDelegate {
         print ("Paired Watch: \(session.isPaired), Watch App Installed: \(session.isWatchAppInstalled)")
     }
     
-    // MARK: - WCSessionDelegate
-    
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
         print ("activationDidCompleteWith activationState:\(activationState) error:\(String(describing: error))")
     }

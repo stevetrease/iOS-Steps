@@ -28,11 +28,36 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>268</string>
+	<string>277</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSHealthShareUsageDescription</key>
 	<string>This application requires read only access to HealthKit data.</string>
+	<key>UIApplicationShortcutItems</key>
+	<array>
+		<dict>
+			<key>UIApplicationShortcutIUtem</key>
+			<dict>
+				<key>firstShortcutKey</key>
+				<string>firstShortcutKeyValue1</string>
+			</dict>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Day view</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>eu.trease.iosteps.option1</string>
+		</dict>
+		<dict>
+			<key>UIApplicationShortcutIUtem</key>
+			<dict>
+				<key>firstShortcutKey</key>
+				<string>firstShortcutKeyValue1</string>
+			</dict>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Week view</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>eu.trease.iosteps.option2</string>
+		</dict>
+	</array>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>fetch</string>
