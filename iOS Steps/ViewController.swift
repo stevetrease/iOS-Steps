@@ -51,6 +51,7 @@ class ViewController: UIViewController {
         chartView.xAxis.granularity = 1.0
         chartView.xAxis.granularityEnabled = true
         
+        updateHealthData()
         drawScreen()
     }
     
@@ -61,11 +62,14 @@ class ViewController: UIViewController {
         drawScreen()
     }
     
+    func updateHealthData () {
+        print (NSURL (fileURLWithPath: "\(#file)").lastPathComponent!, "\(#function)")
+    }
+    
     
     func drawScreen () {
         print (NSURL (fileURLWithPath: "\(#file)").lastPathComponent!, "\(#function)")
         
-        let startTime = Date()
         let generator = UIImpactFeedbackGenerator(style: .light)
         
         let energyFormatter = EnergyFormatter()
@@ -105,9 +109,6 @@ class ViewController: UIViewController {
         
         healthKitManager.updateHourlyStepsArray(completion: { (steps) in
             OperationQueue.main.addOperation {
-                var elapsed = Date().timeIntervalSince(startTime)
-                // print ("updateStepsArray call time = \(elapsed)")
-                
                 var hourlyDataEntries: [BarChartDataEntry] = []
                 var line1Data: [ChartDataEntry] = []
                 var line2Data: [ChartDataEntry] = []
@@ -188,10 +189,7 @@ class ViewController: UIViewController {
                 self.chartView.data = data
                 self.chartView.data?.notifyDataChanged()
                 self.chartView.notifyDataSetChanged()
-                
-                elapsed = Date().timeIntervalSince(startTime)
-                print ("updateStepsArray finished =  \(elapsed)")
-            }
+             }
         })
     }
     

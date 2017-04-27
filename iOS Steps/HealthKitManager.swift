@@ -209,6 +209,8 @@ class HealthKitManager {
     var stepsArray: [(date: Date, value: Double)] = []
     func updateHourlyStepsArray(completion:@escaping (Double?)->())
     {
+        let startTime = Date()
+        
         let anchorDate = cal.date(byAdding: .day, value: -1, to: cal.startOfDay(for: Date()))
         
         var interval = DateComponents()
@@ -246,12 +248,14 @@ class HealthKitManager {
                     self.stepsArray.append(date: date, value: steps)
                 }
             }
-            print ("steps array length: \(self.stepsArray.count)")
             
             // filter today's steps
             self.hourlySteps = self.stepsArray.filter { self.cal.isDateInToday ($0.date) }
             // filter yesterday's steps
             self.hourlyStepsYesterday = self.stepsArray.filter { self.cal.isDateInYesterday($0.date) }
+            
+            let elapsedTime = Date().timeIntervalSince(startTime)
+            print ("updateHourlyStepsArray: \(self.stepsArray.count) in \(elapsedTime)")
             
             completion (0.0)
         }
@@ -262,6 +266,8 @@ class HealthKitManager {
     var activeEnergyArray: [(date: Date, value: Double)] = []
     func updateHourlyActiveEnergyArray(completion:@escaping (Double?)->())
     {
+        let startTime = Date()
+        
         let anchorDate = cal.date(byAdding: .day, value: -1, to: cal.startOfDay(for: Date()))
         
         var interval = DateComponents()
@@ -299,8 +305,10 @@ class HealthKitManager {
                     self.activeEnergyArray.append(date: date, value: energy)
                 }
             }
-            print ("active energy array length: \(self.activeEnergyArray.count)")
             
+            let elapsedTime = Date().timeIntervalSince(startTime)
+            print ("updateHourlyActiveEnergyArray: \(self.activeEnergyArray.count) in \(elapsedTime)")
+
             completion (0.0)
         }
         healthStore.execute(query)
@@ -309,6 +317,8 @@ class HealthKitManager {
     var passiveEnergyArray: [(date: Date, value: Double)] = []
     func updateHourlyPassiveEnergyArray(completion:@escaping (Double?)->())
     {
+        let startTime = Date()
+
         let anchorDate = cal.date(byAdding: .day, value: -1, to: cal.startOfDay(for: Date()))
         
         var interval = DateComponents()
@@ -346,7 +356,9 @@ class HealthKitManager {
                     self.passiveEnergyArray.append(date: date, value: energy)
                 }
             }
-            print ("passive energy array length: \(self.passiveEnergyArray.count)")
+            
+            let elapsedTime = Date().timeIntervalSince(startTime)
+            print ("updateHourlyPassiveEnergyArray: \(self.passiveEnergyArray.count) in \(elapsedTime)")
             
             completion (0.0)
         }
