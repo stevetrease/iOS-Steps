@@ -238,16 +238,18 @@ class HealthKitManager {
             let endDate = Date()
             let startDate = self.cal.date(byAdding: .day, value: -(self.historyDays + 1), to: endDate)
             
-            self.stepsArray = []
+            var tempArray: [(date: Date, value: Double)] = []
             
             statsCollection.enumerateStatistics(from: startDate!, to: endDate) { [unowned self] statistics, stop in  
                 if let quantity = statistics.sumQuantity() {
                     let date = statistics.startDate
                     let steps = quantity.doubleValue(for: HKUnit.count())
                     
-                    self.stepsArray.append(date: date, value: steps)
+                    tempArray.append(date: date, value: steps)
                 }
             }
+            
+            self.stepsArray = tempArray
             
             // filter today's steps
             self.hourlySteps = self.stepsArray.filter { self.cal.isDateInToday ($0.date) }
@@ -295,16 +297,18 @@ class HealthKitManager {
             let endDate = Date()
             let startDate = self.cal.date(byAdding: .day, value: -(self.historyDays + 1), to: endDate)
             
-            self.activeEnergyArray = []
+            var tempArray: [(date: Date, value: Double)] = []
             
             statsCollection.enumerateStatistics(from: startDate!, to: endDate) { [unowned self] statistics, stop in
                 if let quantity = statistics.sumQuantity() {
                     let date = statistics.startDate
                     let energy = quantity.doubleValue(for: HKUnit.calorie())
                     
-                    self.activeEnergyArray.append(date: date, value: energy)
+                    tempArray.append(date: date, value: energy)
                 }
             }
+            
+            self.activeEnergyArray = tempArray
             
             let elapsedTime = Date().timeIntervalSince(startTime)
             print ("updateHourlyActiveEnergyArray: \(self.activeEnergyArray.count) in \(elapsedTime)")
@@ -346,20 +350,22 @@ class HealthKitManager {
             let endDate = Date()
             let startDate = self.cal.date(byAdding: .day, value: -(self.historyDays + 1), to: endDate)
             
-            self.passiveEnergyArray = []
+            var tempArray: [(date: Date, value: Double)] = []
             
             statsCollection.enumerateStatistics(from: startDate!, to: endDate) { [unowned self] statistics, stop in
                 if let quantity = statistics.sumQuantity() {
                     let date = statistics.startDate
                     let energy = quantity.doubleValue(for: HKUnit.calorie())
                     
-                    self.passiveEnergyArray.append(date: date, value: energy)
+                    tempArray.append(date: date, value: energy)
                 }
             }
             
+            self.passiveEnergyArray = tempArray
+            
             let elapsedTime = Date().timeIntervalSince(startTime)
             print ("updateHourlyPassiveEnergyArray: \(self.passiveEnergyArray.count) in \(elapsedTime)")
-            
+
             completion (0.0)
         }
         healthStore.execute(query)
