@@ -107,6 +107,7 @@ class ViewController: UIViewController {
         healthKitManager.updateHourlyPassiveEnergyArray (completion: { (calories) in
         })
         
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
         healthKitManager.updateHourlyStepsArray(completion: { (steps) in
             OperationQueue.main.addOperation {
                 var hourlyDataEntries: [BarChartDataEntry] = []
@@ -189,6 +190,8 @@ class ViewController: UIViewController {
                 self.chartView.data = data
                 self.chartView.data?.notifyDataChanged()
                 self.chartView.notifyDataSetChanged()
+                
+                UIApplication.shared.isNetworkActivityIndicatorVisible = false
              }
         })
     }
