@@ -22,10 +22,10 @@
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="tf9-b3-YY4"/>
-                        <segue destination="6yh-p4-nxq" kind="relationship" relationship="viewControllers" id="hQt-G2-JWW"/>
                         <segue destination="TKc-jX-oaP" kind="relationship" relationship="viewControllers" id="wEx-Lp-zyz"/>
                         <segue destination="PGX-2h-JkP" kind="relationship" relationship="viewControllers" id="J5b-iJ-pac"/>
                         <segue destination="hXx-Ip-P8M" kind="relationship" relationship="viewControllers" id="hGe-ut-l1T"/>
+                        <segue destination="6yh-p4-nxq" kind="relationship" relationship="viewControllers" id="hQt-G2-JWW"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zBq-2k-MXu" userLabel="First Responder" sceneMemberID="firstResponder"/>
