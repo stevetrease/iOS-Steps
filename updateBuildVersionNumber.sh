@@ -14,3 +14,5 @@ do
 	PLIST="$DELIVERABLE/Info.plist"
 	$PLB -c "Set :CFBundleVersion $NEW_BUILD" "$PLIST"
 done
+
+sed -e "/userLabel=\"APP_VERSION\"/s/text=\"[^\"]*\"/text=\"Build: $NEW_BUILD\"/" "iOS Steps"/Base.lproj/LaunchScreen.storyboard
