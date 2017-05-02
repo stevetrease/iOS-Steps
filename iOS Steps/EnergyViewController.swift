@@ -63,7 +63,7 @@ class EnergyViewController: UIViewController {
         for day in -healthKitManager.historyDays...0 {
             let filterDay = cal.date(byAdding: .day, value: day, to: cal.startOfDay(for: Date()))
             
-            let activeEnergyForDay: [(date: Date, value: Double)] = healthKitManager.activeEnergyArray.filter { cal.startOfDay(for: $0.date) == filterDay }
+            let activeEnergyForDay: [(timeStamp: Date, value: Double)] = healthKitManager.activeEnergyArray.filter { cal.startOfDay(for: $0.timeStamp) == filterDay }
             
             var accumulator = 0.0
             for hour in activeEnergyForDay {
@@ -87,7 +87,7 @@ class EnergyViewController: UIViewController {
         for day in -healthKitManager.historyDays...0 {
             let filterDay = cal.date(byAdding: .day, value: day, to: cal.startOfDay(for: Date()))
             
-            let passiveEnergyForDay: [(date: Date, value: Double)] = healthKitManager.passiveEnergyArray.filter { cal.startOfDay(for: $0.date) == filterDay }
+            let passiveEnergyForDay: [(timeStamp: Date, value: Double)] = healthKitManager.passiveEnergyArray.filter { cal.startOfDay(for: $0.timeStamp) == filterDay }
             
             var accumulator = 0.0
             for hour in passiveEnergyForDay {

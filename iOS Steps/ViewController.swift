@@ -120,7 +120,7 @@ class ViewController: UIViewController {
                 var accumulator1 = 0.0
                 for i in 0..<healthKitManager.hourlySteps.count {
                     let cal = Calendar.current
-                    let d = healthKitManager.hourlySteps[i].date
+                    let d = healthKitManager.hourlySteps[i].timeStamp
                     let components = cal.dateComponents ([.hour], from: d)
                     let hour = Double(components.hour!)
                     let value = healthKitManager.hourlySteps[i].value
@@ -144,7 +144,7 @@ class ViewController: UIViewController {
                 var accumulator2 = 0.0
                 for i in 0..<healthKitManager.hourlyStepsYesterday.count {
                     let cal = Calendar.current
-                    let d = healthKitManager.hourlyStepsYesterday[i].date
+                    let d = healthKitManager.hourlyStepsYesterday[i].timeStamp
                     let components = cal.dateComponents ([.hour], from: d)
                     let hour = Double(components.hour!)
                     let value = healthKitManager.hourlyStepsYesterday[i].value

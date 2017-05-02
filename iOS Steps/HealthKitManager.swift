@@ -13,6 +13,12 @@ import HealthKit
 var healthKitManager = HealthKitManager()
 
 
+class HealthData {
+    var timeStamp = Date()
+    var data = 0.0
+}
+
+
 class HealthKitManager {
     
     let healthStore = HKHealthStore()
@@ -204,9 +210,9 @@ class HealthKitManager {
     }
 
     
-    var hourlySteps: [(date: Date, value: Double)] = []
-    var hourlyStepsYesterday: [(date: Date, value: Double)] = []
-    var stepsArray: [(date: Date, value: Double)] = []
+    var hourlySteps: [(timeStamp: Date, value: Double)] = []
+    var hourlyStepsYesterday: [(timeStamp: Date, value: Double)] = []
+    var stepsArray: [(timeStamp: Date, value: Double)] = []
     func updateHourlyStepsArray(completion:@escaping (Double?)->())
     {
         let startTime = Date()
@@ -229,6 +235,7 @@ class HealthKitManager {
         query.initialResultsHandler = {
             query, results, error in
             print (NSURL (fileURLWithPath: "\(#file)").lastPathComponent!, "\(#function)")
+            let startTime = Date()
             
             guard let statsCollection = results else {
                 // Perform proper error handling here
@@ -238,26 +245,26 @@ class HealthKitManager {
             let endDate = Date()
             let startDate = self.cal.date(byAdding: .day, value: -(self.historyDays + 1), to: endDate)
             
-            var tempArray: [(date: Date, value: Double)] = []
+            var tempArray: [(timeStamp: Date, value: Double)] = []
             
             statsCollection.enumerateStatistics(from: startDate!, to: endDate) { [unowned self] statistics, stop in  
                 if let quantity = statistics.sumQuantity() {
                     let date = statistics.startDate
                     let steps = quantity.doubleValue(for: HKUnit.count())
                     
-                    tempArray.append(date: date, value: steps)
+                    tempArray.append(timeStamp: date, value: steps)
                 }
             }
             
             self.stepsArray = tempArray
             
             // filter today's steps
-            self.hourlySteps = self.stepsArray.filter { self.cal.isDateInToday ($0.date) }
+            self.hourlySteps = self.stepsArray.filter { self.cal.isDateInToday ($0.timeStamp) }
             // filter yesterday's steps
-            self.hourlyStepsYesterday = self.stepsArray.filter { self.cal.isDateInYesterday($0.date) }
+            self.hourlyStepsYesterday = self.stepsArray.filter { self.cal.isDateInYesterday($0.timeStamp) }
             
             let elapsedTime = Date().timeIntervalSince(startTime)
-            print ("updateHourlyStepsArray: \(self.stepsArray.count) in \(elapsedTime)")
+            // print ("updateHourlyStepsArray: \(self.stepsArray.count) in \(elapsedTime)")
             
             completion (0.0)
         }
@@ -265,7 +272,7 @@ class HealthKitManager {
     }
     
     
-    var activeEnergyArray: [(date: Date, value: Double)] = []
+    var activeEnergyArray: [(timeStamp: Date, value: Double)] = []
     func updateHourlyActiveEnergyArray(completion:@escaping (Double?)->())
     {
         let startTime = Date()
@@ -297,28 +304,28 @@ class HealthKitManager {
             let endDate = Date()
             let startDate = self.cal.date(byAdding: .day, value: -(self.historyDays + 1), to: endDate)
             
-            var tempArray: [(date: Date, value: Double)] = []
+            var tempArray: [(timeStamp: Date, value: Double)] = []
             
             statsCollection.enumerateStatistics(from: startDate!, to: endDate) { [unowned self] statistics, stop in
                 if let quantity = statistics.sumQuantity() {
                     let date = statistics.startDate
                     let energy = quantity.doubleValue(for: HKUnit.calorie())
                     
-                    tempArray.append(date: date, value: energy)
+                    tempArray.append(timeStamp: date, value: energy)
                 }
             }
             
             self.activeEnergyArray = tempArray
             
             let elapsedTime = Date().timeIntervalSince(startTime)
-            print ("updateHourlyActiveEnergyArray: \(self.activeEnergyArray.count) in \(elapsedTime)")
+            // print ("updateHourlyActiveEnergyArray: \(self.activeEnergyArray.count) in \(elapsedTime)")
 
             completion (0.0)
         }
         healthStore.execute(query)
     }
     
-    var passiveEnergyArray: [(date: Date, value: Double)] = []
+    var passiveEnergyArray: [(timeStamp: Date, value: Double)] = []
     func updateHourlyPassiveEnergyArray(completion:@escaping (Double?)->())
     {
         let startTime = Date()
@@ -350,21 +357,21 @@ class HealthKitManager {
             let endDate = Date()
             let startDate = self.cal.date(byAdding: .day, value: -(self.historyDays + 1), to: endDate)
             
-            var tempArray: [(date: Date, value: Double)] = []
+            var tempArray: [(timeStamp: Date, value: Double)] = []
             
             statsCollection.enumerateStatistics(from: startDate!, to: endDate) { [unowned self] statistics, stop in
                 if let quantity = statistics.sumQuantity() {
                     let date = statistics.startDate
                     let energy = quantity.doubleValue(for: HKUnit.calorie())
                     
-                    tempArray.append(date: date, value: energy)
+                    tempArray.append(timeStamp: date, value: energy)
                 }
             }
             
             self.passiveEnergyArray = tempArray
             
             let elapsedTime = Date().timeIntervalSince(startTime)
-            print ("updateHourlyPassiveEnergyArray: \(self.passiveEnergyArray.count) in \(elapsedTime)")
+            // print ("updateHourlyPassiveEnergyArray: \(self.passiveEnergyArray.count) in \(elapsedTime)")
 
             completion (0.0)
         }
@@ -428,6 +435,7 @@ class HealthKitManager {
         }
         healthStore.execute(query)
     }
+    
     
     var activeCaloriesToday: Double = 0.0
     func getActiveCaloriesToday(completion:@escaping (Double?)->())

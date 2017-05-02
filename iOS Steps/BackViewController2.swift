@@ -65,7 +65,7 @@ class BackViewController2: UIViewController {
                 for day in -healthKitManager.historyDays...0 {
                     let filterDay = self.cal.date(byAdding: .day, value: day, to: self.cal.startOfDay(for: Date()))
                     
-                    let stepsForDay: [(date: Date, value: Double)] = healthKitManager.stepsArray.filter { self.cal.startOfDay(for: $0.date) == filterDay }
+                    let stepsForDay: [(timeStamp: Date, value: Double)] = healthKitManager.stepsArray.filter { self.cal.startOfDay(for: $0.timeStamp) == filterDay }
                 
                     var accumulator = 0.0
                     for hour in stepsForDay {

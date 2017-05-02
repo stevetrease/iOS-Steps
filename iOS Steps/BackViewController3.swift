@@ -68,14 +68,14 @@ class BackViewController3: UIViewController {
                 for day in -healthKitManager.historyDays...0 {
                     let filterDay = self.cal.date(byAdding: .day, value: day, to: self.cal.startOfDay(for: Date()))
                     
-                    var dailySteps = healthKitManager.stepsArray.filter { self.cal.startOfDay(for: $0.date) == filterDay }
+                    var dailySteps = healthKitManager.stepsArray.filter { self.cal.startOfDay(for: $0.timeStamp) == filterDay }
                     
                     var dailyLineDataEntries: [BarChartDataEntry] = []
                     
                     var accumulator = 0.0
                     for i in 0..<dailySteps.count {
                         let cal = Calendar.current
-                        let d = dailySteps[i].date
+                        let d = dailySteps[i].timeStamp
                         let components = cal.dateComponents ([.hour], from: d)
                         let hour = Double(components.hour!)
                         
