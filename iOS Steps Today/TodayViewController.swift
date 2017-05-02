@@ -10,20 +10,20 @@ import UIKit
 import NotificationCenter
 import HealthKit
 
+
+
 class TodayViewController: UIViewController, NCWidgetProviding {
     
     let healthStore = HKHealthStore()
     let cal = Calendar.current
     
     @IBOutlet weak var stepsLabel: UILabel!
-    @IBOutlet weak var activeCaloriesLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print ("viewDidLoad")
         
         stepsLabel.text = ""
-        activeCaloriesLabel.text = ""
         
         checkHealthKitAuthorization()
         
@@ -85,18 +85,6 @@ class TodayViewController: UIViewController, NCWidgetProviding {
                 OperationQueue.main.addOperation {
                     if (self.stepsLabel.text != numberString!) {
                         self.stepsLabel.text = numberString!
-                    }
-                }
-            }
-        })
-        
-        getActiveCaloriesToday (completion: { (calories) in
-            let energyString = energyFormatter.string(fromJoules: calories!)
-            
-            if calories != -1.0 {
-                OperationQueue.main.addOperation {
-                    if (self.activeCaloriesLabel.text != energyString) {
-                        self.activeCaloriesLabel.text = energyString
                     }
                 }
             }

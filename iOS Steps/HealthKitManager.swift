@@ -13,7 +13,7 @@ import HealthKit
 var healthKitManager = HealthKitManager()
 
 
-class HealthData {
+class HealthDataType {
     var timeStamp = Date()
     var data = 0.0
 }
