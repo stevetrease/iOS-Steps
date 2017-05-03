@@ -62,6 +62,8 @@ class BackViewController2: UIViewController {
                 var dailyStepDataEntries: [BarChartDataEntry] = []
                 var xLabels: [String] = []
                 
+                var averageDailySteps = 0.0
+                
                 for day in -healthKitManager.historyDays...0 {
                     let filterDay = self.cal.date(byAdding: .day, value: day, to: self.cal.startOfDay(for: Date()))
                     
@@ -79,7 +81,14 @@ class BackViewController2: UIViewController {
                     let formatter = DateFormatter()
                     formatter.dateFormat = "E"
                     xLabels.append (formatter.string (from: filterDay!))
+                    
+                    if day != 0 {
+                        averageDailySteps = averageDailySteps + accumulator
+                    }
                 }
+                
+                averageDailySteps = averageDailySteps / Double(healthKitManager.historyDays)
+                print (averageDailySteps)
                 
                 let barDataSet = BarChartDataSet(values: dailyStepDataEntries, label: "")
                 

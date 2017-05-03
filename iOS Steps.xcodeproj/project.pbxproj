@@ -339,6 +339,7 @@
 			buildPhases = (
 				AA9D2E7D1E3E424C000E9C08 /* Sources */,
 				AA9D2E7E1E3E424C000E9C08 /* Frameworks */,
+				AA2E20801EBA358F00E68388 /* ShellScript */,
 				AA9D2E7F1E3E424C000E9C08 /* Resources */,
 				AA558A0C1E42925100230075 /* ShellScript */,
 				AA8072BC1E857F5800E45DEC /* Embed Frameworks */,
@@ -514,6 +515,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		AA2E20801EBA358F00E68388 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = ./updateSplashScreen.sh;
+		};
 		AA558A0C1E42925100230075 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

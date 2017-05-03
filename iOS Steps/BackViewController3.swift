@@ -65,6 +65,7 @@ class BackViewController3: UIViewController {
                 var lastHour = 0.0
                 var lines: [LineChartDataSet] = []
                 
+                
                 for day in -healthKitManager.historyDays...0 {
                     let filterDay = self.cal.date(byAdding: .day, value: day, to: self.cal.startOfDay(for: Date()))
                     
