@@ -16,7 +16,6 @@ import Charts
 class ViewController: UIViewController {
 
     @IBOutlet weak var todayStepCountLabel: UILabel!
-    @IBOutlet weak var todayFlightClimbedLabel: UILabel!
     @IBOutlet weak var yesterdayStepCountLabel: UILabel!
     @IBOutlet weak var yesterdayFlightClimbedLabel: UILabel!
     @IBOutlet weak var chartView: CombinedChartView!
@@ -25,10 +24,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         print (NSURL (fileURLWithPath: "\(#file)").lastPathComponent!, "\(#function)")
         
-        todayStepCountLabel.text = " "
-        todayFlightClimbedLabel.text = " "
-        yesterdayStepCountLabel.text = " "
-        yesterdayFlightClimbedLabel.text = " "
+        todayStepCountLabel.text = ""
+        yesterdayStepCountLabel.text = ""
         
         let appDelegate:AppDelegate = UIApplication.shared.delegate! as! AppDelegate
         appDelegate.myViewController = self
@@ -72,9 +69,6 @@ class ViewController: UIViewController {
         
         let generator = UIImpactFeedbackGenerator(style: .light)
         
-        let energyFormatter = EnergyFormatter()
-        energyFormatter.numberFormatter.maximumFractionDigits = 0
-        
         healthKitManager.getTodayStepCount (completion: { (steps) in
             OperationQueue.main.addOperation {
                 self.todayStepCountLabel.text = healthKitManager.stepsTodayString + " today"
@@ -88,24 +82,6 @@ class ViewController: UIViewController {
             }
         })
         
-        healthKitManager.getTodayFlightsClimbedCount (completion: { (flights) in
-            OperationQueue.main.addOperation {
-                 self.todayFlightClimbedLabel.text = healthKitManager.flightsClimbedTodayString + " today"
-            }
-            generator.impactOccurred()
-        })
-
-        healthKitManager.getYesterdayFlightsClimbedCount( completion: { (flights) in
-            OperationQueue.main.addOperation {
-                self.yesterdayFlightClimbedLabel.text = healthKitManager.flightsClimbedYesterdayString + " yesterday"
-            }
-        })
-
-        healthKitManager.updateHourlyActiveEnergyArray (completion: { (calories) in
-        })
-        
-        healthKitManager.updateHourlyPassiveEnergyArray (completion: { (calories) in
-        })
         
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         healthKitManager.updateHourlyStepsArray(completion: { (steps) in

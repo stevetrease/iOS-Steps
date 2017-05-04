@@ -25,7 +25,6 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="tf9-b3-YY4"/>
                         <segue destination="TKc-jX-oaP" kind="relationship" relationship="viewControllers" id="wEx-Lp-zyz"/>
                         <segue destination="PGX-2h-JkP" kind="relationship" relationship="viewControllers" id="J5b-iJ-pac"/>
-                        <segue destination="hXx-Ip-P8M" kind="relationship" relationship="viewControllers" id="hGe-ut-l1T"/>
                         <segue destination="6yh-p4-nxq" kind="relationship" relationship="viewControllers" id="hQt-G2-JWW"/>
                     </connections>
                 </tabBarController>
@@ -48,55 +47,28 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Vvw-VY-4ya">
                                 <rect key="frame" x="10" y="30" width="300" height="479"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Wj2-Ac-Zpc">
-                                        <rect key="frame" x="0.0" y="0.0" width="300" height="403"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="todayStepCountLabel" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="24" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oJu-oP-i4O" userLabel="todayStepCountLabel">
-                                                <rect key="frame" x="6.5" y="0.0" width="287.5" height="95.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="yesterdayStepCountLabel" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="24" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WPY-JI-Jbe" userLabel="yesterdayStepCountLabel">
-                                                <rect key="frame" x="5.5" y="95.5" width="289.5" height="76.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iZi-bJ-8bk" customClass="CombinedChartView" customModule="Charts">
-                                                <rect key="frame" x="0.0" y="172" width="300" height="231"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <accessibility key="accessibilityConfiguration">
-                                                    <accessibilityTraits key="traits" notEnabled="YES"/>
-                                                </accessibility>
-                                            </view>
-                                        </subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="todayStepCountLabel" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="24" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oJu-oP-i4O" userLabel="todayStepCountLabel">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="102.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="yesterdayStepCountLabel" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="24" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WPY-JI-Jbe" userLabel="yesterdayStepCountLabel">
+                                        <rect key="frame" x="0.0" y="102.5" width="300" height="76.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iZi-bJ-8bk" customClass="CombinedChartView" customModule="Charts">
+                                        <rect key="frame" x="0.0" y="179" width="300" height="300"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <accessibilityTraits key="traits" notEnabled="YES"/>
+                                        </accessibility>
                                         <constraints>
-                                            <constraint firstItem="iZi-bJ-8bk" firstAttribute="leading" secondItem="Wj2-Ac-Zpc" secondAttribute="leadingMargin" id="3ID-1N-xml"/>
-                                            <constraint firstAttribute="trailingMargin" secondItem="iZi-bJ-8bk" secondAttribute="trailing" id="4Pc-uO-Ns9"/>
+                                            <constraint firstAttribute="width" secondItem="iZi-bJ-8bk" secondAttribute="height" multiplier="1:1" id="0EL-CU-Hgq"/>
                                         </constraints>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ULM-lZ-ccC">
-                                        <rect key="frame" x="0.0" y="403" width="300" height="76"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="todayFlightClimbedLabel" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="24" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j1u-TF-Awu" userLabel="todayFlightClimbedLabel">
-                                                <rect key="frame" x="22" y="0.0" width="256" height="38"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="yesterdayFlightClimbedLabel" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="24" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3kt-C4-gcd" userLabel="yesterdayFlightClimbedLabel">
-                                                <rect key="frame" x="36" y="38" width="228" height="38"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstItem="3kt-C4-gcd" firstAttribute="leading" secondItem="ULM-lZ-ccC" secondAttribute="leading" constant="36" id="GCy-ek-mdW"/>
-                                            <constraint firstItem="j1u-TF-Awu" firstAttribute="leading" secondItem="ULM-lZ-ccC" secondAttribute="leading" constant="22" id="JqX-la-AXj"/>
-                                        </constraints>
-                                    </stackView>
+                                    </view>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -115,9 +87,7 @@
                     <tabBarItem key="tabBarItem" title="Day" image="Bridge" selectedImage="Bridge" id="kg1-fp-8Hz"/>
                     <connections>
                         <outlet property="chartView" destination="iZi-bJ-8bk" id="bPY-mj-1kV"/>
-                        <outlet property="todayFlightClimbedLabel" destination="j1u-TF-Awu" id="dcz-Zn-WS4"/>
                         <outlet property="todayStepCountLabel" destination="oJu-oP-i4O" id="zJh-0Q-CMX"/>
-                        <outlet property="yesterdayFlightClimbedLabel" destination="3kt-C4-gcd" id="Mb9-nW-Zht"/>
                         <outlet property="yesterdayStepCountLabel" destination="WPY-JI-Jbe" id="vjb-xs-0Fd"/>
                     </connections>
                 </viewController>
@@ -197,54 +167,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y8Z-91-V3U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1416" y="112"/>
-        </scene>
-        <!--EnergyView Controller-->
-        <scene sceneID="trk-lG-VA5">
-            <objects>
-                <viewController id="hXx-Ip-P8M" userLabel="EnergyView Controller" customClass="EnergyViewController" customModule="iOS_Steps" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Txt-S2-Qqp"/>
-                        <viewControllerLayoutGuide type="bottom" id="aDC-cr-hO5"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="EZX-q2-t0I">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XLg-1G-cce" userLabel="Chart View4" customClass="CombinedChartView" customModule="Charts">
-                                <rect key="frame" x="16" y="140" width="288" height="288"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" notEnabled="YES"/>
-                                </accessibility>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="XLg-1G-cce" secondAttribute="height" multiplier="1:1" id="rJV-kk-Gpc"/>
-                                </constraints>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="XLg-1G-cce" firstAttribute="centerY" secondItem="EZX-q2-t0I" secondAttribute="centerY" id="DpP-YP-yLe"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="XLg-1G-cce" secondAttribute="leading" id="LZ1-VO-3si"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="XLg-1G-cce" secondAttribute="trailing" id="Oiy-mP-YKy"/>
-                        </constraints>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="KJw-eb-xLN" appends="YES" id="4n5-GK-jlG"/>
-                        </connections>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Energy" image="Hazard" selectedImage="Hazard" id="OOV-O2-wrs" userLabel="Energy"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="chartView4" destination="XLg-1G-cce" id="XUN-LM-XeX"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hiW-tu-F3j" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="KJw-eb-xLN">
-                    <connections>
-                        <action selector="screenTappedTriggeredWithSender:" destination="hXx-Ip-P8M" id="mcS-93-BAC"/>
-                    </connections>
-                </tapGestureRecognizer>
-            </objects>
-            <point key="canvasLocation" x="2416.875" y="109.85915492957747"/>
         </scene>
         <!--BackView2 Controller-->
         <scene sceneID="gEN-Lm-YFF">

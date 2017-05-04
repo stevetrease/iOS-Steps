@@ -28,7 +28,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>363</string>
+	<string>366</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSHealthShareUsageDescription</key>
@@ -45,17 +45,6 @@
 			<string>Day view</string>
 			<key>UIApplicationShortcutItemType</key>
 			<string>eu.trease.iosteps.option1</string>
-		</dict>
-		<dict>
-			<key>UIApplicationShortcutIUtem</key>
-			<dict>
-				<key>firstShortcutKey</key>
-				<string>firstShortcutKeyValue1</string>
-			</dict>
-			<key>UIApplicationShortcutItemTitle</key>
-			<string>Energy view</string>
-			<key>UIApplicationShortcutItemType</key>
-			<string>eu.trease.iosteps.energy</string>
 		</dict>
 		<dict>
 			<key>UIApplicationShortcutIUtem</key>

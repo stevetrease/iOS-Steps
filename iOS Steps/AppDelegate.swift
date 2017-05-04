@@ -90,10 +90,7 @@ import WatchConnectivity
         case "eu.trease.iosteps.option1":
             tabBarController.selectedIndex = 0
         case "eu.trease.iosteps.week":
-            tabBarController.selectedIndex = 3
-        case "eu.trease.iosteps.energy":
-            tabBarController.selectedIndex = 4
-
+            tabBarController.selectedIndex = 2
         default:
             print ("error \(shortcutItem.type)")
         }
