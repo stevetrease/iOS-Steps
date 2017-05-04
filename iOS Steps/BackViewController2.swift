@@ -109,7 +109,7 @@ class BackViewController2: UIViewController {
         
         let barDataSet = BarChartDataSet(values: dailyStepDataEntries, label: "")
         
-        barDataSet.colors = [UIColor.darkGray]
+        barDataSet.colors = [UIColor.lightGray]
         
         let barData = BarChartData(dataSets: [barDataSet])
         

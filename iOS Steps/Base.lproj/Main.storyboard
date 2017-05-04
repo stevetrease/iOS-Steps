@@ -8,6 +8,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -258,17 +259,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="bSj-dT-frE">
-                                <rect key="frame" x="0.0" y="20" width="320" height="499"/>
+                                <rect key="frame" x="10" y="30" width="300" height="479"/>
                                 <subviews>
                                     <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hen-Jn-og8" customClass="CombinedChartView" customModule="Charts">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="249.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="319.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" notEnabled="YES"/>
                                         </accessibility>
                                     </view>
                                     <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bUu-a9-YtA" customClass="CombinedChartView" customModule="Charts">
-                                        <rect key="frame" x="0.0" y="249.5" width="320" height="249.5"/>
+                                        <rect key="frame" x="0.0" y="319.5" width="300" height="159.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" notEnabled="YES"/>
@@ -279,16 +280,16 @@
                                     <constraint firstAttribute="bottom" secondItem="bUu-a9-YtA" secondAttribute="bottom" id="Lur-u9-Pwj"/>
                                     <constraint firstItem="hen-Jn-og8" firstAttribute="leading" secondItem="bSj-dT-frE" secondAttribute="leading" id="a2u-8a-StR"/>
                                     <constraint firstItem="hen-Jn-og8" firstAttribute="centerX" secondItem="bSj-dT-frE" secondAttribute="centerX" id="ytv-f5-ncy"/>
-                                    <constraint firstItem="hen-Jn-og8" firstAttribute="height" secondItem="bUu-a9-YtA" secondAttribute="height" id="z6g-MT-u3B"/>
+                                    <constraint firstItem="hen-Jn-og8" firstAttribute="height" secondItem="bUu-a9-YtA" secondAttribute="height" multiplier="2" id="z6g-MT-u3B"/>
                                 </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="bSj-dT-frE" secondAttribute="trailing" id="JFt-dI-hyF"/>
-                            <constraint firstItem="bSj-dT-frE" firstAttribute="top" secondItem="kwe-DW-U14" secondAttribute="bottom" id="aYV-ZP-Ib2"/>
-                            <constraint firstItem="fR9-aN-AMs" firstAttribute="top" secondItem="bSj-dT-frE" secondAttribute="bottom" id="dr9-Jf-AyR"/>
-                            <constraint firstItem="bSj-dT-frE" firstAttribute="leading" secondItem="SHl-Wv-p2X" secondAttribute="leading" id="vvu-cx-DEe"/>
+                            <constraint firstAttribute="trailing" secondItem="bSj-dT-frE" secondAttribute="trailing" constant="10" id="JFt-dI-hyF"/>
+                            <constraint firstItem="bSj-dT-frE" firstAttribute="top" secondItem="kwe-DW-U14" secondAttribute="bottom" constant="10" id="aYV-ZP-Ib2"/>
+                            <constraint firstItem="fR9-aN-AMs" firstAttribute="top" secondItem="bSj-dT-frE" secondAttribute="bottom" constant="10" id="dr9-Jf-AyR"/>
+                            <constraint firstItem="bSj-dT-frE" firstAttribute="leading" secondItem="SHl-Wv-p2X" secondAttribute="leading" constant="10" id="vvu-cx-DEe"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="9RX-nZ-GBD" appends="YES" id="7la-3H-BAy"/>
@@ -296,8 +297,8 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Week" image="Maintenance" selectedImage="Maintenance" id="imV-WR-Afu"/>
                     <connections>
-                        <outlet property="chartView2" destination="hen-Jn-og8" id="hz9-uJ-FOe"/>
-                        <outlet property="chartView3" destination="bUu-a9-YtA" id="KFS-I8-8Ag"/>
+                        <outlet property="chartView2" destination="bUu-a9-YtA" id="19v-1y-3g3"/>
+                        <outlet property="chartView3" destination="hen-Jn-og8" id="wbd-bH-CIE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O4B-Pu-wIt" userLabel="First Responder" sceneMemberID="firstResponder"/>
