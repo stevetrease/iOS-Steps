@@ -26,18 +26,15 @@ class HealthKitManager {
     private let cal = Calendar.current
     
     init() {
+        print (NSURL (fileURLWithPath: "\(#file)").lastPathComponent!, "\(#function)")
+        
         numberFormatter.maximumFractionDigits = 0
         numberFormatter.numberStyle = NumberFormatter.Style.decimal
         checkHealthKitAuthorization()
         
-        getTodayStepCount (completion: { (steps) in
-        })
-        
-        getYesterdayStepCount (completion: { (steps) in
-        })
-    
-        updateHourlyStepsArray(completion: { (steps) in
-        })
+        getTodayStepCount (completion: { _ in })
+        getYesterdayStepCount (completion: { _ in })
+        updateHourlyStepsArray(completion: { _ in })
     }
     
     
