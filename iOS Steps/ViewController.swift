@@ -59,6 +59,7 @@ class ViewController: UIViewController {
         drawScreen()
     }
     
+    
     func updateHealthData () {
         print (NSURL (fileURLWithPath: "\(#file)").lastPathComponent!, "\(#function)")
     }

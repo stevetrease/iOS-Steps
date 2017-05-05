@@ -42,6 +42,7 @@ class BackViewController2: UIViewController {
         
         chartView2.xAxis.granularity = 1.0
         chartView2.xAxis.granularityEnabled = true
+        self.drawChart2()
         
         
         chartView3.legend.enabled = true
@@ -61,6 +62,7 @@ class BackViewController2: UIViewController {
         
         chartView3.xAxis.granularity = 1.0
         chartView3.xAxis.granularityEnabled = true
+        self.drawChart3()
         
         drawScreen()
     }

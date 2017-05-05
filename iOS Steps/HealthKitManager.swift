@@ -29,7 +29,18 @@ class HealthKitManager {
         numberFormatter.maximumFractionDigits = 0
         numberFormatter.numberStyle = NumberFormatter.Style.decimal
         checkHealthKitAuthorization()
+        
+        getTodayStepCount (completion: { (steps) in
+        })
+        
+        getYesterdayStepCount (completion: { (steps) in
+        })
+    
+        updateHourlyStepsArray(completion: { (steps) in
+        })
     }
+    
+    
     
     let historyDays = 7
     

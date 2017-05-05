@@ -44,6 +44,8 @@ class BackViewController3: UIViewController {
         chartView3.xAxis.granularity = 1.0
         chartView3.xAxis.granularityEnabled = true
         
+        self.drawChart3()
+        
         drawScreen()
     }
     
