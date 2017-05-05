@@ -36,7 +36,6 @@ import WatchConnectivity
         formatter.dateFormat = "HH:mm"
         
         let stepCountSampleType = HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)
-        let flightCountSampleType = HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.flightsClimbed)
 
         let stepCountQuery = HKObserverQuery(sampleType: stepCountSampleType!, predicate: nil) {
             query, completionHandler, error in
@@ -54,26 +53,8 @@ import WatchConnectivity
             
             completionHandler()
         }
-
-        let flightCountQuery = HKObserverQuery(sampleType: flightCountSampleType!, predicate: nil) {
-            query, completionHandler, error in
-            
-            let dateString = formatter.string(from: Date())
-            print ("flight count query handler called at \(dateString)")
-            
-            if error != nil {
-                // Perform Proper Error Handling Here...
-                print ("*** An error occured while setting up the flightCount observer. \(String(describing: error?.localizedDescription)) ***")
-                abort()
-            }
-            
-            self.myViewController?.drawScreen()
-            
-            completionHandler()
-        }
-        
+      
         healthKitManager.healthStore.execute(stepCountQuery)
-        healthKitManager.healthStore.execute(flightCountQuery)
   
         return true
     }
