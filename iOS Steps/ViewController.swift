@@ -137,9 +137,6 @@ class ViewController: UIViewController {
             
             let hourlyDataEntry = BarChartDataEntry(x: Double(hour), y: sum)
             hourlyDataEntries.append(hourlyDataEntry)
-            
-            print (hour, sum)
-            
         }
         
         // yesterday line data
@@ -170,7 +167,7 @@ class ViewController: UIViewController {
         let lineDataSet1 = LineChartDataSet(values: line1Data, label: "Today")
         let lineDataSet2 = LineChartDataSet(values: line2Data, label: "Yesterday")
         
-        barDataSet.colors = [UIColor.darkText]
+        barDataSet.colors = [UIColor.darkGray]
         lineDataSet1.colors = [UIColor.darkText]
         lineDataSet1.drawCirclesEnabled = false
         lineDataSet1.lineWidth = 3
