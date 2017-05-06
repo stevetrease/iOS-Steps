@@ -107,7 +107,7 @@ class BackViewController2: UIViewController {
         }
         
         averageDailySteps = averageDailySteps / Double(healthKitManager.historyDays)
-        print (averageDailySteps)
+        print ("average daily step", averageDailySteps)
         
         let barDataSet = BarChartDataSet(values: dailyStepDataEntries, label: "")
         
@@ -154,8 +154,9 @@ class BackViewController2: UIViewController {
             for i in 0..<dailySteps.count {
                 let cal = Calendar.current
                 let d = dailySteps[i].timeStamp
-                let components = cal.dateComponents ([.hour], from: d)
+                let components = cal.dateComponents ([.hour, .minute], from: d)
                 let hour = Double(components.hour!)
+                let minutes = Double(components.minute!)
                 
                 accumulator = accumulator + dailySteps[i].value
                 let value = accumulator
@@ -167,7 +168,7 @@ class BackViewController2: UIViewController {
                     lastHour = hour
                 }
                 
-                let dailyLineDataEntry = BarChartDataEntry(x: hour, y: value)
+                let dailyLineDataEntry = BarChartDataEntry(x: hour + (minutes / 60), y: value)
                 dailyLineDataEntries.append(dailyLineDataEntry)
             }
             

@@ -150,7 +150,7 @@ class HealthKitManager {
         let anchorDate = cal.date(byAdding: .day, value: -1, to: cal.startOfDay(for: Date()))
         
         var interval = DateComponents()
-        interval.hour = 1
+        interval.minute = 5
         
         let type = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)
         
@@ -194,7 +194,7 @@ class HealthKitManager {
             self.hourlyStepsYesterday = self.stepsArray.filter { self.cal.isDateInYesterday($0.timeStamp) }
             
             let elapsedTime = Date().timeIntervalSince(startTime)
-            // print ("updateHourlyStepsArray: \(self.stepsArray.count) in \(elapsedTime)")
+            print ("updateHourlyStepsArray: \(self.stepsArray.count) in \(elapsedTime)")
             
             completion (0.0)
         }
