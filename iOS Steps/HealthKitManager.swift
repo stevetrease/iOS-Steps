@@ -32,9 +32,9 @@ class HealthKitManager {
         numberFormatter.numberStyle = NumberFormatter.Style.decimal
         checkHealthKitAuthorization()
         
-        getTodayStepCount (completion: { _ in })
-        getYesterdayStepCount (completion: { _ in })
-        updateHourlyStepsArray(completion: { _ in })
+        // getTodayStepCount (completion: { _ in })
+        // getYesterdayStepCount (completion: { _ in })
+        // updateHourlyStepsArray(completion: { _ in })
     }
     
     
@@ -78,6 +78,8 @@ class HealthKitManager {
         }
     }
     func getTodayStepCount(completion:@escaping (Double?)->()) {
+        print (NSURL (fileURLWithPath: "\(#file)").lastPathComponent!, "\(#function)")
+        
         //   Define the sample type
         let type = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)
         
@@ -114,6 +116,8 @@ class HealthKitManager {
         }
     }
     func getYesterdayStepCount(completion:@escaping (Double?)->()) {
+        print (NSURL (fileURLWithPath: "\(#file)").lastPathComponent!, "\(#function)")
+        
         //   Define the sample type
         let type = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)
         
@@ -145,6 +149,7 @@ class HealthKitManager {
     var hourlyStepsYesterday: [(timeStamp: Date, value: Double)] = []
     var stepsArray: [(timeStamp: Date, value: Double)] = []
     func updateHourlyStepsArray(completion:@escaping (Double?)->()) {
+        print (NSURL (fileURLWithPath: "\(#file)").lastPathComponent!, "\(#function)")
         let startTime = Date()
         
         let anchorDate = cal.date(byAdding: .day, value: -1, to: cal.startOfDay(for: Date()))
