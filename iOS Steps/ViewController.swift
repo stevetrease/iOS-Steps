@@ -101,14 +101,18 @@ class ViewController: UIViewController {
         var firstHour = 24.0
         var lastHour = 0.0
         
-        var accumulator1 = 0.0
-        for i in 0..<healthKitManager.hourlySteps.count {
+        // today line data
+        let dailyStepsToday = healthKitManager.hourlySteps
+        var accumulator = 0.0
+        for i in 0..<dailyStepsToday.count {
             let cal = Calendar.current
-            let d = healthKitManager.hourlySteps[i].timeStamp
+            let d = dailyStepsToday[i].timeStamp
             let components = cal.dateComponents ([.hour, .minute], from: d)
             let hour = Double(components.hour!)
-            let minutes = Double(components.hour!)
-            let value = healthKitManager.hourlySteps[i].value
+            let minutes = Double(components.minute!)
+            
+            accumulator = accumulator + dailyStepsToday[i].value
+            let value = accumulator
             
             if (hour < firstHour) {
                 firstHour = hour
@@ -117,36 +121,49 @@ class ViewController: UIViewController {
                 lastHour = hour
             }
             
-            accumulator1 = accumulator1 + value
-            
-            let hourlyDataEntry = BarChartDataEntry(x: hour, y: value)
-            hourlyDataEntries.append(hourlyDataEntry)
-            
-            let line1DataPoint = ChartDataEntry (x: hour + (minutes / 60), y: Double (accumulator1))
-            line1Data.append (line1DataPoint)
+            let dailyLineDataEntry = BarChartDataEntry(x: hour + (minutes / 60), y: value)
+            line1Data.append(dailyLineDataEntry)
         }
         
-        var accumulator2 = 0.0
-        for i in 0..<healthKitManager.hourlyStepsYesterday.count {
+        // hourly bar data
+        let cal = Calendar.current
+        for hour in Int(firstHour)...Int(lastHour) {
+            let hourlySteps = dailyStepsToday.filter { cal.component(.hour, from: $0.timeStamp) == hour }
+            
+            var sum = 0.0
+            hourlySteps.forEach { item in
+                sum = sum + item.value
+            }
+            
+            let hourlyDataEntry = BarChartDataEntry(x: Double(hour), y: sum)
+            hourlyDataEntries.append(hourlyDataEntry)
+            
+            print (hour, sum)
+            
+        }
+        
+        // yesterday line data
+        let dailyStepsYesterday = healthKitManager.hourlyStepsYesterday
+        accumulator = 0.0
+        for i in 0..<dailyStepsYesterday.count {
             let cal = Calendar.current
-            let d = healthKitManager.hourlyStepsYesterday[i].timeStamp
+            let d = dailyStepsYesterday[i].timeStamp
             let components = cal.dateComponents ([.hour, .minute], from: d)
             let hour = Double(components.hour!)
-            let minutes = Double(components.hour!)
-            let value = healthKitManager.hourlyStepsYesterday[i].value
+            let minutes = Double(components.minute!)
+            
+            accumulator = accumulator + dailyStepsYesterday[i].value
+            let value = accumulator
             
             if (hour < firstHour) {
                 firstHour = hour
             }
             if (hour > lastHour) {
-                
                 lastHour = hour
             }
             
-            accumulator2 = accumulator2 + value
-            
-            let line2DataPoint = ChartDataEntry (x: hour + (minutes / 60), y: Double (accumulator2))
-            line2Data.append (line2DataPoint)
+            let dailyLineDataEntry = BarChartDataEntry(x: hour + (minutes / 60), y: value)
+            line2Data.append(dailyLineDataEntry)
         }
         
         let barDataSet = BarChartDataSet(values: hourlyDataEntries, label: "")
