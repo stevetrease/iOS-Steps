@@ -24,6 +24,7 @@ import WatchConnectivity
         print (NSURL (fileURLWithPath: "\(#file)").lastPathComponent!, "\(#function)")
         UserDefaults.standard.setValue(false, forKey: "_UIConstraintBasedLayoutLogUnsatisfiable")
         
+        // UIApplication.shared.delegate?.window??.tintColor = .green
         
         // if WCSession.isSupported() {
         //     watchConnectivityHandler = WatchConnectivityHandler()
