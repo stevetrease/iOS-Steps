@@ -79,6 +79,7 @@ class HealthKitManager {
     }
     func getTodayStepCount(completion:@escaping (Double?)->()) {
         print (NSURL (fileURLWithPath: "\(#file)").lastPathComponent!, "\(#function)")
+        let startTime = Date()
         
         //   Define the sample type
         let type = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)
@@ -93,6 +94,9 @@ class HealthKitManager {
             let quantity = results?.sumQuantity()
             let unit = HKUnit.count()
             let steps = quantity?.doubleValue(for: unit)
+            
+            let elapsedTime = Date().timeIntervalSince(startTime)
+            print ("getTodayStepCount: \(self.stepsArray.count) in \(elapsedTime)")
             
             if steps != nil {
                 self.stepsToday = steps!
@@ -117,6 +121,7 @@ class HealthKitManager {
     }
     func getYesterdayStepCount(completion:@escaping (Double?)->()) {
         print (NSURL (fileURLWithPath: "\(#file)").lastPathComponent!, "\(#function)")
+        let startTime = Date()
         
         //   Define the sample type
         let type = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)
@@ -132,6 +137,9 @@ class HealthKitManager {
             let unit = HKUnit.count()
             let steps = quantity?.doubleValue(for: unit)
 
+            let elapsedTime = Date().timeIntervalSince(startTime)
+            print ("getYesterdayStepCount: \(self.stepsArray.count) in \(elapsedTime)")
+            
             if steps != nil {
                 self.stepsYesterday = steps!
                 completion(steps)
@@ -170,7 +178,6 @@ class HealthKitManager {
         query.initialResultsHandler = {
             query, results, error in
             print (NSURL (fileURLWithPath: "\(#file)").lastPathComponent!, "\(#function)")
-            let startTime = Date()
             
             guard let statsCollection = results else {
                 // Perform proper error handling here
