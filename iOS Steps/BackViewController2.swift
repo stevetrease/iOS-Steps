@@ -75,6 +75,33 @@ class BackViewController2: UIViewController {
     }
     
     
+    func drawScreen () {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        healthKitManager.updateHourlyStepsArray(completion: { (steps) in
+            OperationQueue.main.addOperation {
+                print (NSURL (fileURLWithPath: "\(#file)").lastPathComponent!, "\(#function)")
+                self.drawChart2()
+                self.drawChart3()
+            }
+            UIApplication.shared.isNetworkActivityIndicatorVisible = false
+        })
+    }
+    
+    
+    @IBAction func screenTappedTriggered(sender: AnyObject) {
+        print ("\(#file) - \(#function)")
+        
+        drawScreen()
+    }
+
+
+    override func didReceiveMemoryWarning() {
+        print (NSURL (fileURLWithPath: "\(#file)").lastPathComponent!, "\(#function)")
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    
     func drawChart2 () {
         print (NSURL (fileURLWithPath: "\(#file)").lastPathComponent!, "\(#function)")
         
@@ -205,33 +232,5 @@ class BackViewController2: UIViewController {
         self.chartView3.data = data
         self.chartView3.data?.notifyDataChanged()
         self.chartView3.notifyDataSetChanged()
-    }
-
-
-    func drawScreen () {
-        UIApplication.shared.isNetworkActivityIndicatorVisible = true
-        healthKitManager.updateHourlyStepsArray(completion: { (steps) in
-            OperationQueue.main.addOperation {
-                print (NSURL (fileURLWithPath: "\(#file)").lastPathComponent!, "\(#function)")
-                self.drawChart2()
-                self.drawChart3()
-            }
-            UIApplication.shared.isNetworkActivityIndicatorVisible = false
-        })
-    }
-    
-    
-    @IBAction func screenTappedTriggered(sender: AnyObject) {
-        print ("\(#file) - \(#function)")
-        
-        drawScreen()
-    }
-    
-
-    
-    override func didReceiveMemoryWarning() {
-        print (NSURL (fileURLWithPath: "\(#file)").lastPathComponent!, "\(#function)")
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 }

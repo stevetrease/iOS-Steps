@@ -93,6 +93,19 @@ class ViewController: UIViewController {
     }
     
     
+    @IBAction func screenTappedTriggered(sender: AnyObject) {
+        print (NSURL (fileURLWithPath: "\(#file)").lastPathComponent!, "\(#function)")
+        
+        drawScreen()
+    }
+    
+    
+    override func didReceiveMemoryWarning() {
+        print("\(#file) - \(#function)")
+        // Dispose of any resources that can be recreated.
+    }
+    
+    
     func drawChart2 () {
         var hourlyDataEntries: [BarChartDataEntry] = []
         var line1Data: [ChartDataEntry] = []
@@ -190,21 +203,5 @@ class ViewController: UIViewController {
         self.chartView.data = data
         self.chartView.data?.notifyDataChanged()
         self.chartView.notifyDataSetChanged()
-    }
-    
-    
-    @IBAction func screenTappedTriggered(sender: AnyObject) {
-        print (NSURL (fileURLWithPath: "\(#file)").lastPathComponent!, "\(#function)")
-        
-        drawScreen()
-    }
-
-    
-    @IBAction func unWindToViewControllerSegue (segue: UIStoryboardSegue) {}
-    
-    
-    override func didReceiveMemoryWarning() {
-        print("\(#file) - \(#function)")
-        // Dispose of any resources that can be recreated.
     }
 }
