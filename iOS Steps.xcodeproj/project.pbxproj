@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2CAE80AA838A970D1254765A /* Pods_iOS_Steps_Watch_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3BBB70C9F292FBCCC1C22F8 /* Pods_iOS_Steps_Watch_Extension.framework */; };
+		31C857F76F84AB672AE65FAE /* Pods_iOS_Steps_Watch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CE2A7754AED0F954F00AA60 /* Pods_iOS_Steps_Watch.framework */; };
+		808B28604A4F723DF56270D8 /* Pods_iOS_Steps_Today.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34C67A3EAE9842861A998968 /* Pods_iOS_Steps_Today.framework */; };
 		AA3AF8F91E95501500903F2B /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA3AF8F71E95501500903F2B /* Interface.storyboard */; };
 		AA3AF8FB1E95501500903F2B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA3AF8FA1E95501500903F2B /* Assets.xcassets */; };
 		AA3AF9021E95501500903F2B /* iOS Steps Watch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = AA3AF9011E95501500903F2B /* iOS Steps Watch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -18,8 +21,6 @@
 		AA3AF9211E95581A00903F2B /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA3AF9201E95581A00903F2B /* HealthKit.framework */; };
 		AA3BDF031E9A05A500DF1B98 /* WatchKitSessionMananager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3BDF021E9A05A500DF1B98 /* WatchKitSessionMananager.swift */; };
 		AA67AFCD1E5768CF00EE0630 /* BackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA67AFCC1E5768CF00EE0630 /* BackViewController.swift */; };
-		AA8072CC1E86A94800E45DEC /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA8072C51E86A78800E45DEC /* Charts.framework */; };
-		AA8072CD1E86A99100E45DEC /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AA8072C51E86A78800E45DEC /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AA9D2E851E3E424C000E9C08 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9D2E841E3E424C000E9C08 /* AppDelegate.swift */; };
 		AA9D2E871E3E424C000E9C08 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9D2E861E3E424C000E9C08 /* ViewController.swift */; };
 		AA9D2E8A1E3E424C000E9C08 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA9D2E881E3E424C000E9C08 /* Main.storyboard */; };
@@ -33,6 +34,7 @@
 		AAF185F91E8848730081A1DB /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAF185F71E8848730081A1DB /* MainInterface.storyboard */; };
 		AAF185FD1E8848730081A1DB /* iOS Steps Today.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = AAF185F11E8848720081A1DB /* iOS Steps Today.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		AAF421FE1E891FBA00D935FE /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAD088411E3FBA1800612BC1 /* HealthKit.framework */; };
+		C655F2083F2736D99167920C /* Pods_iOS_Steps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64199355B2F169C1B7183BC9 /* Pods_iOS_Steps.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,20 +51,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = AA3AF8F41E95501500903F2B;
 			remoteInfo = "iOS Steps Watch";
-		};
-		AA8072C41E86A78800E45DEC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = AA8072BE1E86A78800E45DEC /* Charts.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 06165F241D8110E600722320;
-			remoteInfo = Charts;
-		};
-		AA8072C81E86A78800E45DEC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = AA8072BE1E86A78800E45DEC /* Charts.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 06165F2E1D8110E600722320;
-			remoteInfo = ChartsTests;
 		};
 		AAF185FB1E8848730081A1DB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -102,7 +90,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				AA8072CD1E86A99100E45DEC /* Charts.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -121,6 +108,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0CE2A7754AED0F954F00AA60 /* Pods_iOS_Steps_Watch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_Steps_Watch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		13855C4EFABFC2005A9FE839 /* Pods-iOS Steps Watch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS Steps Watch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOS Steps Watch/Pods-iOS Steps Watch.debug.xcconfig"; sourceTree = "<group>"; };
+		34C67A3EAE9842861A998968 /* Pods_iOS_Steps_Today.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_Steps_Today.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		42D9A0DD6B26973CC38582A6 /* Pods-iOS Steps Today.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS Steps Today.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOS Steps Today/Pods-iOS Steps Today.release.xcconfig"; sourceTree = "<group>"; };
+		56CE62F85B55C21A2313F3D2 /* Pods-iOS Steps Watch Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS Steps Watch Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOS Steps Watch Extension/Pods-iOS Steps Watch Extension.release.xcconfig"; sourceTree = "<group>"; };
+		64199355B2F169C1B7183BC9 /* Pods_iOS_Steps.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_Steps.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		71CB1BB8475E79148BF5F41A /* Pods-iOS Steps.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS Steps.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOS Steps/Pods-iOS Steps.release.xcconfig"; sourceTree = "<group>"; };
+		7E1CB4AC3515A7E486D7C646 /* Pods-iOS Steps Today.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS Steps Today.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOS Steps Today/Pods-iOS Steps Today.debug.xcconfig"; sourceTree = "<group>"; };
 		AA3AF8F51E95501500903F2B /* iOS Steps Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS Steps Watch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA3AF8F81E95501500903F2B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		AA3AF8FA1E95501500903F2B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -136,7 +131,6 @@
 		AA3AF9201E95581A00903F2B /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS3.2.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
 		AA3BDF021E9A05A500DF1B98 /* WatchKitSessionMananager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchKitSessionMananager.swift; sourceTree = "<group>"; };
 		AA67AFCC1E5768CF00EE0630 /* BackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackViewController.swift; sourceTree = "<group>"; };
-		AA8072BE1E86A78800E45DEC /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "Charts-master/Charts.xcodeproj"; sourceTree = SOURCE_ROOT; };
 		AA9D2E811E3E424C000E9C08 /* iOS Steps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS Steps.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA9D2E841E3E424C000E9C08 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA9D2E861E3E424C000E9C08 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -154,14 +148,27 @@
 		AAF185F81E8848730081A1DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		AAF185FA1E8848730081A1DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AAF421FD1E891FBA00D935FE /* iOS Steps Today.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "iOS Steps Today.entitlements"; sourceTree = "<group>"; };
+		B3BBB70C9F292FBCCC1C22F8 /* Pods_iOS_Steps_Watch_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_Steps_Watch_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B90B08CFA41C124B41EA2B14 /* Pods-iOS Steps Watch Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS Steps Watch Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOS Steps Watch Extension/Pods-iOS Steps Watch Extension.debug.xcconfig"; sourceTree = "<group>"; };
+		C7D8852190D296D9AEF366F5 /* Pods-iOS Steps Watch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS Steps Watch.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOS Steps Watch/Pods-iOS Steps Watch.release.xcconfig"; sourceTree = "<group>"; };
+		F15932BD84242B45CA1A834B /* Pods-iOS Steps.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS Steps.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOS Steps/Pods-iOS Steps.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		96EEE819455B01DB79011BC9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				31C857F76F84AB672AE65FAE /* Pods_iOS_Steps_Watch.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AA3AF8FE1E95501500903F2B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				AA3AF9211E95581A00903F2B /* HealthKit.framework in Frameworks */,
+				2CAE80AA838A970D1254765A /* Pods_iOS_Steps_Watch_Extension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -169,8 +176,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA8072CC1E86A94800E45DEC /* Charts.framework in Frameworks */,
 				AAD088421E3FBA1800612BC1 /* HealthKit.framework in Frameworks */,
+				C655F2083F2736D99167920C /* Pods_iOS_Steps.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -180,12 +187,28 @@
 			files = (
 				AAF185F31E8848720081A1DB /* NotificationCenter.framework in Frameworks */,
 				AAF421FE1E891FBA00D935FE /* HealthKit.framework in Frameworks */,
+				808B28604A4F723DF56270D8 /* Pods_iOS_Steps_Today.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7AB9A071B2ECC1A27472129F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F15932BD84242B45CA1A834B /* Pods-iOS Steps.debug.xcconfig */,
+				71CB1BB8475E79148BF5F41A /* Pods-iOS Steps.release.xcconfig */,
+				7E1CB4AC3515A7E486D7C646 /* Pods-iOS Steps Today.debug.xcconfig */,
+				42D9A0DD6B26973CC38582A6 /* Pods-iOS Steps Today.release.xcconfig */,
+				13855C4EFABFC2005A9FE839 /* Pods-iOS Steps Watch.debug.xcconfig */,
+				C7D8852190D296D9AEF366F5 /* Pods-iOS Steps Watch.release.xcconfig */,
+				B90B08CFA41C124B41EA2B14 /* Pods-iOS Steps Watch Extension.debug.xcconfig */,
+				56CE62F85B55C21A2313F3D2 /* Pods-iOS Steps Watch Extension.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		AA3AF8F61E95501500903F2B /* iOS Steps Watch */ = {
 			isa = PBXGroup;
 			children = (
@@ -218,15 +241,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		AA8072BF1E86A78800E45DEC /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				AA8072C51E86A78800E45DEC /* Charts.framework */,
-				AA8072C91E86A78800E45DEC /* ChartsTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		AA9D2E781E3E424C000E9C08 = {
 			isa = PBXGroup;
 			children = (
@@ -236,6 +250,7 @@
 				AA3AF9051E95501500903F2B /* iOS Steps Watch Extension */,
 				AA9D2E821E3E424C000E9C08 /* Products */,
 				AAD088401E3FBA1800612BC1 /* Frameworks */,
+				7AB9A071B2ECC1A27472129F /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -264,7 +279,6 @@
 				AA9D2E881E3E424C000E9C08 /* Main.storyboard */,
 				AA9D2E901E3E424C000E9C08 /* Info.plist */,
 				AA9D2E8B1E3E424C000E9C08 /* Assets.xcassets */,
-				AA8072BE1E86A78800E45DEC /* Charts.xcodeproj */,
 			);
 			path = "iOS Steps";
 			sourceTree = "<group>";
@@ -275,6 +289,10 @@
 				AA3AF9201E95581A00903F2B /* HealthKit.framework */,
 				AAD088411E3FBA1800612BC1 /* HealthKit.framework */,
 				AAF185F21E8848720081A1DB /* NotificationCenter.framework */,
+				64199355B2F169C1B7183BC9 /* Pods_iOS_Steps.framework */,
+				34C67A3EAE9842861A998968 /* Pods_iOS_Steps_Today.framework */,
+				0CE2A7754AED0F954F00AA60 /* Pods_iOS_Steps_Watch.framework */,
+				B3BBB70C9F292FBCCC1C22F8 /* Pods_iOS_Steps_Watch_Extension.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -297,8 +315,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AA3AF91D1E95501500903F2B /* Build configuration list for PBXNativeTarget "iOS Steps Watch" */;
 			buildPhases = (
+				C070CAC63BA3136083B4B5BB /* [CP] Check Pods Manifest.lock */,
 				AA3AF8F31E95501500903F2B /* Resources */,
 				AA3AF91C1E95501500903F2B /* Embed App Extensions */,
+				96EEE819455B01DB79011BC9 /* Frameworks */,
+				5638C2D85E74FFC52FC125A7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -314,9 +335,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AA3AF91B1E95501500903F2B /* Build configuration list for PBXNativeTarget "iOS Steps Watch Extension" */;
 			buildPhases = (
+				273AD9738002F5F2DF5A8000 /* [CP] Check Pods Manifest.lock */,
 				AA3AF8FD1E95501500903F2B /* Sources */,
 				AA3AF8FE1E95501500903F2B /* Frameworks */,
 				AA3AF8FF1E95501500903F2B /* Resources */,
+				BF0B8E037CDB53A100DDA1EF /* [CP] Embed Pods Frameworks */,
+				68939D33F76EE1BD4A42F71E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -331,6 +355,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AA9D2E931E3E424C000E9C08 /* Build configuration list for PBXNativeTarget "iOS Steps" */;
 			buildPhases = (
+				CB11F7250FD4F9A8EDAFC987 /* [CP] Check Pods Manifest.lock */,
 				AA9D2E7D1E3E424C000E9C08 /* Sources */,
 				AA9D2E7E1E3E424C000E9C08 /* Frameworks */,
 				AA2E20801EBA358F00E68388 /* ShellScript */,
@@ -339,6 +364,8 @@
 				AA8072BC1E857F5800E45DEC /* Embed Frameworks */,
 				AAF186041E8848730081A1DB /* Embed App Extensions */,
 				AA3AF91E1E95501500903F2B /* Embed Watch Content */,
+				5C93A1980ECA70505E01EE19 /* [CP] Embed Pods Frameworks */,
+				F417D958A9A32D6850D0B06C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -355,9 +382,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AAF186031E8848730081A1DB /* Build configuration list for PBXNativeTarget "iOS Steps Today" */;
 			buildPhases = (
+				75637092D050E55F56FFB940 /* [CP] Check Pods Manifest.lock */,
 				AAF185ED1E8848720081A1DB /* Sources */,
 				AAF185EE1E8848720081A1DB /* Frameworks */,
 				AAF185EF1E8848720081A1DB /* Resources */,
+				B9EDBC38D2EF77F6E8019771 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -437,12 +466,6 @@
 			mainGroup = AA9D2E781E3E424C000E9C08;
 			productRefGroup = AA9D2E821E3E424C000E9C08 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = AA8072BF1E86A78800E45DEC /* Products */;
-					ProjectRef = AA8072BE1E86A78800E45DEC /* Charts.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				AA9D2E801E3E424C000E9C08 /* iOS Steps */,
@@ -452,23 +475,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		AA8072C51E86A78800E45DEC /* Charts.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Charts.framework;
-			remoteRef = AA8072C41E86A78800E45DEC /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		AA8072C91E86A78800E45DEC /* ChartsTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = ChartsTests.xctest;
-			remoteRef = AA8072C81E86A78800E45DEC /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		AA3AF8F31E95501500903F2B /* Resources */ = {
@@ -509,6 +515,81 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		273AD9738002F5F2DF5A8000 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5638C2D85E74FFC52FC125A7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iOS Steps Watch/Pods-iOS Steps Watch-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5C93A1980ECA70505E01EE19 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iOS Steps/Pods-iOS Steps-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		68939D33F76EE1BD4A42F71E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iOS Steps Watch Extension/Pods-iOS Steps Watch Extension-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		75637092D050E55F56FFB940 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		AA2E20801EBA358F00E68388 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -534,6 +615,81 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = ./updateBuildVersionNumber.sh;
+		};
+		B9EDBC38D2EF77F6E8019771 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iOS Steps Today/Pods-iOS Steps Today-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BF0B8E037CDB53A100DDA1EF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iOS Steps Watch Extension/Pods-iOS Steps Watch Extension-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C070CAC63BA3136083B4B5BB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		CB11F7250FD4F9A8EDAFC987 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F417D958A9A32D6850D0B06C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iOS Steps/Pods-iOS Steps-resources.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -627,6 +783,7 @@
 /* Begin XCBuildConfiguration section */
 		AA3AF9141E95501500903F2B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 13855C4EFABFC2005A9FE839 /* Pods-iOS Steps Watch.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -646,6 +803,7 @@
 		};
 		AA3AF9151E95501500903F2B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C7D8852190D296D9AEF366F5 /* Pods-iOS Steps Watch.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -665,6 +823,7 @@
 		};
 		AA3AF9161E95501500903F2B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B90B08CFA41C124B41EA2B14 /* Pods-iOS Steps Watch Extension.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -684,6 +843,7 @@
 		};
 		AA3AF9171E95501500903F2B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 56CE62F85B55C21A2313F3D2 /* Pods-iOS Steps Watch Extension.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -794,6 +954,7 @@
 		};
 		AA9D2E941E3E424C000E9C08 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F15932BD84242B45CA1A834B /* Pods-iOS Steps.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -809,6 +970,7 @@
 		};
 		AA9D2E951E3E424C000E9C08 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 71CB1BB8475E79148BF5F41A /* Pods-iOS Steps.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -824,6 +986,7 @@
 		};
 		AAF185FE1E8848730081A1DB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7E1CB4AC3515A7E486D7C646 /* Pods-iOS Steps Today.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CODE_SIGN_ENTITLEMENTS = "iOS Steps Today/iOS Steps Today.entitlements";
@@ -840,6 +1003,7 @@
 		};
 		AAF185FF1E8848730081A1DB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 42D9A0DD6B26973CC38582A6 /* Pods-iOS Steps Today.release.xcconfig */;
 			buildSettings = {
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CODE_SIGN_ENTITLEMENTS = "iOS Steps Today/iOS Steps Today.entitlements";

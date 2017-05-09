@@ -12,7 +12,6 @@ import HealthKit
 
 var healthKitManager = HealthKitManager()
 
-
 class HealthDataType {
     var timeStamp = Date()
     var data = 0.0
@@ -20,6 +19,9 @@ class HealthDataType {
 
 
 class HealthKitManager {
+    
+    let historyDays = 7
+    
     
     let healthStore = HKHealthStore()
     private let numberFormatter = NumberFormatter()
@@ -37,10 +39,7 @@ class HealthKitManager {
         // updateHourlyStepsArray(completion: { _ in })
     }
     
-    
-    
-    let historyDays = 7
-    
+
     private var earliestPermittedSampleDate: Date {
         return (healthStore.earliestPermittedSampleDate())
     }
