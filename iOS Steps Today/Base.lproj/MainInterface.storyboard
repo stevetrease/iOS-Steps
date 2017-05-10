@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F67a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="M4Y-Lb-cyx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F71b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="M4Y-Lb-cyx">
     <device id="retina3_5" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
@@ -21,17 +21,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="37"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="daq-Px-e6X">
-                                <rect key="frame" x="160" y="18.5" width="0.0" height="0.0"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZdE-90-rhb" customClass="UICountingLabel">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="37"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="daq-Px-e6X" firstAttribute="centerY" secondItem="S3S-Oj-5AN" secondAttribute="centerY" id="c9j-jD-018"/>
-                            <constraint firstItem="daq-Px-e6X" firstAttribute="centerX" secondItem="S3S-Oj-5AN" secondAttribute="centerX" id="tqm-Ao-7ji"/>
+                            <constraint firstItem="ZdE-90-rhb" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" id="1aI-ce-Z56"/>
+                            <constraint firstItem="ZdE-90-rhb" firstAttribute="top" secondItem="S3S-Oj-5AN" secondAttribute="top" id="4ly-Xj-iBF"/>
+                            <constraint firstAttribute="trailing" secondItem="ZdE-90-rhb" secondAttribute="trailing" id="uS4-1t-hzH"/>
+                            <constraint firstAttribute="bottom" secondItem="ZdE-90-rhb" secondAttribute="bottom" id="xZp-1f-4I0"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="O2w-ql-fca" appends="YES" id="HSH-06-eog"/>
@@ -44,7 +44,7 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="37"/>
                     <connections>
-                        <outlet property="stepsLabel" destination="daq-Px-e6X" id="ngz-dO-7vv"/>
+                        <outlet property="stepsLabel2" destination="ZdE-90-rhb" id="CPF-TR-c26"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>

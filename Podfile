@@ -15,6 +15,7 @@ target 'iOS Steps Today' do
   use_frameworks!
 
   # Pods for iOS Steps Today
+  pod 'UICountingLabel'
 
 end
 
