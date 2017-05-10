@@ -24,10 +24,11 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         super.viewDidLoad()
         print ("viewDidLoad")
         
+        stepsLabel2.font = stepsLabel2.font.withSize(48)
         stepsLabel2.format = "%d"
-        stepsLabel2.countFromZero(to: 0)
+        // stepsLabel2.countFromZero(to: 0)
         stepsLabel2.textAlignment = .center
-        
+
         checkHealthKitAuthorization()
         
         updateView ()
@@ -86,7 +87,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
             
             if steps != -1.0 {
                 OperationQueue.main.addOperation {
-                    self.stepsLabel2.countFromCurrentValue(to: CGFloat(steps!), withDuration: 0.75)
+                    self.stepsLabel2.countFromCurrentValue(to: CGFloat(steps!), withDuration: 0.5)
                 }
             }
         })
