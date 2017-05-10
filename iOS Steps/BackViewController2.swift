@@ -136,15 +136,29 @@ class BackViewController2: UIViewController {
         averageDailySteps = averageDailySteps / Double(healthKitManager.historyDays)
         print ("average daily step", averageDailySteps)
         
+        let averageLineStartDataEntry = BarChartDataEntry(x: -(Double(healthKitManager.historyDays) + 0.5), y: averageDailySteps)
+        let averageLineEndDataEntry = BarChartDataEntry(x: 0.5, y: averageDailySteps)
+        var averageLineDataEntries: [BarChartDataEntry] = []
+        averageLineDataEntries.append (averageLineStartDataEntry)
+        averageLineDataEntries.append (averageLineEndDataEntry)
+        let averageLineDataSet = LineChartDataSet (values: averageLineDataEntries, label: "average")
+        averageLineDataSet.colors = [.gray]
+        averageLineDataSet.drawCirclesEnabled = false
+        averageLineDataSet.lineWidth = 2
+        var lines: [LineChartDataSet] = []
+        lines.append(averageLineDataSet)
+
         let barDataSet = BarChartDataSet(values: dailyStepDataEntries, label: "")
         
         barDataSet.colors = [UIColor.lightGray]
         
         let barData = BarChartData(dataSets: [barDataSet])
+        let lineData = LineChartData (dataSets: lines)
         
         let data: CombinedChartData = CombinedChartData()
         data.barData = barData
-        
+        // data.lineData = lineData
+ 
         self.chartView2.xAxis.valueFormatter = DefaultAxisValueFormatter(block: {(value, _) in
             let index = Int(value) + healthKitManager.historyDays
             if (value == 0) {
@@ -170,6 +184,8 @@ class BackViewController2: UIViewController {
         var lastHour = 0.0
         var lines: [LineChartDataSet] = []
         
+        var averageDailySteps = 0.0
+        
         for day in -healthKitManager.historyDays...0 {
             let filterDay = self.cal.date(byAdding: .day, value: day, to: self.cal.startOfDay(for: Date()))
             
@@ -179,7 +195,6 @@ class BackViewController2: UIViewController {
             
             var accumulator = 0.0
             for i in 0..<dailySteps.count {
-                let cal = Calendar.current
                 let d = dailySteps[i].timeStamp
                 let components = cal.dateComponents ([.hour, .minute], from: d)
                 let hour = Double(components.hour!)
@@ -193,6 +208,10 @@ class BackViewController2: UIViewController {
                 }
                 if (hour > lastHour) {
                     lastHour = hour
+                }
+                
+                if day != 0 {
+                    averageDailySteps = averageDailySteps + dailySteps[i].value
                 }
                 
                 let dailyLineDataEntry = BarChartDataEntry(x: hour + (minutes / 60), y: value)
@@ -223,6 +242,20 @@ class BackViewController2: UIViewController {
             
             lines.append(lineDataSet)
         }
+        
+        averageDailySteps = averageDailySteps / Double(healthKitManager.historyDays)
+        print ("average daily step", averageDailySteps)
+        
+        let averageLineStartDataEntry = BarChartDataEntry(x: firstHour, y: averageDailySteps)
+        let averageLineEndDataEntry = BarChartDataEntry(x: lastHour, y: averageDailySteps)
+        var averageLineDataEntries: [BarChartDataEntry] = []
+        averageLineDataEntries.append (averageLineStartDataEntry)
+        averageLineDataEntries.append (averageLineEndDataEntry)
+        let averageLineDataSet = LineChartDataSet (values: averageLineDataEntries, label: "average")
+        averageLineDataSet.colors = [.lightGray]
+        averageLineDataSet.drawCirclesEnabled = false
+        averageLineDataSet.lineWidth = 2
+        lines.append(averageLineDataSet)
         
         let data: CombinedChartData = CombinedChartData()
         let lineData = LineChartData (dataSets: lines)
