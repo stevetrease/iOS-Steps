@@ -254,7 +254,7 @@ class BackViewController2: UIViewController {
         let averageLineDataSet = LineChartDataSet (values: averageLineDataEntries, label: "average")
         averageLineDataSet.colors = [.lightGray]
         averageLineDataSet.drawCirclesEnabled = false
-        averageLineDataSet.lineWidth = 2
+        averageLineDataSet.lineWidth = 1
         lines.append(averageLineDataSet)
         
         let data: CombinedChartData = CombinedChartData()
