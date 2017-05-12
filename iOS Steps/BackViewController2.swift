@@ -203,11 +203,11 @@ class BackViewController2: UIViewController {
                 accumulator = accumulator + dailySteps[i].value
                 let value = accumulator
                 
-                if (hour < firstHour) {
-                    firstHour = hour
+                if ((hour + (minutes / 60)) < firstHour) {
+                    firstHour = (hour + (minutes / 60))
                 }
-                if (hour > lastHour) {
-                    lastHour = hour
+                if ((hour + (minutes / 60)) > lastHour) {
+                    lastHour = (hour + (minutes / 60))
                 }
                 
                 if day != 0 {

@@ -83,8 +83,6 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         numberFormatter.numberStyle = NumberFormatter.Style.decimal
         
         getTodayStepCount (completion: { (steps) in
-            let numberString = numberFormatter.string(from: steps! as NSNumber)
-            
             if steps != -1.0 {
                 OperationQueue.main.addOperation {
                     self.stepsLabel2.countFromCurrentValue(to: CGFloat(steps!), withDuration: 0.5)
