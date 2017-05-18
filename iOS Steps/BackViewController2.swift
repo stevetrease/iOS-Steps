@@ -34,7 +34,7 @@ class BackViewController2: UIViewController {
         chartView2.rightAxis.drawLabelsEnabled = false
         chartView2.leftAxis.drawLabelsEnabled = true
         chartView2.chartDescription?.text = ""
-        /self.chartView2.drawOrder = [2, 0]
+        self.chartView2.drawOrder = [2, 0]
         chartView2.drawBordersEnabled = false
         chartView2.leftAxis.drawAxisLineEnabled = false
         chartView2.rightAxis.drawAxisLineEnabled = false
