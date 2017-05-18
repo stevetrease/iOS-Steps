@@ -34,7 +34,7 @@ class BackViewController2: UIViewController {
         chartView2.rightAxis.drawLabelsEnabled = false
         chartView2.leftAxis.drawLabelsEnabled = true
         chartView2.chartDescription?.text = ""
-        
+        /self.chartView2.drawOrder = [2, 0]
         chartView2.drawBordersEnabled = false
         chartView2.leftAxis.drawAxisLineEnabled = false
         chartView2.rightAxis.drawAxisLineEnabled = false
@@ -136,18 +136,19 @@ class BackViewController2: UIViewController {
         averageDailySteps = averageDailySteps / Double(healthKitManager.historyDays)
         print ("average daily step", averageDailySteps)
         
-        let averageLineStartDataEntry = BarChartDataEntry(x: -(Double(healthKitManager.historyDays) + 0.5), y: averageDailySteps)
-        let averageLineEndDataEntry = BarChartDataEntry(x: 0.5, y: averageDailySteps)
+        let averageLineStartDataEntry = BarChartDataEntry(x: -(Double(healthKitManager.historyDays)), y: averageDailySteps)
+        let averageLineEndDataEntry = BarChartDataEntry(x: -1, y: averageDailySteps)
         var averageLineDataEntries: [BarChartDataEntry] = []
         averageLineDataEntries.append (averageLineStartDataEntry)
         averageLineDataEntries.append (averageLineEndDataEntry)
         let averageLineDataSet = LineChartDataSet (values: averageLineDataEntries, label: "average")
-        averageLineDataSet.colors = [.gray]
+        averageLineDataSet.colors = [.darkGray]
+        averageLineDataSet.drawValuesEnabled = false
         averageLineDataSet.drawCirclesEnabled = false
-        averageLineDataSet.lineWidth = 2
+        averageLineDataSet.lineWidth = 1
         var lines: [LineChartDataSet] = []
         lines.append(averageLineDataSet)
-
+        
         let barDataSet = BarChartDataSet(values: dailyStepDataEntries, label: "")
         
         barDataSet.colors = [UIColor.lightGray]
@@ -157,7 +158,7 @@ class BackViewController2: UIViewController {
         
         let data: CombinedChartData = CombinedChartData()
         data.barData = barData
-        // data.lineData = lineData
+        data.lineData = lineData
  
         self.chartView2.xAxis.valueFormatter = DefaultAxisValueFormatter(block: {(value, _) in
             let index = Int(value) + healthKitManager.historyDays
