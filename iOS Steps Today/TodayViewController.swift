@@ -17,6 +17,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     
     let healthStore = HKHealthStore()
     let cal = Calendar.current
+    let numberFormatter = NumberFormatter()
     
     @IBOutlet weak var stepsLabel2: UICountingLabel!
     
@@ -25,8 +26,16 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         print ("viewDidLoad")
         
         stepsLabel2.font = stepsLabel2.font.withSize(48)
-        stepsLabel2.format = "%d"
-        // stepsLabel2.countFromZero(to: 0)
+        numberFormatter.maximumFractionDigits = 0
+        numberFormatter.numberStyle = NumberFormatter.Style.decimal
+        stepsLabel2.formatBlock = {
+            (value) in
+            if (value == 0) {
+                return ""
+            } else {
+                return (self.numberFormatter.string(from: value as NSNumber)!)
+            }
+        }
         stepsLabel2.textAlignment = .center
 
         checkHealthKitAuthorization()
@@ -34,7 +43,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         updateView ()
     }
     
-   override func viewDidAppear(_ animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         print ("viewDidAppear")
         
