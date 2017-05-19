@@ -22,8 +22,10 @@ class HealthKitManager {
     
     let historyDays = 7
     
+    static let sharedInstance = HealthKitManager()
     
     let healthStore = HKHealthStore()
+    
     private let numberFormatter = NumberFormatter()
     private let cal = Calendar.current
     
