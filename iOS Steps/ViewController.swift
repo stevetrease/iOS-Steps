@@ -200,6 +200,17 @@ class ViewController: UIViewController {
             line2Data.append(dailyLineDataEntry)
         }
         
+        let averageLineStartDataEntry = BarChartDataEntry(x: firstHour - 0.5, y: healthKitManager.stepsAverage)
+        let averageLineEndDataEntry = BarChartDataEntry(x: lastHour + 0.5, y: healthKitManager.stepsAverage)
+        var averageLineDataEntries: [BarChartDataEntry] = []
+        averageLineDataEntries.append (averageLineStartDataEntry)
+        averageLineDataEntries.append (averageLineEndDataEntry)
+        let averageLineDataSet = LineChartDataSet (values: averageLineDataEntries, label: "Average")
+        averageLineDataSet.colors = [.lightGray]
+        averageLineDataSet.drawValuesEnabled = false
+        averageLineDataSet.drawCirclesEnabled = false
+        averageLineDataSet.lineWidth = 1
+        
         let barDataSet = BarChartDataSet(values: hourlyDataEntries, label: "")
         let lineDataSet1 = LineChartDataSet(values: line1Data, label: "Today")
         let lineDataSet2 = LineChartDataSet(values: line2Data, label: "Yesterday")
@@ -213,7 +224,7 @@ class ViewController: UIViewController {
         lineDataSet2.lineWidth = 2
         
         let barData = BarChartData(dataSets: [barDataSet])
-        let lineData = LineChartData (dataSets: [lineDataSet2, lineDataSet1])
+        let lineData = LineChartData (dataSets: [averageLineDataSet, lineDataSet2, lineDataSet1])
         
         lineData.setDrawValues(false)
         
