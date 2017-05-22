@@ -17,7 +17,7 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var todayStepCountLabel: UILabel!
     @IBOutlet weak var yesterdayStepCountLabel: UILabel!
-    @IBOutlet weak var yesterdayFlightClimbedLabel: UILabel!
+    @IBOutlet weak var averageStepCountLabel: UILabel!
     @IBOutlet weak var chartView: CombinedChartView!
 
     override func viewDidLoad() {
@@ -26,6 +26,7 @@ class ViewController: UIViewController {
         
         todayStepCountLabel.text = ""
         yesterdayStepCountLabel.text = ""
+        averageStepCountLabel.text = ""
         
         let appDelegate:AppDelegate = UIApplication.shared.delegate! as! AppDelegate
         appDelegate.myViewController = self
@@ -72,14 +73,37 @@ class ViewController: UIViewController {
         
         healthKitManager.getTodayStepCount (completion: { (steps) in
             OperationQueue.main.addOperation {
-                self.todayStepCountLabel.text = healthKitManager.stepsTodayString + " today"
+                let numberFormatter = NumberFormatter()
+                numberFormatter.maximumFractionDigits = 0
+                numberFormatter.numberStyle = NumberFormatter.Style.decimal
+                let number = numberFormatter.string(from: healthKitManager.stepsToday as NSNumber)!
+                self.todayStepCountLabel.text = "\(number) today"
             }
             generator.impactOccurred()
         })
         
         healthKitManager.getYesterdayStepCount (completion: { (steps) in
             OperationQueue.main.addOperation {
-                self.yesterdayStepCountLabel.text = healthKitManager.stepsYesterdayString + " yesterday"
+                let numberFormatter = NumberFormatter()
+                numberFormatter.maximumFractionDigits = 0
+                numberFormatter.numberStyle = NumberFormatter.Style.decimal
+                let number = numberFormatter.string(from: healthKitManager.stepsYesterday as NSNumber)!
+                self.yesterdayStepCountLabel.text = "\(number) yesterday"
+            }
+        })
+        
+        healthKitManager.getStepsAverage (completion: { (steps) in
+            OperationQueue.main.addOperation {
+                let numberFormatter = NumberFormatter()
+                numberFormatter.maximumFractionDigits = 0
+                numberFormatter.numberStyle = NumberFormatter.Style.decimal
+                let number = numberFormatter.string(from: healthKitManager.stepsAverage as NSNumber)!
+        
+                numberFormatter.maximumFractionDigits = 0
+                numberFormatter.numberStyle = NumberFormatter.Style.spellOut
+                let number2 = numberFormatter.string(from: healthKitManager.historyDays as NSNumber)!
+
+                self.averageStepCountLabel.text = "\(number) \(number2) day average"
             }
         })
         

@@ -71,13 +71,6 @@ class HealthKitManager {
     
     
     var stepsToday: Double = 0.0
-    var stepsTodayString: String {
-        if (Int(stepsToday) != 1) {
-            return (numberFormatter.string(from: stepsToday as NSNumber)! + " steps")
-        } else {
-            return "1 step"
-        }
-    }
     func getTodayStepCount(completion:@escaping (Double?)->()) {
         print (NSURL (fileURLWithPath: "\(#file)").lastPathComponent!, "\(#function)")
         let startTime = Date()
@@ -113,13 +106,6 @@ class HealthKitManager {
     
 
     var stepsYesterday: Double = 0.0
-    var stepsYesterdayString: String {
-        if (Int(stepsYesterday) != 1) {
-            return (numberFormatter.string(from: stepsYesterday as NSNumber)! + " steps")
-        } else {
-            return "1 step"
-        }
-    }
     func getYesterdayStepCount(completion:@escaping (Double?)->()) {
         print (NSURL (fileURLWithPath: "\(#file)").lastPathComponent!, "\(#function)")
         let startTime = Date()
@@ -147,6 +133,41 @@ class HealthKitManager {
             } else {
                 print("getTodayStepCount: results are nil - returning zero steps")
                 self.stepsYesterday = 0.0
+                completion(0.0)
+            }
+        }
+        healthStore.execute(query)
+    }
+    
+    
+    var stepsAverage: Double = 0.0
+    func getStepsAverage (completion:@escaping (Double?)->()) {
+        print (NSURL (fileURLWithPath: "\(#file)").lastPathComponent!, "\(#function)")
+        let startTime = Date()
+        
+        //   Define the sample type
+        let type = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)
+        
+        let endDate = cal.startOfDay(for: Date())
+        let startDate =  cal.date(byAdding: .day, value: -historyDays, to: endDate)
+        
+        //  Set the predicate
+        let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: [])
+        
+        let query = HKStatisticsQuery(quantityType: type!, quantitySamplePredicate: predicate, options: .cumulativeSum) { query, results, error in
+            let quantity = results?.sumQuantity()
+            let unit = HKUnit.count()
+            let steps = quantity?.doubleValue(for: unit)
+            
+            let elapsedTime = Date().timeIntervalSince(startTime)
+            print ("getStepsAverage: \(elapsedTime)")
+            
+            if steps != nil {
+                self.stepsAverage = steps! / Double(self.historyDays)
+                completion(steps! / Double(self.historyDays))
+            } else {
+                print("getStepsAverage: results are nil - returning zero steps")
+                self.stepsAverage = 0.0
                 completion(0.0)
             }
         }
