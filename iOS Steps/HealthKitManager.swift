@@ -35,10 +35,6 @@ class HealthKitManager {
         numberFormatter.maximumFractionDigits = 0
         numberFormatter.numberStyle = NumberFormatter.Style.decimal
         checkHealthKitAuthorization()
-        
-        // getTodayStepCount (completion: { _ in })
-        // getYesterdayStepCount (completion: { _ in })
-        // updateHourlyStepsArray(completion: { _ in })
     }
     
 
@@ -73,7 +69,6 @@ class HealthKitManager {
     var stepsToday: Double = 0.0
     func getTodayStepCount(completion:@escaping (Double?)->()) {
         print (NSURL (fileURLWithPath: "\(#file)").lastPathComponent!, "\(#function)")
-        let startTime = Date()
         
         //   Define the sample type
         let type = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)
@@ -88,9 +83,6 @@ class HealthKitManager {
             let quantity = results?.sumQuantity()
             let unit = HKUnit.count()
             let steps = quantity?.doubleValue(for: unit)
-            
-            let elapsedTime = Date().timeIntervalSince(startTime)
-            print ("getTodayStepCount: \(self.stepsArray.count) in \(elapsedTime)")
             
             if steps != nil {
                 self.stepsToday = steps!
@@ -108,7 +100,6 @@ class HealthKitManager {
     var stepsYesterday: Double = 0.0
     func getYesterdayStepCount(completion:@escaping (Double?)->()) {
         print (NSURL (fileURLWithPath: "\(#file)").lastPathComponent!, "\(#function)")
-        let startTime = Date()
         
         //   Define the sample type
         let type = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)
@@ -124,9 +115,6 @@ class HealthKitManager {
             let unit = HKUnit.count()
             let steps = quantity?.doubleValue(for: unit)
 
-            let elapsedTime = Date().timeIntervalSince(startTime)
-            print ("getYesterdayStepCount: \(self.stepsArray.count) in \(elapsedTime)")
-            
             if steps != nil {
                 self.stepsYesterday = steps!
                 completion(steps)
@@ -143,7 +131,6 @@ class HealthKitManager {
     var stepsAverage: Double = 0.0
     func getStepsAverage (completion:@escaping (Double?)->()) {
         print (NSURL (fileURLWithPath: "\(#file)").lastPathComponent!, "\(#function)")
-        let startTime = Date()
         
         //   Define the sample type
         let type = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)
@@ -158,9 +145,6 @@ class HealthKitManager {
             let quantity = results?.sumQuantity()
             let unit = HKUnit.count()
             let steps = quantity?.doubleValue(for: unit)
-            
-            let elapsedTime = Date().timeIntervalSince(startTime)
-            print ("getStepsAverage: \(elapsedTime)")
             
             if steps != nil {
                 self.stepsAverage = steps! / Double(self.historyDays)
@@ -180,7 +164,6 @@ class HealthKitManager {
     var stepsArray: [(timeStamp: Date, value: Double)] = []
     func updateHourlyStepsArray(completion:@escaping (Double?)->()) {
         print (NSURL (fileURLWithPath: "\(#file)").lastPathComponent!, "\(#function)")
-        let startTime = Date()
         
         let anchorDate = cal.date(byAdding: .day, value: -1, to: cal.startOfDay(for: Date()))
         
@@ -211,7 +194,9 @@ class HealthKitManager {
             
             var tempArray: [(timeStamp: Date, value: Double)] = []
             
-            statsCollection.enumerateStatistics(from: startDate!, to: endDate) { [unowned self] statistics, stop in  
+            // statsCollection.enumerateStatistics(from: startDate!, to: endDate) { [unowned self] statistics, stop in
+            
+            statsCollection.enumerateStatistics(from: startDate!, to: endDate) { statistics, stop in
                 if let quantity = statistics.sumQuantity() {
                     let date = statistics.startDate
                     let steps = quantity.doubleValue(for: HKUnit.count())
@@ -226,9 +211,6 @@ class HealthKitManager {
             self.hourlySteps = self.stepsArray.filter { self.cal.isDateInToday ($0.timeStamp) }
             // filter yesterday's steps
             self.hourlyStepsYesterday = self.stepsArray.filter { self.cal.isDateInYesterday($0.timeStamp) }
-            
-            let elapsedTime = Date().timeIntervalSince(startTime)
-            print ("updateHourlyStepsArray: \(self.stepsArray.count) in \(elapsedTime)")
             
             completion (0.0)
         }
