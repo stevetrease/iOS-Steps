@@ -28,11 +28,13 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>505</string>
+	<string>511</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSHealthShareUsageDescription</key>
 	<string>This application requires read only access to HealthKit data.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>The application saves screenshots to the photo library.</string>
 	<key>UIApplicationShortcutItems</key>
 	<array>
 		<dict>

@@ -44,31 +44,31 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Vvw-VY-4ya">
-                                <rect key="frame" x="10" y="30" width="355" height="578"/>
+                                <rect key="frame" x="10" y="30" width="360" height="578"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="jTo-Bq-yKj">
-                                        <rect key="frame" x="0.0" y="0.0" width="355" height="223"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="360" height="218"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iOS Steps" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="thn-yY-hF0">
-                                                <rect key="frame" x="109.5" y="0.0" width="136.5" height="51.5"/>
+                                                <rect key="frame" x="112" y="0.0" width="136.5" height="50.5"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="todayStepCountLabel" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumFontSize="24" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oJu-oP-i4O" userLabel="todayStepCountLabel">
-                                                <rect key="frame" x="0.0" y="51.5" width="355" height="68.5"/>
+                                                <rect key="frame" x="0.0" y="50.5" width="360" height="67"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="yesterdayStepCountLabel" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumFontSize="24" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WPY-JI-Jbe" userLabel="yesterdayStepCountLabel">
-                                                <rect key="frame" x="5.5" y="120" width="344" height="51.5"/>
+                                                <rect key="frame" x="8" y="117.5" width="344" height="50"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="averageStepLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2sU-7j-M6u" userLabel="averageStepCountLabel">
-                                                <rect key="frame" x="57.5" y="171.5" width="240" height="51.5"/>
+                                                <rect key="frame" x="60" y="167.5" width="240" height="50.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -76,7 +76,7 @@
                                         </subviews>
                                     </stackView>
                                     <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iZi-bJ-8bk" customClass="CombinedChartView" customModule="Charts">
-                                        <rect key="frame" x="0.0" y="223" width="355" height="355"/>
+                                        <rect key="frame" x="0.0" y="218" width="360" height="360"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" notEnabled="YES"/>
@@ -87,9 +87,9 @@
                                     </view>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y1a-78-3fT">
-                                <rect key="frame" x="324" y="30" width="25" height="25"/>
-                                <state key="normal" image="Bridge"/>
+                            <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y1a-78-3fT">
+                                <rect key="frame" x="320" y="25" width="29" height="28"/>
+                                <state key="normal" image="quickaction_icon_share"/>
                                 <connections>
                                     <action selector="shareButtonClickedWithSender:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="V8I-iC-zq7"/>
                                 </connections>
@@ -99,8 +99,8 @@
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="Vvw-VY-4ya" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="12A-Vs-6WU"/>
-                            <constraint firstAttribute="trailing" secondItem="Vvw-VY-4ya" secondAttribute="trailing" constant="10" id="3lK-sH-hHb"/>
-                            <constraint firstItem="y1a-78-3fT" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="IfS-g8-8TJ"/>
+                            <constraint firstAttribute="trailing" secondItem="Vvw-VY-4ya" secondAttribute="trailing" constant="5" id="3lK-sH-hHb"/>
+                            <constraint firstItem="y1a-78-3fT" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="5" id="IfS-g8-8TJ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="y1a-78-3fT" secondAttribute="trailing" constant="10" id="Ory-X6-oLe"/>
                             <constraint firstItem="Vvw-VY-4ya" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="aiV-1e-1wL"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Vvw-VY-4ya" secondAttribute="bottom" constant="10" id="wjl-2X-S9o"/>
@@ -258,5 +258,6 @@
         <image name="Bridge" width="25" height="25"/>
         <image name="Hazard" width="25" height="25"/>
         <image name="Maintenance" width="25" height="25"/>
+        <image name="quickaction_icon_share" width="29" height="28"/>
     </resources>
 </document>
