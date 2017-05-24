@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -86,12 +87,21 @@
                                     </view>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y1a-78-3fT">
+                                <rect key="frame" x="324" y="30" width="25" height="25"/>
+                                <state key="normal" image="Bridge"/>
+                                <connections>
+                                    <action selector="shareButtonClickedWithSender:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="V8I-iC-zq7"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="Vvw-VY-4ya" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="12A-Vs-6WU"/>
                             <constraint firstAttribute="trailing" secondItem="Vvw-VY-4ya" secondAttribute="trailing" constant="10" id="3lK-sH-hHb"/>
+                            <constraint firstItem="y1a-78-3fT" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="IfS-g8-8TJ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="y1a-78-3fT" secondAttribute="trailing" constant="10" id="Ory-X6-oLe"/>
                             <constraint firstItem="Vvw-VY-4ya" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="aiV-1e-1wL"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Vvw-VY-4ya" secondAttribute="bottom" constant="10" id="wjl-2X-S9o"/>
                         </constraints>
@@ -114,7 +124,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-1089" y="112"/>
+            <point key="canvasLocation" x="-1090.4000000000001" y="111.99400299850076"/>
         </scene>
         <!--BackView Controller-->
         <scene sceneID="L0T-8W-Kgt">
@@ -149,17 +159,12 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="FgD-mJ-L52">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="timeToNextBirthdayDaysLabel" textAlignment="center" lineBreakMode="clip" baselineAdjustment="alignBaselines" minimumScaleFactor="1" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FTR-G9-v25" userLabel="nextBirthdayDaysLabel">
                                         <rect key="frame" x="0.0" y="459.5" width="355" height="38.5"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="timeToNextBirthdayDaysLabel" textAlignment="center" lineBreakMode="clip" baselineAdjustment="alignBaselines" minimumScaleFactor="1" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FTR-G9-v25" userLabel="nextBirthdayDaysLabel">
-                                                <rect key="frame" x="0.0" y="0.0" width="355" height="38.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
+                                        <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -182,7 +187,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y8Z-91-V3U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="234" y="113"/>
+            <point key="canvasLocation" x="232.80000000000001" y="112.89355322338831"/>
         </scene>
         <!--BackView2 Controller-->
         <scene sceneID="gEN-Lm-YFF">

@@ -11,7 +11,6 @@ import Foundation
 import HealthKit
 
 
-
 class BackViewController: UIViewController {
     
     @IBOutlet weak var dateOfBirthLabel: UILabel!

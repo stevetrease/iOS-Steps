@@ -25,6 +25,8 @@ class ViewController: UIViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(notificationReceived), name: NSNotification.Name(rawValue: healthKitDidUpdateNotification1), object: nil)
         
+        // addShareBarButtonItem()
+        
         todayStepCountLabel.text = ""
         yesterdayStepCountLabel.text = ""
         averageStepCountLabel.text = ""
@@ -245,5 +247,25 @@ class ViewController: UIViewController {
         self.chartView.data = data
         self.chartView.data?.notifyDataChanged()
         self.chartView.notifyDataSetChanged()
+    }
+    
+    
+    @IBAction func shareButtonClicked(sender: UIButton) {
+        print (NSURL (fileURLWithPath: "\(#file)").lastPathComponent!, "\(#function)")
+        
+        let imageToShare: UIImage = self.view.snapShot()
+        
+        let objectsToShare = [imageToShare] as [Any]
+        let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+        
+        activityVC.popoverPresentationController?.sourceView = sender
+        self.present(activityVC, animated: true, completion: nil)
+        
+    }
+    
+    func addShareBarButtonItem() {
+        print (NSURL (fileURLWithPath: "\(#file)").lastPathComponent!, "\(#function)")
+        let shareButton = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(self.shareButtonClicked))
+        self.navigationItem.rightBarButtonItem = shareButton
     }
 }

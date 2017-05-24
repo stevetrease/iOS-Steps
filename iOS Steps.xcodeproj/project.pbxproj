@@ -21,6 +21,7 @@
 		AA3AF9211E95581A00903F2B /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA3AF9201E95581A00903F2B /* HealthKit.framework */; };
 		AA3BDF031E9A05A500DF1B98 /* WatchKitSessionMananager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3BDF021E9A05A500DF1B98 /* WatchKitSessionMananager.swift */; };
 		AA67AFCD1E5768CF00EE0630 /* BackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA67AFCC1E5768CF00EE0630 /* BackViewController.swift */; };
+		AA7B06481ED6124B0097F08E /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7B06471ED6124B0097F08E /* UIViewExtension.swift */; };
 		AA9D2E851E3E424C000E9C08 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9D2E841E3E424C000E9C08 /* AppDelegate.swift */; };
 		AA9D2E871E3E424C000E9C08 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9D2E861E3E424C000E9C08 /* ViewController.swift */; };
 		AA9D2E8A1E3E424C000E9C08 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA9D2E881E3E424C000E9C08 /* Main.storyboard */; };
@@ -131,6 +132,7 @@
 		AA3AF9201E95581A00903F2B /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS3.2.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
 		AA3BDF021E9A05A500DF1B98 /* WatchKitSessionMananager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchKitSessionMananager.swift; sourceTree = "<group>"; };
 		AA67AFCC1E5768CF00EE0630 /* BackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackViewController.swift; sourceTree = "<group>"; };
+		AA7B06471ED6124B0097F08E /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		AA9D2E811E3E424C000E9C08 /* iOS Steps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS Steps.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA9D2E841E3E424C000E9C08 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA9D2E861E3E424C000E9C08 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -274,6 +276,7 @@
 				AA67AFCC1E5768CF00EE0630 /* BackViewController.swift */,
 				AABD2EF01E9E999D00575B92 /* BackViewController2.swift */,
 				AAD088461E3FC3C500612BC1 /* HealthKitManager.swift */,
+				AA7B06471ED6124B0097F08E /* UIViewExtension.swift */,
 				AA3BDF021E9A05A500DF1B98 /* WatchKitSessionMananager.swift */,
 				AA9D2E8D1E3E424C000E9C08 /* LaunchScreen.storyboard */,
 				AA9D2E881E3E424C000E9C08 /* Main.storyboard */,
@@ -712,6 +715,7 @@
 				AA9D2E851E3E424C000E9C08 /* AppDelegate.swift in Sources */,
 				AAD088471E3FC3C500612BC1 /* HealthKitManager.swift in Sources */,
 				AABD2EF11E9E999D00575B92 /* BackViewController2.swift in Sources */,
+				AA7B06481ED6124B0097F08E /* UIViewExtension.swift in Sources */,
 				AA67AFCD1E5768CF00EE0630 /* BackViewController.swift in Sources */,
 				AA3BDF031E9A05A500DF1B98 /* WatchKitSessionMananager.swift in Sources */,
 			);
