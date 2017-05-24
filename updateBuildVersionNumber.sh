@@ -6,7 +6,7 @@ echo "build:" $BUILD
 
 PLB=/usr/libexec/PlistBuddy
 
-for DELIVERABLE in "iOS Steps" "iOS Steps Today" "iOS Steps Watch" "iOS Steps Watch Extension"
+for DELIVERABLE in "iOS Steps" "iOS Steps Today" "iOS Steps Watch" "iOS Steps Watch Extension" "iOS Steps Sharing Extension"
 do
 	PLIST="$DELIVERABLE/Info.plist"
 	$PLB -c "Set :CFBundleVersion $BUILD" "$PLIST"

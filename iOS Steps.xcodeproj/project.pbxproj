@@ -21,6 +21,9 @@
 		AA3AF9211E95581A00903F2B /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA3AF9201E95581A00903F2B /* HealthKit.framework */; };
 		AA3BDF031E9A05A500DF1B98 /* WatchKitSessionMananager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3BDF021E9A05A500DF1B98 /* WatchKitSessionMananager.swift */; };
 		AA67AFCD1E5768CF00EE0630 /* BackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA67AFCC1E5768CF00EE0630 /* BackViewController.swift */; };
+		AA7B063C1ED5AC890097F08E /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7B063B1ED5AC890097F08E /* ShareViewController.swift */; };
+		AA7B063F1ED5AC890097F08E /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA7B063D1ED5AC890097F08E /* MainInterface.storyboard */; };
+		AA7B06431ED5AC890097F08E /* iOS Steps Sharing Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = AA7B06391ED5AC890097F08E /* iOS Steps Sharing Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		AA9D2E851E3E424C000E9C08 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9D2E841E3E424C000E9C08 /* AppDelegate.swift */; };
 		AA9D2E871E3E424C000E9C08 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9D2E861E3E424C000E9C08 /* ViewController.swift */; };
 		AA9D2E8A1E3E424C000E9C08 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA9D2E881E3E424C000E9C08 /* Main.storyboard */; };
@@ -51,6 +54,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = AA3AF8F41E95501500903F2B;
 			remoteInfo = "iOS Steps Watch";
+		};
+		AA7B06411ED5AC890097F08E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AA9D2E791E3E424C000E9C08 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AA7B06381ED5AC890097F08E;
+			remoteInfo = "iOS Steps Sharing Extension";
 		};
 		AAF185FB1E8848730081A1DB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -100,6 +110,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				AA7B06431ED5AC890097F08E /* iOS Steps Sharing Extension.appex in Embed App Extensions */,
 				AAF185FD1E8848730081A1DB /* iOS Steps Today.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
@@ -131,6 +142,10 @@
 		AA3AF9201E95581A00903F2B /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS3.2.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
 		AA3BDF021E9A05A500DF1B98 /* WatchKitSessionMananager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchKitSessionMananager.swift; sourceTree = "<group>"; };
 		AA67AFCC1E5768CF00EE0630 /* BackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackViewController.swift; sourceTree = "<group>"; };
+		AA7B06391ED5AC890097F08E /* iOS Steps Sharing Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "iOS Steps Sharing Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA7B063B1ED5AC890097F08E /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		AA7B063E1ED5AC890097F08E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		AA7B06401ED5AC890097F08E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA9D2E811E3E424C000E9C08 /* iOS Steps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS Steps.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA9D2E841E3E424C000E9C08 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA9D2E861E3E424C000E9C08 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -169,6 +184,13 @@
 			files = (
 				AA3AF9211E95581A00903F2B /* HealthKit.framework in Frameworks */,
 				2CAE80AA838A970D1254765A /* Pods_iOS_Steps_Watch_Extension.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA7B06361ED5AC890097F08E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,6 +263,16 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		AA7B063A1ED5AC890097F08E /* iOS Steps Sharing Extension */ = {
+			isa = PBXGroup;
+			children = (
+				AA7B063B1ED5AC890097F08E /* ShareViewController.swift */,
+				AA7B063D1ED5AC890097F08E /* MainInterface.storyboard */,
+				AA7B06401ED5AC890097F08E /* Info.plist */,
+			);
+			path = "iOS Steps Sharing Extension";
+			sourceTree = "<group>";
+		};
 		AA9D2E781E3E424C000E9C08 = {
 			isa = PBXGroup;
 			children = (
@@ -248,6 +280,7 @@
 				AAF185F41E8848730081A1DB /* iOS Steps Today */,
 				AA3AF8F61E95501500903F2B /* iOS Steps Watch */,
 				AA3AF9051E95501500903F2B /* iOS Steps Watch Extension */,
+				AA7B063A1ED5AC890097F08E /* iOS Steps Sharing Extension */,
 				AA9D2E821E3E424C000E9C08 /* Products */,
 				AAD088401E3FBA1800612BC1 /* Frameworks */,
 				7AB9A071B2ECC1A27472129F /* Pods */,
@@ -261,6 +294,7 @@
 				AAF185F11E8848720081A1DB /* iOS Steps Today.appex */,
 				AA3AF8F51E95501500903F2B /* iOS Steps Watch.app */,
 				AA3AF9011E95501500903F2B /* iOS Steps Watch Extension.appex */,
+				AA7B06391ED5AC890097F08E /* iOS Steps Sharing Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -351,6 +385,23 @@
 			productReference = AA3AF9011E95501500903F2B /* iOS Steps Watch Extension.appex */;
 			productType = "com.apple.product-type.watchkit2-extension";
 		};
+		AA7B06381ED5AC890097F08E /* iOS Steps Sharing Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AA7B06461ED5AC890097F08E /* Build configuration list for PBXNativeTarget "iOS Steps Sharing Extension" */;
+			buildPhases = (
+				AA7B06351ED5AC890097F08E /* Sources */,
+				AA7B06361ED5AC890097F08E /* Frameworks */,
+				AA7B06371ED5AC890097F08E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "iOS Steps Sharing Extension";
+			productName = "iOS Steps Sharing Extension";
+			productReference = AA7B06391ED5AC890097F08E /* iOS Steps Sharing Extension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		AA9D2E801E3E424C000E9C08 /* iOS Steps */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = AA9D2E931E3E424C000E9C08 /* Build configuration list for PBXNativeTarget "iOS Steps" */;
@@ -372,6 +423,7 @@
 			dependencies = (
 				AAF185FC1E8848730081A1DB /* PBXTargetDependency */,
 				AA3AF9121E95501500903F2B /* PBXTargetDependency */,
+				AA7B06421ED5AC890097F08E /* PBXTargetDependency */,
 			);
 			name = "iOS Steps";
 			productName = "iOS Steps";
@@ -430,6 +482,11 @@
 							};
 						};
 					};
+					AA7B06381ED5AC890097F08E = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = 22648A4K3P;
+						ProvisioningStyle = Automatic;
+					};
 					AA9D2E801E3E424C000E9C08 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 22648A4K3P;
@@ -472,6 +529,7 @@
 				AAF185F01E8848720081A1DB /* iOS Steps Today */,
 				AA3AF8F41E95501500903F2B /* iOS Steps Watch */,
 				AA3AF9001E95501500903F2B /* iOS Steps Watch Extension */,
+				AA7B06381ED5AC890097F08E /* iOS Steps Sharing Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -491,6 +549,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA3AF90F1E95501500903F2B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA7B06371ED5AC890097F08E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA7B063F1ED5AC890097F08E /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -704,6 +770,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AA7B06351ED5AC890097F08E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA7B063C1ED5AC890097F08E /* ShareViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AA9D2E7D1E3E424C000E9C08 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -738,6 +812,11 @@
 			target = AA3AF8F41E95501500903F2B /* iOS Steps Watch */;
 			targetProxy = AA3AF9111E95501500903F2B /* PBXContainerItemProxy */;
 		};
+		AA7B06421ED5AC890097F08E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AA7B06381ED5AC890097F08E /* iOS Steps Sharing Extension */;
+			targetProxy = AA7B06411ED5AC890097F08E /* PBXContainerItemProxy */;
+		};
 		AAF185FC1E8848730081A1DB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = AAF185F01E8848720081A1DB /* iOS Steps Today */;
@@ -752,6 +831,14 @@
 				AA3AF8F81E95501500903F2B /* Base */,
 			);
 			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+		AA7B063D1ED5AC890097F08E /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AA7B063E1ED5AC890097F08E /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 		AA9D2E881E3E424C000E9C08 /* Main.storyboard */ = {
@@ -858,6 +945,34 @@
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 3.2;
+			};
+			name = Release;
+		};
+		AA7B06441ED5AC890097F08E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				DEVELOPMENT_TEAM = 22648A4K3P;
+				INFOPLIST_FILE = "iOS Steps Sharing Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "eu.trease.iosteps.iOS-Steps.iOS-Steps-Sharing-Extension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		AA7B06451ED5AC890097F08E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				DEVELOPMENT_TEAM = 22648A4K3P;
+				INFOPLIST_FILE = "iOS Steps Sharing Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "eu.trease.iosteps.iOS-Steps.iOS-Steps-Sharing-Extension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -1040,6 +1155,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		AA7B06461ED5AC890097F08E /* Build configuration list for PBXNativeTarget "iOS Steps Sharing Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA7B06441ED5AC890097F08E /* Debug */,
+				AA7B06451ED5AC890097F08E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 		AA9D2E7C1E3E424C000E9C08 /* Build configuration list for PBXProject "iOS Steps" */ = {
 			isa = XCConfigurationList;

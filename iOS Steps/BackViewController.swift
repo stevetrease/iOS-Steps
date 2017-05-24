@@ -19,6 +19,7 @@ class BackViewController: UIViewController {
     @IBOutlet weak var nextBirthdayLabel: UILabel!
     @IBOutlet weak var timeToNextBirthdayDaysLabel: UILabel!
     
+    let cal = Calendar.current
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,20 +41,30 @@ class BackViewController: UIViewController {
         print (NSURL (fileURLWithPath: "\(#file)").lastPathComponent!, "\(#function)")
         
         let dateOfBirth = healthKitManager.dateOfBirth
+        // let dateOfBirth = Date()
         let nextBirthday = healthKitManager.dateOfNextBirthday
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .full
         
         dateOfBirthLabel.text = dateFormatter.string(from: dateOfBirth)
-        nextBirthdayLabel.text = dateFormatter.string(from: nextBirthday)
-
+        
         let ageFormatter = DateComponentsFormatter()
         ageFormatter.unitsStyle = .full
+
+        let components1 = cal.dateComponents( [.month, .day], from: dateOfBirth)
+        let components2 = cal.dateComponents( [.month, .day], from: Date())
     
-        ageFormatter.allowedUnits = [.day]
-        timeToNextBirthdayDaysLabel.text =  ageFormatter.string(from: Date(), to: nextBirthday)
-        
+        if components1 == components2 {
+            timeToNextBirthdayDaysLabel.text = "Happy birthday"
+            nextBirthdayLabel.isHidden = true
+        } else {
+            ageFormatter.allowedUnits = [.day]
+            timeToNextBirthdayDaysLabel.text = ageFormatter.string(from: Date(), to: nextBirthday)
+            nextBirthdayLabel.isHidden = false
+            nextBirthdayLabel.text = dateFormatter.string(from: nextBirthday)
+        }
+            
         ageFormatter.allowedUnits = [.year, .month, .day]
         ageFormatter.maximumUnitCount = 3
         ageLabel.text = ageFormatter.string(from: dateOfBirth, to: Date())
