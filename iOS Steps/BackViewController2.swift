@@ -108,8 +108,6 @@ class BackViewController2: UIViewController {
         var dailyStepDataEntries: [BarChartDataEntry] = []
         var xLabels: [String] = []
         
-        var averageDailySteps = 0.0
-        
         for day in -healthKitManager.historyDays...0 {
             let filterDay = self.cal.date(byAdding: .day, value: day, to: self.cal.startOfDay(for: Date()))
             
@@ -127,17 +125,10 @@ class BackViewController2: UIViewController {
             let formatter = DateFormatter()
             formatter.dateFormat = "E"
             xLabels.append (formatter.string (from: filterDay!))
-            
-            if day != 0 {
-                averageDailySteps = averageDailySteps + accumulator
-            }
         }
-        
-        averageDailySteps = averageDailySteps / Double(healthKitManager.historyDays)
-        print ("average daily step", averageDailySteps)
-        
-        let averageLineStartDataEntry = BarChartDataEntry(x: -(Double(healthKitManager.historyDays)), y: averageDailySteps)
-        let averageLineEndDataEntry = BarChartDataEntry(x: -1, y: averageDailySteps)
+                
+        let averageLineStartDataEntry = BarChartDataEntry(x: -(Double(healthKitManager.historyDays)), y: healthKitManager.stepsAverage)
+        let averageLineEndDataEntry = BarChartDataEntry(x: -1, y: healthKitManager.stepsAverage)
         var averageLineDataEntries: [BarChartDataEntry] = []
         averageLineDataEntries.append (averageLineStartDataEntry)
         averageLineDataEntries.append (averageLineEndDataEntry)
@@ -185,9 +176,6 @@ class BackViewController2: UIViewController {
         var lastHour = 0.0
         var lines: [LineChartDataSet] = []
         
-        var averageDailySteps = 0.0
-        var maxSteps = 0.0
-        
         for day in -healthKitManager.historyDays...0 {
             let filterDay = self.cal.date(byAdding: .day, value: day, to: self.cal.startOfDay(for: Date()))
             
@@ -210,14 +198,6 @@ class BackViewController2: UIViewController {
                 }
                 if ((hour + (minutes / 60)) > lastHour) {
                     lastHour = (hour + (minutes / 60))
-                }
-                
-                if day != 0 {
-                    averageDailySteps = averageDailySteps + dailySteps[i].value
-                }
-                
-                if value > maxSteps {
-                    maxSteps = value
                 }
                 
                 let dailyLineDataEntry = BarChartDataEntry(x: hour + (minutes / 60), y: value)
@@ -249,11 +229,8 @@ class BackViewController2: UIViewController {
             lines.append(lineDataSet)
         }
         
-        averageDailySteps = averageDailySteps / Double(healthKitManager.historyDays)
-        print ("average daily step", averageDailySteps)
-        
-        let averageLineStartDataEntry = BarChartDataEntry(x: firstHour, y: averageDailySteps)
-        let averageLineEndDataEntry = BarChartDataEntry(x: lastHour, y: averageDailySteps)
+        let averageLineStartDataEntry = BarChartDataEntry(x: firstHour, y: healthKitManager.stepsAverage)
+        let averageLineEndDataEntry = BarChartDataEntry(x: lastHour, y: healthKitManager.stepsAverage)
         var averageLineDataEntries: [BarChartDataEntry] = []
         averageLineDataEntries.append (averageLineStartDataEntry)
         averageLineDataEntries.append (averageLineEndDataEntry)
@@ -263,24 +240,6 @@ class BackViewController2: UIViewController {
         averageLineDataSet.lineWidth = 1
         lines.append(averageLineDataSet)
         
-        /*
-        let components = cal.dateComponents ([.hour, .minute], from: Date())
-        let hour = Double(components.hour!)
-        let minutes = Double(components.minute!)
-        let now = hour + (minutes / 60)
-        
-        let nowLineStartDataEntry = BarChartDataEntry(x: now, y: 0)
-        let nowLineEndDataEntry = BarChartDataEntry(x: now, y: maxSteps)
-        var nowLineDataEntries: [BarChartDataEntry] = []
-        nowLineDataEntries.append (nowLineStartDataEntry)
-        nowLineDataEntries.append (nowLineEndDataEntry)
-        let nowLineDataSet = LineChartDataSet (values: nowLineDataEntries, label: "")
-        nowLineDataSet.colors = [.lightGray]
-        nowLineDataSet.drawCirclesEnabled = false
-        nowLineDataSet.lineWidth = 0.5
-        lines.append(nowLineDataSet)
-        */
- 
         let data: CombinedChartData = CombinedChartData()
         let lineData = LineChartData (dataSets: lines)
         
