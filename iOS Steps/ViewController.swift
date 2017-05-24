@@ -12,7 +12,6 @@ import HealthKit
 import Charts
 
 
-
 class ViewController: UIViewController {
 
     @IBOutlet weak var todayStepCountLabel: UILabel!
@@ -23,6 +22,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print (NSURL (fileURLWithPath: "\(#file)").lastPathComponent!, "\(#function)")
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(notificationReceived), name: NSNotification.Name(rawValue: healthKitDidUpdateNotification1), object: nil)
         
         todayStepCountLabel.text = ""
         yesterdayStepCountLabel.text = ""
@@ -63,6 +64,12 @@ class ViewController: UIViewController {
     
     func updateHealthData () {
         print (NSURL (fileURLWithPath: "\(#file)").lastPathComponent!, "\(#function)")
+    }
+
+    
+    func notificationReceived () {
+        print (NSURL (fileURLWithPath: "\(#file)").lastPathComponent!, "\(#function)")
+        self.drawChart2()
     }
     
     
@@ -110,8 +117,8 @@ class ViewController: UIViewController {
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         healthKitManager.updateHourlyStepsArray(completion: { (steps) in
             OperationQueue.main.addOperation {
-                self.drawChart2()
                 UIApplication.shared.isNetworkActivityIndicatorVisible = false
+                self.drawChart2()
             }
         })
     }

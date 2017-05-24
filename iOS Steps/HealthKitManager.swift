@@ -17,6 +17,9 @@ class HealthDataType {
     var data = 0.0
 }
 
+let healthKitDidUpdateNotification1 = "healthKitDidUpdateNotification1"
+let healthKitDidUpdateNotification2 = "healthKitDidUpdateNotification2"
+
 
 class HealthKitManager {
     
@@ -211,6 +214,11 @@ class HealthKitManager {
             self.hourlySteps = self.stepsArray.filter { self.cal.isDateInToday ($0.timeStamp) }
             // filter yesterday's steps
             self.hourlyStepsYesterday = self.stepsArray.filter { self.cal.isDateInYesterday($0.timeStamp) }
+            
+            // now call updates in viewControllers
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: healthKitDidUpdateNotification1), object: nil)
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: healthKitDidUpdateNotification2), object: nil)
+
             
             completion (0.0)
         }

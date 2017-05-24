@@ -25,6 +25,8 @@ class BackViewController2: UIViewController {
         
         print (NSURL (fileURLWithPath: "\(#file)").lastPathComponent!, "\(#function)")
         
+        NotificationCenter.default.addObserver(self, selector: #selector(notificationReceived), name: NSNotification.Name(rawValue: healthKitDidUpdateNotification2), object: nil)
+        
         chartView2.legend.enabled = false
         chartView2.xAxis.drawLabelsEnabled = true
         chartView2.xAxis.labelPosition = XAxis.LabelPosition.bottom
@@ -65,6 +67,13 @@ class BackViewController2: UIViewController {
         self.drawChart3()
         
         drawScreen()
+    }
+
+    
+    func notificationReceived () {
+        print (NSURL (fileURLWithPath: "\(#file)").lastPathComponent!, "\(#function)")
+        self.drawChart2()
+        self.drawChart3()
     }
     
     
