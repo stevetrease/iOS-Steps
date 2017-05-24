@@ -87,8 +87,8 @@
                                     </view>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y1a-78-3fT">
-                                <rect key="frame" x="320" y="25" width="29" height="28"/>
+                            <button opaque="NO" alpha="0.29999999999999999" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y1a-78-3fT" userLabel="Share Button">
+                                <rect key="frame" x="330" y="25" width="29" height="28"/>
                                 <state key="normal" image="quickaction_icon_share"/>
                                 <connections>
                                     <action selector="shareButtonClickedWithSender:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="V8I-iC-zq7"/>
@@ -101,7 +101,7 @@
                             <constraint firstItem="Vvw-VY-4ya" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="12A-Vs-6WU"/>
                             <constraint firstAttribute="trailing" secondItem="Vvw-VY-4ya" secondAttribute="trailing" constant="5" id="3lK-sH-hHb"/>
                             <constraint firstItem="y1a-78-3fT" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="5" id="IfS-g8-8TJ"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="y1a-78-3fT" secondAttribute="trailing" constant="10" id="Ory-X6-oLe"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="y1a-78-3fT" secondAttribute="trailing" id="Ory-X6-oLe"/>
                             <constraint firstItem="Vvw-VY-4ya" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="aiV-1e-1wL"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Vvw-VY-4ya" secondAttribute="bottom" constant="10" id="wjl-2X-S9o"/>
                         </constraints>
