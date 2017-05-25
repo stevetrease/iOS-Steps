@@ -253,9 +253,14 @@ class ViewController: UIViewController {
     @IBAction func shareButtonClicked(sender: UIButton) {
         print (NSURL (fileURLWithPath: "\(#file)").lastPathComponent!, "\(#function)")
         
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .short
+        
+        let stringToShare: String = dateFormatter.string(from: Date())
         let imageToShare: UIImage = self.view.snapShot()
         
-        let objectsToShare = [imageToShare] as [Any]
+        let objectsToShare = [imageToShare,stringToShare] as [Any]
         let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
         
         activityVC.popoverPresentationController?.sourceView = sender
