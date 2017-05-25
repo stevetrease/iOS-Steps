@@ -18,6 +18,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var yesterdayStepCountLabel: UILabel!
     @IBOutlet weak var averageStepCountLabel: UILabel!
     @IBOutlet weak var chartView: CombinedChartView!
+    @IBOutlet weak var shareButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -258,7 +259,9 @@ class ViewController: UIViewController {
         dateFormatter.timeStyle = .short
         
         let stringToShare: String = dateFormatter.string(from: Date())
+        shareButton.isHidden = true
         let imageToShare: UIImage = self.view.snapShot()
+        shareButton.isHidden = false
         
         let objectsToShare = [imageToShare,stringToShare] as [Any]
         let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)

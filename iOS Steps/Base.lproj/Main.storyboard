@@ -113,6 +113,7 @@
                     <connections>
                         <outlet property="averageStepCountLabel" destination="2sU-7j-M6u" id="gvE-mN-7OL"/>
                         <outlet property="chartView" destination="iZi-bJ-8bk" id="bPY-mj-1kV"/>
+                        <outlet property="shareButton" destination="y1a-78-3fT" id="p4n-qN-tn0"/>
                         <outlet property="todayStepCountLabel" destination="oJu-oP-i4O" id="zJh-0Q-CMX"/>
                         <outlet property="yesterdayStepCountLabel" destination="WPY-JI-Jbe" id="vjb-xs-0Fd"/>
                     </connections>
