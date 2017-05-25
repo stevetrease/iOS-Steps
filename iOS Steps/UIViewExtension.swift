@@ -9,7 +9,7 @@
 import UIKit
 
 
-
+// snapshot UIView into a UIImage
 extension UIView {
     func snapShot() -> UIImage {
         UIGraphicsBeginImageContextWithOptions(self.bounds.size, true, UIScreen.main.scale)
@@ -17,5 +17,13 @@ extension UIView {
         let img = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         return img!
+    }
+}
+
+// extension to allow a view to be duplicated
+extension UIView
+{
+    func copyView<T: UIView>() -> T {
+        return NSKeyedUnarchiver.unarchiveObject(with: NSKeyedArchiver.archivedData(withRootObject: self)) as! T
     }
 }
