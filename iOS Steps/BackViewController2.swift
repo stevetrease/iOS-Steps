@@ -147,7 +147,7 @@ class BackViewController2: UIViewController {
         averageLineDataSet.drawCirclesEnabled = false
         averageLineDataSet.lineWidth = 1
         var lines: [LineChartDataSet] = []
-        lines.append(averageLineDataSet)
+        lines.insert(averageLineDataSet, at: 0)
         
         let barDataSet = BarChartDataSet(values: dailyStepDataEntries, label: "")
         
