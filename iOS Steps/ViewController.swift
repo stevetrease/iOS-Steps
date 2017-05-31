@@ -258,17 +258,15 @@ class ViewController: UIViewController {
         dateFormatter.dateStyle = .medium
         dateFormatter.timeStyle = .short
         
-        let stringToShare: String = dateFormatter.string(from: Date())
         shareButton.isHidden = true
         let imageToShare: UIImage = self.view.snapShot()
         shareButton.isHidden = false
         
-        let objectsToShare = [imageToShare,stringToShare] as [Any]
+        let objectsToShare = [imageToShare] as [Any]
         let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
         
         activityVC.popoverPresentationController?.sourceView = sender
         self.present(activityVC, animated: true, completion: nil)
-        
     }
     
     func addShareBarButtonItem() {

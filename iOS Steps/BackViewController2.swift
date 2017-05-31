@@ -17,6 +17,7 @@ class BackViewController2: UIViewController {
 
     @IBOutlet weak var chartView2: CombinedChartView!
     @IBOutlet weak var chartView3: CombinedChartView!
+    @IBOutlet weak var shareButton: UIButton!
 
     private let cal = Calendar.current
     
@@ -257,5 +258,23 @@ class BackViewController2: UIViewController {
         self.chartView3.data = data
         self.chartView3.data?.notifyDataChanged()
         self.chartView3.notifyDataSetChanged()
+    }
+    
+    @IBAction func shareButtonClicked(sender: UIButton) {
+        print (NSURL (fileURLWithPath: "\(#file)").lastPathComponent!, "\(#function)")
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .short
+        
+        shareButton.isHidden = true
+        let imageToShare: UIImage = self.view.snapShot()
+        shareButton.isHidden = false
+        
+        let objectsToShare = [imageToShare] as [Any]
+        let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+        
+        activityVC.popoverPresentationController?.sourceView = sender
+        self.present(activityVC, animated: true, completion: nil)
     }
 }
