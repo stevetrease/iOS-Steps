@@ -268,10 +268,4 @@ class ViewController: UIViewController {
         activityVC.popoverPresentationController?.sourceView = sender
         self.present(activityVC, animated: true, completion: nil)
     }
-    
-    func addShareBarButtonItem() {
-        print (NSURL (fileURLWithPath: "\(#file)").lastPathComponent!, "\(#function)")
-        let shareButton = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(self.shareButtonClicked))
-        self.navigationItem.rightBarButtonItem = shareButton
-    }
 }
