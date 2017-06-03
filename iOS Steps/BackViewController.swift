@@ -59,7 +59,7 @@ class BackViewController: UIViewController {
             nextBirthdayLabel.isHidden = true
         } else {
             ageFormatter.allowedUnits = [.day]
-            timeToNextBirthdayDaysLabel.text = ageFormatter.string(from: Date(), to: nextBirthday)
+            timeToNextBirthdayDaysLabel.text = ageFormatter.string(from: Date(), to:  cal.date(byAdding: .day, value: 1, to: nextBirthday)!)
             nextBirthdayLabel.isHidden = false
             nextBirthdayLabel.text = dateFormatter.string(from: nextBirthday)
         }
