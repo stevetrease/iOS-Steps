@@ -23,6 +23,11 @@ import WatchConnectivity
         print (NSURL (fileURLWithPath: "\(#file)").lastPathComponent!, "\(#function)")
         UserDefaults.standard.setValue(false, forKey: "_UIConstraintBasedLayoutLogUnsatisfiable")
         
+        // enable debugging overlay - double tap status bar to activate
+        // http://ryanipete.com/blog/ios/swift/objective-c/uidebugginginformationoverlay/?utm_campaign=iOS%2BDev%2BWeekly&utm_medium=email&utm_source=iOS_Dev_Weekly_Issue_303
+        let overlayClass = NSClassFromString("UIDebuggingInformationOverlay") as? UIWindow.Type
+        _ = overlayClass?.perform(NSSelectorFromString("prepareDebuggingOverlay"))
+        
         // UIApplication.shared.delegate?.window??.tintColor = .green
         
         // if WCSession.isSupported() {
