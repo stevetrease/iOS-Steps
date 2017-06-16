@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="12118" systemVersion="16F43c" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="13122.17" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
     <device id="watch38" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="watchOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="12029"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="13034"/>
     </dependencies>
     <scenes>
         <!--Steps-->
@@ -16,13 +16,17 @@
                     <items>
                         <group width="1" alignment="left" id="KmV-u1-7Xx">
                             <items>
-                                <label width="1" height="1" alignment="left" text="--" textAlignment="center" minimumScaleFactor="0.59999999999999998" id="jRp-pr-6vw">
+                                <label width="1" height="0.5" alignment="center" text="--" textAlignment="center" minimumScaleFactor="0.59999999999999998" id="jRp-pr-6vw">
                                     <fontDescription key="font" type="system" pointSize="48"/>
+                                </label>
+                                <label width="1" height="0.5" alignment="center" verticalAlignment="bottom" text="++" textAlignment="center" id="W3B-9J-eM0">
+                                    <fontDescription key="font" type="system" pointSize="24"/>
                                 </label>
                             </items>
                         </group>
                     </items>
                     <connections>
+                        <outlet property="averageLabel" destination="W3B-9J-eM0" id="Zjg-gc-mob"/>
                         <outlet property="stepsLabel" destination="jRp-pr-6vw" id="gxc-mO-hfM"/>
                     </connections>
                 </controller>

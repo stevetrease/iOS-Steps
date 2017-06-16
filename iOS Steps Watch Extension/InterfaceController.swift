@@ -15,6 +15,8 @@ import WatchConnectivity
 class InterfaceController: WKInterfaceController {
 
     @IBOutlet var stepsLabel: WKInterfaceLabel!
+    @IBOutlet var averageLabel: WKInterfaceLabel!
+    
     
     let healthStore = HKHealthStore()
     var session : WCSession?
@@ -29,12 +31,6 @@ class InterfaceController: WKInterfaceController {
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
-        print ("willActivate")
-        
-        // session = WCSession.default()
-        // session?.delegate = self
-        // session?.activate()
-        
         
         guard HKHealthStore.isHealthDataAvailable() == true else {
             stepsLabel.setText("not available")
@@ -68,7 +64,6 @@ class InterfaceController: WKInterfaceController {
     
     func updateView () {
         getTodayStepCount (completion: { (steps) in
-            print ("getTodayStepCount")
             let numberFormatter = NumberFormatter()
             numberFormatter.maximumFractionDigits = 0
             numberFormatter.numberStyle = NumberFormatter.Style.decimal
@@ -81,23 +76,24 @@ class InterfaceController: WKInterfaceController {
                 }
             }
         })
+        
+        getSevenDayStepCount (completion: { (steps) in
+            let numberFormatter = NumberFormatter()
+            numberFormatter.maximumFractionDigits = 0
+            numberFormatter.numberStyle = NumberFormatter.Style.decimal
+            let numberString = numberFormatter.string(from: steps! as NSNumber)
+            
+            if steps != -1.0 {
+                OperationQueue.main.addOperation {
+                    self.averageLabel.setText(numberString!)
+                }
+            }
+        })
     }
-
-    
-    // func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
-    //     print("activationDidCompleteWith activationState:\(activationState) error:\(String(describing: error))")
-    // }
-    
-    
-    // func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String : Any]) {
-    //     print ("didReceiveApplicationContext \"\(applicationContext).self\"")
-    //     self.updateView()
-    // }
 
     
     func getTodayStepCount(completion:@escaping (Double?)->())
     {
-        
         //   Define the sample type
         let type = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)
         
@@ -109,7 +105,6 @@ class InterfaceController: WKInterfaceController {
         let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: [])
         
         let query = HKStatisticsQuery(quantityType: type!, quantitySamplePredicate: predicate, options: .cumulativeSum) { query, results, error in
-            // print ("query: getTodayStepCount")
             let quantity = results?.sumQuantity()
             let unit = HKUnit.count()
             let steps = quantity?.doubleValue(for: unit)
@@ -123,6 +118,32 @@ class InterfaceController: WKInterfaceController {
         }
         healthStore.execute(query)
     }
-
-
+    
+    
+    func getSevenDayStepCount(completion:@escaping (Double?)->())
+    {
+        //   Define the sample type
+        let type = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)
+        
+        let cal = Calendar.current
+        let endDate = cal.startOfDay(for: Date())
+        let startDate =  cal.date(byAdding: .day, value: -7, to: endDate)
+        
+        //  Set the predicate
+        let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: [])
+        
+        let query = HKStatisticsQuery(quantityType: type!, quantitySamplePredicate: predicate, options: .cumulativeSum) { query, results, error in
+            let quantity = results?.sumQuantity()
+            let unit = HKUnit.count()
+            let steps = quantity?.doubleValue(for: unit)
+            
+            if steps != nil {
+                completion(steps! / 7.0)
+            } else {
+                print("getStepsAverage: results are nil - returning zero steps")
+                completion(-1.0)
+            }
+        }
+        healthStore.execute(query)
+    }
 }
