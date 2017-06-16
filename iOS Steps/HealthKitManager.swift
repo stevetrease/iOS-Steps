@@ -168,10 +168,15 @@ class HealthKitManager {
     func updateHourlyStepsArray(completion:@escaping (Double?)->()) {
         print (NSURL (fileURLWithPath: "\(#file)").lastPathComponent!, "\(#function)")
         
-        let anchorDate = cal.date(byAdding: .day, value: -1, to: cal.startOfDay(for: Date()))
-        
+        // longer interval, so less step periods initially
         var interval = DateComponents()
-        interval.minute = 5
+        if (hourlySteps.count == 0 ) {
+            interval.minute = 60
+        } else {
+            interval.minute = 5
+        }
+        
+        let anchorDate = cal.date(byAdding: .day, value: -1, to: cal.startOfDay(for: Date()))
         
         let type = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)
         
@@ -218,7 +223,6 @@ class HealthKitManager {
             // now call updates in viewControllers
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: healthKitDidUpdateNotification1), object: nil)
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: healthKitDidUpdateNotification2), object: nil)
-
             
             completion (0.0)
         }
