@@ -78,15 +78,16 @@ class InterfaceController: WKInterfaceController {
     func updateView () {
         getTodayStepCount (completion: { (steps) in
             if steps != -1.0 {
-                WKInterfaceDevice.current().play(.click)
                 self.stepsToday = steps!
                 OperationQueue.main.addOperation {
                     let numberString = self.numberFormatter.string(from: steps! as NSNumber)
                     self.stepsLabel.setText(numberString!)
                     
                     if (self.stepsToday > self.sevenDayStepAverage) {
+                        WKInterfaceDevice.current().play(.success)
                         self.stepsLabel.setTextColor(.green)
                     } else {
+                        WKInterfaceDevice.current().play(.click)
                         self.stepsLabel.setTextColor(.white)
                     }
                 }
@@ -97,7 +98,6 @@ class InterfaceController: WKInterfaceController {
         if (!cal.isDateInToday(sevenDayStepAverageLastUpdated)) {
             getSevenDayStepAverage (completion: { (averageSteps) in
                  if averageSteps != -1.0 {
-                    WKInterfaceDevice.current().play(.success)
                     self.sevenDayStepAverage = averageSteps!
                     self.sevenDayStepAverageLastUpdated = Date()
                     OperationQueue.main.addOperation {
