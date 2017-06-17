@@ -18,6 +18,13 @@ class InterfaceController: WKInterfaceController {
     @IBOutlet var averageLabel: WKInterfaceLabel!
     
     
+    var stepsToday: Double = 0.0
+    var sevenDayStepAverage: Double = 100000.0
+    var sevenDayStepAverageLastUpdated: Date = Date.distantPast
+    
+    let numberFormatter = NumberFormatter()
+    let cal = Calendar.current
+    
     let healthStore = HKHealthStore()
     var session : WCSession?
     
@@ -32,20 +39,26 @@ class InterfaceController: WKInterfaceController {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
         
+        numberFormatter.maximumFractionDigits = 0
+        numberFormatter.numberStyle = NumberFormatter.Style.decimal
+        
         guard HKHealthStore.isHealthDataAvailable() == true else {
-            stepsLabel.setText("not available")
+            stepsLabel.setText("HealthKit not available")
+            stepsLabel.setTextColor(.red)
             return
         }
         
         guard let quantityType = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount) else {
-            stepsLabel.setText("no quantity")
+            stepsLabel.setText("No stepCount quantity")
+            stepsLabel.setTextColor(.red)
             return
         }
         
         let dataTypes = Set(arrayLiteral: quantityType)
         healthStore.requestAuthorization(toShare: nil, read: dataTypes) { (success, error) -> Void in
             if success == false {
-                self.stepsLabel.setText("not allowed")
+                self.stepsLabel.setText("no HealthKit authorisation")
+                self.stepsLabel.setTextColor(.red)
             }
         }
 
@@ -64,31 +77,36 @@ class InterfaceController: WKInterfaceController {
     
     func updateView () {
         getTodayStepCount (completion: { (steps) in
-            let numberFormatter = NumberFormatter()
-            numberFormatter.maximumFractionDigits = 0
-            numberFormatter.numberStyle = NumberFormatter.Style.decimal
-            let numberString = numberFormatter.string(from: steps! as NSNumber)
-            
             if steps != -1.0 {
                 WKInterfaceDevice.current().play(.click)
+                self.stepsToday = steps!
                 OperationQueue.main.addOperation {
+                    let numberString = self.numberFormatter.string(from: steps! as NSNumber)
                     self.stepsLabel.setText(numberString!)
+                    
+                    if (self.stepsToday > self.sevenDayStepAverage) {
+                        self.stepsLabel.setTextColor(.green)
+                    } else {
+                        self.stepsLabel.setTextColor(.white)
+                    }
                 }
             }
         })
         
-        getSevenDayStepCount (completion: { (steps) in
-            let numberFormatter = NumberFormatter()
-            numberFormatter.maximumFractionDigits = 0
-            numberFormatter.numberStyle = NumberFormatter.Style.decimal
-            let numberString = numberFormatter.string(from: steps! as NSNumber)
-            
-            if steps != -1.0 {
-                OperationQueue.main.addOperation {
-                    self.averageLabel.setText(numberString!)
+        // only update if not updated already today
+        if (!cal.isDateInToday(sevenDayStepAverageLastUpdated)) {
+            getSevenDayStepAverage (completion: { (averageSteps) in
+                 if averageSteps != -1.0 {
+                    WKInterfaceDevice.current().play(.success)
+                    self.sevenDayStepAverage = averageSteps!
+                    self.sevenDayStepAverageLastUpdated = Date()
+                    OperationQueue.main.addOperation {
+                        let numberString = self.numberFormatter.string(from: averageSteps! as NSNumber)
+                        self.averageLabel.setText(numberString!)
+                    }
                 }
-            }
-        })
+            })
+        }
     }
 
     
@@ -120,7 +138,7 @@ class InterfaceController: WKInterfaceController {
     }
     
     
-    func getSevenDayStepCount(completion:@escaping (Double?)->())
+    func getSevenDayStepAverage(completion:@escaping (Double?)->())
     {
         //   Define the sample type
         let type = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)

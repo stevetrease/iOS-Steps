@@ -40,7 +40,6 @@ class BackViewController: UIViewController {
         print (NSURL (fileURLWithPath: "\(#file)").lastPathComponent!, "\(#function)")
         
         let dateOfBirth = healthKitManager.dateOfBirth
-        // let dateOfBirth = Date()
         let nextBirthday = healthKitManager.dateOfNextBirthday
         
         let dateFormatter = DateFormatter()
