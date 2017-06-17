@@ -85,7 +85,7 @@ class InterfaceController: WKInterfaceController {
                     
                     if (self.stepsToday > self.sevenDayStepAverage) {
                         WKInterfaceDevice.current().play(.success)
-                        self.stepsLabel.setTextColor(.green)
+                     self.stepsLabel.setTextColor(UIColor(red: 0.8, green: 1.0, blue: 0.8, alpha: 1.0)) // pale green
                     } else {
                         WKInterfaceDevice.current().play(.click)
                         self.stepsLabel.setTextColor(.white)

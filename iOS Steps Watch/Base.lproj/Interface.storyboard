@@ -18,7 +18,7 @@
                             <fontDescription key="font" type="system" pointSize="48"/>
                         </label>
                         <label width="1" height="0.5" alignment="center" verticalAlignment="bottom" text="-" textAlignment="center" id="W3B-9J-eM0">
-                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <fontDescription key="font" type="system" pointSize="24"/>
                         </label>
                     </items>
