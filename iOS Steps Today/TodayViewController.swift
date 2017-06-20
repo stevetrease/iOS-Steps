@@ -12,14 +12,22 @@ import HealthKit
 
 import UICountingLabel
 
-
 class TodayViewController: UIViewController, NCWidgetProviding {
+    
+    @IBOutlet weak var stepsLabel2: UICountingLabel!
+    @IBOutlet weak var stepsLabel: UILabel!
+    @IBOutlet weak var averageLabel: UILabel!
+    
     
     let healthStore = HKHealthStore()
     let cal = Calendar.current
     let numberFormatter = NumberFormatter()
     
-    @IBOutlet weak var stepsLabel2: UICountingLabel!
+    var stepsToday: Double = 0.0
+    var sevenDayStepAverage: Double = 100000.0
+    var sevenDayStepAverageLastUpdated: Date = Date.distantPast
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,11 +45,14 @@ class TodayViewController: UIViewController, NCWidgetProviding {
             }
         }
         stepsLabel2.textAlignment = .center
+        
+        stepsLabel2.isEnabled = false
 
         checkHealthKitAuthorization()
         
         updateView ()
     }
+    
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -49,6 +60,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         
         updateView()
     }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -84,13 +96,11 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     
     
     func updateView () {
-        let energyFormatter = EnergyFormatter()
-        energyFormatter.numberFormatter.maximumFractionDigits = 0
-        
         let numberFormatter = NumberFormatter()
         numberFormatter.maximumFractionDigits = 0
         numberFormatter.numberStyle = NumberFormatter.Style.decimal
         
+        /*
         getTodayStepCount (completion: { (steps) in
             if steps != -1.0 {
                 OperationQueue.main.addOperation {
@@ -98,6 +108,42 @@ class TodayViewController: UIViewController, NCWidgetProviding {
                 }
             }
         })
+         */
+        
+        getTodayStepCount (completion: { (steps) in
+            if steps != -1.0 {
+                OperationQueue.main.addOperation {
+                    let numberString = self.numberFormatter.string(from: steps! as NSNumber)
+                    self.stepsLabel.text = numberString!
+                    
+                    if (self.stepsToday > self.sevenDayStepAverage) {
+                        self.stepsLabel.textColor = UIColor(red: 0, green: 0.25, blue: 0, alpha: 1.0) // pale green
+                    } else {
+                        self.stepsLabel.textColor = .black
+                    }
+                }
+            }
+        })
+        
+        // only update if not updated already today
+        if (!cal.isDateInToday(sevenDayStepAverageLastUpdated)) {
+            getSevenDayStepAverage (completion: { (averageSteps) in
+                if averageSteps != -1.0 {
+                    self.sevenDayStepAverage = averageSteps!
+                    self.sevenDayStepAverageLastUpdated = Date()
+                    OperationQueue.main.addOperation {
+                        let numberString = self.numberFormatter.string(from: averageSteps! as NSNumber)
+                        self.averageLabel.text = numberString!
+                        
+                        if (self.stepsToday > self.sevenDayStepAverage) {
+                            self.stepsLabel.textColor = UIColor(red: 0, green: 0.25, blue: 0, alpha: 1.0) // pale green
+                        } else {
+                            self.stepsLabel.textColor = .black
+                        }
+                    }
+                }
+            })
+        }
     }
     
     
@@ -149,6 +195,34 @@ class TodayViewController: UIViewController, NCWidgetProviding {
                 completion(steps)
             } else {
                 print("getTodayStepCount: results are nil - returning nil steps")
+                completion(-1.0)
+            }
+        }
+        healthStore.execute(query)
+    }
+    
+    
+    func getSevenDayStepAverage(completion:@escaping (Double?)->())
+    {
+        //   Define the sample type
+        let type = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)
+        
+        let cal = Calendar.current
+        let endDate = cal.startOfDay(for: Date())
+        let startDate =  cal.date(byAdding: .day, value: -7, to: endDate)
+        
+        //  Set the predicate
+        let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: [])
+        
+        let query = HKStatisticsQuery(quantityType: type!, quantitySamplePredicate: predicate, options: .cumulativeSum) { query, results, error in
+            let quantity = results?.sumQuantity()
+            let unit = HKUnit.count()
+            let steps = quantity?.doubleValue(for: unit)
+            
+            if steps != nil {
+                completion(steps! / 7.0)
+            } else {
+                print("getStepsAverage: results are nil - returning zero steps")
                 completion(-1.0)
             }
         }

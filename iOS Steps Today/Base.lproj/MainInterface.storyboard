@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F71b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="M4Y-Lb-cyx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.17" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="M4Y-Lb-cyx">
     <device id="retina3_5" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.14"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,17 +22,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="37"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZdE-90-rhb" customClass="UICountingLabel">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="37"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="COV-QY-SJN">
+                                <rect key="frame" x="16" y="0.0" width="288" height="37"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZdE-90-rhb" customClass="UICountingLabel">
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="13.5"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="63c-KM-sb8">
+                                        <rect key="frame" x="106.5" y="13.5" width="75.5" height="10"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fte-7B-W9C">
+                                        <rect key="frame" x="0.0" y="23.5" width="288" height="13.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="ZdE-90-rhb" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" id="1aI-ce-Z56"/>
-                            <constraint firstItem="ZdE-90-rhb" firstAttribute="top" secondItem="S3S-Oj-5AN" secondAttribute="top" id="4ly-Xj-iBF"/>
-                            <constraint firstAttribute="trailing" secondItem="ZdE-90-rhb" secondAttribute="trailing" id="uS4-1t-hzH"/>
-                            <constraint firstAttribute="bottom" secondItem="ZdE-90-rhb" secondAttribute="bottom" id="xZp-1f-4I0"/>
+                            <constraint firstItem="COV-QY-SJN" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" id="1hz-G3-POS"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="COV-QY-SJN" secondAttribute="bottom" id="4A0-lp-QJH"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="COV-QY-SJN" secondAttribute="trailing" id="RR4-Dq-fuk"/>
+                            <constraint firstItem="COV-QY-SJN" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leadingMargin" id="q3C-ih-xHY"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="O2w-ql-fca" appends="YES" id="HSH-06-eog"/>
@@ -44,6 +62,8 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="37"/>
                     <connections>
+                        <outlet property="averageLabel" destination="Fte-7B-W9C" id="TWd-vi-sCy"/>
+                        <outlet property="stepsLabel" destination="63c-KM-sb8" id="zMz-FZ-NKr"/>
                         <outlet property="stepsLabel2" destination="ZdE-90-rhb" id="CPF-TR-c26"/>
                     </connections>
                 </viewController>

@@ -83,7 +83,6 @@ class InterfaceController: WKInterfaceController {
                     let numberString = self.numberFormatter.string(from: steps! as NSNumber)
                     self.stepsLabel.setText(numberString!)
                     
-                    WKInterfaceDevice.current().play(.click)
                     if (self.stepsToday > self.sevenDayStepAverage) {
                         self.stepsLabel.setTextColor(UIColor(red: 0.8, green: 1.0, blue: 0.8, alpha: 1.0)) // pale green
                     } else {
@@ -100,8 +99,15 @@ class InterfaceController: WKInterfaceController {
                     self.sevenDayStepAverage = averageSteps!
                     self.sevenDayStepAverageLastUpdated = Date()
                     OperationQueue.main.addOperation {
+                        WKInterfaceDevice.current().play(.click)
                         let numberString = self.numberFormatter.string(from: averageSteps! as NSNumber)
                         self.averageLabel.setText(numberString!)
+                        
+                        if (self.stepsToday > self.sevenDayStepAverage) {
+                            self.stepsLabel.setTextColor(UIColor(red: 0.8, green: 1.0, blue: 0.8, alpha: 1.0)) // pale green
+                        } else {
+                            self.stepsLabel.setTextColor(.white)
+                        }
                     }
                 }
             })
