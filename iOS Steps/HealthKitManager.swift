@@ -228,6 +228,52 @@ class HealthKitManager {
         }
         healthStore.execute(query)
     }
+    
+    
+    var workoutData: [HKWorkout] = []
+    func getWorkouts (completion:@escaping (Double?)->()) {
+        //   Define the sample type
+        let sampleType = HKObjectType.workoutType()
+        
+        let endDate = Date()
+        let startDate =  cal.date(byAdding: .day, value: -historyDays * 5, to: endDate)
+        
+        let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: .strictStartDate)
+        let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierEndDate, ascending: false)
+        let limit = 0
+        
+        let query = HKSampleQuery(sampleType: sampleType, predicate: predicate, limit: limit, sortDescriptors: [ sortDescriptor ]) { query, results, error in
+            if let results = results {
+                
+                self.workoutData = []
+                
+                for result in results {
+                    if let workout = result as? HKWorkout {
+                        self.workoutData.append(workout)
+                    }
+                }
+            }
+            else {
+                print ("No results were returned, check the error")
+            }
+            completion (0.0)
+        }
+        healthStore.execute(query)
+    }
+    
+    
+    func workoutTypeIcon (_ type: HKWorkoutActivityType) -> String {
+        switch type {
+        case HKWorkoutActivityType.cycling:
+            return ("🚴‍♂️")
+        case HKWorkoutActivityType.running:
+            return ("🏃")
+        case HKWorkoutActivityType.walking:
+            return ("🚶")
+        default:
+            return ("?")
+        }
+    }
 
 
     func checkHealthKitAuthorization() ->() {
@@ -238,6 +284,7 @@ class HealthKitManager {
         if HKHealthStore.isHealthDataAvailable() {
             let healthKitTypesToRead : Set = [
                 HKObjectType.characteristicType(forIdentifier: HKCharacteristicTypeIdentifier.dateOfBirth)!,
+                HKObjectType.workoutType(),
                 HKObjectType.quantityType(forIdentifier:HKQuantityTypeIdentifier.stepCount)!
             ]
             healthStore.requestAuthorization(toShare: nil, read: healthKitTypesToRead) { (success, error) -> Void in

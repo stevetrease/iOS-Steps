@@ -30,6 +30,9 @@
 		AABD2EF11E9E999D00575B92 /* BackViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABD2EF01E9E999D00575B92 /* BackViewController2.swift */; };
 		AAD088421E3FBA1800612BC1 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAD088411E3FBA1800612BC1 /* HealthKit.framework */; };
 		AAD088471E3FC3C500612BC1 /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD088461E3FC3C500612BC1 /* HealthKitManager.swift */; };
+		AAE161271F095CA000AD672D /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE161261F095CA000AD672D /* ActivityViewController.swift */; };
+		AAE161291F095CCB00AD672D /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE161281F095CCB00AD672D /* CustomTableViewCell.swift */; };
+		AAE1612B1F095CE500AD672D /* CustomTableViewHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE1612A1F095CE500AD672D /* CustomTableViewHeaderCell.swift */; };
 		AAF185F31E8848720081A1DB /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAF185F21E8848720081A1DB /* NotificationCenter.framework */; };
 		AAF185F61E8848730081A1DB /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF185F51E8848730081A1DB /* TodayViewController.swift */; };
 		AAF185F91E8848730081A1DB /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAF185F71E8848730081A1DB /* MainInterface.storyboard */; };
@@ -144,6 +147,9 @@
 		AAD088411E3FBA1800612BC1 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		AAD088431E3FBA1800612BC1 /* iOS Steps.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "iOS Steps.entitlements"; sourceTree = "<group>"; };
 		AAD088461E3FC3C500612BC1 /* HealthKitManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthKitManager.swift; sourceTree = "<group>"; };
+		AAE161261F095CA000AD672D /* ActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
+		AAE161281F095CCB00AD672D /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		AAE1612A1F095CE500AD672D /* CustomTableViewHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewHeaderCell.swift; sourceTree = "<group>"; };
 		AAF185F11E8848720081A1DB /* iOS Steps Today.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "iOS Steps Today.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAF185F21E8848720081A1DB /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		AAF185F51E8848730081A1DB /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
@@ -271,13 +277,16 @@
 			isa = PBXGroup;
 			children = (
 				AAD088431E3FBA1800612BC1 /* iOS Steps.entitlements */,
+				AAD088461E3FC3C500612BC1 /* HealthKitManager.swift */,
 				AA9D2E841E3E424C000E9C08 /* AppDelegate.swift */,
 				AA9D2E861E3E424C000E9C08 /* ViewController.swift */,
 				AA67AFCC1E5768CF00EE0630 /* BackViewController.swift */,
 				AABD2EF01E9E999D00575B92 /* BackViewController2.swift */,
-				AAD088461E3FC3C500612BC1 /* HealthKitManager.swift */,
 				AA7B06471ED6124B0097F08E /* UIViewExtension.swift */,
 				AA3BDF021E9A05A500DF1B98 /* WatchKitSessionMananager.swift */,
+				AAE161281F095CCB00AD672D /* CustomTableViewCell.swift */,
+				AAE1612A1F095CE500AD672D /* CustomTableViewHeaderCell.swift */,
+				AAE161261F095CA000AD672D /* ActivityViewController.swift */,
 				AA9D2E8D1E3E424C000E9C08 /* LaunchScreen.storyboard */,
 				AA9D2E881E3E424C000E9C08 /* Main.storyboard */,
 				AA9D2E901E3E424C000E9C08 /* Info.plist */,
@@ -711,11 +720,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAE161291F095CCB00AD672D /* CustomTableViewCell.swift in Sources */,
 				AA9D2E871E3E424C000E9C08 /* ViewController.swift in Sources */,
 				AA9D2E851E3E424C000E9C08 /* AppDelegate.swift in Sources */,
 				AAD088471E3FC3C500612BC1 /* HealthKitManager.swift in Sources */,
+				AAE161271F095CA000AD672D /* ActivityViewController.swift in Sources */,
 				AABD2EF11E9E999D00575B92 /* BackViewController2.swift in Sources */,
 				AA7B06481ED6124B0097F08E /* UIViewExtension.swift in Sources */,
+				AAE1612B1F095CE500AD672D /* CustomTableViewHeaderCell.swift in Sources */,
 				AA67AFCD1E5768CF00EE0630 /* BackViewController.swift in Sources */,
 				AA3BDF031E9A05A500DF1B98 /* WatchKitSessionMananager.swift in Sources */,
 			);
@@ -965,7 +977,7 @@
 				CODE_SIGN_ENTITLEMENTS = "iOS Steps/iOS Steps.entitlements";
 				DEVELOPMENT_TEAM = 22648A4K3P;
 				INFOPLIST_FILE = "iOS Steps/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "eu.trease.iosteps.iOS-Steps";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -982,7 +994,7 @@
 				CODE_SIGN_ENTITLEMENTS = "iOS Steps/iOS Steps.entitlements";
 				DEVELOPMENT_TEAM = 22648A4K3P;
 				INFOPLIST_FILE = "iOS Steps/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "eu.trease.iosteps.iOS-Steps";
 				PRODUCT_NAME = "$(TARGET_NAME)";
