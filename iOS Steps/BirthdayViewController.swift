@@ -11,7 +11,7 @@ import Foundation
 import HealthKit
 
 
-class BackViewController: UIViewController {
+class BirthdayViewController: UIViewController {
     
     @IBOutlet weak var dateOfBirthLabel: UILabel!
     @IBOutlet weak var ageLabel: UILabel!

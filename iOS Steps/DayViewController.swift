@@ -12,7 +12,7 @@ import HealthKit
 import Charts
 
 
-class ViewController: UIViewController {
+class DayViewController: UIViewController {
 
     @IBOutlet weak var todayStepCountLabel: UILabel!
     @IBOutlet weak var yesterdayStepCountLabel: UILabel!

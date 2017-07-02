@@ -35,7 +35,7 @@
         <!--Day-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="iOS_Steps" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="DayViewController" customModule="iOS_Steps" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -131,7 +131,7 @@
         <!--BackView Controller-->
         <scene sceneID="L0T-8W-Kgt">
             <objects>
-                <viewController id="6yh-p4-nxq" userLabel="BackView Controller" customClass="BackViewController" customModule="iOS_Steps" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="6yh-p4-nxq" userLabel="BackView Controller" customClass="BirthdayViewController" customModule="iOS_Steps" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jRN-D9-6Rz"/>
                         <viewControllerLayoutGuide type="bottom" id="4Rx-aj-lFR"/>
@@ -194,7 +194,7 @@
         <!--BackView2 Controller-->
         <scene sceneID="gEN-Lm-YFF">
             <objects>
-                <viewController id="TKc-jX-oaP" userLabel="BackView2 Controller" customClass="BackViewController2" customModule="iOS_Steps" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="TKc-jX-oaP" userLabel="BackView2 Controller" customClass="WeekViewController" customModule="iOS_Steps" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kwe-DW-U14"/>
                         <viewControllerLayoutGuide type="bottom" id="fR9-aN-AMs"/>

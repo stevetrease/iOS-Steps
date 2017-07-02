@@ -13,7 +13,7 @@ import Charts
 
 
 
-class BackViewController2: UIViewController {
+class WeekViewController: UIViewController {
 
     @IBOutlet weak var chartView2: CombinedChartView!
     @IBOutlet weak var chartView3: CombinedChartView!
