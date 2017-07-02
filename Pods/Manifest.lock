@@ -1,0 +1,17 @@
+PODS:
+  - Charts (3.0.2):
+    - Charts/Core (= 3.0.2)
+  - Charts/Core (3.0.2)
+  - UICountingLabel (1.4.0)
+
+DEPENDENCIES:
+  - Charts
+  - UICountingLabel
+
+SPEC CHECKSUMS:
+  Charts: 236d6ccdd0ce6feae151d89e829a7397381a21fd
+  UICountingLabel: ed5ce5b6d5ef278ff40d99cfa49577a30ab0c87b
+
+PODFILE CHECKSUM: 5239e697261aede78c507e846807396feee71f5f
+
+COCOAPODS: 1.2.1
