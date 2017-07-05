@@ -270,6 +270,8 @@ class HealthKitManager {
             return ("🏃")
         case HKWorkoutActivityType.walking:
             return ("🚶")
+        case HKWorkoutActivityType.swimming:
+            return ("🏊")
         default:
             return ("?")
         }
