@@ -71,7 +71,7 @@ class WeekViewController: UIViewController {
     }
 
     
-    func notificationReceived () {
+    @objc func notificationReceived () {
         print (NSURL (fileURLWithPath: "\(#file)").lastPathComponent!, "\(#function)")
         self.drawChart2()
         self.drawChart3()

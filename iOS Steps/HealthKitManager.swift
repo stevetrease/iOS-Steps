@@ -209,7 +209,7 @@ class HealthKitManager {
                     let date = statistics.startDate
                     let steps = quantity.doubleValue(for: HKUnit.count())
                     
-                    tempArray.append(timeStamp: date, value: steps)
+                    tempArray.append((timeStamp: date, value: steps))
                 }
             }
             

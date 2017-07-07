@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0830"
+   LastUpgradeVersion = "0900"
    version = "2.0">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AAE2EC2C1E8C4BC0004B6B23"
+               BlueprintIdentifier = "AA3AF8F41E95501500903F2B"
                BuildableName = "iOS Steps Watch.app"
                BlueprintName = "iOS Steps Watch"
                ReferencedContainer = "container:iOS Steps.xcodeproj">
@@ -40,13 +40,14 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      language = ""
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AAE2EC2C1E8C4BC0004B6B23"
+            BlueprintIdentifier = "AA3AF8F41E95501500903F2B"
             BuildableName = "iOS Steps Watch.app"
             BlueprintName = "iOS Steps Watch"
             ReferencedContainer = "container:iOS Steps.xcodeproj">
@@ -59,6 +60,7 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      language = ""
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
@@ -73,7 +75,7 @@
          RemotePath = "/iOS Steps">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AAE2EC2C1E8C4BC0004B6B23"
+            BlueprintIdentifier = "AA3AF8F41E95501500903F2B"
             BuildableName = "iOS Steps Watch.app"
             BlueprintName = "iOS Steps Watch"
             ReferencedContainer = "container:iOS Steps.xcodeproj">
@@ -82,7 +84,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AAE2EC2C1E8C4BC0004B6B23"
+            BlueprintIdentifier = "AA3AF8F41E95501500903F2B"
             BuildableName = "iOS Steps Watch.app"
             BlueprintName = "iOS Steps Watch"
             ReferencedContainer = "container:iOS Steps.xcodeproj">
@@ -105,7 +107,7 @@
          RemotePath = "/iOS Steps">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AAE2EC2C1E8C4BC0004B6B23"
+            BlueprintIdentifier = "AA3AF8F41E95501500903F2B"
             BuildableName = "iOS Steps Watch.app"
             BlueprintName = "iOS Steps Watch"
             ReferencedContainer = "container:iOS Steps.xcodeproj">
@@ -114,7 +116,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AAE2EC2C1E8C4BC0004B6B23"
+            BlueprintIdentifier = "AA3AF8F41E95501500903F2B"
             BuildableName = "iOS Steps Watch.app"
             BlueprintName = "iOS Steps Watch"
             ReferencedContainer = "container:iOS Steps.xcodeproj">

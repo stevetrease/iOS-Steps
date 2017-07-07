@@ -228,5 +228,4 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         }
         healthStore.execute(query)
     }
-  
 }

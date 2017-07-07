@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.19" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="HQR-Yx-edT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.19" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HQR-Yx-edT">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.16"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -36,10 +36,6 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="DayViewController" customModule="iOS_Steps" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
                     <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -99,13 +95,14 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="Vvw-VY-4ya" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="12A-Vs-6WU"/>
-                            <constraint firstAttribute="trailing" secondItem="Vvw-VY-4ya" secondAttribute="trailing" constant="5" id="3lK-sH-hHb"/>
-                            <constraint firstItem="y1a-78-3fT" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="IfS-g8-8TJ"/>
+                            <constraint firstItem="Vvw-VY-4ya" firstAttribute="top" secondItem="3Ip-Ak-rg9" secondAttribute="top" constant="10" id="12A-Vs-6WU"/>
+                            <constraint firstItem="3Ip-Ak-rg9" firstAttribute="trailing" secondItem="Vvw-VY-4ya" secondAttribute="trailing" constant="5" id="3lK-sH-hHb"/>
+                            <constraint firstItem="y1a-78-3fT" firstAttribute="top" secondItem="3Ip-Ak-rg9" secondAttribute="top" id="IfS-g8-8TJ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="y1a-78-3fT" secondAttribute="trailing" id="Ory-X6-oLe"/>
-                            <constraint firstItem="Vvw-VY-4ya" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="aiV-1e-1wL"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Vvw-VY-4ya" secondAttribute="bottom" constant="10" id="wjl-2X-S9o"/>
+                            <constraint firstItem="Vvw-VY-4ya" firstAttribute="leading" secondItem="3Ip-Ak-rg9" secondAttribute="leading" constant="10" id="aiV-1e-1wL"/>
+                            <constraint firstItem="3Ip-Ak-rg9" firstAttribute="bottom" secondItem="Vvw-VY-4ya" secondAttribute="bottom" constant="10" id="wjl-2X-S9o"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="3Ip-Ak-rg9"/>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="Ehe-mo-Wfg" appends="YES" id="m36-Y1-WWc"/>
                         </connections>
@@ -132,10 +129,6 @@
         <scene sceneID="L0T-8W-Kgt">
             <objects>
                 <viewController id="6yh-p4-nxq" userLabel="BackView Controller" customClass="BirthdayViewController" customModule="iOS_Steps" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="jRN-D9-6Rz"/>
-                        <viewControllerLayoutGuide type="bottom" id="4Rx-aj-lFR"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="cCQ-jF-24S">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -172,12 +165,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="G2h-uc-hT2" firstAttribute="leading" secondItem="cCQ-jF-24S" secondAttribute="leading" constant="10" id="Fsi-dG-q4g"/>
-                            <constraint firstItem="G2h-uc-hT2" firstAttribute="top" secondItem="jRN-D9-6Rz" secondAttribute="bottom" constant="50" id="JNK-90-T5L"/>
-                            <constraint firstAttribute="trailing" secondItem="G2h-uc-hT2" secondAttribute="trailing" constant="10" id="hqB-We-nyI"/>
-                            <constraint firstItem="G2h-uc-hT2" firstAttribute="top" secondItem="jRN-D9-6Rz" secondAttribute="bottom" constant="50" id="s0w-we-C3r"/>
-                            <constraint firstItem="4Rx-aj-lFR" firstAttribute="top" secondItem="G2h-uc-hT2" secondAttribute="bottom" constant="50" id="xVy-l4-YAf"/>
+                            <constraint firstItem="G2h-uc-hT2" firstAttribute="leading" secondItem="oy7-ZW-k9F" secondAttribute="leading" constant="10" id="Fsi-dG-q4g"/>
+                            <constraint firstItem="G2h-uc-hT2" firstAttribute="top" secondItem="oy7-ZW-k9F" secondAttribute="top" constant="50" id="JNK-90-T5L"/>
+                            <constraint firstItem="oy7-ZW-k9F" firstAttribute="trailing" secondItem="G2h-uc-hT2" secondAttribute="trailing" constant="10" id="hqB-We-nyI"/>
+                            <constraint firstItem="G2h-uc-hT2" firstAttribute="top" secondItem="oy7-ZW-k9F" secondAttribute="top" constant="50" id="s0w-we-C3r"/>
+                            <constraint firstItem="oy7-ZW-k9F" firstAttribute="bottom" secondItem="G2h-uc-hT2" secondAttribute="bottom" constant="50" id="xVy-l4-YAf"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="oy7-ZW-k9F"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Birthday" image="Hazard" selectedImage="Hazard" id="U2P-vG-PpF"/>
                     <connections>
@@ -195,10 +189,6 @@
         <scene sceneID="gEN-Lm-YFF">
             <objects>
                 <viewController id="TKc-jX-oaP" userLabel="BackView2 Controller" customClass="WeekViewController" customModule="iOS_Steps" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="kwe-DW-U14"/>
-                        <viewControllerLayoutGuide type="bottom" id="fR9-aN-AMs"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="SHl-Wv-p2X">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -238,13 +228,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="6e1-LO-5W5" firstAttribute="top" secondItem="kwe-DW-U14" secondAttribute="bottom" id="0WN-Jy-PgQ"/>
-                            <constraint firstAttribute="trailing" secondItem="bSj-dT-frE" secondAttribute="trailing" constant="10" id="JFt-dI-hyF"/>
-                            <constraint firstItem="bSj-dT-frE" firstAttribute="top" secondItem="kwe-DW-U14" secondAttribute="bottom" constant="10" id="aYV-ZP-Ib2"/>
-                            <constraint firstItem="fR9-aN-AMs" firstAttribute="top" secondItem="bSj-dT-frE" secondAttribute="bottom" constant="10" id="dr9-Jf-AyR"/>
+                            <constraint firstItem="6e1-LO-5W5" firstAttribute="top" secondItem="rpm-R0-MvS" secondAttribute="top" id="0WN-Jy-PgQ"/>
+                            <constraint firstItem="rpm-R0-MvS" firstAttribute="trailing" secondItem="bSj-dT-frE" secondAttribute="trailing" constant="10" id="JFt-dI-hyF"/>
+                            <constraint firstItem="bSj-dT-frE" firstAttribute="top" secondItem="rpm-R0-MvS" secondAttribute="top" constant="10" id="aYV-ZP-Ib2"/>
+                            <constraint firstItem="rpm-R0-MvS" firstAttribute="bottom" secondItem="bSj-dT-frE" secondAttribute="bottom" constant="10" id="dr9-Jf-AyR"/>
                             <constraint firstAttribute="trailingMargin" secondItem="6e1-LO-5W5" secondAttribute="trailing" id="mTU-qH-tBW"/>
-                            <constraint firstItem="bSj-dT-frE" firstAttribute="leading" secondItem="SHl-Wv-p2X" secondAttribute="leading" constant="10" id="vvu-cx-DEe"/>
+                            <constraint firstItem="bSj-dT-frE" firstAttribute="leading" secondItem="rpm-R0-MvS" secondAttribute="leading" constant="10" id="vvu-cx-DEe"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="rpm-R0-MvS"/>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="9RX-nZ-GBD" appends="YES" id="7la-3H-BAy"/>
                         </connections>
@@ -268,11 +259,7 @@
         <!--Workouts-->
         <scene sceneID="a27-FO-xG5">
             <objects>
-                <viewController id="Ck9-bb-LNM" customClass="ActivityViewController" customModule="HealthKit_Test" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="bcm-8P-8yJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="1ZJ-zs-vXF"/>
-                    </layoutGuides>
+                <viewController id="Ck9-bb-LNM" customClass="ActivityViewController" customModule="iOS_Steps" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="p0c-17-kU1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -281,7 +268,7 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="598"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellIDwalking" id="aOu-81-KVy" customClass="CustomTableViewCell" customModule="HealthKit_Test" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellIDwalking" id="aOu-81-KVy" customClass="CustomTableViewCell" customModule="iOS_Steps" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aOu-81-KVy" id="gTe-0W-sZ2">
@@ -303,13 +290,13 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="CRz-Ct-M2x">
                                                             <rect key="frame" x="0.0" y="0.0" width="120" height="43.5"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hwo-o0-Niu">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hwo-o0-Niu">
                                                                     <rect key="frame" x="0.0" y="0.0" width="120" height="22"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Duration" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ua9-jL-L9K">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Duration" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ua9-jL-L9K">
                                                                     <rect key="frame" x="0.0" y="22" width="120" height="21.5"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                     <nil key="textColor"/>
@@ -317,13 +304,13 @@
                                                                 </label>
                                                             </subviews>
                                                         </stackView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EQX-J9-vmZ">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EQX-J9-vmZ">
                                                             <rect key="frame" x="120" y="0.0" width="120" height="43.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Energy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oXo-j6-Bzn">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Energy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oXo-j6-Bzn">
                                                             <rect key="frame" x="240" y="0.0" width="120" height="43.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                             <nil key="textColor"/>
@@ -349,7 +336,7 @@
                                             <outlet property="timeLabel" destination="hwo-o0-Niu" id="sDZ-ta-AGE"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellIDHeader" id="ahV-Fz-vzP" customClass="CustomTableViewHeaderCell" customModule="HealthKit_Test" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellIDHeader" id="ahV-Fz-vzP" customClass="CustomTableViewHeaderCell" customModule="iOS_Steps" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ahV-Fz-vzP" id="uo1-rc-MSm">
@@ -373,8 +360,8 @@
                                                         </label>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstItem="rhO-rp-HnO" firstAttribute="leading" secondItem="Bcb-Rt-PIO" secondAttribute="leading" constant="5" id="PXE-8D-XQv"/>
-                                                        <constraint firstAttribute="trailing" secondItem="h9b-VE-ucX" secondAttribute="trailing" constant="5" id="QBL-eY-zex"/>
+                                                        <constraint firstItem="rhO-rp-HnO" firstAttribute="leading" secondItem="Bcb-Rt-PIO" secondAttribute="leadingMargin" constant="10" id="PXE-8D-XQv"/>
+                                                        <constraint firstAttribute="trailingMargin" secondItem="h9b-VE-ucX" secondAttribute="trailing" constant="10" id="QBL-eY-zex"/>
                                                     </constraints>
                                                 </stackView>
                                             </subviews>
@@ -402,11 +389,12 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="6so-VC-mOn" firstAttribute="top" secondItem="bcm-8P-8yJ" secondAttribute="bottom" id="N1b-qV-JHc"/>
-                            <constraint firstItem="1ZJ-zs-vXF" firstAttribute="top" secondItem="6so-VC-mOn" secondAttribute="bottom" id="QuL-MJ-lvx"/>
-                            <constraint firstItem="6so-VC-mOn" firstAttribute="leading" secondItem="p0c-17-kU1" secondAttribute="leading" id="lP6-fJ-rJh"/>
-                            <constraint firstAttribute="trailing" secondItem="6so-VC-mOn" secondAttribute="trailing" id="rVi-lW-aeX"/>
+                            <constraint firstItem="6so-VC-mOn" firstAttribute="top" secondItem="mBO-f7-ZnT" secondAttribute="top" id="N1b-qV-JHc"/>
+                            <constraint firstItem="mBO-f7-ZnT" firstAttribute="bottom" secondItem="6so-VC-mOn" secondAttribute="bottom" id="QuL-MJ-lvx"/>
+                            <constraint firstItem="6so-VC-mOn" firstAttribute="leading" secondItem="mBO-f7-ZnT" secondAttribute="leading" id="lP6-fJ-rJh"/>
+                            <constraint firstItem="mBO-f7-ZnT" firstAttribute="trailing" secondItem="6so-VC-mOn" secondAttribute="trailing" id="rVi-lW-aeX"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="mBO-f7-ZnT"/>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="pYB-ld-19X" appends="YES" id="z25-Rs-iEt"/>
                         </connections>
