@@ -26,7 +26,6 @@
 		AA9D2E871E3E424C000E9C08 /* DayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9D2E861E3E424C000E9C08 /* DayViewController.swift */; };
 		AA9D2E8A1E3E424C000E9C08 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA9D2E881E3E424C000E9C08 /* Main.storyboard */; };
 		AA9D2E8C1E3E424C000E9C08 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA9D2E8B1E3E424C000E9C08 /* Assets.xcassets */; };
-		AA9D2E8F1E3E424C000E9C08 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA9D2E8D1E3E424C000E9C08 /* LaunchScreen.storyboard */; };
 		AABD2EF11E9E999D00575B92 /* WeekViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABD2EF01E9E999D00575B92 /* WeekViewController.swift */; };
 		AAD088421E3FBA1800612BC1 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAD088411E3FBA1800612BC1 /* HealthKit.framework */; };
 		AAD088471E3FC3C500612BC1 /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD088461E3FC3C500612BC1 /* HealthKitManager.swift */; };
@@ -141,7 +140,6 @@
 		AA9D2E861E3E424C000E9C08 /* DayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayViewController.swift; sourceTree = "<group>"; };
 		AA9D2E891E3E424C000E9C08 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AA9D2E8B1E3E424C000E9C08 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		AA9D2E8E1E3E424C000E9C08 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AA9D2E901E3E424C000E9C08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AABD2EF01E9E999D00575B92 /* WeekViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekViewController.swift; sourceTree = "<group>"; };
 		AAD088411E3FBA1800612BC1 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
@@ -286,7 +284,6 @@
 				AAE161281F095CCB00AD672D /* CustomTableViewCell.swift */,
 				AAE1612A1F095CE500AD672D /* CustomTableViewHeaderCell.swift */,
 				AA7B06471ED6124B0097F08E /* UIViewExtension.swift */,
-				AA9D2E8D1E3E424C000E9C08 /* LaunchScreen.storyboard */,
 				AA3BDF021E9A05A500DF1B98 /* WatchKitSessionMananager.swift */,
 				AA9D2E881E3E424C000E9C08 /* Main.storyboard */,
 				AA9D2E901E3E424C000E9C08 /* Info.plist */,
@@ -514,7 +511,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA9D2E8F1E3E424C000E9C08 /* LaunchScreen.storyboard in Resources */,
 				AA9D2E8C1E3E424C000E9C08 /* Assets.xcassets in Resources */,
 				AA9D2E8A1E3E424C000E9C08 /* Main.storyboard in Resources */,
 			);
@@ -780,14 +776,6 @@
 				AA9D2E891E3E424C000E9C08 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		AA9D2E8D1E3E424C000E9C08 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AA9D2E8E1E3E424C000E9C08 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 		AAF185F71E8848730081A1DB /* MainInterface.storyboard */ = {

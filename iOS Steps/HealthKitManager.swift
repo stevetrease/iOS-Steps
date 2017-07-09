@@ -8,6 +8,7 @@
 
 import Foundation
 import HealthKit
+import UIKit
 
 
 var healthKitManager = HealthKitManager()
@@ -259,6 +260,22 @@ class HealthKitManager {
             completion (0.0)
         }
         healthStore.execute(query)
+    }
+    
+    
+    func workoutTypeImage (_ type: HKWorkoutActivityType) -> UIImage {
+        switch type {
+        case HKWorkoutActivityType.cycling:
+            return UIImage(named: "ic_directions_walk_black_24px.svg")!
+        case HKWorkoutActivityType.running:
+            return UIImage(named: "ic_directions_walk_black_24px.svg")!
+        case HKWorkoutActivityType.walking:
+            return UIImage(named: "ic_directions_walk_black_24px.svg")!
+        case HKWorkoutActivityType.swimming:
+            return UIImage(named: "ic_directions_walk_black_24px.svg")!
+        default:
+            return UIImage(named: "ic_directions_walk_black_24px.svg")!
+        }
     }
     
     

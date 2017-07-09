@@ -130,6 +130,7 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
         cell.timeLabel.text = timeString
         cell.distanceLabel.text = distanceString
         cell.activityLabel.text = healthKitManager.workoutTypeIcon(workout.workoutActivityType)
+        // cell.activityImage.image = healthKitManager.workoutTypeImage(workout.workoutActivityType)
         
         return cell
     }
