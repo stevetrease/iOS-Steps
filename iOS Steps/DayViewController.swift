@@ -116,7 +116,10 @@ class DayViewController: UIViewController {
             }
         })
         
-        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        OperationQueue.main.addOperation {
+            UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        }
+        
         healthKitManager.updateHourlyStepsArray(completion: { (steps) in
             OperationQueue.main.addOperation {
                 UIApplication.shared.isNetworkActivityIndicatorVisible = false
