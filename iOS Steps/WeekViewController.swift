@@ -48,7 +48,7 @@ class WeekViewController: UIViewController {
         self.drawChart2()
         
         
-        chartView3.legend.enabled = true
+        chartView3.legend.enabled = false
         chartView3.xAxis.drawLabelsEnabled = true
         chartView3.xAxis.labelPosition = XAxis.LabelPosition.bottom
         chartView3.xAxis.drawGridLinesEnabled = false

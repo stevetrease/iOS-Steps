@@ -26,7 +26,6 @@ class DayViewController: UIViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(notificationReceived), name: NSNotification.Name(rawValue: healthKitDidUpdateNotification1), object: nil)
         
-        // addShareBarButtonItem()
         
         todayStepCountLabel.text = ""
         yesterdayStepCountLabel.text = ""
@@ -72,7 +71,7 @@ class DayViewController: UIViewController {
     
     @objc func notificationReceived () {
         print (NSURL (fileURLWithPath: "\(#file)").lastPathComponent!, "\(#function)")
-        self.drawChart2()
+        self.drawChart()
     }
     
     
@@ -121,7 +120,7 @@ class DayViewController: UIViewController {
         healthKitManager.updateHourlyStepsArray(completion: { (steps) in
             OperationQueue.main.addOperation {
                 UIApplication.shared.isNetworkActivityIndicatorVisible = false
-                self.drawChart2()
+                self.drawChart()
             }
         })
     }
@@ -140,7 +139,7 @@ class DayViewController: UIViewController {
     }
     
     
-    func drawChart2 () {
+    func drawChart () {
         var hourlyDataEntries: [BarChartDataEntry] = []
         var line1Data: [ChartDataEntry] = []
         var line2Data: [ChartDataEntry] = []
