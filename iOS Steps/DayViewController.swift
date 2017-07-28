@@ -13,13 +13,13 @@ import Charts
 
 
 class DayViewController: UIViewController {
-
+    
     @IBOutlet weak var todayStepCountLabel: UILabel!
     @IBOutlet weak var yesterdayStepCountLabel: UILabel!
     @IBOutlet weak var averageStepCountLabel: UILabel!
     @IBOutlet weak var chartView: CombinedChartView!
     @IBOutlet weak var shareButton: UIButton!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print (NSURL (fileURLWithPath: "\(#file)").lastPathComponent!, "\(#function)")
@@ -67,7 +67,7 @@ class DayViewController: UIViewController {
     func updateHealthData () {
         print (NSURL (fileURLWithPath: "\(#file)").lastPathComponent!, "\(#function)")
     }
-
+    
     
     @objc func notificationReceived () {
         print (NSURL (fileURLWithPath: "\(#file)").lastPathComponent!, "\(#function)")
@@ -107,11 +107,11 @@ class DayViewController: UIViewController {
                 numberFormatter.maximumFractionDigits = 0
                 numberFormatter.numberStyle = NumberFormatter.Style.decimal
                 let number = numberFormatter.string(from: healthKitManager.stepsAverage as NSNumber)!
-        
+                
                 numberFormatter.maximumFractionDigits = 0
                 numberFormatter.numberStyle = NumberFormatter.Style.spellOut
                 let number2 = numberFormatter.string(from: healthKitManager.historyDays as NSNumber)!
-
+                
                 self.averageStepCountLabel.text = "\(number) \(number2) day average"
             }
         })

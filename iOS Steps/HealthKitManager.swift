@@ -41,7 +41,7 @@ class HealthKitManager {
         checkHealthKitAuthorization()
     }
     
-
+    
     private var earliestPermittedSampleDate: Date {
         return (healthStore.earliestPermittedSampleDate())
     }
@@ -58,7 +58,7 @@ class HealthKitManager {
         var components = DateComponents ()
         components.day = dateofBirthComponents.day
         components.month = dateofBirthComponents.month
-            
+        
         return (cal.nextDate(after: Date(), matching: components, matchingPolicy: .nextTime, direction: .forward))!
     }
     var dateOfLastBirthday: Date {
@@ -91,16 +91,16 @@ class HealthKitManager {
             if steps != nil {
                 self.stepsToday = steps!
                 completion(steps)
-             } else {
+            } else {
                 print("getTodayStepCount: results are nil - returning zero steps")
                 self.stepsToday = 0.0
                 completion(0.0)
-             }
+            }
         }
         healthStore.execute(query)
     }
     
-
+    
     var stepsYesterday: Double = 0.0
     func getYesterdayStepCount(completion:@escaping (Double?)->()) {
         print (NSURL (fileURLWithPath: "\(#file)").lastPathComponent!, "\(#function)")
@@ -118,7 +118,7 @@ class HealthKitManager {
             let quantity = results?.sumQuantity()
             let unit = HKUnit.count()
             let steps = quantity?.doubleValue(for: unit)
-
+            
             if steps != nil {
                 self.stepsYesterday = steps!
                 completion(steps)
@@ -161,7 +161,7 @@ class HealthKitManager {
         }
         healthStore.execute(query)
     }
-
+    
     
     var hourlySteps: [(timeStamp: Date, value: Double)] = []
     var hourlyStepsYesterday: [(timeStamp: Date, value: Double)] = []
@@ -293,8 +293,8 @@ class HealthKitManager {
             return ("?")
         }
     }
-
-
+    
+    
     func checkHealthKitAuthorization() ->() {
         // Default to assuming that we're authorized
         var isHealthKitEnabled = true

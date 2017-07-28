@@ -13,7 +13,7 @@ import WatchConnectivity
 
 // class InterfaceController: WKInterfaceController, WCSessionDelegate {
 class InterfaceController: WKInterfaceController {
-
+    
     @IBOutlet var stepsLabel: WKInterfaceLabel!
     @IBOutlet var averageLabel: WKInterfaceLabel!
     @IBOutlet var yesterdayLabel: WKInterfaceLabel!
@@ -63,7 +63,7 @@ class InterfaceController: WKInterfaceController {
                 self.stepsLabel.setTextColor(.red)
             }
         }
-
+        
         self.updateView()
     }
     
@@ -97,7 +97,7 @@ class InterfaceController: WKInterfaceController {
         // only update if not updated already today
         if (!cal.isDateInToday(sevenDayStepAverageLastUpdated)) {
             getSevenDayStepAverage (completion: { (averageSteps) in
-                 if averageSteps != -1.0 {
+                if averageSteps != -1.0 {
                     self.sevenDayStepAverage = averageSteps!
                     self.sevenDayStepAverageLastUpdated = Date()
                     OperationQueue.main.addOperation {
@@ -120,13 +120,13 @@ class InterfaceController: WKInterfaceController {
                     OperationQueue.main.addOperation {
                         let numberString = self.numberFormatter.string(from: steps! as NSNumber)
                         self.yesterdayLabel.setText(numberString!)
-                   }
+                    }
                 }
             })
             
         }
     }
-
+    
     
     func getTodayStepCount(completion:@escaping (Double?)->())
     {
