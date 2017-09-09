@@ -1,7 +1,7 @@
 PODS:
-  - Charts (3.0.2):
-    - Charts/Core (= 3.0.2)
-  - Charts/Core (3.0.2)
+  - Charts (3.0.3):
+    - Charts/Core (= 3.0.3)
+  - Charts/Core (3.0.3)
   - UICountingLabel (1.4.0)
 
 DEPENDENCIES:
@@ -9,7 +9,7 @@ DEPENDENCIES:
   - UICountingLabel
 
 SPEC CHECKSUMS:
-  Charts: 236d6ccdd0ce6feae151d89e829a7397381a21fd
+  Charts: bcde37724c161958c1438dd4883971fcb2d50c06
   UICountingLabel: ed5ce5b6d5ef278ff40d99cfa49577a30ab0c87b
 
 PODFILE CHECKSUM: 5239e697261aede78c507e846807396feee71f5f
