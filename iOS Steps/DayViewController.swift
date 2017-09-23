@@ -78,7 +78,7 @@ class DayViewController: UIViewController {
     func drawScreen () {
         print (NSURL (fileURLWithPath: "\(#file)").lastPathComponent!, "\(#function)")
         
-        let generator = UIImpactFeedbackGenerator(style: .light)
+        // let generator = UIImpactFeedbackGenerator(style: .light)
         
         healthKitManager.getTodayStepCount (completion: { (steps) in
             OperationQueue.main.addOperation {
@@ -88,7 +88,7 @@ class DayViewController: UIViewController {
                 let number = numberFormatter.string(from: healthKitManager.stepsToday as NSNumber)!
                 self.todayStepCountLabel.text = "\(number) today"
             }
-            generator.impactOccurred()
+            // generator.impactOccurred()
         })
         
         healthKitManager.getYesterdayStepCount (completion: { (steps) in

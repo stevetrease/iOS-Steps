@@ -22,24 +22,12 @@ import WatchConnectivity
         // Override point for customization after application launch.
         print (NSURL (fileURLWithPath: "\(#file)").lastPathComponent!, "\(#function)")
         UserDefaults.standard.setValue(false, forKey: "_UIConstraintBasedLayoutLogUnsatisfiable")
-        
-        // enable debugging overlay - double tap status bar to activate
-        // http://ryanipete.com/blog/ios/swift/objective-c/uidebugginginformationoverlay/?utm_campaign=iOS%2BDev%2BWeekly&utm_medium=email&utm_source=iOS_Dev_Weekly_Issue_303
-        let overlayClass = NSClassFromString("UIDebuggingInformationOverlay") as? UIWindow.Type
-        _ = overlayClass?.perform(NSSelectorFromString("prepareDebuggingOverlay"))
-        
-        // UIApplication.shared.delegate?.window??.tintColor = .green
-        
-        // if WCSession.isSupported() {
-        //     watchConnectivityHandler = WatchConnectivityHandler()
-        //     print ("WCSession supported")
-        // } else {
-        //     print ("WCSession not supported")
-        // }
-        
+                
         let formatter = DateFormatter()
         formatter.dateFormat = "HH:mm"
         
+        
+        /*
         let stepCountSampleType = HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)
 
         let stepCountQuery = HKObserverQuery(sampleType: stepCountSampleType!, predicate: nil) {
@@ -59,7 +47,8 @@ import WatchConnectivity
             completionHandler()
         }
       
-        healthKitManager.healthStore.execute(stepCountQuery)
+        healthKitManager.healthStore.execute(stepCountQuery
+         */
   
         return true
     }
