@@ -54,6 +54,11 @@ class DayViewController: UIViewController {
         
         updateHealthData()
         drawScreen()
+        
+        
+        yesterdayStepCountLabel.isUserInteractionEnabled = true
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(DayViewController.copyStepsPressed))
+        yesterdayStepCountLabel.addGestureRecognizer(gestureRecognizer)
     }
     
     
@@ -250,6 +255,12 @@ class DayViewController: UIViewController {
         self.chartView.data = data
         self.chartView.data?.notifyDataChanged()
         self.chartView.notifyDataSetChanged()
+    }
+    
+    
+    func copyStepsPressed () {
+        print (NSURL (fileURLWithPath: "\(#file)").lastPathComponent!, "\(#function)")
+        UIPasteboard.general.string = String(Int(healthKitManager.stepsYesterday))
     }
     
     
