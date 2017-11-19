@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="13156.6" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="13770" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
     <device id="watch42" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="watchOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13137.5"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="13040"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13770"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="13756"/>
     </dependencies>
     <scenes>
         <!--Steps-->
@@ -28,6 +28,13 @@
                                     <fontDescription key="font" type="system" pointSize="24"/>
                                 </label>
                             </items>
+                            <gestureRecognizers>
+                                <tapGestureRecognizer id="0Xz-pu-lZp">
+                                    <connections>
+                                        <action selector="screenTappedTriggeredWithSender:" destination="AgC-eL-Hgc" id="TWD-DV-zRu"/>
+                                    </connections>
+                                </tapGestureRecognizer>
+                            </gestureRecognizers>
                         </group>
                     </items>
                     <connections>

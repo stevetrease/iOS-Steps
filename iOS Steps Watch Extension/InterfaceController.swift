@@ -37,6 +37,12 @@ class InterfaceController: WKInterfaceController {
     }
     
     
+    @IBAction func screenTappedTriggered(sender: AnyObject) {
+        print (NSURL (fileURLWithPath: "\(#file)").lastPathComponent!, "\(#function)")
+        self.updateView()
+    }
+    
+    
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
