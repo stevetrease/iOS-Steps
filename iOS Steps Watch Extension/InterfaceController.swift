@@ -84,6 +84,8 @@ class InterfaceController: WKInterfaceController {
     
     
     func updateView () {
+        WKInterfaceDevice.current().play(.click)
+        
         getTodayStepCount (completion: { (steps) in
             if steps != -1.0 {
                 self.stepsToday = steps!
