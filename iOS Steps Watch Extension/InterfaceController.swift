@@ -39,6 +39,7 @@ class InterfaceController: WKInterfaceController {
     
     @IBAction func screenTappedTriggered(sender: AnyObject) {
         print (NSURL (fileURLWithPath: "\(#file)").lastPathComponent!, "\(#function)")
+        WKInterfaceDevice.current().play(.click)
         self.updateView()
     }
     
@@ -84,8 +85,6 @@ class InterfaceController: WKInterfaceController {
     
     
     func updateView () {
-        WKInterfaceDevice.current().play(.click)
-        
         getTodayStepCount (completion: { (steps) in
             if steps != -1.0 {
                 self.stepsToday = steps!
@@ -109,7 +108,6 @@ class InterfaceController: WKInterfaceController {
                     self.sevenDayStepAverage = averageSteps!
                     self.sevenDayStepAverageLastUpdated = Date()
                     OperationQueue.main.addOperation {
-                        WKInterfaceDevice.current().play(.click)
                         let numberString = self.numberFormatter.string(from: averageSteps! as NSNumber)
                         self.averageLabel.setText(numberString!)
                         
