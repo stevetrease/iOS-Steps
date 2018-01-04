@@ -21,6 +21,13 @@ import WatchConnectivity
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         print (NSURL (fileURLWithPath: "\(#file)").lastPathComponent!, "\(#function)")
+        
+        print ("device uuid ", (UIDevice.current.identifierForVendor?.uuidString)!)
+        
+        let appName: String = (Bundle.main.infoDictionary?["CFBundleName"] as? String)!
+        let versionNumber: String = (Bundle.main.infoDictionary?["CFBundleVersion"] as? String)!
+        print ("\(appName)  (\(versionNumber))")
+        
         UserDefaults.standard.setValue(false, forKey: "_UIConstraintBasedLayoutLogUnsatisfiable")
                 
         let formatter = DateFormatter()
