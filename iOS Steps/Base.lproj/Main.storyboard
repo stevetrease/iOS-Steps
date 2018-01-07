@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.19" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HQR-Yx-edT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HQR-Yx-edT">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.16"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -36,7 +36,6 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="DayViewController" customModule="iOS_Steps" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides/>
                     <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -130,7 +129,6 @@
         <scene sceneID="L0T-8W-Kgt">
             <objects>
                 <viewController id="6yh-p4-nxq" userLabel="BackView Controller" customClass="BirthdayViewController" customModule="iOS_Steps" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides/>
                     <view key="view" contentMode="scaleToFill" id="cCQ-jF-24S">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -191,7 +189,6 @@
         <scene sceneID="gEN-Lm-YFF">
             <objects>
                 <viewController id="TKc-jX-oaP" userLabel="BackView2 Controller" customClass="WeekViewController" customModule="iOS_Steps" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides/>
                     <view key="view" contentMode="scaleToFill" id="SHl-Wv-p2X">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -263,7 +260,6 @@
         <scene sceneID="a27-FO-xG5">
             <objects>
                 <viewController id="Ck9-bb-LNM" customClass="ActivityViewController" customModule="iOS_Steps" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides/>
                     <view key="view" contentMode="scaleToFill" id="p0c-17-kU1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

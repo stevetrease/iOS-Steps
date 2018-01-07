@@ -10,6 +10,7 @@
 		2CAE80AA838A970D1254765A /* Pods_iOS_Steps_Watch_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3BBB70C9F292FBCCC1C22F8 /* Pods_iOS_Steps_Watch_Extension.framework */; };
 		31C857F76F84AB672AE65FAE /* Pods_iOS_Steps_Watch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CE2A7754AED0F954F00AA60 /* Pods_iOS_Steps_Watch.framework */; };
 		808B28604A4F723DF56270D8 /* Pods_iOS_Steps_Today.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34C67A3EAE9842861A998968 /* Pods_iOS_Steps_Today.framework */; };
+		AA002FE82002A8B200C4CB17 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA002FE62002A8B200C4CB17 /* LaunchScreen.storyboard */; };
 		AA3AF8F91E95501500903F2B /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA3AF8F71E95501500903F2B /* Interface.storyboard */; };
 		AA3AF8FB1E95501500903F2B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA3AF8FA1E95501500903F2B /* Assets.xcassets */; };
 		AA3AF9021E95501500903F2B /* iOS Steps Watch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = AA3AF9011E95501500903F2B /* iOS Steps Watch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -119,6 +120,7 @@
 		64199355B2F169C1B7183BC9 /* Pods_iOS_Steps.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_Steps.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		71CB1BB8475E79148BF5F41A /* Pods-iOS Steps.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS Steps.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOS Steps/Pods-iOS Steps.release.xcconfig"; sourceTree = "<group>"; };
 		7E1CB4AC3515A7E486D7C646 /* Pods-iOS Steps Today.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS Steps Today.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOS Steps Today/Pods-iOS Steps Today.debug.xcconfig"; sourceTree = "<group>"; };
+		AA002FE72002A8B200C4CB17 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AA3AF8F51E95501500903F2B /* iOS Steps Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS Steps Watch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA3AF8F81E95501500903F2B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		AA3AF8FA1E95501500903F2B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -274,6 +276,7 @@
 		AA9D2E831E3E424C000E9C08 /* iOS Steps */ = {
 			isa = PBXGroup;
 			children = (
+				AA002FE62002A8B200C4CB17 /* LaunchScreen.storyboard */,
 				AAD088431E3FBA1800612BC1 /* iOS Steps.entitlements */,
 				AAD088461E3FC3C500612BC1 /* HealthKitManager.swift */,
 				AA9D2E841E3E424C000E9C08 /* AppDelegate.swift */,
@@ -511,6 +514,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA002FE82002A8B200C4CB17 /* LaunchScreen.storyboard in Resources */,
 				AA9D2E8C1E3E424C000E9C08 /* Assets.xcassets in Resources */,
 				AA9D2E8A1E3E424C000E9C08 /* Main.storyboard in Resources */,
 			);
@@ -762,6 +766,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		AA002FE62002A8B200C4CB17 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AA002FE72002A8B200C4CB17 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
 		AA3AF8F71E95501500903F2B /* Interface.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

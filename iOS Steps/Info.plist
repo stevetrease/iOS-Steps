@@ -4,6 +4,8 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
+	<key>CFBundleDisplayName</key>
+	<string>iOS Steps</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -28,10 +30,12 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>661</string>
+	<string>662</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSHealthShareUsageDescription</key>
+	<string>This application requires read only access to HealthKit data.</string>
+	<key>NSHealthUpdateUsageDescription</key>
 	<string>This application requires read only access to HealthKit data.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>The application saves screenshots to the photo library.</string>
