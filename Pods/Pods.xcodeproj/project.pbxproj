@@ -7,12 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		02B00A78791E1764A006BE1F6084700E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76720B026417625FB62285B73CECF0BF /* Foundation.framework */; };
 		02F884A5BF39328B21CC5CEA3AE8904C /* TriangleShapeRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB126E58B7B9D14F17C3E7C777198AD /* TriangleShapeRenderer.swift */; };
 		07791CBB2F51E5BA87C08D4BC1F7C070 /* RadarChartDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A71791C318EDCA1E88F533D17B5BC4 /* RadarChartDataSet.swift */; };
 		0779E9756899A25CA332C9E3AE8B924C /* ScatterChartDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6397303D5E217D2CECEBEEDCDEA64D /* ScatterChartDataSet.swift */; };
 		0A14C975AE6102593F2C0C01C42612AB /* IShapeRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E5E0554AF83C3490FD446B98A3D53B /* IShapeRenderer.swift */; };
-		0C2A62F6A3FA6ACE6151FD1C11F45928 /* UICountingLabel-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC058CF051F68A14CD7F6EB9F42587D /* UICountingLabel-dummy.m */; };
+		0C2A62F6A3FA6ACE6151FD1C11F45928 /* UICountingLabel-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E2366D5F9CB1FF7196EA34ABCC0A03 /* UICountingLabel-dummy.m */; };
 		0CFFC8A4F8CB53582A8CDD3D760DC552 /* ChartDataEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA41166A55A11474028BF04FFA7EEB6A /* ChartDataEntry.swift */; };
 		0DBCD6C0B88CE3CA4E32C7C1B59FDC5C /* ChartHighlighter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC37625ACF523D6D330D46033C2B990 /* ChartHighlighter.swift */; };
 		0EB00BFDDF749FB31540233CFA696558 /* ChartColorTemplates.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3999A66191F42D73F352878EE597E8D /* ChartColorTemplates.swift */; };
@@ -27,7 +26,7 @@
 		25341A055ACCAAE63F479800DEEBFE1A /* ChartViewBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777098CE98143B93355113CC9C1B62D8 /* ChartViewBase.swift */; };
 		26E6A619C6EE68508416929515A0CD42 /* Fill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D464D82E0174195D0BB75C618A8C59 /* Fill.swift */; };
 		27CFB28382586DAA7335F21D81F3BBA4 /* LineScatterCandleRadarRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61B8E739F8D447ABCAFD38E747E3EA7 /* LineScatterCandleRadarRenderer.swift */; };
-		2886AB5EEBEB31E87420ABCCEC2B1762 /* Charts-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 06A25E16DB9168697C5AF1383BBBE698 /* Charts-dummy.m */; };
+		2886AB5EEBEB31E87420ABCCEC2B1762 /* Charts-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C67BBAD12E9310015D95C72722FBD97 /* Charts-dummy.m */; };
 		2C00EEEB878E3AFF833FB4265139E751 /* CandleChartDataEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FB39C5EE342D462075C9ACF63CE985 /* CandleChartDataEntry.swift */; };
 		2E77D12FF73D2CDC3FC900187D365C66 /* PieChartData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00545BE186F1C3E52B86B32A6C028F92 /* PieChartData.swift */; };
 		31F0D5BC7B463EFE9735CE9C992B146E /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC2169E36A31EC52147CB0A896211C8 /* Animator.swift */; };
@@ -39,9 +38,10 @@
 		3C08FD7959BD8AB4EEFE90F812CE0331 /* ZoomViewJob.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34ED1EA7544E9AC0ADA1387F3557048E /* ZoomViewJob.swift */; };
 		3C93FB4B67CCE624CDB59AB77B0D93E7 /* ICandleChartDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5618404813E6029E8CADFA1DBD6245A /* ICandleChartDataSet.swift */; };
 		3D3AC8D12A23595327C1B09C5729FF56 /* YAxis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB5B867B30839F6A50BCC6D3B2E7A68 /* YAxis.swift */; };
-		3EB0979651AC2AD5DCA334725CB20A20 /* UICountingLabel-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7221144AEC03975F67370759216DA0B6 /* UICountingLabel-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3EB0979651AC2AD5DCA334725CB20A20 /* UICountingLabel-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FE1CD639927B96B45C106D5B8423A8B5 /* UICountingLabel-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		406E10BB68DC6F1C147E26EA81D38BFF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4975B2083EBFB55CAF05CD02BA838CB /* Foundation.framework */; };
 		40B98EAE903725671DDD49C09B110ECF /* AnimatedZoomViewJob.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355CA630E619DE67916F822A82A9D9CF /* AnimatedZoomViewJob.swift */; };
-		413ED294AFEFB89B8C5EF7CF070953CA /* Pods-iOS Steps-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FD122C748C85BFB34ABA19E3B603500F /* Pods-iOS Steps-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		413ED294AFEFB89B8C5EF7CF070953CA /* Pods-iOS Steps-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E40526732E416DA755D91C385B0EE99 /* Pods-iOS Steps-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		416214FA92743FF11B78120FC4734B28 /* CrossShapeRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05439CEAEF6B7161617673858BF5DF38 /* CrossShapeRenderer.swift */; };
 		43D39889A2A4D9B161B8E8B36D10ADFC /* XShapeRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CFDA0D6A9B3E909D6EEF1659917015 /* XShapeRenderer.swift */; };
 		4405A6A5344DDD391720FDD1C5C9BD2A /* XAxisRendererHorizontalBarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00859A72A131154F3BAAEC3136BE383 /* XAxisRendererHorizontalBarChart.swift */; };
@@ -54,7 +54,7 @@
 		510E4C97F40677A248DF595EF41D1013 /* IMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2DF5EA4A8D6220EBAA8A84DF49E134 /* IMarker.swift */; };
 		541ACC8E434F35204868338AED4A3E18 /* BarLineChartViewBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16717D8EB7D09C997EA7F3C85467DFD3 /* BarLineChartViewBase.swift */; };
 		560C8F3AD5B3809D0148B2BB80C987F5 /* ScatterChartDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB161D7FF5B651C9152AAA05A9D661A /* ScatterChartDataProvider.swift */; };
-		575EDB8DA96849B05B2D90CBBC6E7F37 /* Charts-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E15D751F14F1666387B9C7FAE2D228E /* Charts-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		575EDB8DA96849B05B2D90CBBC6E7F37 /* Charts-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AF36422602A05191F9F5ED65AE2E17F5 /* Charts-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5857B07B67A8752924C22368C45E436C /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E71D80DDCD7EE587946BE94FEE3F036 /* Renderer.swift */; };
 		5C66D4BED1B4572FB65745EE045961DA /* CircleShapeRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1341BB0151FFE9601BC0635FC9880346 /* CircleShapeRenderer.swift */; };
 		5CF666D94A00EB9897A2A75EBA0A1A77 /* LineScatterCandleRadarChartDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE27EE4D8CB6D9899BB7A20C9E0126A3 /* LineScatterCandleRadarChartDataSet.swift */; };
@@ -69,8 +69,9 @@
 		679A922E58AD36EA0CD2FF1F194A49F8 /* ChartDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4862102CE13CF9E85C0BDF80D7C84FC4 /* ChartDataProvider.swift */; };
 		6825F987487EDF06F4D24299C38983E4 /* Transformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE2C45CF8100BF9AA8927240C6BDDEE /* Transformer.swift */; };
 		69E81189486A414318D77B812FE5BD11 /* DefaultAxisValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0592141A7BB2D8131C80EE2CC6BA54 /* DefaultAxisValueFormatter.swift */; };
+		6AB01E7E572643FC43180BA7E78C4AAC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E77640DDAFE615BB37FC5A8BC18E875D /* Foundation.framework */; };
 		6C679C3A31EDFD86CA769C0213F0266D /* XAxisRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CF6DC2A8159DA368F79B25C720FAC4 /* XAxisRenderer.swift */; };
-		6ED4628E5818ABA72BBCF5465C52C499 /* Pods-iOS Steps Watch-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B6F59091C313DDCC7E8AE1246B6AE08 /* Pods-iOS Steps Watch-dummy.m */; };
+		6ED4628E5818ABA72BBCF5465C52C499 /* Pods-iOS Steps Watch-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BD13AF2D312ADF3289A9F28C742BA17F /* Pods-iOS Steps Watch-dummy.m */; };
 		6FC5B0E0F56612457D2A08E5372B2265 /* BarLineScatterCandleBubbleChartData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115F1677CBAFA4D2BDCB1FAEEFE33B7D /* BarLineScatterCandleBubbleChartData.swift */; };
 		7266DEDA85346EA9E01DD661C1C1AA17 /* BarLineScatterCandleBubbleChartDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7D34BCC812B0D9CD19F9F5D5F88AB7 /* BarLineScatterCandleBubbleChartDataProvider.swift */; };
 		736EF63B2F314148AB46F2AE5D935C59 /* AxisRendererBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B909610CD23CDB188E9F6644A48438 /* AxisRendererBase.swift */; };
@@ -82,8 +83,8 @@
 		7548ACB434594E231EFE5D75A5D96CCF /* LineChartDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3845374203819D2C61E06F8C0127A6B /* LineChartDataSet.swift */; };
 		7596C4EC49FA537B84FB3C63F3890188 /* LineRadarRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66805F9178DCA032D959291E6A9958E1 /* LineRadarRenderer.swift */; };
 		78E9166215F02F3FA8A5E2923C86E2E8 /* ChartBaseDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A14E88CCA513CE7320BA00A6BF36B58 /* ChartBaseDataSet.swift */; };
+		7C164FED8A94E2DAA65DDE0013BC5ACB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E77640DDAFE615BB37FC5A8BC18E875D /* Foundation.framework */; };
 		7E4271876298C299BE9C94B0620F4D18 /* BubbleChartDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0781990C4539BD579DCA146CC63DC5E /* BubbleChartDataProvider.swift */; };
-		805C26328E942629D7243E5059372CF5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0FDE7E6C756FE51216AA3F19811305B /* Foundation.framework */; };
 		806564C05DA4E1954384AE79FFDAFAE6 /* RadarHighlighter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD51F34CB4B143D7C722A72ADEFDD9C /* RadarHighlighter.swift */; };
 		86492D003584407BF5EA438D0A5F489C /* ViewPortJob.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D150A9AA5E103939A4406EBAC95B86 /* ViewPortJob.swift */; };
 		8992239AF1272804CEE86F780052CF62 /* DataApproximator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F2FD0CA7F0A60E1C1152B2EE9A7D07 /* DataApproximator.swift */; };
@@ -102,12 +103,12 @@
 		99A845D04850C426CBBAB1354D280A8F /* BarChartRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EA0E39034610138E50B18388B4F2A0 /* BarChartRenderer.swift */; };
 		9B53647E6877E38B0F49C09303DE7397 /* TransformerHorizontalBarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D79409E9E5C733762AB233D7F5846FA /* TransformerHorizontalBarChart.swift */; };
 		9CABBB1A02009EC2595AEAC4F61CDF04 /* MarkerImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F8B71ED5C015ECC7095F985487635E /* MarkerImage.swift */; };
+		9E699B89F951437407DE06C637E5A4B6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E77640DDAFE615BB37FC5A8BC18E875D /* Foundation.framework */; };
 		A4151F881DAB4651899F9E8F510DA531 /* IBarLineScatterCandleBubbleChartDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BD3BCB5F5BFFDD8F3F146D68ACB127 /* IBarLineScatterCandleBubbleChartDataSet.swift */; };
 		A69CD59AB50E01403A646479704F1792 /* AxisBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C86BEF682509AA6CED63C1F5443374 /* AxisBase.swift */; };
 		AC87C9266ACAA0FA87CEF8E83C0569A6 /* CombinedChartRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736295B71E83BA50FCBF1978F9C0C931 /* CombinedChartRenderer.swift */; };
 		ADD0A7D4873694805EAD32848441AFAD /* ChartDataEntryBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA025CDA3B5B10F160DBFC5E4FDAC50 /* ChartDataEntryBase.swift */; };
-		B0E7D7A5227B601D6BFE049DA8308A84 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0FDE7E6C756FE51216AA3F19811305B /* Foundation.framework */; };
-		B320D08E6AC665116011BB59E2004296 /* Pods-iOS Steps Watch Extension-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 58830A4CF351BA46CCCC38F6C5ABEEF2 /* Pods-iOS Steps Watch Extension-dummy.m */; };
+		B320D08E6AC665116011BB59E2004296 /* Pods-iOS Steps Watch Extension-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FBF73F8C40AA4823782B7BF158B2701 /* Pods-iOS Steps Watch Extension-dummy.m */; };
 		B5C06A9E2E9333E2CE5ADCFCFBE195E9 /* BarLineScatterCandleBubbleRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864B6A3A1904E2C3CDD3DB8A3A3C5FCB /* BarLineScatterCandleBubbleRenderer.swift */; };
 		B7251BCC063F1B5D357B31DDA9D3911F /* PieRadarChartViewBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F0F457CBA4FBEB2E4A03330D44809F /* PieRadarChartViewBase.swift */; };
 		B9E2A3DF455414E2BE8C54E50FF87A50 /* YAxisRendererHorizontalBarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CB9D2C986D4512E43E66A6FAA79387 /* YAxisRendererHorizontalBarChart.swift */; };
@@ -123,10 +124,9 @@
 		C8EC913F45D98180007B34C46A351CAF /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1349BA7DCCC2AE6B4D189D491BCF3F07 /* Platform.swift */; };
 		CA3C2E825B627B0E19297606C239146C /* IBarChartDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C51091E2463039042E4F0BA6A4DF89 /* IBarChartDataSet.swift */; };
 		CE8D59281ED15FC18FE6CF0594B3533D /* Range.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AF55BAC2A0AC84493346A128D612DE /* Range.swift */; };
-		D0173444DD488588F6E7A662E59051DB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76720B026417625FB62285B73CECF0BF /* Foundation.framework */; };
 		D2BDAB02A9525421303C75FF9A2BD5DA /* LineChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E738A7F4F0023B1ED5C91917A2909B1 /* LineChartView.swift */; };
 		D35653116BC9D9386ABBF195A3092996 /* LineChartDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03046A248E4E63D0BE44A8B20B3B201A /* LineChartDataProvider.swift */; };
-		D4F6C2403208E94CBD2CA754024C6270 /* Pods-iOS Steps Today-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E7020A41DCA4E6CFDE6288EF78E5E82 /* Pods-iOS Steps Today-dummy.m */; };
+		D4F6C2403208E94CBD2CA754024C6270 /* Pods-iOS Steps Today-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A41C8DD6767FC4404D36387D5F3AA94E /* Pods-iOS Steps Today-dummy.m */; };
 		D5C99BB23C97A332BC297B5965B781A4 /* CombinedHighlighter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CE24DC890C8279DCD6D36C2546DE2B /* CombinedHighlighter.swift */; };
 		D617E9470AD6B1F7CF4DD9DACC6A3FCF /* UICountingLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = 410938963CEA44D64757862225A75266 /* UICountingLabel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D70AC4ADBC1784237470DF649F33FBCD /* LegendRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C708A0A0CF87D9402902E3A1EF6C75 /* LegendRenderer.swift */; };
@@ -140,13 +140,12 @@
 		DE8201138BC27360623DED5E33DB09F7 /* ScatterChartRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3957BB7706D1B7A18D9CF310F0BE92F /* ScatterChartRenderer.swift */; };
 		E06C11517CF5EBC3AD4716BAF9DE7032 /* RadarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3486B91F63F270D5CB6C1BC0053E47D /* RadarChartView.swift */; };
 		E5B1F1D3579641AA5FF8C031950F56F7 /* BubbleChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FD59DED493BD641F55920E78C8F6CD /* BubbleChartView.swift */; };
-		E5B325A478ABA83FD177E33B502335A7 /* Pods-iOS Steps Watch-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B703208CDAA8699E081E690B83105EEA /* Pods-iOS Steps Watch-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E5E8A59BA9968A7A38C98765EADA1B4D /* Pods-iOS Steps Watch Extension-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 859DB0055D9B755542460B06D1AFDF89 /* Pods-iOS Steps Watch Extension-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E5B325A478ABA83FD177E33B502335A7 /* Pods-iOS Steps Watch-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 52A5F12C690FD5FBFCD422E7679BF3A9 /* Pods-iOS Steps Watch-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E5E8A59BA9968A7A38C98765EADA1B4D /* Pods-iOS Steps Watch Extension-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7ED55F1C793AC85F481FE881AB775ACF /* Pods-iOS Steps Watch Extension-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E6FC09D485B3A310B30A04CDA03AA9CB /* IPieChartDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4EE07F668FB67BD1EE7659631D898D /* IPieChartDataSet.swift */; };
 		E79525D2BB5EFBA1170DDF31EFE69E1B /* BubbleChartData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1476C7521866161F74542A563900FCF /* BubbleChartData.swift */; };
-		E7F757E283968DDFB5B12884F8F1798F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0FDE7E6C756FE51216AA3F19811305B /* Foundation.framework */; };
 		EAFE66969B8288438DB654702FE920CF /* LineRadarChartDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CD511A00D78C614ACC8C6DF9CC746DD /* LineRadarChartDataSet.swift */; };
-		EB3A45E65233BA82996440D7A6BCE5CC /* Pods-iOS Steps Today-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 15192E8754E5724D7C4D43186AF9A534 /* Pods-iOS Steps Today-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB3A45E65233BA82996440D7A6BCE5CC /* Pods-iOS Steps Today-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 90F6B8D8D09ECA7A3A6254B949BA008E /* Pods-iOS Steps Today-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ECA8832916B8D8EFFAB5A2C766A6330D /* BarChartDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933B413F28F347ED938B1B27AE252DFA /* BarChartDataSet.swift */; };
 		EE96809B72CD956D93B2C74C5CEC3079 /* IChartDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD9A660B4A67CC1B316B8BB22A564F7 /* IChartDataSet.swift */; };
 		EEA9F13878C9F3A3E1DC3AB2D4FCEBDB /* UICountingLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 37B58F5DA76119A9BB3C4BF3CFB59CF3 /* UICountingLabel.m */; };
@@ -154,12 +153,13 @@
 		F17F62DDB93ADF8E88628A6DEAE2D5E5 /* ChartData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEB0B24EF8614427F7CAFDBC3AE49B7 /* ChartData.swift */; };
 		F3164A48C4BD14B24589513631E76289 /* RadarChartData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63135E4A8A204F9CA6D1E7D1240CF0DF /* RadarChartData.swift */; };
 		F34138A7B6DA112CD721402546A83E4C /* CandleStickChartRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2023305815A3C512AC514DFDD3DCB623 /* CandleStickChartRenderer.swift */; };
-		F38B0CB16B99F07AB236228F32C1F050 /* Pods-iOS Steps-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 278FD14269AF90B25C5B0321DE42B33C /* Pods-iOS Steps-dummy.m */; };
+		F38B0CB16B99F07AB236228F32C1F050 /* Pods-iOS Steps-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BA8F2B0868FDF2F9C0AF6C1E5EA7103 /* Pods-iOS Steps-dummy.m */; };
+		F3C1D73F080BCAA7CBEEFDE2B7C9698E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E77640DDAFE615BB37FC5A8BC18E875D /* Foundation.framework */; };
 		FA235C475565E40FB2EC81D8C07AEB1D /* YAxisRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD9D87FE3E53CDBF7B7ACC01660E914 /* YAxisRenderer.swift */; };
 		FB0545D14B1E4861481C33CBAA0C0E38 /* Description.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA59F947B8B643CD1CDF2069ADA9E35A /* Description.swift */; };
-		FB4B4F9A3C5E48AA8061E75630C8D193 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0FDE7E6C756FE51216AA3F19811305B /* Foundation.framework */; };
 		FBE3E2442ACE2FBA04F7AB0C162C4D89 /* RadarChartRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0189B8080E77740086A9BEA30A62A07 /* RadarChartRenderer.swift */; };
 		FC57776203D958993075D6E1E166A07F /* IAxisValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9C8DA2400BCB0E8D20B260ECD813AC /* IAxisValueFormatter.swift */; };
+		FC750E954B629EECF45CD066579C1717 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4975B2083EBFB55CAF05CD02BA838CB /* Foundation.framework */; };
 		FF094B99FBD0FC5CFAC0091958D49032 /* HorizontalBarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6847DA3B5A5DBDDA3B37B0E6DA946832 /* HorizontalBarChartView.swift */; };
 		FFF38F053B3F4842CAFAFD53109555E3 /* IScatterChartDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D97A6EA593DCF160DA2C25BD683481 /* IScatterChartDataSet.swift */; };
 /* End PBXBuildFile section */
@@ -190,21 +190,20 @@
 
 /* Begin PBXFileReference section */
 		00545BE186F1C3E52B86B32A6C028F92 /* PieChartData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PieChartData.swift; path = Source/Charts/Data/Implementations/Standard/PieChartData.swift; sourceTree = "<group>"; };
+		00859FE0854F554752E15F4931BA2ABD /* UICountingLabel.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = UICountingLabel.modulemap; sourceTree = "<group>"; };
 		01C51091E2463039042E4F0BA6A4DF89 /* IBarChartDataSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IBarChartDataSet.swift; path = Source/Charts/Data/Interfaces/IBarChartDataSet.swift; sourceTree = "<group>"; };
 		03046A248E4E63D0BE44A8B20B3B201A /* LineChartDataProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LineChartDataProvider.swift; path = Source/Charts/Interfaces/LineChartDataProvider.swift; sourceTree = "<group>"; };
 		03C0C5088F9619E7DDD2CBAA852EBBDB /* ChartDataRendererBase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChartDataRendererBase.swift; path = Source/Charts/Renderers/ChartDataRendererBase.swift; sourceTree = "<group>"; };
 		05439CEAEF6B7161617673858BF5DF38 /* CrossShapeRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CrossShapeRenderer.swift; path = Source/Charts/Renderers/Scatter/CrossShapeRenderer.swift; sourceTree = "<group>"; };
 		05F8B71ED5C015ECC7095F985487635E /* MarkerImage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MarkerImage.swift; path = Source/Charts/Components/MarkerImage.swift; sourceTree = "<group>"; };
-		06A25E16DB9168697C5AF1383BBBE698 /* Charts-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Charts-dummy.m"; sourceTree = "<group>"; };
 		07B40D1E248FD58055BA8E320F5EEA2A /* PieChartRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PieChartRenderer.swift; path = Source/Charts/Renderers/PieChartRenderer.swift; sourceTree = "<group>"; };
 		07CE24DC890C8279DCD6D36C2546DE2B /* CombinedHighlighter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CombinedHighlighter.swift; path = Source/Charts/Highlight/CombinedHighlighter.swift; sourceTree = "<group>"; };
 		08D97A6EA593DCF160DA2C25BD683481 /* IScatterChartDataSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IScatterChartDataSet.swift; path = Source/Charts/Data/Interfaces/IScatterChartDataSet.swift; sourceTree = "<group>"; };
-		09B930B2F79DADDC5EDF3AECC9BE4844 /* Pods-iOS Steps Watch-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-iOS Steps Watch-acknowledgements.plist"; sourceTree = "<group>"; };
-		0AA66807614A97E17F36FA8575E20C09 /* Pods-iOS Steps Watch Extension-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-iOS Steps Watch Extension-resources.sh"; sourceTree = "<group>"; };
+		08E76DC34A6672424DCCD870A8A0A8B5 /* Pods-iOS Steps-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-iOS Steps-acknowledgements.markdown"; sourceTree = "<group>"; };
+		0AEBA91D1DAE07E300F33C91FF9D80C2 /* Pods-iOS Steps Watch Extension-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-iOS Steps Watch Extension-acknowledgements.markdown"; sourceTree = "<group>"; };
 		0BB5B867B30839F6A50BCC6D3B2E7A68 /* YAxis.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YAxis.swift; path = Source/Charts/Components/YAxis.swift; sourceTree = "<group>"; };
+		0C08BBD1B641FB61EF6632AA9F088676 /* Pods-iOS Steps Watch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-iOS Steps Watch.release.xcconfig"; sourceTree = "<group>"; };
 		0C27D5F694631AD2AFD0B8BBECBC2CD6 /* CombinedChartDataProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CombinedChartDataProvider.swift; path = Source/Charts/Interfaces/CombinedChartDataProvider.swift; sourceTree = "<group>"; };
-		0CFD79DADD08143B7AF79E03200165A5 /* Pods-iOS Steps Watch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-iOS Steps Watch.release.xcconfig"; sourceTree = "<group>"; };
-		0D176943142A3AB81A95BFAA5F5B4FF2 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0DD9A660B4A67CC1B316B8BB22A564F7 /* IChartDataSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IChartDataSet.swift; path = Source/Charts/Data/Interfaces/IChartDataSet.swift; sourceTree = "<group>"; };
 		0E090DAA71A73298A070C082307F6AEB /* ComponentBase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ComponentBase.swift; path = Source/Charts/Components/ComponentBase.swift; sourceTree = "<group>"; };
 		0E71D80DDCD7EE587946BE94FEE3F036 /* Renderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Renderer.swift; path = Source/Charts/Renderers/Renderer.swift; sourceTree = "<group>"; };
@@ -217,67 +216,64 @@
 		1341BB0151FFE9601BC0635FC9880346 /* CircleShapeRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CircleShapeRenderer.swift; path = Source/Charts/Renderers/Scatter/CircleShapeRenderer.swift; sourceTree = "<group>"; };
 		1349BA7DCCC2AE6B4D189D491BCF3F07 /* Platform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Platform.swift; path = Source/Charts/Utils/Platform.swift; sourceTree = "<group>"; };
 		138EF9E4563CE9BAA7DCB299DFB1793E /* XAxisRendererRadarChart.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = XAxisRendererRadarChart.swift; path = Source/Charts/Renderers/XAxisRendererRadarChart.swift; sourceTree = "<group>"; };
-		15192E8754E5724D7C4D43186AF9A534 /* Pods-iOS Steps Today-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-iOS Steps Today-umbrella.h"; sourceTree = "<group>"; };
 		15CF6DC2A8159DA368F79B25C720FAC4 /* XAxisRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = XAxisRenderer.swift; path = Source/Charts/Renderers/XAxisRenderer.swift; sourceTree = "<group>"; };
+		1643F391553F5AE9DA48A90DFB31D186 /* Pods-iOS Steps.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-iOS Steps.release.xcconfig"; sourceTree = "<group>"; };
 		16717D8EB7D09C997EA7F3C85467DFD3 /* BarLineChartViewBase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BarLineChartViewBase.swift; path = Source/Charts/Charts/BarLineChartViewBase.swift; sourceTree = "<group>"; };
-		1A4053E0297F2A2DB47952BB84E10F18 /* Pods-iOS Steps-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-iOS Steps-acknowledgements.markdown"; sourceTree = "<group>"; };
 		1D4EE07F668FB67BD1EE7659631D898D /* IPieChartDataSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IPieChartDataSet.swift; path = Source/Charts/Data/Interfaces/IPieChartDataSet.swift; sourceTree = "<group>"; };
 		1D58F3C00236C7E30EF7D52AAFB50510 /* IValueFormatter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IValueFormatter.swift; path = Source/Charts/Formatters/IValueFormatter.swift; sourceTree = "<group>"; };
 		1E7D34BCC812B0D9CD19F9F5D5F88AB7 /* BarLineScatterCandleBubbleChartDataProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BarLineScatterCandleBubbleChartDataProvider.swift; path = Source/Charts/Interfaces/BarLineScatterCandleBubbleChartDataProvider.swift; sourceTree = "<group>"; };
 		2023305815A3C512AC514DFDD3DCB623 /* CandleStickChartRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CandleStickChartRenderer.swift; path = Source/Charts/Renderers/CandleStickChartRenderer.swift; sourceTree = "<group>"; };
 		214FA80A5F28B321BA683B1BFC72850F /* ScatterChartData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ScatterChartData.swift; path = Source/Charts/Data/Implementations/Standard/ScatterChartData.swift; sourceTree = "<group>"; };
+		221D16138D147D4A734125A0ED0BA078 /* Pods-iOS Steps Today.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-iOS Steps Today.release.xcconfig"; sourceTree = "<group>"; };
 		22E5E0554AF83C3490FD446B98A3D53B /* IShapeRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IShapeRenderer.swift; path = Source/Charts/Renderers/Scatter/IShapeRenderer.swift; sourceTree = "<group>"; };
-		23FA23C0227FD7753D0DBFD22898EBCC /* Pods-iOS Steps.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-iOS Steps.debug.xcconfig"; sourceTree = "<group>"; };
-		2538E05613675ACA3974C160189BDE48 /* UICountingLabel.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = UICountingLabel.xcconfig; sourceTree = "<group>"; };
-		278FD14269AF90B25C5B0321DE42B33C /* Pods-iOS Steps-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-iOS Steps-dummy.m"; sourceTree = "<group>"; };
+		2522735ACD871B0DE5E1BBFEEF106C8C /* Pods-iOS Steps Today-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-iOS Steps Today-resources.sh"; sourceTree = "<group>"; };
 		27A2782D79C4C5AFA27A96F0AF828A9A /* AnimatedMoveViewJob.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnimatedMoveViewJob.swift; path = Source/Charts/Jobs/AnimatedMoveViewJob.swift; sourceTree = "<group>"; };
+		2A1093E4DD38542D3AB06EC999A06971 /* Pods-iOS Steps Watch Extension.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-iOS Steps Watch Extension.modulemap"; sourceTree = "<group>"; };
 		2A14E88CCA513CE7320BA00A6BF36B58 /* ChartBaseDataSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChartBaseDataSet.swift; path = Source/Charts/Data/Implementations/ChartBaseDataSet.swift; sourceTree = "<group>"; };
+		2C67BBAD12E9310015D95C72722FBD97 /* Charts-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Charts-dummy.m"; sourceTree = "<group>"; };
 		2D79409E9E5C733762AB233D7F5846FA /* TransformerHorizontalBarChart.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TransformerHorizontalBarChart.swift; path = Source/Charts/Utils/TransformerHorizontalBarChart.swift; sourceTree = "<group>"; };
 		2D942A8FBE48DB0D50D4255D7914C552 /* PieChartDataEntry.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PieChartDataEntry.swift; path = Source/Charts/Data/Implementations/Standard/PieChartDataEntry.swift; sourceTree = "<group>"; };
-		30FCF1ABA1B0035DFA251A8BA78FE221 /* Charts.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Charts.modulemap; sourceTree = "<group>"; };
+		2F6ED1AE386078A72921F08D25F2FEBC /* UICountingLabel-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UICountingLabel-prefix.pch"; sourceTree = "<group>"; };
+		32D0B125F88CE5490035D34FF410E1DB /* Pods-iOS Steps Watch Extension-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-iOS Steps Watch Extension-resources.sh"; sourceTree = "<group>"; };
+		34B36399E1E7FAD901EA4E5306C3C247 /* Pods-iOS Steps Watch-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-iOS Steps Watch-resources.sh"; sourceTree = "<group>"; };
 		34ED1EA7544E9AC0ADA1387F3557048E /* ZoomViewJob.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZoomViewJob.swift; path = Source/Charts/Jobs/ZoomViewJob.swift; sourceTree = "<group>"; };
 		355CA630E619DE67916F822A82A9D9CF /* AnimatedZoomViewJob.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnimatedZoomViewJob.swift; path = Source/Charts/Jobs/AnimatedZoomViewJob.swift; sourceTree = "<group>"; };
 		372BF2EEF79618F8A279C3EE50AB985D /* CandleStickChartView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CandleStickChartView.swift; path = Source/Charts/Charts/CandleStickChartView.swift; sourceTree = "<group>"; };
 		379D33C499C23985EE681C73F200F929 /* Pods_iOS_Steps.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_iOS_Steps.framework; path = "Pods-iOS Steps.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		37B58F5DA76119A9BB3C4BF3CFB59CF3 /* UICountingLabel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = UICountingLabel.m; sourceTree = "<group>"; };
+		37CFE5EF3212E896EB5512B253604675 /* Charts-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Charts-prefix.pch"; sourceTree = "<group>"; };
 		39080D251F315A28EC80FC45D05234CB /* HorizontalBarHighlighter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HorizontalBarHighlighter.swift; path = Source/Charts/Highlight/HorizontalBarHighlighter.swift; sourceTree = "<group>"; };
 		39CB9D2C986D4512E43E66A6FAA79387 /* YAxisRendererHorizontalBarChart.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YAxisRendererHorizontalBarChart.swift; path = Source/Charts/Renderers/YAxisRendererHorizontalBarChart.swift; sourceTree = "<group>"; };
-		3A30DBA79490F3B259339FD5B0797666 /* Charts.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Charts.xcconfig; sourceTree = "<group>"; };
+		3A44DC6D586A4BF3B89C8604E5368EF4 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3AD51F34CB4B143D7C722A72ADEFDD9C /* RadarHighlighter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RadarHighlighter.swift; path = Source/Charts/Highlight/RadarHighlighter.swift; sourceTree = "<group>"; };
 		3D087F2C5A180E8ABE4A30775F0247B3 /* ChartDataSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChartDataSet.swift; path = Source/Charts/Data/Implementations/Standard/ChartDataSet.swift; sourceTree = "<group>"; };
+		3D2FDA86B32C539A1CAF59C98EF04F34 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3E9C8DA2400BCB0E8D20B260ECD813AC /* IAxisValueFormatter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IAxisValueFormatter.swift; path = Source/Charts/Formatters/IAxisValueFormatter.swift; sourceTree = "<group>"; };
 		3F0592141A7BB2D8131C80EE2CC6BA54 /* DefaultAxisValueFormatter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DefaultAxisValueFormatter.swift; path = Source/Charts/Formatters/DefaultAxisValueFormatter.swift; sourceTree = "<group>"; };
-		40E17F24F436584834C8AC494C144ADA /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		410938963CEA44D64757862225A75266 /* UICountingLabel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = UICountingLabel.h; sourceTree = "<group>"; };
 		41DA69E913F30ADA5DB0EF7D82708832 /* HorizontalBarChartRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HorizontalBarChartRenderer.swift; path = Source/Charts/Renderers/HorizontalBarChartRenderer.swift; sourceTree = "<group>"; };
-		4291F124F64B93B69CB197873B47EC6A /* Pods-iOS Steps Today-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-iOS Steps Today-resources.sh"; sourceTree = "<group>"; };
-		4526285C08F69B9B8D936ECCC1FF90B1 /* Pods-iOS Steps-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-iOS Steps-acknowledgements.plist"; sourceTree = "<group>"; };
 		454FBD057D26BE3F6BD781897A0975B1 /* BubbleChartRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BubbleChartRenderer.swift; path = Source/Charts/Renderers/BubbleChartRenderer.swift; sourceTree = "<group>"; };
 		45CFDA0D6A9B3E909D6EEF1659917015 /* XShapeRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = XShapeRenderer.swift; path = Source/Charts/Renderers/Scatter/XShapeRenderer.swift; sourceTree = "<group>"; };
 		468358E3C57EECB68F6B9810FE8B5E66 /* IFillFormatter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IFillFormatter.swift; path = Source/Charts/Formatters/IFillFormatter.swift; sourceTree = "<group>"; };
-		468D02F4F859DA27879A2ABFDEACADE8 /* Pods-iOS Steps Today-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-iOS Steps Today-acknowledgements.markdown"; sourceTree = "<group>"; };
+		475A62555C4864BB63CDA9607DD328AF /* Charts.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Charts.xcconfig; sourceTree = "<group>"; };
 		4862102CE13CF9E85C0BDF80D7C84FC4 /* ChartDataProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChartDataProvider.swift; path = Source/Charts/Interfaces/ChartDataProvider.swift; sourceTree = "<group>"; };
 		49C836D075B11770A9283498B8D32613 /* MoveViewJob.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MoveViewJob.swift; path = Source/Charts/Jobs/MoveViewJob.swift; sourceTree = "<group>"; };
-		4AC058CF051F68A14CD7F6EB9F42587D /* UICountingLabel-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UICountingLabel-dummy.m"; sourceTree = "<group>"; };
 		4CEB0B24EF8614427F7CAFDBC3AE49B7 /* ChartData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChartData.swift; path = Source/Charts/Data/Implementations/Standard/ChartData.swift; sourceTree = "<group>"; };
 		4DF882E6E7206EB085A6E2708F9F31A7 /* CandleChartDataProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CandleChartDataProvider.swift; path = Source/Charts/Interfaces/CandleChartDataProvider.swift; sourceTree = "<group>"; };
-		5017D4D76A0E681DA660A3A36908DA4E /* Pods-iOS Steps.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-iOS Steps.release.xcconfig"; sourceTree = "<group>"; };
+		4F217265A6B799F2B8BCE4710A3F9F77 /* Pods-iOS Steps.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-iOS Steps.debug.xcconfig"; sourceTree = "<group>"; };
+		4FBF73F8C40AA4823782B7BF158B2701 /* Pods-iOS Steps Watch Extension-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-iOS Steps Watch Extension-dummy.m"; sourceTree = "<group>"; };
+		4FE2397CC45A8B2B0D5FCCA89D55E959 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50A1317DFB38174FF1D7EF453F6A118E /* IHighlighter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IHighlighter.swift; path = Source/Charts/Highlight/IHighlighter.swift; sourceTree = "<group>"; };
 		50F1E1A90CFCF5582D7EE9A7D096383A /* ILineScatterCandleRadarChartDataSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ILineScatterCandleRadarChartDataSet.swift; path = Source/Charts/Data/Interfaces/ILineScatterCandleRadarChartDataSet.swift; sourceTree = "<group>"; };
 		50FB39C5EE342D462075C9ACF63CE985 /* CandleChartDataEntry.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CandleChartDataEntry.swift; path = Source/Charts/Data/Implementations/Standard/CandleChartDataEntry.swift; sourceTree = "<group>"; };
 		51C708A0A0CF87D9402902E3A1EF6C75 /* LegendRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LegendRenderer.swift; path = Source/Charts/Renderers/LegendRenderer.swift; sourceTree = "<group>"; };
-		566A622A41846FF7B54C06B0B2111EB5 /* UICountingLabel-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UICountingLabel-prefix.pch"; sourceTree = "<group>"; };
-		578E7325033E200D37CC378CAB80CD1F /* Pods-iOS Steps Watch Extension-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-iOS Steps Watch Extension-frameworks.sh"; sourceTree = "<group>"; };
+		52A5F12C690FD5FBFCD422E7679BF3A9 /* Pods-iOS Steps Watch-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-iOS Steps Watch-umbrella.h"; sourceTree = "<group>"; };
+		52D298ACE5143F1B220CE761AD922EA2 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		57E91DB53CBA376DA83EF732B4B85375 /* RadarChartDataEntry.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RadarChartDataEntry.swift; path = Source/Charts/Data/Implementations/Standard/RadarChartDataEntry.swift; sourceTree = "<group>"; };
-		58830A4CF351BA46CCCC38F6C5ABEEF2 /* Pods-iOS Steps Watch Extension-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-iOS Steps Watch Extension-dummy.m"; sourceTree = "<group>"; };
 		58AF55BAC2A0AC84493346A128D612DE /* Range.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Range.swift; path = Source/Charts/Highlight/Range.swift; sourceTree = "<group>"; };
 		59D74BA470993712092F2BD7AE3D8CCB /* XAxis.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = XAxis.swift; path = Source/Charts/Components/XAxis.swift; sourceTree = "<group>"; };
-		59DD6C091753DF642D2FE0EF5F553ADF /* Pods-iOS Steps Watch Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-iOS Steps Watch Extension.debug.xcconfig"; sourceTree = "<group>"; };
-		59FD1837075FD83707516BAAAA27C2C8 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5B6F59091C313DDCC7E8AE1246B6AE08 /* Pods-iOS Steps Watch-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-iOS Steps Watch-dummy.m"; sourceTree = "<group>"; };
-		5E7020A41DCA4E6CFDE6288EF78E5E82 /* Pods-iOS Steps Today-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-iOS Steps Today-dummy.m"; sourceTree = "<group>"; };
+		5C99D92987833DA900A2EC1C5CAD2A39 /* Pods-iOS Steps Watch Extension-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-iOS Steps Watch Extension-acknowledgements.plist"; sourceTree = "<group>"; };
 		60E7085B5A9D10B5D097B4B43FC4FB3C /* ILineChartDataSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ILineChartDataSet.swift; path = Source/Charts/Data/Interfaces/ILineChartDataSet.swift; sourceTree = "<group>"; };
-		62F33B333CDB65AD53057B40E2E19A5E /* Pods-iOS Steps Today.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-iOS Steps Today.debug.xcconfig"; sourceTree = "<group>"; };
 		63135E4A8A204F9CA6D1E7D1240CF0DF /* RadarChartData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RadarChartData.swift; path = Source/Charts/Data/Implementations/Standard/RadarChartData.swift; sourceTree = "<group>"; };
 		66195519BF54AFFDCFC16826313A9833 /* ChartAnimationEasing.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChartAnimationEasing.swift; path = Source/Charts/Animation/ChartAnimationEasing.swift; sourceTree = "<group>"; };
 		66805F9178DCA032D959291E6A9958E1 /* LineRadarRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LineRadarRenderer.swift; path = Source/Charts/Renderers/LineRadarRenderer.swift; sourceTree = "<group>"; };
@@ -287,43 +283,45 @@
 		6ABD7DB5FE36805E3F5BF4678D07C9CD /* BubbleChartDataEntry.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BubbleChartDataEntry.swift; path = Source/Charts/Data/Implementations/Standard/BubbleChartDataEntry.swift; sourceTree = "<group>"; };
 		6CD511A00D78C614ACC8C6DF9CC746DD /* LineRadarChartDataSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LineRadarChartDataSet.swift; path = Source/Charts/Data/Implementations/Standard/LineRadarChartDataSet.swift; sourceTree = "<group>"; };
 		6EF450AF1A577A6C9373FD45542B41FC /* UICountingLabel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = UICountingLabel.framework; path = UICountingLabel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6F403E51D9E106472FF5D547584C29F0 /* Pods-iOS Steps Watch Extension-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-iOS Steps Watch Extension-frameworks.sh"; sourceTree = "<group>"; };
 		6F4A7CF6934BE9ABFB91B63C25A629A4 /* LineChartRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LineChartRenderer.swift; path = Source/Charts/Renderers/LineChartRenderer.swift; sourceTree = "<group>"; };
 		6FE2C45CF8100BF9AA8927240C6BDDEE /* Transformer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Transformer.swift; path = Source/Charts/Utils/Transformer.swift; sourceTree = "<group>"; };
-		7221144AEC03975F67370759216DA0B6 /* UICountingLabel-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UICountingLabel-umbrella.h"; sourceTree = "<group>"; };
-		729C78AD6302F3DCED2BE9361CA53DE2 /* Pods-iOS Steps Watch-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-iOS Steps Watch-frameworks.sh"; sourceTree = "<group>"; };
 		736295B71E83BA50FCBF1978F9C0C931 /* CombinedChartRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CombinedChartRenderer.swift; path = Source/Charts/Renderers/CombinedChartRenderer.swift; sourceTree = "<group>"; };
-		7431EF7CD3A73B75B3D23B6293B9DDFD /* Pods-iOS Steps-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-iOS Steps-frameworks.sh"; sourceTree = "<group>"; };
 		7445807F9DD4D34CBF66CCF95CFDA57D /* Charts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Charts.framework; path = Charts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		74E34292BBEF8340111056BC48BF530E /* Pods-iOS Steps-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-iOS Steps-resources.sh"; sourceTree = "<group>"; };
 		75F152CEF22E6B38CDA6486D81C9B2E5 /* BarChartData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BarChartData.swift; path = Source/Charts/Data/Implementations/Standard/BarChartData.swift; sourceTree = "<group>"; };
-		76720B026417625FB62285B73CECF0BF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS3.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		75F9E1F1A3ED7ED5D453F80F3A34A06F /* Pods-iOS Steps-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-iOS Steps-frameworks.sh"; sourceTree = "<group>"; };
 		77000A42232E4E19CFBC007EF65C447F /* SquareShapeRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SquareShapeRenderer.swift; path = Source/Charts/Renderers/Scatter/SquareShapeRenderer.swift; sourceTree = "<group>"; };
 		777098CE98143B93355113CC9C1B62D8 /* ChartViewBase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChartViewBase.swift; path = Source/Charts/Charts/ChartViewBase.swift; sourceTree = "<group>"; };
-		799A4FF38EBA46336245CB61717D2BB6 /* Pods-iOS Steps Watch Extension-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-iOS Steps Watch Extension-acknowledgements.markdown"; sourceTree = "<group>"; };
+		7798C89766878EAD1A08208090F08EC8 /* Pods-iOS Steps Watch Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-iOS Steps Watch Extension.debug.xcconfig"; sourceTree = "<group>"; };
 		7A784BCA03A6A0B5F865B23EF8BF6D83 /* ChartUtils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChartUtils.swift; path = Source/Charts/Utils/ChartUtils.swift; sourceTree = "<group>"; };
 		7DB126E58B7B9D14F17C3E7C777198AD /* TriangleShapeRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TriangleShapeRenderer.swift; path = Source/Charts/Renderers/Scatter/TriangleShapeRenderer.swift; sourceTree = "<group>"; };
+		7ED55F1C793AC85F481FE881AB775ACF /* Pods-iOS Steps Watch Extension-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-iOS Steps Watch Extension-umbrella.h"; sourceTree = "<group>"; };
 		7FA6574B2A44ABBF34C3CD98EC4596ED /* BarHighlighter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BarHighlighter.swift; path = Source/Charts/Highlight/BarHighlighter.swift; sourceTree = "<group>"; };
 		80D150A9AA5E103939A4406EBAC95B86 /* ViewPortJob.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ViewPortJob.swift; path = Source/Charts/Jobs/ViewPortJob.swift; sourceTree = "<group>"; };
+		84E2366D5F9CB1FF7196EA34ABCC0A03 /* UICountingLabel-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UICountingLabel-dummy.m"; sourceTree = "<group>"; };
 		851AFBDE2BC056765AB26C22C33FAD23 /* BarChartView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BarChartView.swift; path = Source/Charts/Charts/BarChartView.swift; sourceTree = "<group>"; };
-		859DB0055D9B755542460B06D1AFDF89 /* Pods-iOS Steps Watch Extension-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-iOS Steps Watch Extension-umbrella.h"; sourceTree = "<group>"; };
 		864B6A3A1904E2C3CDD3DB8A3A3C5FCB /* BarLineScatterCandleBubbleRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BarLineScatterCandleBubbleRenderer.swift; path = Source/Charts/Renderers/BarLineScatterCandleBubbleRenderer.swift; sourceTree = "<group>"; };
 		86A7933B12C59535FC6F315F2270D83E /* ViewPortHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ViewPortHandler.swift; path = Source/Charts/Utils/ViewPortHandler.swift; sourceTree = "<group>"; };
 		870487466AAD5885B4971FA87020B361 /* Pods_iOS_Steps_Today.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_iOS_Steps_Today.framework; path = "Pods-iOS Steps Today.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		87A304B6D135226CBE7C1E2BC07070F5 /* Pods-iOS Steps Watch-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-iOS Steps Watch-acknowledgements.markdown"; sourceTree = "<group>"; };
 		88A65AD1CBA76B5FFD4746A01F1FFF71 /* BarChartDataProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BarChartDataProvider.swift; path = Source/Charts/Interfaces/BarChartDataProvider.swift; sourceTree = "<group>"; };
 		89FD59DED493BD641F55920E78C8F6CD /* BubbleChartView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BubbleChartView.swift; path = Source/Charts/Charts/BubbleChartView.swift; sourceTree = "<group>"; };
 		8C2DF5EA4A8D6220EBAA8A84DF49E134 /* IMarker.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IMarker.swift; path = Source/Charts/Components/IMarker.swift; sourceTree = "<group>"; };
-		8E15D751F14F1666387B9C7FAE2D228E /* Charts-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Charts-umbrella.h"; sourceTree = "<group>"; };
+		8D2BD8CD629E0CE4ED942EA015947080 /* Pods-iOS Steps.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-iOS Steps.modulemap"; sourceTree = "<group>"; };
+		8E40526732E416DA755D91C385B0EE99 /* Pods-iOS Steps-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-iOS Steps-umbrella.h"; sourceTree = "<group>"; };
 		8EC2169E36A31EC52147CB0A896211C8 /* Animator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Animator.swift; path = Source/Charts/Animation/Animator.swift; sourceTree = "<group>"; };
 		8F78F684084D350FA4863CFE855D0439 /* ScatterChartView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ScatterChartView.swift; path = Source/Charts/Charts/ScatterChartView.swift; sourceTree = "<group>"; };
+		90F62FDAF992F26E23FAD80A348E7722 /* Pods-iOS Steps Today.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-iOS Steps Today.modulemap"; sourceTree = "<group>"; };
+		90F6B8D8D09ECA7A3A6254B949BA008E /* Pods-iOS Steps Today-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-iOS Steps Today-umbrella.h"; sourceTree = "<group>"; };
+		913D79027651D2B52DD3F9A6FDF2E43E /* Pods-iOS Steps Watch-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-iOS Steps Watch-frameworks.sh"; sourceTree = "<group>"; };
 		933B413F28F347ED938B1B27AE252DFA /* BarChartDataSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BarChartDataSet.swift; path = Source/Charts/Data/Implementations/Standard/BarChartDataSet.swift; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		93B909610CD23CDB188E9F6644A48438 /* AxisRendererBase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AxisRendererBase.swift; path = Source/Charts/Renderers/AxisRendererBase.swift; sourceTree = "<group>"; };
-		94581AD350D5916BD290C6BFD6BE428B /* Pods-iOS Steps Watch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-iOS Steps Watch.debug.xcconfig"; sourceTree = "<group>"; };
 		95058AACC947CA9B725B9815DE2F93D9 /* IndexAxisValueFormatter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IndexAxisValueFormatter.swift; path = Source/Charts/Formatters/IndexAxisValueFormatter.swift; sourceTree = "<group>"; };
-		950A51A4C85BB1F2EE9C58C87C8EE0AC /* Pods-iOS Steps Today-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-iOS Steps Today-acknowledgements.plist"; sourceTree = "<group>"; };
-		966E58B360F36CDFBAD6CD34FC057605 /* Pods-iOS Steps Watch Extension.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-iOS Steps Watch Extension.modulemap"; sourceTree = "<group>"; };
 		96C86BEF682509AA6CED63C1F5443374 /* AxisBase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AxisBase.swift; path = Source/Charts/Components/AxisBase.swift; sourceTree = "<group>"; };
 		9A14F1B654E30C1ADBB6038230CAD048 /* CandleChartDataSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CandleChartDataSet.swift; path = Source/Charts/Data/Implementations/Standard/CandleChartDataSet.swift; sourceTree = "<group>"; };
+		9BA8F2B0868FDF2F9C0AF6C1E5EA7103 /* Pods-iOS Steps-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-iOS Steps-dummy.m"; sourceTree = "<group>"; };
+		A41C8DD6767FC4404D36387D5F3AA94E /* Pods-iOS Steps Today-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-iOS Steps Today-dummy.m"; sourceTree = "<group>"; };
 		A51FC892E30545F16B654F362FF9925D /* PieChartView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PieChartView.swift; path = Source/Charts/Charts/PieChartView.swift; sourceTree = "<group>"; };
 		A57CC62F69511455C1F9C2E7082EADCC /* PieRadarHighlighter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PieRadarHighlighter.swift; path = Source/Charts/Highlight/PieRadarHighlighter.swift; sourceTree = "<group>"; };
 		A8342EB4EA57EEB7A81F86EB2A6A9764 /* Pods_iOS_Steps_Watch_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_iOS_Steps_Watch_Extension.framework; path = "Pods-iOS Steps Watch Extension.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -331,61 +329,63 @@
 		AB6B38C5639277F6265BB27EB7BBCFEA /* AnimatedViewPortJob.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnimatedViewPortJob.swift; path = Source/Charts/Jobs/AnimatedViewPortJob.swift; sourceTree = "<group>"; };
 		AC8C91A1322801E233D113701AF0261F /* DefaultFillFormatter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DefaultFillFormatter.swift; path = Source/Charts/Formatters/DefaultFillFormatter.swift; sourceTree = "<group>"; };
 		AD0BD7E5DFC77898BD8CD490218A6DB5 /* CandleChartData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CandleChartData.swift; path = Source/Charts/Data/Implementations/Standard/CandleChartData.swift; sourceTree = "<group>"; };
+		AF36422602A05191F9F5ED65AE2E17F5 /* Charts-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Charts-umbrella.h"; sourceTree = "<group>"; };
 		B0189B8080E77740086A9BEA30A62A07 /* RadarChartRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RadarChartRenderer.swift; path = Source/Charts/Renderers/RadarChartRenderer.swift; sourceTree = "<group>"; };
 		B0E7ADECDF4FCBCA75B82CBD172C2251 /* BarLineScatterCandleBubbleChartDataSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BarLineScatterCandleBubbleChartDataSet.swift; path = Source/Charts/Data/Implementations/Standard/BarLineScatterCandleBubbleChartDataSet.swift; sourceTree = "<group>"; };
 		B1476C7521866161F74542A563900FCF /* BubbleChartData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BubbleChartData.swift; path = Source/Charts/Data/Implementations/Standard/BubbleChartData.swift; sourceTree = "<group>"; };
+		B1A19CC0E8CC89A0A2095F46D0D2DD2C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B1F63BAD054EBC8ED19BE4917A47CA42 /* ChartLimitLine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChartLimitLine.swift; path = Source/Charts/Components/ChartLimitLine.swift; sourceTree = "<group>"; };
 		B3806D8DE2212E498BDDD7845348A53D /* CombinedChartData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CombinedChartData.swift; path = Source/Charts/Data/Implementations/Standard/CombinedChartData.swift; sourceTree = "<group>"; };
-		B4A4DCEFC18D7FEA19CCC3A53EDCE594 /* Pods-iOS Steps-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-iOS Steps-resources.sh"; sourceTree = "<group>"; };
 		B4EA0E39034610138E50B18388B4F2A0 /* BarChartRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BarChartRenderer.swift; path = Source/Charts/Renderers/BarChartRenderer.swift; sourceTree = "<group>"; };
 		B5618404813E6029E8CADFA1DBD6245A /* ICandleChartDataSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ICandleChartDataSet.swift; path = Source/Charts/Data/Interfaces/ICandleChartDataSet.swift; sourceTree = "<group>"; };
-		B6E2799AEBDD209B2FF07E7AAE7BF150 /* Pods-iOS Steps Today.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-iOS Steps Today.release.xcconfig"; sourceTree = "<group>"; };
-		B703208CDAA8699E081E690B83105EEA /* Pods-iOS Steps Watch-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-iOS Steps Watch-umbrella.h"; sourceTree = "<group>"; };
+		B5AA455D98F1A18845695C51654A6AB5 /* Pods-iOS Steps Today.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-iOS Steps Today.debug.xcconfig"; sourceTree = "<group>"; };
 		B822FA21D60346E39B635AE5A77EEB83 /* Pods_iOS_Steps_Watch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_iOS_Steps_Watch.framework; path = "Pods-iOS Steps Watch.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8EE6C1BB05F04E084466EC744C055B6 /* ILineRadarChartDataSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ILineRadarChartDataSet.swift; path = Source/Charts/Data/Interfaces/ILineRadarChartDataSet.swift; sourceTree = "<group>"; };
 		BAA025CDA3B5B10F160DBFC5E4FDAC50 /* ChartDataEntryBase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChartDataEntryBase.swift; path = Source/Charts/Data/Implementations/Standard/ChartDataEntryBase.swift; sourceTree = "<group>"; };
 		BBB161D7FF5B651C9152AAA05A9D661A /* ScatterChartDataProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ScatterChartDataProvider.swift; path = Source/Charts/Interfaces/ScatterChartDataProvider.swift; sourceTree = "<group>"; };
-		BF8C7F3EB0B2016AB256329166CEAF07 /* Pods-iOS Steps Watch Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-iOS Steps Watch Extension.release.xcconfig"; sourceTree = "<group>"; };
+		BC182E5203A7F388DDE4E6ED8CA39327 /* Pods-iOS Steps Watch-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-iOS Steps Watch-acknowledgements.plist"; sourceTree = "<group>"; };
+		BD13AF2D312ADF3289A9F28C742BA17F /* Pods-iOS Steps Watch-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-iOS Steps Watch-dummy.m"; sourceTree = "<group>"; };
+		BE56DB908C48508BDCC1A563FE2D02C2 /* Pods-iOS Steps-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-iOS Steps-acknowledgements.plist"; sourceTree = "<group>"; };
+		BEA64C20BB83CAB7161B60E55C1FBDEA /* Pods-iOS Steps Watch.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-iOS Steps Watch.modulemap"; sourceTree = "<group>"; };
+		BF20CFEEFDBADDEB20DCAA5E91514841 /* Pods-iOS Steps Today-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-iOS Steps Today-acknowledgements.markdown"; sourceTree = "<group>"; };
 		BF94B1F2A69D1CBAFC5D814D8C7A52FD /* BarChartDataEntry.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BarChartDataEntry.swift; path = Source/Charts/Data/Implementations/Standard/BarChartDataEntry.swift; sourceTree = "<group>"; };
 		C00859A72A131154F3BAAEC3136BE383 /* XAxisRendererHorizontalBarChart.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = XAxisRendererHorizontalBarChart.swift; path = Source/Charts/Renderers/XAxisRendererHorizontalBarChart.swift; sourceTree = "<group>"; };
 		C0781990C4539BD579DCA146CC63DC5E /* BubbleChartDataProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BubbleChartDataProvider.swift; path = Source/Charts/Interfaces/BubbleChartDataProvider.swift; sourceTree = "<group>"; };
-		C16DD41F553AEC0B1806B662D57BEBEE /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C38A3D008F82B3BC0185FFF441A56EE1 /* Pods-iOS Steps Today.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-iOS Steps Today.modulemap"; sourceTree = "<group>"; };
+		C4975B2083EBFB55CAF05CD02BA838CB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS4.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		CA59F947B8B643CD1CDF2069ADA9E35A /* Description.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Description.swift; path = Source/Charts/Components/Description.swift; sourceTree = "<group>"; };
-		CA804D892B6A8A2DF89A6E524E863394 /* UICountingLabel.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = UICountingLabel.modulemap; sourceTree = "<group>"; };
 		CFB123DE365D549E5BE22D9BD6B9A00B /* LegendEntry.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LegendEntry.swift; path = Source/Charts/Components/LegendEntry.swift; sourceTree = "<group>"; };
-		D0FDE7E6C756FE51216AA3F19811305B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		D11648748AC84C978902AD6123250998 /* Pods-iOS Steps Watch-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-iOS Steps Watch-resources.sh"; sourceTree = "<group>"; };
 		D1BD3BCB5F5BFFDD8F3F146D68ACB127 /* IBarLineScatterCandleBubbleChartDataSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IBarLineScatterCandleBubbleChartDataSet.swift; path = Source/Charts/Data/Interfaces/IBarLineScatterCandleBubbleChartDataSet.swift; sourceTree = "<group>"; };
 		D3486B91F63F270D5CB6C1BC0053E47D /* RadarChartView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RadarChartView.swift; path = Source/Charts/Charts/RadarChartView.swift; sourceTree = "<group>"; };
 		D3957BB7706D1B7A18D9CF310F0BE92F /* ScatterChartRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ScatterChartRenderer.swift; path = Source/Charts/Renderers/ScatterChartRenderer.swift; sourceTree = "<group>"; };
 		D4648807A0956F9D1A5A471A1BF80C42 /* BubbleChartDataSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BubbleChartDataSet.swift; path = Source/Charts/Data/Implementations/Standard/BubbleChartDataSet.swift; sourceTree = "<group>"; };
 		D5D712BCF85AAD7564BD3427B38ACE44 /* YAxisRendererRadarChart.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YAxisRendererRadarChart.swift; path = Source/Charts/Renderers/YAxisRendererRadarChart.swift; sourceTree = "<group>"; };
-		D6775F028A0B6D3DE1F183C3DBBE7234 /* Pods-iOS Steps.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-iOS Steps.modulemap"; sourceTree = "<group>"; };
 		DA41166A55A11474028BF04FFA7EEB6A /* ChartDataEntry.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChartDataEntry.swift; path = Source/Charts/Data/Implementations/Standard/ChartDataEntry.swift; sourceTree = "<group>"; };
 		DA480EBA951C540299AE8207BD9DBC97 /* PieHighlighter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PieHighlighter.swift; path = Source/Charts/Highlight/PieHighlighter.swift; sourceTree = "<group>"; };
+		DAC4AAFFAE789D352B032B4208AB43FF /* Pods-iOS Steps Watch Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-iOS Steps Watch Extension.release.xcconfig"; sourceTree = "<group>"; };
 		DD79304C4CA5C4DC56C9D5FB85C0F764 /* Highlight.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Highlight.swift; path = Source/Charts/Highlight/Highlight.swift; sourceTree = "<group>"; };
-		DDDC9DD98F5B420BC498862D5DA0D02C /* Pods-iOS Steps Watch.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-iOS Steps Watch.modulemap"; sourceTree = "<group>"; };
+		DE665F3911B9ADED94E5C0D619354623 /* Pods-iOS Steps Today-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-iOS Steps Today-acknowledgements.plist"; sourceTree = "<group>"; };
 		E2A71791C318EDCA1E88F533D17B5BC4 /* RadarChartDataSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RadarChartDataSet.swift; path = Source/Charts/Data/Implementations/Standard/RadarChartDataSet.swift; sourceTree = "<group>"; };
 		E2D3BA7AB22B845FB18D2C22A30F57DD /* PieChartDataSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PieChartDataSet.swift; path = Source/Charts/Data/Implementations/Standard/PieChartDataSet.swift; sourceTree = "<group>"; };
 		E3845374203819D2C61E06F8C0127A6B /* LineChartDataSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LineChartDataSet.swift; path = Source/Charts/Data/Implementations/Standard/LineChartDataSet.swift; sourceTree = "<group>"; };
 		E3999A66191F42D73F352878EE597E8D /* ChartColorTemplates.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChartColorTemplates.swift; path = Source/Charts/Utils/ChartColorTemplates.swift; sourceTree = "<group>"; };
-		E4B804268FD595A1D0210E40F23C6635 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E43B5579BB7972B73A820491D2AC2A87 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E595036887340566B2F55527AD7AF4FB /* CombinedChartView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CombinedChartView.swift; path = Source/Charts/Charts/CombinedChartView.swift; sourceTree = "<group>"; };
+		E6E6782AD6C436198C049BD4DC92F931 /* Charts.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Charts.modulemap; sourceTree = "<group>"; };
+		E77640DDAFE615BB37FC5A8BC18E875D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		EA4C73B800E74CD928A3A2CDF6DF64FD /* ChevronUpShapeRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChevronUpShapeRenderer.swift; path = Source/Charts/Renderers/Scatter/ChevronUpShapeRenderer.swift; sourceTree = "<group>"; };
 		EB4BEBDB33E300224174A193B998723F /* ChevronDownShapeRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChevronDownShapeRenderer.swift; path = Source/Charts/Renderers/Scatter/ChevronDownShapeRenderer.swift; sourceTree = "<group>"; };
 		EB6397303D5E217D2CECEBEEDCDEA64D /* ScatterChartDataSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ScatterChartDataSet.swift; path = Source/Charts/Data/Implementations/Standard/ScatterChartDataSet.swift; sourceTree = "<group>"; };
 		EBDD60E98C75AA942276BB111ECC0D78 /* DefaultValueFormatter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DefaultValueFormatter.swift; path = Source/Charts/Formatters/DefaultValueFormatter.swift; sourceTree = "<group>"; };
-		EF234116C9CED65C87555A8AF46B1F44 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F15600B06D702974734CB53E9AAC6253 /* Pods-iOS Steps Watch Extension-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-iOS Steps Watch Extension-acknowledgements.plist"; sourceTree = "<group>"; };
 		F44899889205DCCA31B8C671D4501A83 /* IBubbleChartDataSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IBubbleChartDataSet.swift; path = Source/Charts/Data/Interfaces/IBubbleChartDataSet.swift; sourceTree = "<group>"; };
 		F61B8E739F8D447ABCAFD38E747E3EA7 /* LineScatterCandleRadarRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LineScatterCandleRadarRenderer.swift; path = Source/Charts/Renderers/LineScatterCandleRadarRenderer.swift; sourceTree = "<group>"; };
 		F7C6F6C614F7C1C1A238752F90297BB8 /* IRadarChartDataSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IRadarChartDataSet.swift; path = Source/Charts/Data/Interfaces/IRadarChartDataSet.swift; sourceTree = "<group>"; };
 		F7D000E7CDDAE02A525F5C4D046F4160 /* LineChartData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LineChartData.swift; path = Source/Charts/Data/Implementations/Standard/LineChartData.swift; sourceTree = "<group>"; };
-		F8EA0A26BD92FFDDB7C6B72AEA435F8D /* Charts-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Charts-prefix.pch"; sourceTree = "<group>"; };
 		FC271D3E52ADE4AE2BAAD6F081A16590 /* Legend.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Legend.swift; path = Source/Charts/Components/Legend.swift; sourceTree = "<group>"; };
-		FD122C748C85BFB34ABA19E3B603500F /* Pods-iOS Steps-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-iOS Steps-umbrella.h"; sourceTree = "<group>"; };
+		FC514920F201EDC54290D838F20F4AE6 /* Pods-iOS Steps Watch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-iOS Steps Watch.debug.xcconfig"; sourceTree = "<group>"; };
+		FE1CD639927B96B45C106D5B8423A8B5 /* UICountingLabel-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UICountingLabel-umbrella.h"; sourceTree = "<group>"; };
 		FE27EE4D8CB6D9899BB7A20C9E0126A3 /* LineScatterCandleRadarChartDataSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LineScatterCandleRadarChartDataSet.swift; path = Source/Charts/Data/Implementations/Standard/LineScatterCandleRadarChartDataSet.swift; sourceTree = "<group>"; };
+		FF47EB999CCF1FA884E46AFFF97592D8 /* Pods-iOS Steps Watch-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-iOS Steps Watch-acknowledgements.markdown"; sourceTree = "<group>"; };
+		FFD7FBA823D15E6E4D1C4C0F4CF5ACF4 /* UICountingLabel.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = UICountingLabel.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -393,7 +393,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB4B4F9A3C5E48AA8061E75630C8D193 /* Foundation.framework in Frameworks */,
+				7C164FED8A94E2DAA65DDE0013BC5ACB /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,7 +401,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				02B00A78791E1764A006BE1F6084700E /* Foundation.framework in Frameworks */,
+				FC750E954B629EECF45CD066579C1717 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,7 +409,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E7F757E283968DDFB5B12884F8F1798F /* Foundation.framework in Frameworks */,
+				6AB01E7E572643FC43180BA7E78C4AAC /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,7 +417,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B0E7D7A5227B601D6BFE049DA8308A84 /* Foundation.framework in Frameworks */,
+				F3C1D73F080BCAA7CBEEFDE2B7C9698E /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,7 +425,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				805C26328E942629D7243E5059372CF5 /* Foundation.framework in Frameworks */,
+				9E699B89F951437407DE06C637E5A4B6 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,82 +433,68 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D0173444DD488588F6E7A662E59051DB /* Foundation.framework in Frameworks */,
+				406E10BB68DC6F1C147E26EA81D38BFF /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0A5F38D48A0C0EEE6DD65416B51916F2 /* Pods-iOS Steps */ = {
+		007CE0BB02F3B820DEEA2E4FDC358670 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				E4B804268FD595A1D0210E40F23C6635 /* Info.plist */,
-				D6775F028A0B6D3DE1F183C3DBBE7234 /* Pods-iOS Steps.modulemap */,
-				1A4053E0297F2A2DB47952BB84E10F18 /* Pods-iOS Steps-acknowledgements.markdown */,
-				4526285C08F69B9B8D936ECCC1FF90B1 /* Pods-iOS Steps-acknowledgements.plist */,
-				278FD14269AF90B25C5B0321DE42B33C /* Pods-iOS Steps-dummy.m */,
-				7431EF7CD3A73B75B3D23B6293B9DDFD /* Pods-iOS Steps-frameworks.sh */,
-				B4A4DCEFC18D7FEA19CCC3A53EDCE594 /* Pods-iOS Steps-resources.sh */,
-				FD122C748C85BFB34ABA19E3B603500F /* Pods-iOS Steps-umbrella.h */,
-				23FA23C0227FD7753D0DBFD22898EBCC /* Pods-iOS Steps.debug.xcconfig */,
-				5017D4D76A0E681DA660A3A36908DA4E /* Pods-iOS Steps.release.xcconfig */,
+				E6E6782AD6C436198C049BD4DC92F931 /* Charts.modulemap */,
+				475A62555C4864BB63CDA9607DD328AF /* Charts.xcconfig */,
+				2C67BBAD12E9310015D95C72722FBD97 /* Charts-dummy.m */,
+				37CFE5EF3212E896EB5512B253604675 /* Charts-prefix.pch */,
+				AF36422602A05191F9F5ED65AE2E17F5 /* Charts-umbrella.h */,
+				4FE2397CC45A8B2B0D5FCCA89D55E959 /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Charts";
+			sourceTree = "<group>";
+		};
+		1EDB28B8D8A0823FD3D01C74F341E4B5 /* watchOS */ = {
+			isa = PBXGroup;
+			children = (
+				C4975B2083EBFB55CAF05CD02BA838CB /* Foundation.framework */,
+			);
+			name = watchOS;
+			sourceTree = "<group>";
+		};
+		6D24BBAF89667857FC37348D34409010 /* Pods-iOS Steps */ = {
+			isa = PBXGroup;
+			children = (
+				E43B5579BB7972B73A820491D2AC2A87 /* Info.plist */,
+				8D2BD8CD629E0CE4ED942EA015947080 /* Pods-iOS Steps.modulemap */,
+				08E76DC34A6672424DCCD870A8A0A8B5 /* Pods-iOS Steps-acknowledgements.markdown */,
+				BE56DB908C48508BDCC1A563FE2D02C2 /* Pods-iOS Steps-acknowledgements.plist */,
+				9BA8F2B0868FDF2F9C0AF6C1E5EA7103 /* Pods-iOS Steps-dummy.m */,
+				75F9E1F1A3ED7ED5D453F80F3A34A06F /* Pods-iOS Steps-frameworks.sh */,
+				74E34292BBEF8340111056BC48BF530E /* Pods-iOS Steps-resources.sh */,
+				8E40526732E416DA755D91C385B0EE99 /* Pods-iOS Steps-umbrella.h */,
+				4F217265A6B799F2B8BCE4710A3F9F77 /* Pods-iOS Steps.debug.xcconfig */,
+				1643F391553F5AE9DA48A90DFB31D186 /* Pods-iOS Steps.release.xcconfig */,
 			);
 			name = "Pods-iOS Steps";
 			path = "Target Support Files/Pods-iOS Steps";
 			sourceTree = "<group>";
 		};
-		2DC89D99EE40091E93878F73848713B6 /* Pods-iOS Steps Today */ = {
+		727E0D495074ADB31473C29CE55EC595 /* Pods-iOS Steps Today */ = {
 			isa = PBXGroup;
 			children = (
-				40E17F24F436584834C8AC494C144ADA /* Info.plist */,
-				C38A3D008F82B3BC0185FFF441A56EE1 /* Pods-iOS Steps Today.modulemap */,
-				468D02F4F859DA27879A2ABFDEACADE8 /* Pods-iOS Steps Today-acknowledgements.markdown */,
-				950A51A4C85BB1F2EE9C58C87C8EE0AC /* Pods-iOS Steps Today-acknowledgements.plist */,
-				5E7020A41DCA4E6CFDE6288EF78E5E82 /* Pods-iOS Steps Today-dummy.m */,
-				4291F124F64B93B69CB197873B47EC6A /* Pods-iOS Steps Today-resources.sh */,
-				15192E8754E5724D7C4D43186AF9A534 /* Pods-iOS Steps Today-umbrella.h */,
-				62F33B333CDB65AD53057B40E2E19A5E /* Pods-iOS Steps Today.debug.xcconfig */,
-				B6E2799AEBDD209B2FF07E7AAE7BF150 /* Pods-iOS Steps Today.release.xcconfig */,
+				3A44DC6D586A4BF3B89C8604E5368EF4 /* Info.plist */,
+				90F62FDAF992F26E23FAD80A348E7722 /* Pods-iOS Steps Today.modulemap */,
+				BF20CFEEFDBADDEB20DCAA5E91514841 /* Pods-iOS Steps Today-acknowledgements.markdown */,
+				DE665F3911B9ADED94E5C0D619354623 /* Pods-iOS Steps Today-acknowledgements.plist */,
+				A41C8DD6767FC4404D36387D5F3AA94E /* Pods-iOS Steps Today-dummy.m */,
+				2522735ACD871B0DE5E1BBFEEF106C8C /* Pods-iOS Steps Today-resources.sh */,
+				90F6B8D8D09ECA7A3A6254B949BA008E /* Pods-iOS Steps Today-umbrella.h */,
+				B5AA455D98F1A18845695C51654A6AB5 /* Pods-iOS Steps Today.debug.xcconfig */,
+				221D16138D147D4A734125A0ED0BA078 /* Pods-iOS Steps Today.release.xcconfig */,
 			);
 			name = "Pods-iOS Steps Today";
 			path = "Target Support Files/Pods-iOS Steps Today";
-			sourceTree = "<group>";
-		};
-		3CD0D54929695496BB56C6B115CE7143 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				EF234116C9CED65C87555A8AF46B1F44 /* Info.plist */,
-				CA804D892B6A8A2DF89A6E524E863394 /* UICountingLabel.modulemap */,
-				2538E05613675ACA3974C160189BDE48 /* UICountingLabel.xcconfig */,
-				4AC058CF051F68A14CD7F6EB9F42587D /* UICountingLabel-dummy.m */,
-				566A622A41846FF7B54C06B0B2111EB5 /* UICountingLabel-prefix.pch */,
-				7221144AEC03975F67370759216DA0B6 /* UICountingLabel-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/UICountingLabel";
-			sourceTree = "<group>";
-		};
-		482EA88B9136A5A573514953C7FCB52D /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				D0FDE7E6C756FE51216AA3F19811305B /* Foundation.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		4C9377CB20ECA718CD735083515F4F7B /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				30FCF1ABA1B0035DFA251A8BA78FE221 /* Charts.modulemap */,
-				3A30DBA79490F3B259339FD5B0797666 /* Charts.xcconfig */,
-				06A25E16DB9168697C5AF1383BBBE698 /* Charts-dummy.m */,
-				F8EA0A26BD92FFDDB7C6B72AEA435F8D /* Charts-prefix.pch */,
-				8E15D751F14F1666387B9C7FAE2D228E /* Charts-umbrella.h */,
-				C16DD41F553AEC0B1806B662D57BEBEE /* Info.plist */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/Charts";
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -522,31 +508,49 @@
 			);
 			sourceTree = "<group>";
 		};
-		7F4227A5DF518BCB98C6F8EF0CE957DE /* Pods-iOS Steps Watch Extension */ = {
-			isa = PBXGroup;
-			children = (
-				59FD1837075FD83707516BAAAA27C2C8 /* Info.plist */,
-				966E58B360F36CDFBAD6CD34FC057605 /* Pods-iOS Steps Watch Extension.modulemap */,
-				799A4FF38EBA46336245CB61717D2BB6 /* Pods-iOS Steps Watch Extension-acknowledgements.markdown */,
-				F15600B06D702974734CB53E9AAC6253 /* Pods-iOS Steps Watch Extension-acknowledgements.plist */,
-				58830A4CF351BA46CCCC38F6C5ABEEF2 /* Pods-iOS Steps Watch Extension-dummy.m */,
-				578E7325033E200D37CC378CAB80CD1F /* Pods-iOS Steps Watch Extension-frameworks.sh */,
-				0AA66807614A97E17F36FA8575E20C09 /* Pods-iOS Steps Watch Extension-resources.sh */,
-				859DB0055D9B755542460B06D1AFDF89 /* Pods-iOS Steps Watch Extension-umbrella.h */,
-				59DD6C091753DF642D2FE0EF5F553ADF /* Pods-iOS Steps Watch Extension.debug.xcconfig */,
-				BF8C7F3EB0B2016AB256329166CEAF07 /* Pods-iOS Steps Watch Extension.release.xcconfig */,
-			);
-			name = "Pods-iOS Steps Watch Extension";
-			path = "Target Support Files/Pods-iOS Steps Watch Extension";
-			sourceTree = "<group>";
-		};
 		8F91EE078EA3977443D1BDC2601132EF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				482EA88B9136A5A573514953C7FCB52D /* iOS */,
-				FD9E2CBABDA1AB35BAD3C3F041262069 /* watchOS */,
+				F375DB63C3BCC11AF9808234753C618A /* iOS */,
+				1EDB28B8D8A0823FD3D01C74F341E4B5 /* watchOS */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8FD380DDA53CE60631376EC96A38C1FD /* Pods-iOS Steps Watch */ = {
+			isa = PBXGroup;
+			children = (
+				52D298ACE5143F1B220CE761AD922EA2 /* Info.plist */,
+				BEA64C20BB83CAB7161B60E55C1FBDEA /* Pods-iOS Steps Watch.modulemap */,
+				FF47EB999CCF1FA884E46AFFF97592D8 /* Pods-iOS Steps Watch-acknowledgements.markdown */,
+				BC182E5203A7F388DDE4E6ED8CA39327 /* Pods-iOS Steps Watch-acknowledgements.plist */,
+				BD13AF2D312ADF3289A9F28C742BA17F /* Pods-iOS Steps Watch-dummy.m */,
+				913D79027651D2B52DD3F9A6FDF2E43E /* Pods-iOS Steps Watch-frameworks.sh */,
+				34B36399E1E7FAD901EA4E5306C3C247 /* Pods-iOS Steps Watch-resources.sh */,
+				52A5F12C690FD5FBFCD422E7679BF3A9 /* Pods-iOS Steps Watch-umbrella.h */,
+				FC514920F201EDC54290D838F20F4AE6 /* Pods-iOS Steps Watch.debug.xcconfig */,
+				0C08BBD1B641FB61EF6632AA9F088676 /* Pods-iOS Steps Watch.release.xcconfig */,
+			);
+			name = "Pods-iOS Steps Watch";
+			path = "Target Support Files/Pods-iOS Steps Watch";
+			sourceTree = "<group>";
+		};
+		90D3FC4F08D0E6510C79F20540C2D25E /* Pods-iOS Steps Watch Extension */ = {
+			isa = PBXGroup;
+			children = (
+				B1A19CC0E8CC89A0A2095F46D0D2DD2C /* Info.plist */,
+				2A1093E4DD38542D3AB06EC999A06971 /* Pods-iOS Steps Watch Extension.modulemap */,
+				0AEBA91D1DAE07E300F33C91FF9D80C2 /* Pods-iOS Steps Watch Extension-acknowledgements.markdown */,
+				5C99D92987833DA900A2EC1C5CAD2A39 /* Pods-iOS Steps Watch Extension-acknowledgements.plist */,
+				4FBF73F8C40AA4823782B7BF158B2701 /* Pods-iOS Steps Watch Extension-dummy.m */,
+				6F403E51D9E106472FF5D547584C29F0 /* Pods-iOS Steps Watch Extension-frameworks.sh */,
+				32D0B125F88CE5490035D34FF410E1DB /* Pods-iOS Steps Watch Extension-resources.sh */,
+				7ED55F1C793AC85F481FE881AB775ACF /* Pods-iOS Steps Watch Extension-umbrella.h */,
+				7798C89766878EAD1A08208090F08EC8 /* Pods-iOS Steps Watch Extension.debug.xcconfig */,
+				DAC4AAFFAE789D352B032B4208AB43FF /* Pods-iOS Steps Watch Extension.release.xcconfig */,
+			);
+			name = "Pods-iOS Steps Watch Extension";
+			path = "Target Support Files/Pods-iOS Steps Watch Extension";
 			sourceTree = "<group>";
 		};
 		98064B4142E7C73D3AF37ECFE5165428 /* Products */ = {
@@ -708,28 +712,10 @@
 			isa = PBXGroup;
 			children = (
 				9F150C3EB2A20EC50357A62071DE900E /* Core */,
-				4C9377CB20ECA718CD735083515F4F7B /* Support Files */,
+				007CE0BB02F3B820DEEA2E4FDC358670 /* Support Files */,
 			);
 			name = Charts;
 			path = Charts;
-			sourceTree = "<group>";
-		};
-		C628F83AF6B1A37598D4837C75190844 /* Pods-iOS Steps Watch */ = {
-			isa = PBXGroup;
-			children = (
-				0D176943142A3AB81A95BFAA5F5B4FF2 /* Info.plist */,
-				DDDC9DD98F5B420BC498862D5DA0D02C /* Pods-iOS Steps Watch.modulemap */,
-				87A304B6D135226CBE7C1E2BC07070F5 /* Pods-iOS Steps Watch-acknowledgements.markdown */,
-				09B930B2F79DADDC5EDF3AECC9BE4844 /* Pods-iOS Steps Watch-acknowledgements.plist */,
-				5B6F59091C313DDCC7E8AE1246B6AE08 /* Pods-iOS Steps Watch-dummy.m */,
-				729C78AD6302F3DCED2BE9361CA53DE2 /* Pods-iOS Steps Watch-frameworks.sh */,
-				D11648748AC84C978902AD6123250998 /* Pods-iOS Steps Watch-resources.sh */,
-				B703208CDAA8699E081E690B83105EEA /* Pods-iOS Steps Watch-umbrella.h */,
-				94581AD350D5916BD290C6BFD6BE428B /* Pods-iOS Steps Watch.debug.xcconfig */,
-				0CFD79DADD08143B7AF79E03200165A5 /* Pods-iOS Steps Watch.release.xcconfig */,
-			);
-			name = "Pods-iOS Steps Watch";
-			path = "Target Support Files/Pods-iOS Steps Watch";
 			sourceTree = "<group>";
 		};
 		D1DF5BA8D48C77B6832BEFD55FACD803 /* Pods */ = {
@@ -746,7 +732,7 @@
 			children = (
 				410938963CEA44D64757862225A75266 /* UICountingLabel.h */,
 				37B58F5DA76119A9BB3C4BF3CFB59CF3 /* UICountingLabel.m */,
-				3CD0D54929695496BB56C6B115CE7143 /* Support Files */,
+				F2A40EA38C444B5A46CED81E02106970 /* Support Files */,
 			);
 			name = UICountingLabel;
 			path = UICountingLabel;
@@ -755,20 +741,34 @@
 		E2C4967B428FC87960AD72276CAC4717 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				0A5F38D48A0C0EEE6DD65416B51916F2 /* Pods-iOS Steps */,
-				2DC89D99EE40091E93878F73848713B6 /* Pods-iOS Steps Today */,
-				C628F83AF6B1A37598D4837C75190844 /* Pods-iOS Steps Watch */,
-				7F4227A5DF518BCB98C6F8EF0CE957DE /* Pods-iOS Steps Watch Extension */,
+				6D24BBAF89667857FC37348D34409010 /* Pods-iOS Steps */,
+				727E0D495074ADB31473C29CE55EC595 /* Pods-iOS Steps Today */,
+				8FD380DDA53CE60631376EC96A38C1FD /* Pods-iOS Steps Watch */,
+				90D3FC4F08D0E6510C79F20540C2D25E /* Pods-iOS Steps Watch Extension */,
 			);
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		FD9E2CBABDA1AB35BAD3C3F041262069 /* watchOS */ = {
+		F2A40EA38C444B5A46CED81E02106970 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				76720B026417625FB62285B73CECF0BF /* Foundation.framework */,
+				3D2FDA86B32C539A1CAF59C98EF04F34 /* Info.plist */,
+				00859FE0854F554752E15F4931BA2ABD /* UICountingLabel.modulemap */,
+				FFD7FBA823D15E6E4D1C4C0F4CF5ACF4 /* UICountingLabel.xcconfig */,
+				84E2366D5F9CB1FF7196EA34ABCC0A03 /* UICountingLabel-dummy.m */,
+				2F6ED1AE386078A72921F08D25F2FEBC /* UICountingLabel-prefix.pch */,
+				FE1CD639927B96B45C106D5B8423A8B5 /* UICountingLabel-umbrella.h */,
 			);
-			name = watchOS;
+			name = "Support Files";
+			path = "../Target Support Files/UICountingLabel";
+			sourceTree = "<group>";
+		};
+		F375DB63C3BCC11AF9808234753C618A /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				E77640DDAFE615BB37FC5A8BC18E875D /* Foundation.framework */,
+			);
+			name = iOS;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -937,8 +937,8 @@
 		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0700;
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1171,34 +1171,96 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		2DC4C7317B0AF4568058E6F742C11891 /* Release */ = {
+		21B235A17B0CDCD07636BCD20AC7F4D3 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BF8C7F3EB0B2016AB256329166CEAF07 /* Pods-iOS Steps Watch Extension.release.xcconfig */;
+			baseConfigurationReference = 475A62555C4864BB63CDA9607DD328AF /* Charts.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Charts/Charts-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Charts/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Charts/Charts.modulemap";
+				PRODUCT_MODULE_NAME = Charts;
+				PRODUCT_NAME = Charts;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		2289EE8D59BC77D78B24B92120371A93 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 475A62555C4864BB63CDA9607DD328AF /* Charts.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Charts/Charts-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Charts/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Charts/Charts.modulemap";
+				PRODUCT_MODULE_NAME = Charts;
+				PRODUCT_NAME = Charts;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		32B7F11E2B649F84B6D9C41FB4382C18 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC514920F201EDC54290D838F20F4AE6 /* Pods-iOS Steps Watch.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-iOS Steps Watch Extension/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-iOS Steps Watch/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-iOS Steps Watch Extension/Pods-iOS Steps Watch Extension.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
+				MODULEMAP_FILE = "Target Support Files/Pods-iOS Steps Watch/Pods-iOS Steps Watch.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_iOS_Steps_Watch_Extension;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
@@ -1206,37 +1268,70 @@
 				VERSION_INFO_PREFIX = "";
 				WATCHOS_DEPLOYMENT_TARGET = 3.2;
 			};
-			name = Release;
+			name = Debug;
 		};
-		3BF14A0D3FD332E67D5A6567E6899851 /* Debug */ = {
+		3DCF6D912B2F26AF4372C710791B8463 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 62F33B333CDB65AD53057B40E2E19A5E /* Pods-iOS Steps Today.debug.xcconfig */;
+			baseConfigurationReference = DAC4AAFFAE789D352B032B4208AB43FF /* Pods-iOS Steps Watch Extension.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-iOS Steps Watch Extension/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-iOS Steps Watch Extension/Pods-iOS Steps Watch Extension.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 3.2;
+			};
+			name = Release;
+		};
+		46217B87D750A1AD62148FCFB2DA4166 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B5AA455D98F1A18845695C51654A6AB5 /* Pods-iOS Steps Today.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-iOS Steps Today/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-iOS Steps Today/Pods-iOS Steps Today.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_iOS_Steps_Today;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1245,81 +1340,116 @@
 			};
 			name = Debug;
 		};
-		3CF5B6190B4447CC19BFFF28F13CCE55 /* Release */ = {
+		5B5F7E336E1CCE273BF64199AB50B848 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5017D4D76A0E681DA660A3A36908DA4E /* Pods-iOS Steps.release.xcconfig */;
+			baseConfigurationReference = 0C08BBD1B641FB61EF6632AA9F088676 /* Pods-iOS Steps Watch.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-iOS Steps Watch/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-iOS Steps Watch/Pods-iOS Steps Watch.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 3.2;
+			};
+			name = Release;
+		};
+		622A8E1A8C722E62EC2A5F611D5AF19D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4F217265A6B799F2B8BCE4710A3F9F77 /* Pods-iOS Steps.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-iOS Steps/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-iOS Steps/Pods-iOS Steps.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_iOS_Steps;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
-		46327D01F1C23B2899501E23C43F519F /* Release */ = {
+		7398A674F14157420037ED32626FEF91 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3A30DBA79490F3B259339FD5B0797666 /* Charts.xcconfig */;
+			baseConfigurationReference = 221D16138D147D4A734125A0ED0BA078 /* Pods-iOS Steps Today.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Charts/Charts-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Charts/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-iOS Steps Today/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Charts/Charts.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = Charts;
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-iOS Steps Today/Pods-iOS Steps Today.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
-		49573E51810A5A23F9133E13100DBC96 /* Debug */ = {
+		7D54B6EC9A6B668C23761EA0E9ECCBDA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2538E05613675ACA3974C160189BDE48 /* UICountingLabel.xcconfig */;
+			baseConfigurationReference = FFD7FBA823D15E6E4D1C4C0F4CF5ACF4 /* UICountingLabel.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -1327,23 +1457,21 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/UICountingLabel/UICountingLabel-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/UICountingLabel/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/UICountingLabel/UICountingLabel.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_MODULE_NAME = UICountingLabel;
 				PRODUCT_NAME = UICountingLabel;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1351,355 +1479,231 @@
 			};
 			name = Debug;
 		};
-		5C083FDB3E606864E700B8DA8A51FC4A /* Release */ = {
+		8B631E99F53D53C389FA47F3695CE77E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1643F391553F5AE9DA48A90DFB31D186 /* Pods-iOS Steps.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGNING_REQUIRED = NO;
-				COPY_PHASE_STRIP = YES;
-				ENABLE_NS_ASSERTIONS = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"POD_CONFIGURATION_RELEASE=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
-				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
-				STRIP_INSTALLED_PRODUCT = NO;
-				SYMROOT = "${SRCROOT}/../build";
-				VALIDATE_PRODUCT = YES;
-				WATCHOS_DEPLOYMENT_TARGET = 3.2;
-			};
-			name = Release;
-		};
-		7CBDC9FDEC10BDC9258D3DA5B5A37252 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 23FA23C0227FD7753D0DBFD22898EBCC /* Pods-iOS Steps.debug.xcconfig */;
-			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "Target Support Files/Pods-iOS Steps/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-iOS Steps/Pods-iOS Steps.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_iOS_Steps;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
+			name = Release;
+		};
+		8EA07AE393A56710F5926F2CBFD10609 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7798C89766878EAD1A08208090F08EC8 /* Pods-iOS Steps Watch Extension.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-iOS Steps Watch Extension/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-iOS Steps Watch Extension/Pods-iOS Steps Watch Extension.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 3.2;
+			};
 			name = Debug;
 		};
-		7E35915CD6FA902D6B3D1501BBBE68B1 /* Debug */ = {
+		9FCF24AB876B4A2AC0B5B856B674667C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				WATCHOS_DEPLOYMENT_TARGET = 3.2;
+			};
+			name = Release;
+		};
+		BE2403A872C06FCC8E8F197DB97F804B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FFD7FBA823D15E6E4D1C4C0F4CF5ACF4 /* UICountingLabel.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/UICountingLabel/UICountingLabel-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/UICountingLabel/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/UICountingLabel/UICountingLabel.modulemap";
+				PRODUCT_MODULE_NAME = UICountingLabel;
+				PRODUCT_NAME = UICountingLabel;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		C5C8D56FE83BD45CE9CD2B0C5687703D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"POD_CONFIGURATION_DEBUG=1",
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SYMROOT = "${SRCROOT}/../build";
 				WATCHOS_DEPLOYMENT_TARGET = 3.2;
 			};
 			name = Debug;
-		};
-		8B9EB14BD8929BFE61E09380C955A72D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 94581AD350D5916BD290C6BFD6BE428B /* Pods-iOS Steps Watch.debug.xcconfig */;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-iOS Steps Watch/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-iOS Steps Watch/Pods-iOS Steps Watch.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_iOS_Steps_Watch;
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = 4;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-				WATCHOS_DEPLOYMENT_TARGET = 3.2;
-			};
-			name = Debug;
-		};
-		D3A68AFA8DED5D33377CF50EC0389178 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3A30DBA79490F3B259339FD5B0797666 /* Charts.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Charts/Charts-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Charts/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Charts/Charts.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = Charts;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		D8ED71B4A851628858F844649D3FCD2B /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2538E05613675ACA3974C160189BDE48 /* UICountingLabel.xcconfig */;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/UICountingLabel/UICountingLabel-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/UICountingLabel/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/UICountingLabel/UICountingLabel.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = UICountingLabel;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		DC08069A28E966CEB03BCA6914D97D4D /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B6E2799AEBDD209B2FF07E7AAE7BF150 /* Pods-iOS Steps Today.release.xcconfig */;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-iOS Steps Today/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-iOS Steps Today/Pods-iOS Steps Today.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_iOS_Steps_Today;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		E64A1AF8DDC613A145DDB247CB7C4BB0 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 59DD6C091753DF642D2FE0EF5F553ADF /* Pods-iOS Steps Watch Extension.debug.xcconfig */;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-iOS Steps Watch Extension/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-iOS Steps Watch Extension/Pods-iOS Steps Watch Extension.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_iOS_Steps_Watch_Extension;
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = 4;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-				WATCHOS_DEPLOYMENT_TARGET = 3.2;
-			};
-			name = Debug;
-		};
-		FFBF18E682F0D828CAE32FDC584CC152 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0CFD79DADD08143B7AF79E03200165A5 /* Pods-iOS Steps Watch.release.xcconfig */;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-iOS Steps Watch/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-iOS Steps Watch/Pods-iOS Steps Watch.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_iOS_Steps_Watch;
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = 4;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-				WATCHOS_DEPLOYMENT_TARGET = 3.2;
-			};
-			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
@@ -1707,8 +1711,8 @@
 		0708EB4E7176F699C41ACD14037D4D2D /* Build configuration list for PBXNativeTarget "Pods-iOS Steps Watch" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8B9EB14BD8929BFE61E09380C955A72D /* Debug */,
-				FFBF18E682F0D828CAE32FDC584CC152 /* Release */,
+				32B7F11E2B649F84B6D9C41FB4382C18 /* Debug */,
+				5B5F7E336E1CCE273BF64199AB50B848 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1716,8 +1720,8 @@
 		0BB90AFA09CF2897259FE465E2EDEF66 /* Build configuration list for PBXNativeTarget "UICountingLabel" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				49573E51810A5A23F9133E13100DBC96 /* Debug */,
-				D8ED71B4A851628858F844649D3FCD2B /* Release */,
+				7D54B6EC9A6B668C23761EA0E9ECCBDA /* Debug */,
+				BE2403A872C06FCC8E8F197DB97F804B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1725,8 +1729,8 @@
 		2BC42A342B5C7A8A06E43923689AA325 /* Build configuration list for PBXNativeTarget "Pods-iOS Steps Watch Extension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E64A1AF8DDC613A145DDB247CB7C4BB0 /* Debug */,
-				2DC4C7317B0AF4568058E6F742C11891 /* Release */,
+				8EA07AE393A56710F5926F2CBFD10609 /* Debug */,
+				3DCF6D912B2F26AF4372C710791B8463 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1734,8 +1738,8 @@
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7E35915CD6FA902D6B3D1501BBBE68B1 /* Debug */,
-				5C083FDB3E606864E700B8DA8A51FC4A /* Release */,
+				C5C8D56FE83BD45CE9CD2B0C5687703D /* Debug */,
+				9FCF24AB876B4A2AC0B5B856B674667C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1743,8 +1747,8 @@
 		3D14B205935AB5DF4894C7AAEE205F6C /* Build configuration list for PBXNativeTarget "Pods-iOS Steps" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7CBDC9FDEC10BDC9258D3DA5B5A37252 /* Debug */,
-				3CF5B6190B4447CC19BFFF28F13CCE55 /* Release */,
+				622A8E1A8C722E62EC2A5F611D5AF19D /* Debug */,
+				8B631E99F53D53C389FA47F3695CE77E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1752,8 +1756,8 @@
 		6554593291BC0182CBD1927A7C865CB2 /* Build configuration list for PBXNativeTarget "Pods-iOS Steps Today" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3BF14A0D3FD332E67D5A6567E6899851 /* Debug */,
-				DC08069A28E966CEB03BCA6914D97D4D /* Release */,
+				46217B87D750A1AD62148FCFB2DA4166 /* Debug */,
+				7398A674F14157420037ED32626FEF91 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1761,8 +1765,8 @@
 		AFA3461FDDF13768BF7CCB6A10F3FFC5 /* Build configuration list for PBXNativeTarget "Charts" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D3A68AFA8DED5D33377CF50EC0389178 /* Debug */,
-				46327D01F1C23B2899501E23C43F519F /* Release */,
+				21B235A17B0CDCD07636BCD20AC7F4D3 /* Debug */,
+				2289EE8D59BC77D78B24B92120371A93 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

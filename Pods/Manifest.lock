@@ -1,17 +1,22 @@
 PODS:
-  - Charts (3.0.5):
-    - Charts/Core (= 3.0.5)
-  - Charts/Core (3.0.5)
+  - Charts (3.1.1):
+    - Charts/Core (= 3.1.1)
+  - Charts/Core (3.1.1)
   - UICountingLabel (1.4.1)
 
 DEPENDENCIES:
   - Charts
   - UICountingLabel
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Charts
+    - UICountingLabel
+
 SPEC CHECKSUMS:
-  Charts: 45cdc985b764c838b35ee47eb1365d15735f6d1a
+  Charts: 90a4d61da0f6e06684c591e3bcab11940fe61736
   UICountingLabel: faf890b505d96312e324a86718f031fafffb0ccb
 
 PODFILE CHECKSUM: 5239e697261aede78c507e846807396feee71f5f
 
-COCOAPODS: 1.2.1
+COCOAPODS: 1.5.2
