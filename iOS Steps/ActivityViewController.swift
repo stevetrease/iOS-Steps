@@ -124,6 +124,7 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
         distanceFormatter.numberFormatter.minimumFractionDigits = 1
         let distanceString = distanceFormatter.string(from: distance)
         
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellIDwalking")! as! CustomTableViewCell
         cell.energyLabel.text = energyString
         cell.durationLabel.text = durationString
@@ -131,6 +132,19 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
         cell.distanceLabel.text = distanceString
         cell.activityLabel.text = healthKitManager.workoutTypeIcon(workout.workoutActivityType)
         // cell.activityImage.image = healthKitManager.workoutTypeImage(workout.workoutActivityType)
+        
+
+        if (workout.workoutActivityType == . running || workout.workoutActivityType == .walking) {
+            healthKitManager.stepsBetween(startDate: workout.startDate, endDate: workout.endDate, completion: { (steps) in
+                OperationQueue.main.addOperation {
+                    let stepFormatter = NumberFormatter()
+                    stepFormatter.maximumFractionDigits = 0
+                    stepFormatter.numberStyle = NumberFormatter.Style.decimal
+                    cell.energyLabel.text = stepFormatter.string(from: steps! as NSNumber)!
+                }
+            })
+        }
+        
         
         return cell
     }
