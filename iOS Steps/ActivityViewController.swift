@@ -117,24 +117,36 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
         let energy = workout.totalEnergyBurned?.doubleValue(for: HKUnit.largeCalorie())
         let energyString = energyFormatter.string(fromValue: energy!, unit: .calorie)
         
-        let distance = Measurement(value: (workout.totalDistance?.doubleValue(for: HKUnit.mile()))!, unit: UnitLength.miles)
-        let distanceFormatter = MeasurementFormatter()
-        distanceFormatter.unitStyle = .medium
-        distanceFormatter.numberFormatter.maximumFractionDigits = 1
-        distanceFormatter.numberFormatter.minimumFractionDigits = 1
-        let distanceString = distanceFormatter.string(from: distance)
-        
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellIDwalking")! as! CustomTableViewCell
-        cell.energyLabel.text = energyString
         cell.durationLabel.text = durationString
         cell.timeLabel.text = timeString
-        cell.distanceLabel.text = distanceString
         cell.activityLabel.text = healthKitManager.workoutTypeIcon(workout.workoutActivityType)
         // cell.activityImage.image = healthKitManager.workoutTypeImage(workout.workoutActivityType)
         
+        switch workout.workoutActivityType {
+        case HKWorkoutActivityType.cycling:
+            let distance = Measurement(value: (workout.totalDistance?.doubleValue(for: HKUnit.mile()))!, unit: UnitLength.miles)
+            let distanceFormatter = MeasurementFormatter()
+            distanceFormatter.unitStyle = .medium
+            distanceFormatter.numberFormatter.maximumFractionDigits = 1
+            distanceFormatter.numberFormatter.minimumFractionDigits = 1
+            let distanceString = distanceFormatter.string(from: distance)
+            
+            cell.energyLabel.text = energyString
+            cell.distanceLabel.text = distanceString
 
-        if (workout.workoutActivityType == . running || workout.workoutActivityType == .walking) {
+        case HKWorkoutActivityType.swimming:
+            let distance = Measurement(value: (workout.totalDistance?.doubleValue(for: HKUnit.mile()))!, unit: UnitLength.meters)
+            let distanceFormatter = MeasurementFormatter()
+            distanceFormatter.unitStyle = .medium
+            distanceFormatter.numberFormatter.maximumFractionDigits = 0
+            distanceFormatter.numberFormatter.minimumFractionDigits = 0
+            let distanceString = distanceFormatter.string(from: distance)
+            
+            cell.energyLabel.text = energyString
+            cell.distanceLabel.text = distanceString
+            
+        case HKWorkoutActivityType.walking, HKWorkoutActivityType.running:
             healthKitManager.stepsBetween(startDate: workout.startDate, endDate: workout.endDate, completion: { (steps) in
                 OperationQueue.main.addOperation {
                     let stepFormatter = NumberFormatter()
@@ -143,8 +155,19 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
                     cell.energyLabel.text = stepFormatter.string(from: steps! as NSNumber)!
                 }
             })
+            
+            let distance = Measurement(value: (workout.totalDistance?.doubleValue(for: HKUnit.mile()))!, unit: UnitLength.miles)
+            let distanceFormatter = MeasurementFormatter()
+            distanceFormatter.unitStyle = .medium
+            distanceFormatter.numberFormatter.maximumFractionDigits = 1
+            distanceFormatter.numberFormatter.minimumFractionDigits = 1
+            let distanceString = distanceFormatter.string(from: distance)
+    
+            cell.distanceLabel.text = distanceString
+            
+        default:
+            print (NSURL (fileURLWithPath: "\(#file)").lastPathComponent!, "\(#function) unknown switch case")
         }
-        
         
         return cell
     }
