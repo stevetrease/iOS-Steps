@@ -137,13 +137,16 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
 
         case HKWorkoutActivityType.swimming:
             let distance = Measurement(value: (workout.totalDistance?.doubleValue(for: HKUnit.mile()))!, unit: UnitLength.miles)
-            let distanceFormatter = MeasurementFormatter()
+           
+            let distance2 = distance.converted(to: UnitLength.meters)
             
+            let distanceFormatter = MeasurementFormatter()
             distanceFormatter.unitStyle = .medium
             distanceFormatter.unitOptions = .naturalScale
+            distanceFormatter.unitOptions = .providedUnit
             distanceFormatter.numberFormatter.maximumFractionDigits = 0
             distanceFormatter.numberFormatter.minimumFractionDigits = 0
-            let distanceString = distanceFormatter.string(from: distance)
+            let distanceString = distanceFormatter.string(from: distance2)
             
             let energyFormatter = EnergyFormatter()
             energyFormatter.numberFormatter.maximumFractionDigits = 0
