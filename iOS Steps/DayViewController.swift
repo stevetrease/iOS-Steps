@@ -258,7 +258,7 @@ class DayViewController: UIViewController {
     }
     
     
-    func copyStepsPressed () {
+    @objc func copyStepsPressed () {
         print (NSURL (fileURLWithPath: "\(#file)").lastPathComponent!, "\(#function)")
         UIPasteboard.general.string = String(Int(healthKitManager.stepsYesterday))
     }
