@@ -269,7 +269,7 @@ class HealthKitManager {
             return UIImage(named: "ic_directions_walk_black_24px.svg")!
         case HKWorkoutActivityType.running:
             return UIImage(named: "ic_directions_walk_black_24px.svg")!
-        case HKWorkoutActivityType.walking:
+        case HKWorkoutActivityType.walking, HKWorkoutActivityType.hiking:
             return UIImage(named: "ic_directions_walk_black_24px.svg")!
         case HKWorkoutActivityType.swimming:
             return UIImage(named: "ic_directions_walk_black_24px.svg")!
@@ -285,7 +285,7 @@ class HealthKitManager {
             return ("🚴‍♂️")
         case HKWorkoutActivityType.running:
             return ("🏃")
-        case HKWorkoutActivityType.walking:
+        case HKWorkoutActivityType.walking, HKWorkoutActivityType.hiking:
             return ("🚶")
         case HKWorkoutActivityType.swimming:
             return ("🏊")

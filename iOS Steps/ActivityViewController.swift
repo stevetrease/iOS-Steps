@@ -157,7 +157,7 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
             cell.energyLabel.text = energyString
             cell.distanceLabel.text = distanceString
             
-        case HKWorkoutActivityType.walking, HKWorkoutActivityType.running:
+        case HKWorkoutActivityType.hiking, HKWorkoutActivityType.walking, HKWorkoutActivityType.running:
             healthKitManager.stepsBetween(startDate: workout.startDate, endDate: workout.endDate, completion: { (steps) in
                 OperationQueue.main.addOperation {
                     let stepFormatter = NumberFormatter()
