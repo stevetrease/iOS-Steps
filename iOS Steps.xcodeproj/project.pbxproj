@@ -593,7 +593,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = ./updateSplashScreen.sh;
+			shellScript = "./updateSplashScreen.sh\n";
 		};
 		AA558A0C1E42925100230075 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -606,7 +606,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = ./updateBuildVersionNumber.sh;
+			shellScript = "./updateBuildVersionNumber.sh\n";
 		};
 		C070CAC63BA3136083B4B5BB /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
