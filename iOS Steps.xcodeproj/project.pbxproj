@@ -550,7 +550,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-iOS Steps/Pods-iOS Steps-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-iOS Steps/Pods-iOS Steps-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
 				"${BUILT_PRODUCTS_DIR}/UICountingLabel/UICountingLabel.framework",
 			);
@@ -561,7 +561,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iOS Steps/Pods-iOS Steps-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iOS Steps/Pods-iOS Steps-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		75637092D050E55F56FFB940 /* [CP] Check Pods Manifest.lock */ = {

@@ -222,15 +222,15 @@ class DayViewController: UIViewController {
         var averageLineDataEntries: [BarChartDataEntry] = []
         averageLineDataEntries.append (averageLineStartDataEntry)
         averageLineDataEntries.append (averageLineEndDataEntry)
-        let averageLineDataSet = LineChartDataSet (values: averageLineDataEntries, label: "Average")
+        let averageLineDataSet = LineChartDataSet (entries: averageLineDataEntries, label: "Average")
         averageLineDataSet.colors = [.lightGray]
         averageLineDataSet.drawValuesEnabled = false
         averageLineDataSet.drawCirclesEnabled = false
         averageLineDataSet.lineWidth = 1
         
-        let barDataSet = BarChartDataSet(values: hourlyDataEntries, label: "")
-        let lineDataSet1 = LineChartDataSet(values: line1Data, label: "Today")
-        let lineDataSet2 = LineChartDataSet(values: line2Data, label: "Yesterday")
+        let barDataSet = BarChartDataSet(entries: hourlyDataEntries, label: "")
+        let lineDataSet1 = LineChartDataSet(entries: line1Data, label: "Today")
+        let lineDataSet2 = LineChartDataSet(entries: line2Data, label: "Yesterday")
         
         barDataSet.colors = [UIColor.darkGray]
         lineDataSet1.colors = [UIColor.darkText]

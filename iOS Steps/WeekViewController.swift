@@ -142,7 +142,7 @@ class WeekViewController: UIViewController {
         var averageLineDataEntries: [BarChartDataEntry] = []
         averageLineDataEntries.append (averageLineStartDataEntry)
         averageLineDataEntries.append (averageLineEndDataEntry)
-        let averageLineDataSet = LineChartDataSet (values: averageLineDataEntries, label: "average")
+        let averageLineDataSet = LineChartDataSet (entries: averageLineDataEntries, label: "average")
         averageLineDataSet.colors = [.darkGray]
         averageLineDataSet.drawValuesEnabled = false
         averageLineDataSet.drawCirclesEnabled = false
@@ -150,7 +150,7 @@ class WeekViewController: UIViewController {
         var lines: [LineChartDataSet] = []
         lines.insert(averageLineDataSet, at: 0)
         
-        let barDataSet = BarChartDataSet(values: dailyStepDataEntries, label: "")
+        let barDataSet = BarChartDataSet(entries: dailyStepDataEntries, label: "")
         
         barDataSet.colors = [UIColor.lightGray]
         
@@ -222,7 +222,7 @@ class WeekViewController: UIViewController {
                 dayString = "Today"
             }
             
-            let lineDataSet = LineChartDataSet(values: dailyLineDataEntries, label: dayString)
+            let lineDataSet = LineChartDataSet(entries: dailyLineDataEntries, label: dayString)
             
             let colourFraction = 1.0 / Double(healthKitManager.historyDays + 1)
             let whiteValue = (Double(day) * colourFraction * -1.0)
@@ -244,7 +244,7 @@ class WeekViewController: UIViewController {
         var averageLineDataEntries: [BarChartDataEntry] = []
         averageLineDataEntries.append (averageLineStartDataEntry)
         averageLineDataEntries.append (averageLineEndDataEntry)
-        let averageLineDataSet = LineChartDataSet (values: averageLineDataEntries, label: "average")
+        let averageLineDataSet = LineChartDataSet (entries: averageLineDataEntries, label: "average")
         averageLineDataSet.colors = [.lightGray]
         averageLineDataSet.drawCirclesEnabled = false
         averageLineDataSet.lineWidth = 1
